@@ -1,5 +1,4 @@
 # Register configuration for bblocks-process-profiles
-# Structure follows GeoLabs/bblocks-eoap-cct.
 
 identifier-prefix: ospd.process-profiles.
 
@@ -32,13 +31,13 @@ description: |
   All mappings are proposed correspondences offered for review, not settled equivalences.
 
 contact:
-  name: GeoLabs SARL
-  url: https://www.geolabs.fr/
+  name: Technologies Luqia, Computer Research Institute of Montréal (CRIM)
+  url: https://www.luqia.ca/
 
 version: 0.1.0
 
-baseURL: https://geolabs.github.io/bblocks-process-profiles/
-gitHubBaseURL: https://github.com/GeoLabs/bblocks-process-profiles/
+baseURL: https://crim-ca.github.io/bblocks-process-profiles/
+gitHubBaseURL: https://github.com/crim-ca/bblocks-process-profiles/
 
 keywords:
   - OSPD
