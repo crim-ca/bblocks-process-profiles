@@ -1,5 +1,5 @@
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/detect-water-body/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/detect-water-body",
   "type": "ProcessType",
   "prefLabel": "Water body detection based on NDWI and otsu threshold",

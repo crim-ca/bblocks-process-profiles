@@ -1,5 +1,5 @@
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/norm-diff/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/norm-diff",
   "type": "ProcessType",
   "prefLabel": "Normalized difference between two rasters",

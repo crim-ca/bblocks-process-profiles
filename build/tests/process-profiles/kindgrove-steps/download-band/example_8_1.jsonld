@@ -1,5 +1,5 @@
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/download-band/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove-steps/download-band/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/download-band",
   "type": "ProcessType",
   "prefLabel": "Download one Sentinel-2 band over a bounding box",

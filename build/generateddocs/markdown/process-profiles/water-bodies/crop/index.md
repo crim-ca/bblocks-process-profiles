@@ -159,7 +159,7 @@ OGC API - Processes processDescription derived from the CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
   "id": "crop",
   "version": "1.4.1",
   "title": "crop",
@@ -241,8 +241,8 @@ OGC API - Processes processDescription derived from the CWL.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -275,17 +275,17 @@ OGC API - Processes processDescription derived from the CWL.
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value "Process converted from CWL" ;
             proc:role schema:description ],
-        [ rdf:value "crop" ;
-            proc:role schema:name ],
         [ rdf:value "1.4.1" ;
-            proc:role schema:softwareVersion ] ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value "crop" ;
+            proc:role schema:name ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns2:cropped [ dcterms:description "" ;
+    proc:outputs [ ns3:cropped [ dcterms:description "" ;
                     dcterms:title "cropped" ;
                     proc:schema [ proc:type "string" ;
-                            ns3:contentMediaType "application/octet-stream" ] ] ] .
+                            ns2:contentMediaType "application/octet-stream" ] ] ] .
 
 
 ```
@@ -314,7 +314,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
   "processDescription": {
     "process": {
       "id": "crop",
@@ -363,7 +363,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
   "inputs": {
     "item": "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
     "aoi": "-121.399,39.834,-120.74,40.472",
@@ -404,7 +404,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
   "cropped": {
     "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-crop-0001/results/crop_green.tif",
     "type": "image/tiff; application=geotiff"
@@ -505,7 +505,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
   "@graph": [
     {
       "id": "urn:example:run:water-bodies:crop",
@@ -672,7 +672,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
   "id": "urn:example:run:water-bodies:crop",
   "type": "ProcessRun",
   "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/crop",
@@ -764,7 +764,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/crop",
   "type": "ProcessType",
   "prefLabel": "Crop a Sentinel-2 COG band to an area of interest",
@@ -1782,10 +1782,10 @@ id:6d7920a6-ee35-4701-88be-68838b9ba10b a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/node_otsu" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:887634a3-fcfa-4422-aaa1-8949fd8db10b ],
-        [ a prov:Association ;
             prov:agent id:39955f0d-0ccf-44b0-b0a9-70d1dd48559c ;
-            prov:hadPlan <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_otsu> ] ;
+            prov:hadPlan <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_otsu> ],
+        [ a prov:Association ;
+            prov:agent id:887634a3-fcfa-4422-aaa1-8949fd8db10b ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T22:14:43.705752"^^xsd:dateTime ;
             prov:hadActivity id:006f10ba-bce7-4602-bc25-46f0ca2c5724 ] ;
@@ -1829,10 +1829,10 @@ id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/node_crop" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:8bbef2fa-3721-4f50-b27c-1d641100a89f ],
-        [ a prov:Association ;
             prov:agent id:39955f0d-0ccf-44b0-b0a9-70d1dd48559c ;
-            prov:hadPlan <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop> ] ;
+            prov:hadPlan <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop> ],
+        [ a prov:Association ;
+            prov:agent id:8bbef2fa-3721-4f50-b27c-1d641100a89f ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T22:11:25.695175"^^xsd:dateTime ;
             prov:hadActivity id:006f10ba-bce7-4602-bc25-46f0ca2c5724 ] ;
@@ -1840,17 +1840,17 @@ id:8d6db404-8e9b-4740-bc17-6a2fab7c0c32 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T22:09:38.001367"^^xsd:dateTime ;
             prov:hadActivity id:006f10ba-bce7-4602-bc25-46f0ca2c5724 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T22:09:38.074291"^^xsd:dateTime ;
-            prov:entity data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop/aoi> ],
+            prov:atTime "2026-09-23T22:09:38.075873"^^xsd:dateTime ;
+            prov:entity data:5f0002427ab880579cf6a5a5c704bd399f3310f2 ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop/item> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T22:09:38.074835"^^xsd:dateTime ;
             prov:entity data:bc74f4f071a5a33f00ab88a6d6385b5e6638b86c ;
             prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop/band> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T22:09:38.075873"^^xsd:dateTime ;
-            prov:entity data:5f0002427ab880579cf6a5a5c704bd399f3310f2 ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop/item> ],
+            prov:atTime "2026-09-23T22:09:38.074291"^^xsd:dateTime ;
+            prov:entity data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop/aoi> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T22:09:38.075291"^^xsd:dateTime ;
             prov:entity data:9d1fba832b03655b5b73ff964bc74d4543bf904a ;
@@ -1878,18 +1878,18 @@ id:eb53f504-eecb-4585-8e33-f7afdbbf816a a wfprov:Artifact,
         prov:Collection,
         prov:Entity ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:42580139-e758-4dbe-8ca8-7a114f7abf7f ],
+            provext:member id:b3b5dbf6-efbd-48f2-ba85-a9937bb49c7e ],
         [ a provext:Membership ;
-            provext:member id:b3b5dbf6-efbd-48f2-ba85-a9937bb49c7e ] .
+            provext:member id:42580139-e758-4dbe-8ca8-7a114f7abf7f ] .
 
 id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/node_crop_2" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:c2b78598-db7e-4ab3-89eb-621c7b5c9bd6 ],
-        [ a prov:Association ;
             prov:agent id:39955f0d-0ccf-44b0-b0a9-70d1dd48559c ;
-            prov:hadPlan <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop_2> ] ;
+            prov:hadPlan <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop_2> ],
+        [ a prov:Association ;
+            prov:agent id:c2b78598-db7e-4ab3-89eb-621c7b5c9bd6 ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T22:14:14.382774"^^xsd:dateTime ;
             prov:hadActivity id:006f10ba-bce7-4602-bc25-46f0ca2c5724 ] ;
@@ -1897,10 +1897,6 @@ id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T22:11:25.771051"^^xsd:dateTime ;
             prov:hadActivity id:006f10ba-bce7-4602-bc25-46f0ca2c5724 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T22:11:25.788461"^^xsd:dateTime ;
-            prov:entity data:5f0002427ab880579cf6a5a5c704bd399f3310f2 ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop_2/item> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T22:11:25.787372"^^xsd:dateTime ;
             prov:entity data:ba936cb0e062bea4078e8b56371ca8fe054093dd ;
             prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop_2/band> ],
@@ -1908,6 +1904,10 @@ id:f47bdfb0-199b-4f9a-93c9-1bc6e9427cc5 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T22:11:25.786582"^^xsd:dateTime ;
             prov:entity data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad ;
             prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop_2/aoi> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T22:11:25.788461"^^xsd:dateTime ;
+            prov:entity data:5f0002427ab880579cf6a5a5c704bd399f3310f2 ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_crop_2/item> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T22:11:25.787927"^^xsd:dateTime ;
             prov:entity data:9d1fba832b03655b5b73ff964bc74d4543bf904a ;
@@ -1917,10 +1917,10 @@ id:f960d24b-dcbf-4c16-88ce-ad7029487e59 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/node_normalized_difference" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:87ca5fb7-8991-4f4e-b107-8b30f9be5eea ],
-        [ a prov:Association ;
             prov:agent id:39955f0d-0ccf-44b0-b0a9-70d1dd48559c ;
-            prov:hadPlan <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_normalized_difference> ] ;
+            prov:hadPlan <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_normalized_difference> ],
+        [ a prov:Association ;
+            prov:agent id:87ca5fb7-8991-4f4e-b107-8b30f9be5eea ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T22:14:35.757176"^^xsd:dateTime ;
             prov:hadActivity id:006f10ba-bce7-4602-bc25-46f0ca2c5724 ] ;
@@ -1973,13 +1973,13 @@ id:006f10ba-bce7-4602-bc25-46f0ca2c5724 a wfprov:WorkflowRun,
             prov:atTime "2026-09-23T22:09:36.483742"^^xsd:dateTime ;
             prov:hadActivity id:39955f0d-0ccf-44b0-b0a9-70d1dd48559c ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T22:09:37.998964"^^xsd:dateTime ;
-            prov:entity id:1f7549f8-4403-44f2-a435-f95a32edb9de ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/bands> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T22:09:37.997833"^^xsd:dateTime ;
             prov:entity data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad ;
             prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/aoi> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T22:09:37.998964"^^xsd:dateTime ;
+            prov:entity id:1f7549f8-4403-44f2-a435-f95a32edb9de ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/bands> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T22:09:37.999442"^^xsd:dateTime ;
             prov:entity data:9d1fba832b03655b5b73ff964bc74d4543bf904a ;
@@ -2041,7 +2041,7 @@ $defs:
   provenance:
     $ref: https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/schema.yaml
   processTypeEntry:
-    $ref: https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml
+    $ref: https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/process-type/schema.yaml
   w3cProvJsonLd:
     $ref: https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/annotated/ogc-utils/prov/w3c-prov-jsonld/schema.yaml
   execute:
@@ -2268,8 +2268,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/schema.json)
-* JSON version: [schema.json](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/schema.yaml)
+* YAML version: [schema.yaml](https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/schema.json)
+* JSON version: [schema.json](https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/schema.yaml)
 
 
 # JSON-LD Context
@@ -2510,13 +2510,13 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld)
+[context.jsonld](https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/context.jsonld)
 
 
 # For developers
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/GeoLabs/bblocks-process-profiles](https://github.com/GeoLabs/bblocks-process-profiles)
+* URL: [https://github.com/crim-ca/bblocks-process-profiles](https://github.com/crim-ca/bblocks-process-profiles)
 * Path: `_sources/water-bodies/crop`
 

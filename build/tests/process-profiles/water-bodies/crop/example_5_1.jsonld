@@ -1,5 +1,5 @@
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
   "cropped": {
     "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-crop-0001/results/crop_green.tif",
     "type": "image/tiff; application=geotiff"

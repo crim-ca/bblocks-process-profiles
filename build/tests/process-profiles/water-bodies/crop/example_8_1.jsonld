@@ -1,5 +1,5 @@
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/crop/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/crop",
   "type": "ProcessType",
   "prefLabel": "Crop a Sentinel-2 COG band to an area of interest",

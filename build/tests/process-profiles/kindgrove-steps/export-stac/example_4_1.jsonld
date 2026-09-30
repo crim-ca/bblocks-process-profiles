@@ -1,5 +1,5 @@
 {
-  "@context": "https://geolabs.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/export-stac/context.jsonld",
+  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove-steps/export-stac/context.jsonld",
   "processDescription": {
     "process": {
       "id": "export_stac",
