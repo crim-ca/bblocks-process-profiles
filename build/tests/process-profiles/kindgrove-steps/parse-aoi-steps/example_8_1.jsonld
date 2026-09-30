@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove-steps/parse-aoi-steps/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/parse-aoi-steps/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/parse-aoi-steps",
   "type": "ProcessType",
   "prefLabel": "Parse area of interest",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove-steps/download-band/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/download-band/context.jsonld",
   "@graph": [
     {
       "id": "urn:example:run:kindgrove-steps:download-band",

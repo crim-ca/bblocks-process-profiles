@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld",
   "id": "reproject_band",
   "version": "0.1.0",
   "title": "reproject_band",

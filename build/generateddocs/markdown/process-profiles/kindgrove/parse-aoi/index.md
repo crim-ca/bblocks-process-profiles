@@ -220,7 +220,7 @@ OGC API - Processes processDescription derived from the CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
   "id": "parse_aoi",
   "version": "0.0.1",
   "title": "parse_aoi",
@@ -397,23 +397,23 @@ OGC API - Processes processDescription derived from the CWL.
                                             proc:type "string" ] ] ;
                             ns1:required "bbox" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "0.0.1" ;
+    proc:metadata [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ],
+        [ rdf:value "0.0.1" ;
             proc:role schema:softwareVersion ],
         [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
             proc:role schema:codeRepository ],
-        [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
-            proc:role schema:license ],
-        [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ],
         [ rdf:value "parse_aoi" ;
             proc:role schema:name ],
         [ rdf:value [ a ns3:Person ;
+                    ns3:name "Cameron Sajedi" ] ;
+            proc:role schema:author ],
+        [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
+            proc:role schema:license ],
+        [ rdf:value [ a ns3:Person ;
                     ns3:identifier "https://orcid.org/0000-0002-9617-8641" ;
                     ns3:name "Gérald Fenoy" ] ;
-            proc:role schema:contributor ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:name "Cameron Sajedi" ] ;
-            proc:role schema:author ] ;
+            proc:role schema:contributor ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
@@ -460,7 +460,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
   "processDescription": {
     "process": {
       "id": "parse_aoi",
@@ -514,7 +514,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
   "inputs": {
     "aoi": {
       "bbox": [
@@ -563,7 +563,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
   "east": 95.35,
   "north": 16.1,
   "output_dir": "outputs",
@@ -683,7 +683,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
   "@graph": [
     {
       "id": "urn:example:run:kindgrove:parse-aoi",
@@ -861,7 +861,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
   "id": "urn:example:run:kindgrove:parse-aoi",
   "type": "ProcessRun",
   "activityType": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/parse-aoi",
@@ -938,7 +938,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove/parse-aoi",
   "type": "ProcessType",
   "prefLabel": "Parse area of interest",
@@ -2616,10 +2616,10 @@ id:32497dfb-a6ea-4996-a29e-3700668da867 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/step_1" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:3ad94428-01ae-451b-a3f4-af56b73e6981 ;
-            prov:hadPlan <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1> ],
+            prov:agent id:a6977d92-2fbb-47e7-a784-4bfcb0da723b ],
         [ a prov:Association ;
-            prov:agent id:a6977d92-2fbb-47e7-a784-4bfcb0da723b ] ;
+            prov:agent id:3ad94428-01ae-451b-a3f4-af56b73e6981 ;
+            prov:hadPlan <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1> ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T10:03:16.994695"^^xsd:dateTime ;
             prov:hadActivity id:ec5cc9e1-3e83-4551-a759-4745c5b5040b ] ;
@@ -2627,33 +2627,33 @@ id:32497dfb-a6ea-4996-a29e-3700668da867 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T10:01:12.463948"^^xsd:dateTime ;
             prov:hadActivity id:ec5cc9e1-3e83-4551-a759-4745c5b5040b ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503903"^^xsd:dateTime ;
-            prov:entity id:d061c0fb-cd9b-4026-acea-7aa18b482246 ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/west> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503371"^^xsd:dateTime ;
-            prov:entity id:980cdadc-8748-4ee0-8e50-02285fada4ac ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/cloud_cover_max> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T10:01:12.503865"^^xsd:dateTime ;
             prov:entity data:e71003c6b7dd4093ce139ac0c51a6ba38d54a439 ;
             prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/output_dir> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503886"^^xsd:dateTime ;
-            prov:entity id:a98d2a32-f817-4ba9-9a35-66d4b22bc9de ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/south> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503436"^^xsd:dateTime ;
-            prov:entity id:43bb865a-d8cd-4787-8345-a30f5433a956 ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/east> ],
+            prov:atTime "2026-09-23T10:01:12.503410"^^xsd:dateTime ;
+            prov:entity id:cf0be29b-e4d9-4fd3-bd1b-2ed80a4095a9 ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/days_back> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T10:01:12.503452"^^xsd:dateTime ;
             prov:entity id:930cbb58-e736-4bd6-97e8-f8d6fdb3ecca ;
             prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/north> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503410"^^xsd:dateTime ;
-            prov:entity id:cf0be29b-e4d9-4fd3-bd1b-2ed80a4095a9 ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/days_back> ] .
+            prov:atTime "2026-09-23T10:01:12.503436"^^xsd:dateTime ;
+            prov:entity id:43bb865a-d8cd-4787-8345-a30f5433a956 ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/east> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T10:01:12.503903"^^xsd:dateTime ;
+            prov:entity id:d061c0fb-cd9b-4026-acea-7aa18b482246 ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/west> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T10:01:12.503886"^^xsd:dateTime ;
+            prov:entity id:a98d2a32-f817-4ba9-9a35-66d4b22bc9de ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/south> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T10:01:12.503371"^^xsd:dateTime ;
+            prov:entity id:980cdadc-8748-4ee0-8e50-02285fada4ac ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/cloud_cover_max> ] .
 
 id:371c06f9-5e4f-482d-a56d-17457d592305 a prov:Entity ;
     prov:value 1.59e+01 .
@@ -2668,9 +2668,9 @@ id:3d909cf5-e433-4f42-a566-ecc18e8648ac a wfprov:Artifact,
     prov:hadDictionaryMember "id:9dc1dc18-e01b-439a-818c-00162dabf4af"^^xsd:QName,
         "id:c78baf60-1897-4153-8e9c-e2eb311497b9"^^xsd:QName ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member data:09b42388eb37be1a4b972127a78f691ec6eb3795 ],
+            provext:member id:639b3f31-e75a-4bcb-891c-0a3a8d2301e3 ],
         [ a provext:Membership ;
-            provext:member id:639b3f31-e75a-4bcb-891c-0a3a8d2301e3 ] .
+            provext:member data:09b42388eb37be1a4b972127a78f691ec6eb3795 ] .
 
 id:43bb865a-d8cd-4787-8345-a30f5433a956 a prov:Entity ;
     prov:value 9.535e+01 .
@@ -2704,13 +2704,13 @@ id:639b3f31-e75a-4bcb-891c-0a3a8d2301e3 a wfprov:Artifact,
         prov:Collection,
         prov:Entity ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:8cae0f0e-8136-47a3-91de-2df4cb915caa ],
+            provext:member id:84fd2907-ae91-49e6-b896-5337cf88d4e4 ],
         [ a provext:Membership ;
-            provext:member id:0b639232-1377-4260-9361-ccfad1f07653 ],
+            provext:member id:8cae0f0e-8136-47a3-91de-2df4cb915caa ],
         [ a provext:Membership ;
             provext:member id:c5bac52b-0236-4d46-9e95-2715e4ebb57f ],
         [ a provext:Membership ;
-            provext:member id:84fd2907-ae91-49e6-b896-5337cf88d4e4 ] .
+            provext:member id:0b639232-1377-4260-9361-ccfad1f07653 ] .
 
 id:74500aa8-7eb8-4831-a5d7-b57b0d559a7f a wfprov:Artifact,
         prov:Collection,
@@ -2771,11 +2771,11 @@ id:ef051260-da6b-471f-b7ec-77a3f03338f9 a wfprov:Artifact,
     provext:qualifiedMembership [ a provext:Membership ;
             provext:member id:05148d8f-b41a-430e-ab3c-e47863420580 ],
         [ a provext:Membership ;
-            provext:member id:3d6a2dea-df15-41de-943f-5c75ffc145fd ],
+            provext:member id:371c06f9-5e4f-482d-a56d-17457d592305 ],
         [ a provext:Membership ;
             provext:member id:5aa7a676-73f7-4cd5-bcc3-8c24e71dd6e0 ],
         [ a provext:Membership ;
-            provext:member id:371c06f9-5e4f-482d-a56d-17457d592305 ] .
+            provext:member id:3d6a2dea-df15-41de-943f-5c75ffc145fd ] .
 
 data:09b42388eb37be1a4b972127a78f691ec6eb3795 a wfprov:Artifact,
         prov:Entity ;
@@ -2794,11 +2794,11 @@ id:3efd1082-30b0-4081-aac3-595258d0235a a ro:Folder,
     provext:qualifiedMembership [ a provext:Membership ;
             provext:member id:1a78bcc2-8056-4262-8f95-eff699d2deeb ],
         [ a provext:Membership ;
-            provext:member id:30f546f9-0831-4994-946d-88f0365ffd8a ],
-        [ a provext:Membership ;
             provext:member id:311c03b4-81b7-421a-8cd4-b744019dc39b ],
         [ a provext:Membership ;
-            provext:member id:1ec302cf-1d77-48c8-9550-86945f3a70ef ] ;
+            provext:member id:1ec302cf-1d77-48c8-9550-86945f3a70ef ],
+        [ a provext:Membership ;
+            provext:member id:30f546f9-0831-4994-946d-88f0365ffd8a ] ;
     cwlprov:basename "mangrove-analysis-20260923-080315" .
 
 id:3ad94428-01ae-451b-a3f4-af56b73e6981 a wfprov:WorkflowEngine,
@@ -2813,10 +2813,10 @@ id:a475ab91-5a11-4da1-8e90-fc280da2c643 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/parse_aoi" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:aef78493-9502-4ecb-9d44-f04f881f4650 ],
-        [ a prov:Association ;
             prov:agent id:3ad94428-01ae-451b-a3f4-af56b73e6981 ;
-            prov:hadPlan <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/parse_aoi> ] ;
+            prov:hadPlan <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/parse_aoi> ],
+        [ a prov:Association ;
+            prov:agent id:aef78493-9502-4ecb-9d44-f04f881f4650 ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T10:01:12.461683"^^xsd:dateTime ;
             prov:hadActivity id:ec5cc9e1-3e83-4551-a759-4745c5b5040b ] ;
@@ -2911,7 +2911,7 @@ $defs:
   provenance:
     $ref: https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/schema.yaml
   processTypeEntry:
-    $ref: https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/process-type/schema.yaml
+    $ref: https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml
   w3cProvJsonLd:
     $ref: https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/annotated/ogc-utils/prov/w3c-prov-jsonld/schema.yaml
   execute:
@@ -3140,8 +3140,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/schema.yaml)
+* YAML version: [schema.yaml](https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/schema.json)
+* JSON version: [schema.json](https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/schema.yaml)
 
 
 # JSON-LD Context
@@ -3382,7 +3382,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld)
+[context.jsonld](https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld)
 
 
 # For developers

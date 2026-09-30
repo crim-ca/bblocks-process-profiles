@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove-steps/calculate-indices/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/calculate-indices/context.jsonld",
   "id": "calculate_indices",
   "version": "0.1.0",
   "title": "calculate_indices",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/detect-water-body/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/context.jsonld",
   "run": {
     "id": "urn:example:run:water-bodies:detect-water-body",
     "type": "WorkflowRun",

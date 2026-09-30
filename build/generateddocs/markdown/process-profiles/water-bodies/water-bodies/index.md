@@ -191,7 +191,7 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
   "id": "water-bodies",
   "version": "1.4.1",
   "title": "Water bodies detection based on NDWI and otsu threshold",
@@ -351,10 +351,10 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                     proc:schema [ proc:type "array" ;
                             ns1:items [ proc:type "string" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "Water bodies detection based on NDWI and otsu threshold" ;
-            proc:role schema:name ],
-        [ rdf:value "Water bodies detection based on NDWI and otsu threshold applied to Sentinel-2 COG STAC items" ;
+    proc:metadata [ rdf:value "Water bodies detection based on NDWI and otsu threshold applied to Sentinel-2 COG STAC items" ;
             proc:role schema:description ],
+        [ rdf:value "Water bodies detection based on NDWI and otsu threshold" ;
+            proc:role schema:name ],
         [ rdf:value "1.4.1" ;
             proc:role schema:softwareVersion ] ;
     proc:mutable true ;
@@ -518,7 +518,7 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
   "id": "water-bodies",
   "version": "1.4.1",
   "title": "Water bodies detection based on NDWI and otsu threshold",
@@ -651,9 +651,9 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
 @prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -675,7 +675,7 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "[\"green\",\"nir\"]"^^rdf:JSON ;
                             proc:type "array" ;
-                            ns3:items [ proc:type "string" ] ] ] ;
+                            ns1:items [ proc:type "string" ] ] ] ;
             ns2:epsg [ dcterms:description "EPSG code" ;
                     dcterms:title "EPSG code" ;
                     proc:maxOccurs 1 ;
@@ -687,31 +687,31 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "array" ;
-                            ns3:items [ proc:type "string" ] ] ] ] ;
+                            ns1:items [ proc:type "string" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "Water bodies detection based on NDWI and otsu threshold applied to Sentinel-2 COG STAC items" ;
-            proc:role schema:description ],
-        [ rdf:value "Water bodies detection based on NDWI and otsu threshold" ;
+    proc:metadata [ rdf:value "Water bodies detection based on NDWI and otsu threshold" ;
             proc:role schema:name ],
         [ rdf:value "1.4.1" ;
-            proc:role schema:softwareVersion ] ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value "Water bodies detection based on NDWI and otsu threshold applied to Sentinel-2 COG STAC items" ;
+            proc:role schema:description ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns1:stac [ dcterms:description "" ;
+    proc:outputs [ ns3:stac [ dcterms:description "" ;
                     dcterms:title "stac" ;
                     proc:schema [ proc:type "object" ;
-                            ns3:format "stac-collection" ;
-                            ns3:properties [ dcterms:description [ proc:type "string" ] ;
+                            ns1:format "stac-collection" ;
+                            ns1:properties [ dcterms:description [ proc:type "string" ] ;
                                     dcterms:title [ proc:type "string" ] ;
                                     rdfs:seeAlso [ dcterms:type "array" ] ;
                                     proc:type [ proc:enum "Collection" ;
                                             proc:type "string" ] ;
-                                    ns3:assets [ proc:type "object" ] ;
-                                    ns3:extent [ proc:type "object" ] ;
-                                    ns3:license [ proc:type "string" ] ;
-                                    ns3:stac_version [ proc:type "string" ] ] ;
-                            ns3:required "description",
+                                    ns1:assets [ proc:type "object" ] ;
+                                    ns1:extent [ proc:type "object" ] ;
+                                    ns1:license [ proc:type "string" ] ;
+                                    ns1:stac_version [ proc:type "string" ] ] ;
+                            ns1:required "description",
                                 "extent",
                                 "id",
                                 "license",
@@ -746,7 +746,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
   "processDescription": {
     "process": {
       "id": "water-bodies",
@@ -797,7 +797,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
   "inputs": {
     "aoi": "-121.399,39.834,-120.74,40.472",
     "epsg": "EPSG:4326",
@@ -840,7 +840,7 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
   "stac": {
     "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-water-bodies-0001/results/catalog.json",
     "type": "application/json"
@@ -932,7 +932,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
   "@graph": [
     {
       "id": "urn:example:run:water-bodies:water-bodies",
@@ -1147,7 +1147,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
   "run": {
     "id": "urn:example:run:water-bodies:water-bodies",
     "type": "WorkflowRun",
@@ -1377,7 +1377,7 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/water-bodies/water-bodies",
   "type": "ProcessType",
   "prefLabel": "Water bodies detection based on NDWI and otsu threshold",
@@ -3238,21 +3238,21 @@ id:afa01c29-85ed-418e-b3a4-99ff6f4b06cf a ro:Folder,
         "id:7d9076f9-073d-4667-84e9-131fd7fda68c"^^xsd:QName,
         "id:a9451218-986b-4920-9d23-62638b8aea56"^^xsd:QName ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 ;
-            prov:atTime "2026-09-23T22:17:45.465410"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/primary/stac> ],
-        [ a prov:Generation ;
             prov:activity id:fbfd9735-117b-4cdd-9707-61f171585925 ;
             prov:atTime "2026-09-23T22:17:45.432581"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/stac_catalog> ] ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/stac_catalog> ],
+        [ a prov:Generation ;
+            prov:activity id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 ;
+            prov:atTime "2026-09-23T22:17:45.465410"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/primary/stac> ] ;
     provext:qualifiedMembership [ a provext:Membership ;
             provext:member id:a782f6a0-89d7-46ac-9c76-c6569903f8e1 ],
         [ a provext:Membership ;
             provext:member id:1d5bc5ed-98ce-4f75-8ca8-c19f497b03c0 ],
         [ a provext:Membership ;
-            provext:member id:0d06dfcd-e7b7-4fad-a2a5-66cddd416313 ],
+            provext:member id:df33a1dc-d46c-4154-9213-04cfb8cc55c4 ],
         [ a provext:Membership ;
-            provext:member id:df33a1dc-d46c-4154-9213-04cfb8cc55c4 ] ;
+            provext:member id:0d06dfcd-e7b7-4fad-a2a5-66cddd416313 ] ;
     cwlprov:basename "docker_tmpwngcerl4" .
 
 id:b6924a3c-a25c-4107-bdd7-2b5b2bff912e a wfprov:Artifact,
@@ -3292,13 +3292,13 @@ id:fbfd9735-117b-4cdd-9707-61f171585925 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T22:17:40.502305"^^xsd:dateTime ;
             prov:hadActivity id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T22:17:40.581639"^^xsd:dateTime ;
-            prov:entity id:25ff238f-e08b-4dee-a1f9-485e90a02a52 ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/item> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T22:17:40.582084"^^xsd:dateTime ;
             prov:entity id:3d637621-61a3-4c53-8aaf-70daadac3593 ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/rasters> ] .
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/rasters> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T22:17:40.581639"^^xsd:dateTime ;
+            prov:entity id:25ff238f-e08b-4dee-a1f9-485e90a02a52 ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/item> ] .
 
 data:09dd884abf8f162fa6ed55f0e958ce9586b8bffd a wfprov:Artifact,
         prov:Entity ;
@@ -3358,9 +3358,9 @@ id:df33a1dc-d46c-4154-9213-04cfb8cc55c4 a ro:Folder,
     prov:hadDictionaryMember "id:0c932b2b-21cb-4d36-8eda-c9d07f86bf53"^^xsd:QName,
         "id:4c5ac9a5-8f70-4cc6-bb2f-89864afd51b9"^^xsd:QName ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:ac975c99-5d6d-476f-b3ab-750fd0ac460d ],
+            provext:member id:471cf7c7-1a60-4c28-b3d0-904c5aa74707 ],
         [ a provext:Membership ;
-            provext:member id:471cf7c7-1a60-4c28-b3d0-904c5aa74707 ] ;
+            provext:member id:ac975c99-5d6d-476f-b3ab-750fd0ac460d ] ;
     cwlprov:basename "S2A_10TFK_20220524_0_L2A" .
 
 id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 a wfprov:WorkflowRun,
@@ -3380,17 +3380,17 @@ id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 a wfprov:WorkflowRun,
             prov:entity id:b6924a3c-a25c-4107-bdd7-2b5b2bff912e ;
             prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/bands> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T22:09:37.995200"^^xsd:dateTime ;
-            prov:entity id:511850b1-b1bc-44cd-8316-bdd367fefd98 ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/stac_items> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T22:09:37.991132"^^xsd:dateTime ;
             prov:entity data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad ;
             prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/aoi> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T22:09:37.993781"^^xsd:dateTime ;
             prov:entity data:9d1fba832b03655b5b73ff964bc74d4543bf904a ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/epsg> ] ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/epsg> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T22:09:37.995200"^^xsd:dateTime ;
+            prov:entity id:511850b1-b1bc-44cd-8316-bdd367fefd98 ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/stac_items> ] ;
     prov:startedAtTime "2026-09-23T22:09:35.483832"^^xsd:dateTime .
 
 id:39955f0d-0ccf-44b0-b0a9-70d1dd48559c a wfprov:WorkflowEngine,
@@ -3456,7 +3456,7 @@ $defs:
   provenance:
     $ref: https://geolabs.github.io/bblocks-generic-provenance-profile/build/annotated/bbr/provenance/provenance/schema.yaml
   processTypeEntry:
-    $ref: https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/process-type/schema.yaml
+    $ref: https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml
   w3cProvJsonLd:
     $ref: https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/annotated/ogc-utils/prov/w3c-prov-jsonld/schema.yaml
   execute:
@@ -3681,8 +3681,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/schema.yaml)
+* YAML version: [schema.yaml](https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/schema.json)
+* JSON version: [schema.json](https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/schema.yaml)
 
 
 # JSON-LD Context
@@ -3923,7 +3923,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld)
+[context.jsonld](https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld)
 
 
 # For developers

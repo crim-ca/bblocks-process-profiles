@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/crim-ca/bblocks-process-profiles/undefined/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld",
+  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/kindgrove-steps/reproject-band",
   "type": "ProcessType",
   "prefLabel": "Reproject a raster onto a regular grid",
