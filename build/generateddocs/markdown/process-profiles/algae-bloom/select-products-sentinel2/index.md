@@ -402,10 +402,10 @@ OGC API - Processes processDescription derived from the CWL.
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns4: <http://schema.org/> .
+@prefix ns1: <http://schema.org/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns4: <https://w3id.org/ogc/api/schema/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -421,79 +421,79 @@ Returned matches will be either S3 or direct HTTPS references depending on the c
         "search" ;
     dcterms:title "Searches the specified catalog for Sentinel-2 products matching filtering criteria." ;
     pp:version "1.1.0" ;
-    proc:inputs [ ns1:aoi [ dcterms:description "Polygon defining the area of interest." ;
+    proc:inputs [ ns3:aoi [ dcterms:description "Polygon defining the area of interest." ;
                     dcterms:title "Area of interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentEncoding "binary" ;
-                            ns2:contentMediaType "application/geo+json" ] ] ;
-            ns1:catalog [ dcterms:description "" ;
+                            ns4:contentEncoding "binary" ;
+                            ns4:contentMediaType "application/geo+json" ] ] ;
+            ns3:catalog [ dcterms:description "" ;
                     dcterms:title "catalog" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:enum "copernicus",
                                 "earth-search" ;
                             proc:type "string" ] ] ;
-            ns1:cloud_cover [ dcterms:description "" ;
+            ns3:cloud_cover [ dcterms:description "" ;
                     dcterms:title "cloud_cover" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:collection [ dcterms:description "" ;
+            ns3:collection [ dcterms:description "" ;
                     dcterms:title "collection" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:date [ dcterms:description "Date around which ±delta-days will be applied for search. If omitted, 'toi' input must be provided instead." ;
+            ns3:date [ dcterms:description "Date around which ±delta-days will be applied for search. If omitted, 'toi' input must be provided instead." ;
                     dcterms:title "Central date" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:delta [ dcterms:description "" ;
+            ns3:delta [ dcterms:description "" ;
                     dcterms:title "delta" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "4"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns1:product_level [ dcterms:description "" ;
+            ns3:product_level [ dcterms:description "" ;
                     dcterms:title "product_level" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:enum "L1C",
                                 "L2A" ;
                             proc:type "string" ] ] ;
-            ns1:toi [ dcterms:description "Start and end date-time strings. Must be provided if 'date' input is omitted." ;
+            ns3:toi [ dcterms:description "Start and end date-time strings. Must be provided if 'date' input is omitted." ;
                     dcterms:title "Time of interest" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ] ] ] ] ;
+                            ns4:items [ proc:type "string" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "Searches the specified catalog for Sentinel-2 products matching filtering criteria." ;
-            proc:role schema:name ],
+    proc:metadata [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ],
         [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
             proc:role schema:license ],
-        [ rdf:value "1.1.0" ;
-            proc:role schema:softwareVersion ],
-        [ rdf:value [ a ns4:Person ;
-                    ns4:email "francis.charette-migneault@crim.ca" ;
-                    ns4:identifier "http://orcid.org/0000-0003-4862-3349" ;
-                    ns4:name "Francis Charette-Migneault" ] ;
-            proc:role schema:author ],
         [ rdf:value """Searches a catalog for Sentinel-2 products using filtering parameters and returns all matched locations.
 Returned matches will be either S3 or direct HTTPS references depending on the catalog.
 """ ;
             proc:role schema:description ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ] ;
+        [ rdf:value "Searches the specified catalog for Sentinel-2 products matching filtering criteria." ;
+            proc:role schema:name ],
+        [ rdf:value "1.1.0" ;
+            proc:role schema:softwareVersion ],
+        [ rdf:value [ a ns1:Person ;
+                    ns1:email "francis.charette-migneault@crim.ca" ;
+                    ns1:identifier "http://orcid.org/0000-0003-4862-3349" ;
+                    ns1:name "Francis Charette-Migneault" ] ;
+            proc:role schema:author ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns3:urls [ dcterms:description "" ;
+    proc:outputs [ ns2:urls [ dcterms:description "" ;
                     dcterms:title "urls" ;
                     proc:schema [ proc:type "array" ;
-                            ns2:items [ proc:type "string" ] ] ] ] .
+                            ns4:items [ proc:type "string" ] ] ] ] .
 
 
 ```
@@ -2745,9 +2745,9 @@ id:042f18c9-28ad-4704-b250-c8dfe82253ab a wfprov:Artifact,
             prov:atTime "2026-09-23T08:40:34.610317"^^xsd:dateTime ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/primary/chlorophyll_a> ] ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:12b49a35-ae72-4b3d-933e-b2d03c6692b4 ],
+            provext:member id:883ae32e-c86f-491e-bcaf-320d0badfa08 ],
         [ a provext:Membership ;
-            provext:member id:883ae32e-c86f-491e-bcaf-320d0badfa08 ] .
+            provext:member id:12b49a35-ae72-4b3d-933e-b2d03c6692b4 ] .
 
 id:0dd086eb-264f-42f5-bf6e-0e2b215edafc a wfprov:Artifact,
         prov:Collection,
@@ -2757,9 +2757,9 @@ id:0dd086eb-264f-42f5-bf6e-0e2b215edafc a wfprov:Artifact,
             prov:atTime "2026-09-23T08:40:34.610317"^^xsd:dateTime ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/primary/chlorophyll_a_color> ] ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:1a896ecf-4e0a-4020-b7e1-107ee08a506c ],
+            provext:member id:6d66c47d-61c7-49a1-b045-7a8a19d0ef54 ],
         [ a provext:Membership ;
-            provext:member id:6d66c47d-61c7-49a1-b045-7a8a19d0ef54 ] .
+            provext:member id:1a896ecf-4e0a-4020-b7e1-107ee08a506c ] .
 
 id:0ee12773-4ecf-4b82-9e77-dacfea757a43 a wfprov:Artifact,
         prov:Collection,
@@ -2769,9 +2769,9 @@ id:0ee12773-4ecf-4b82-9e77-dacfea757a43 a wfprov:Artifact,
             prov:atTime "2026-09-23T08:40:34.610317"^^xsd:dateTime ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/primary/turbidity_color> ] ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:cc8be8e0-4b98-47f7-8c0c-a757d7a5eff4 ],
+            provext:member id:248923b2-906c-4d76-867f-da6f12462902 ],
         [ a provext:Membership ;
-            provext:member id:248923b2-906c-4d76-867f-da6f12462902 ] .
+            provext:member id:cc8be8e0-4b98-47f7-8c0c-a757d7a5eff4 ] .
 
 id:0f27aaca-13e9-4be4-b2d9-ea39fef6101f a wfprov:Artifact,
         prov:Collection,
@@ -2881,9 +2881,9 @@ id:ed4239e2-9d57-4b3c-9644-295b0a843de3 a wfprov:Artifact,
             prov:atTime "2026-09-23T08:40:34.610317"^^xsd:dateTime ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/primary/chlorophyll_a_plot> ] ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:3a29ce4a-c70b-4cb5-ac90-5cc003d32df1 ],
+            provext:member id:372c5307-8059-4cb2-afdb-5417b1e9d278 ],
         [ a provext:Membership ;
-            provext:member id:372c5307-8059-4cb2-afdb-5417b1e9d278 ] .
+            provext:member id:3a29ce4a-c70b-4cb5-ac90-5cc003d32df1 ] .
 
 wf:main a wfdesc:Workflow,
         prov:Entity,
@@ -3076,37 +3076,37 @@ id:6eeb1082-3e85-4b8c-87e4-db08b8a54f27 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T08:26:24.581116"^^xsd:dateTime ;
             prov:hadActivity id:39aa9d6c-b92f-486d-9c56-5289ebc57918 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.620133"^^xsd:dateTime ;
-            prov:entity id:71200b7e-dd7c-4784-a342-7f5a60ceba87 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/toi> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.619408"^^xsd:dateTime ;
-            prov:entity data:4c89b83017b6bf2fdefdc95f52a039255235ba37 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/collection> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.618823"^^xsd:dateTime ;
-            prov:entity id:bb36ba47-4fd9-4c7e-b7f8-fd944a8f3539 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/aoi> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.619451"^^xsd:dateTime ;
-            prov:entity id:4be4827d-8cb6-4720-99c0-164401d97f27 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/delta> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.619429"^^xsd:dateTime ;
             prov:entity cwlprov:None ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/date> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.619154"^^xsd:dateTime ;
-            prov:entity data:b361b353c05b9c7e9b56b5de806f65ce2c8da7b5 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/catalog> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.619184"^^xsd:dateTime ;
             prov:entity id:cf1cca44-d0e6-48b5-ba47-0e7ab8eb2752 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/cloud_cover> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:26:24.619154"^^xsd:dateTime ;
+            prov:entity data:b361b353c05b9c7e9b56b5de806f65ce2c8da7b5 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/catalog> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:26:24.618823"^^xsd:dateTime ;
+            prov:entity id:bb36ba47-4fd9-4c7e-b7f8-fd944a8f3539 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/aoi> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:26:24.619408"^^xsd:dateTime ;
+            prov:entity data:4c89b83017b6bf2fdefdc95f52a039255235ba37 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/collection> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:26:24.619451"^^xsd:dateTime ;
+            prov:entity id:4be4827d-8cb6-4720-99c0-164401d97f27 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/delta> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.619722"^^xsd:dateTime ;
             prov:entity data:632ab110c744c188c9ae98cb2c6b74767894037a ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/product_level> ] .
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/product_level> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:26:24.620133"^^xsd:dateTime ;
+            prov:entity id:71200b7e-dd7c-4784-a342-7f5a60ceba87 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/select_products/toi> ] .
 
 id:71200b7e-dd7c-4784-a342-7f5a60ceba87 a wfprov:Artifact,
         prov:Collection,
@@ -3249,9 +3249,9 @@ id:39aa9d6c-b92f-486d-9c56-5289ebc57918 a wfprov:WorkflowRun,
             prov:atTime "2026-09-23T08:26:24.309107"^^xsd:dateTime ;
             prov:hadActivity id:2eaf041b-2988-4cd3-bd1b-2c3f2028e2c8 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.577548"^^xsd:dateTime ;
-            prov:entity id:9841304d-a79d-49fb-ba33-d05f45ce0443 ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/cloud_cover> ],
+            prov:atTime "2026-09-23T08:26:24.577508"^^xsd:dateTime ;
+            prov:entity id:5226a207-b9d6-4693-b683-260e1f1d77cf ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/aoi> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.577940"^^xsd:dateTime ;
             prov:entity data:4c89b83017b6bf2fdefdc95f52a039255235ba37 ;
@@ -3261,13 +3261,13 @@ id:39aa9d6c-b92f-486d-9c56-5289ebc57918 a wfprov:WorkflowRun,
             prov:entity id:50b5b789-1882-4c70-9c6a-59f121c84204 ;
             prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/toi> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T08:26:24.577508"^^xsd:dateTime ;
-            prov:entity id:5226a207-b9d6-4693-b683-260e1f1d77cf ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/aoi> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T08:26:24.577974"^^xsd:dateTime ;
             prov:entity id:c03c3a8f-fd1a-4796-9014-0da5e9f7866d ;
-            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/delta> ] ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/delta> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T08:26:24.577548"^^xsd:dateTime ;
+            prov:entity id:9841304d-a79d-49fb-ba33-d05f45ce0443 ;
+            prov:hadRole <arcp://uuid,39aa9d6c-b92f-486d-9c56-5289ebc57918/workflow/packed.cwl#main/cloud_cover> ] ;
     prov:startedAtTime "2026-09-23T08:26:24.309085"^^xsd:dateTime .
 
 
