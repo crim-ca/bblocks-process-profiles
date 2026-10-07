@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
+  "name": "Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling workflow",
+  "abstract": "OGC API - Processes profile of the Resoterre RDPS-to-HRDPS U-Net CWL Workflow.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-03T00:00:00Z",
+  "dateOfLastChange": "2026-10-03",
+  "version": "0.1",
+  "itemClass": "schema",
+  "register": "process-profiles",
+  "dependsOn": [
+    "ogc.api.processes.v1.schemas.process",
+    "ogc.api.processes.v2.schemas.staticIndicator",
+    "ogc.api.processes.v2.schemas.ogcapppkg",
+    "ogc.bbr.provenance.provenance",
+    "ospd.process-profiles.process-type",
+    "ogc.model.registered-item.ml-activity-profile",
+    "ogc.model.registered-item.geoprocessing-activity",
+    "ogc.contrib.stac.extensions.mlm",
+    "eoap.cct.cwl-to-ogcprocess",
+    "ogc.ogc-utils.prov.w3c-prov-jsonld",
+    "ogc.bbr.provenance.execution"
+  ],
+  "conformanceClasses": [
+    "http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core"
+  ],
+  "scope": "dev",
+  "tags": ["OSPD", "process profile", "CWL", "Workflow", "climate downscaling", "MLM"],
+  "sourceSchema": "schema.yaml",
+  "maturity": "development",
+  "highlighted": true,
+  "group": "OSPD 2026"
+}

@@ -1,0 +1,18 @@
+@prefix id: <urn:uuid:> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ro: <http://purl.org/wf4ever/ro#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+id:115defa8-bd18-4f7c-9647-d577ba233199 a ro:Folder,
+        ore:Aggregation,
+        prov:Entity ;
+    ore:aggregates id:8ef6afbe-99f5-4818-a28c-dbebfab18739 .
+
+id:8ef6afbe-99f5-4818-a28c-dbebfab18739 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "0"^^xsd:string ;
+    ore:proxyFor id:2e7415eb-959c-47a2-8393-d3553a68e595 ;
+    ore:proxyIn id:115defa8-bd18-4f7c-9647-d577ba233199 .
+

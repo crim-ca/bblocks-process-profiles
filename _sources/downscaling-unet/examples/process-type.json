@@ -1,0 +1,38 @@
+{
+  "id": "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-unet",
+  "type": "ProcessType",
+  "prefLabel": "RDPS-to-HRDPS climate downscaling with a U-Net",
+  "definition": "Retrieves RDPS forecast files and applies the Resoterre U-Net model to produce HRDPS-resolution downscaled output.",
+  "inScheme": "https://crim-ca.github.io/bblocks-process-profiles/def/process-type",
+  "status": "submitted",
+  "phase": [
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation",
+    "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation"
+  ],
+  "profile": "ospd.process-profiles.downscaling-unet.workflow",
+  "model": "https://hirondelle.crim.ca/stac/collections/ml-model-package/items/unet_rdps_to_hrdps",
+  "activityTypes": [
+    "https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling",
+    "https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling-inference"
+  ],
+  "inRegister": "https://crim-ca.github.io/bblocks-process-profiles/",
+  "processDescription": {
+    "id": "ogc-ospd2026-downscaling-unet",
+    "version": "0.1.3.dev10"
+  },
+  "source": {
+    "cwl": "https://github.com/Ouranosinc/resoterre/blob/5d4d884a775fb84ea9b12404c47aefc5ee8d8fa8/examples/deploy/downscaling_unet_workflow.cwl",
+    "cwlClass": "Workflow",
+    "cwlId": "downscaling-unet-workflow",
+    "license": "https://spdx.org/licenses/Apache-2.0"
+  },
+  "provenanceClass": "http://purl.org/wf4ever/wfprov#WorkflowRun",
+  "cctDependencies": [],
+  "candidateCctDependencies": [],
+  "hasStep": [],
+  "openeoEquivalence": {
+    "level": "none",
+    "rationale": "This composite workflow retrieves forecast files and runs a domain-specific climate downscaling model; no exact openEO process equivalent is asserted."
+  }
+}
