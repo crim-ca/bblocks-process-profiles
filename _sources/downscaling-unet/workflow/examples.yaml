@@ -1,0 +1,29 @@
+- title: Source CWL
+  content: >-
+    CWL Workflow deployed as `ogc-ospd2026-downscaling-unet-workflow`. Its steps are described by the
+    `ospd.process-profiles.downscaling-unet.generate-file-list`, `ospd.process-profiles.downscaling-unet.download-files`
+    and `ospd.process-profiles.downscaling-unet.unet` building blocks.
+    The resoterre tag `0.1.3-dev.10` counterpart is <https://github.com/Ouranosinc/resoterre/blob/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl>.
+  snippets:
+    - language: cwl
+      ref: ogc-ospd2026-downscaling-unet-workflow.cwl
+
+- title: U-Net workflow process description
+  base-uri: https://hirondelle.crim.ca/weaver/processes/
+  snippets:
+    - language: json
+      ref: examples/processDescription.json
+
+- title: OGC Application Package deployment reference
+  base-uri: https://hirondelle.crim.ca/weaver/processes/
+  snippets:
+    - language: json
+      ref: examples/ogcapppkg.json
+      schema-ref: "#/$defs/applicationPackage"
+
+- title: Process-type register entry
+  base-uri: https://hirondelle.crim.ca/weaver/processes/
+  snippets:
+    - language: json
+      ref: examples/process-type.json
+      schema-ref: "#/$defs/processTypeEntry"

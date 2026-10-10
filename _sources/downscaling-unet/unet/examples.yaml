@@ -1,0 +1,20 @@
+- title: Source CWL
+  content: CWL CommandLineTool deployed as `ogc-ospd2026-downscaling-unet`. The resoterre tag `0.1.3-dev.10` counterpart
+    is <https://github.com/Ouranosinc/resoterre/blob/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl>.
+  snippets:
+  - language: cwl
+    ref: ogc-ospd2026-downscaling-unet.cwl
+- title: processDescription
+  base-uri: https://hirondelle.crim.ca/weaver/processes/
+  content: OGC API - Processes processDescription returned by Weaver for the deployed CWL.
+  snippets:
+  - language: json
+    ref: examples/processDescription.json
+- title: OGC Application Package (deploy)
+  base-uri: https://hirondelle.crim.ca/weaver/processes/
+  content: 'Part 2 deploy body: the execution unit is a link to the CWL pinned at the resoterre `0.1.3-dev.10` tag
+    commit.'
+  snippets:
+  - language: json
+    ref: examples/ogcapppkg.json
+    schema-ref: '#/$defs/applicationPackage'

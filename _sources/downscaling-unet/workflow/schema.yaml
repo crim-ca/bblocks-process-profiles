@@ -9,7 +9,7 @@ allOf:
     required: [id, version, inputs, outputs]
     properties:
       id:
-        const: ogc-ospd2026-downscaling-unet
+        const: ogc-ospd2026-downscaling-unet-workflow
       inputs:
         type: object
         required:

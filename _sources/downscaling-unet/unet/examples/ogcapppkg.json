@@ -1,12 +1,12 @@
 {
   "processDescription": {
     "process": {
-      "id": "ogc-ospd2026-downscaling-unet-workflow",
+      "id": "ogc-ospd2026-downscaling-unet",
       "version": "0.1.3.dev10"
     }
   },
   "executionUnit": {
-    "href": "https://github.com/Ouranosinc/resoterre/raw/5d4d884a775fb84ea9b12404c47aefc5ee8d8fa8/examples/deploy/downscaling_unet_workflow.cwl",
+    "href": "https://github.com/Ouranosinc/resoterre/raw/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl",
     "type": "application/cwl+yaml",
     "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
   }
