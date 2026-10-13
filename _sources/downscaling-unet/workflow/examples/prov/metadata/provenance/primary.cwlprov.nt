@@ -28,7 +28,7 @@
 <urn:uuid:5a809806-a87d-492b-a347-87fda765c5aa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Dictionary> .
 <urn:uuid:04c48f00-2a31-414e-8dcf-550d2e0d9e5e> <http://www.openarchives.org/ore/terms/proxyFor> <urn:uuid:74cbe49f-4ab4-4495-9e56-0755fe62480b> .
 <urn:uuid:22d1626d-9fab-4990-9542-6fe472b0ec0b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#KeyEntityPair> .
-<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:downscaling-unet-workflow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfdesc#Process> .
+<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfdesc#Process> .
 <urn:uuid:7fab507f-fe02-4462-a33c-1a97099831d1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openarchives.org/ore/terms/Aggregation> .
 <urn:hash::sha1:43152ac5118a9b30e797552806cc637700be2d33> <http://www.w3.org/ns/prov#value> "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/fileServer/birdhouse/disk3/ouranos/geoconnections/RDPS/"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:uuid:5cdab797-85c0-448e-99ac-e188113a67ee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/ro#FolderEntry> .
@@ -117,7 +117,7 @@ _:N73d07cc43cf446089b5202c52ecb64f6 <http://www.w3.org/ns/prov#hadActivity> <urn
 <urn:uuid:8afb0d90-10c4-4992-9f67-4ab6538db393> <http://www.w3.org/ns/prov#hadDictionaryMember> <urn:uuid:1f481246-cf82-4a65-837e-2f7a67a0bc81> .
 <urn:uuid:ba580cd2-a720-44b3-92c0-2cdb253b57d0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <urn:uuid:5a809806-a87d-492b-a347-87fda765c5aa> <https://w3id.org/cwl/prov#basename> "variable_names"^^<http://www.w3.org/2001/XMLSchema#string> .
-<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:downscaling-unet-workflow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <urn:uuid:e03e35af-4745-4252-b6bf-f3ba7779b7df> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#Artifact> .
 <urn:uuid:98579e66-6fa5-4bb6-a146-42b493b80a56> <http://www.w3.org/ns/prov#pairEntity> <urn:uuid:f3f33a70-059f-4915-8a85-f7220ed32c10> .
 <urn:uuid:02d4cac8-f668-43a0-a3a1-2ec543866077> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openarchives.org/ore/terms/Aggregation> .
@@ -166,7 +166,7 @@ _:N73d07cc43cf446089b5202c52ecb64f6 <http://www.w3.org/ns/prov#hadActivity> <urn
 <urn:uuid:ed017d34-d80c-4002-9bdd-dce1a7b8bf5b> <https://w3id.org/cwl/prov#basename> "0"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:uuid:5cdab797-85c0-448e-99ac-e188113a67ee> <http://www.w3.org/ns/prov#pairEntity> <urn:uuid:b3c6b84a-7c00-4390-98e4-4fe048452a61> .
 <urn:hash::sha1:6a14cf08d67bd2ce06ab2a19d0a3abe4f1cd07c0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
-<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:downscaling-unet-workflow> <http://www.w3.org/ns/prov#atLocation> "https://hirondelle.crim.ca/weaver/processes/downscaling-unet-workflow"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow> <http://www.w3.org/ns/prov#atLocation> "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:uuid:2a3f1d78-6dc0-4b05-9ce8-1c811e9c113d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#Artifact> .
 <urn:uuid:a009ea40-1004-4dec-91f8-906e7fbb5238> <http://www.w3.org/ns/prov#hadDictionaryMember> <urn:uuid:56a3880f-53d8-4a4b-be3f-98fbbf5e7536> .
 <urn:uuid:3067bad4-212d-459f-b9e8-68624ec34107> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
@@ -371,7 +371,7 @@ _:N73d07cc43cf446089b5202c52ecb64f6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#
 <urn:uuid:b5f33b35-bc59-47a4-aa56-081a3e8d657f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openarchives.org/ore/terms/Proxy> .
 <urn:uuid:f3f33a70-059f-4915-8a85-f7220ed32c10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <urn:uuid:3af9bb2d-c9b4-4ec1-ba02-00a45e1c6556> <http://www.openarchives.org/ore/terms/proxyIn> <urn:uuid:e03e35af-4745-4252-b6bf-f3ba7779b7df> .
-<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:downscaling-unet-workflow> <http://www.w3.org/2000/01/rdf-schema#label> "Process Description"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow> <http://www.w3.org/2000/01/rdf-schema#label> "Process Description"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:uuid:22d1626d-9fab-4990-9542-6fe472b0ec0b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/ro#FolderEntry> .
 <urn:uuid:49f14c8a-fcb6-44c9-bd55-343465be3ea8> <http://www.openarchives.org/ore/terms/aggregates> <urn:uuid:1c8aff8f-0643-44cb-b796-e622252b99cb> .
 <urn:uuid:8e4fb43e-e8e6-4b31-872b-232a945cea82> <http://www.w3.org/ns/prov#pairKey> "c"^^<http://www.w3.org/2001/XMLSchema#string> .
@@ -1140,7 +1140,7 @@ _:Nd4de164727484abe948d50c6ef5cce40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#
 <urn:hash::sha1:a2c154b6007400462db1077253a356f0a1e802ac> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <urn:uuid:49f14c8a-fcb6-44c9-bd55-343465be3ea8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#Artifact> .
 <urn:uuid:115defa8-bd18-4f7c-9647-d577ba233199> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Collection> .
-<urn:uuid:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715> <http://www.w3.org/ns/prov#atLocation> "https://hirondelle.crim.ca/weaver/processes/downscaling-unet-workflow/jobs/d6f937f0-bdae-4dd5-9fa3-9e0686ed6715"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:uuid:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715> <http://www.w3.org/ns/prov#atLocation> "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/jobs/d6f937f0-bdae-4dd5-9fa3-9e0686ed6715"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:uuid:9f6cec0c-e321-4281-ae54-d53c7320092f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/ro#Folder> .
 <urn:uuid:e03e35af-4745-4252-b6bf-f3ba7779b7df> <https://w3id.org/cwl/prov#basename> "inference_cwl.zarr"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:uuid:9f6cec0c-e321-4281-ae54-d53c7320092f> <http://www.openarchives.org/ore/terms/aggregates> <urn:uuid:ca2830c6-342d-41e6-83ca-279278f5cd2d> .
@@ -1412,7 +1412,7 @@ _:N0079269f898349daafb830a5acaa8107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#
 <urn:uuid:5c2f73e8-6f21-4717-95e5-5964e2f8cd76> <http://purl.org/wf4ever/ro#entryName> "0"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:uuid:68cd9865-9bbb-4569-a5bb-51dfdc1dd545> <http://purl.org/wf4ever/ro#entryName> "zarr.json"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:uuid:ed64c6c0-d2fe-405b-a679-873e9378ce13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/ro#Folder> .
-<urn:uuid:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715> <http://www.w3.org/ns/prov#wasGeneratedBy> <urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:downscaling-unet-workflow> .
+<urn:uuid:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715> <http://www.w3.org/ns/prov#wasGeneratedBy> <urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow> .
 <urn:uuid:fd511bc6-a0f7-4ef9-bcdd-7b5f0de69a53> <https://w3id.org/cwl/prov#nameroot> "rdps_forecast_files"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:uuid:e03e35af-4745-4252-b6bf-f3ba7779b7df> <http://www.openarchives.org/ore/terms/isDescribedBy> <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/metadata/directory-e03e35af-4745-4252-b6bf-f3ba7779b7df.ttl> .
 <urn:uuid:98579e66-6fa5-4bb6-a146-42b493b80a56> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#KeyEntityPair> .

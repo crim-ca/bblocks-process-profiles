@@ -38,6 +38,7 @@ version: 0.1.0
 
 baseURL: https://crim-ca.github.io/bblocks-process-profiles/
 gitHubBaseURL: https://github.com/crim-ca/bblocks-process-profiles/
+gitRepository: https://github.com/crim-ca/bblocks-process-profiles
 
 keywords:
   - OSPD

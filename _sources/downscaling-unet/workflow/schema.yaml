@@ -29,9 +29,53 @@ allOf:
         propertyNames:
           enum: [forecast_files, inference_output]
 $defs:
+  execute:
+    description: >-
+      Execute request using native input values, consistent with the other process profiles.
+      The upstream execute schema rejects plain string values (documented register issue U-01).
+    type: object
+    required: [inputs]
+    properties:
+      inputs:
+        type: object
+        required: [start_datetime, end_datetime]
+        additionalProperties: false
+        properties:
+          start_datetime:
+            type: string
+          end_datetime:
+            type: string
+          requires_previous_forecast_step:
+            type: boolean
+          include_year_month_subdirectory:
+            type: boolean
+          data_root:
+            type: string
+            format: uri
+          config:
+            oneOf:
+              - type: "null"
+              - $ref: bblocks://ogc.api.processes.v1.schemas.link
+              - $ref: bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue
   rawProcessDescription:
     $ref: bblocks://ogc.api.processes.v1.schemas.process
   applicationPackage:
     $ref: bblocks://ogc.api.processes.v2.schemas.ogcapppkg
   processTypeEntry:
     $ref: bblocks://ospd.process-profiles.process-type
+  w3cProvJson:
+    $ref: bblocks://ogc.ogc-utils.prov.w3c-prov-json
+  cwlProvExpandedJsonLd:
+    description: Expanded JSON-LD named bundles. RDF semantics are checked with the imported SHACL shapes.
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required: ["@graph"]
+      properties:
+        "@id":
+          type: string
+        "@graph":
+          type: array
+          items:
+            type: object

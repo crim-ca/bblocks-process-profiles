@@ -1,10 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/master/ogc/bblocks/metadata-schema.yaml",
   "name": "Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling workflow",
-  "abstract": "OGC API - Processes profile of the Resoterre RDPS-to-HRDPS U-Net CWL Workflow.",
+  "abstract": "Select and download RDPS forecasts, then run Resoterre U-Net downscaling to HRDPS-scale Zarr outputs.",
   "status": "under-development",
   "dateTimeAddition": "2026-10-03T00:00:00Z",
-  "dateOfLastChange": "2026-10-07",
+  "dateOfLastChange": "2026-10-13",
   "version": "0.1",
   "itemClass": "schema",
   "register": "process-profiles",
@@ -22,12 +22,22 @@
     "ogc.bbr.provenance.execution"
   ],
   "seeAlso": [
+    "ogc.ogc-utils.prov.w3c-prov-rdf",
+    "ogc.ogc-utils.prov.w3c-prov-json",
+    "ogc.ogc-utils.prov.w3c-prov-n",
+    "ogc.ogc-utils.prov.w3c-prov-xml",
     "ospd.process-profiles.downscaling-unet.generate-file-list",
     "ospd.process-profiles.downscaling-unet.download-files",
     "ospd.process-profiles.downscaling-unet.unet"
   ],
   "conformanceClasses": [
     "http://www.opengis.net/spec/ogcapi-processes-1/1.0/conf/core"
+  ],
+  "sources": [
+    {
+      "title": "Draft OGC API - Processes - Part 5: Provenance (26-038)",
+      "link": "https://docs.ogc.org/DRAFTS/26-038.html"
+    }
   ],
   "scope": "dev",
   "tags": [

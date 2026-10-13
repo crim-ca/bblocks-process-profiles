@@ -203,10 +203,10 @@ data:08f463fc47ce9d1fa89569c16476d0e45c34f310 a wfprov:Artifact,
 data:1278d2d22edbde5f428706c731e21f21439bc65a a wfprov:Artifact,
         prov:Entity .
 
-<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:downscaling-unet-workflow> a wfdesc:Process,
+<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow> a wfdesc:Process,
         prov:Entity ;
     rdfs:label "Process Description"^^xsd:string ;
-    prov:atLocation "https://hirondelle.crim.ca/weaver/processes/downscaling-unet-workflow"^^xsd:string .
+    prov:atLocation "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow"^^xsd:string .
 
 data:2fe6384ed4f8574294c979beeb7b2fecd9139945 a wfprov:Artifact,
         prov:Entity .
@@ -1657,7 +1657,7 @@ id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715 a wfdesc:ProcessRun,
     rdfs:label "Job Information"^^xsd:string,
         "Run of workflow/packed.cwl#main"^^xsd:string ;
     prov:alternateOf id:fa1f8c28-529c-4629-aa0c-d9729325fc54 ;
-    prov:atLocation "https://hirondelle.crim.ca/weaver/processes/downscaling-unet-workflow/jobs/d6f937f0-bdae-4dd5-9fa3-9e0686ed6715"^^xsd:string ;
+    prov:atLocation "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/jobs/d6f937f0-bdae-4dd5-9fa3-9e0686ed6715"^^xsd:string ;
     prov:qualifiedAssociation [ a prov:Association ;
             prov:hadPlan wf:main ] ;
     prov:qualifiedEnd [ a prov:End ;
@@ -1688,7 +1688,7 @@ id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715 a wfdesc:ProcessRun,
             prov:hadRole <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/data_root> ] ;
     prov:startedAtTime "2026-09-28T12:53:28.254158"^^xsd:dateTime ;
     prov:wasAssociatedWith id:fa1f8c28-529c-4629-aa0c-d9729325fc54 ;
-    prov:wasGeneratedBy <urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:downscaling-unet-workflow> ;
+    prov:wasGeneratedBy <urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow> ;
     prov:wasStartedBy data:15401f8d937f5d526951c1bf20dcba16a1271d97 .
 
 id:fa1f8c28-529c-4629-aa0c-d9729325fc54 a wfprov:WorkflowEngine,

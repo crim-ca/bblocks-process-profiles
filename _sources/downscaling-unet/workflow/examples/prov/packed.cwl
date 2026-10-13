@@ -1,7 +1,7 @@
 {
   "cwlVersion": "v1.2",
   "class": "Workflow",
-  "id": "downscaling-unet-workflow",
+  "id": "ogc-ospd2026-downscaling-unet-workflow",
   "doc": "Chain the RDPS forecast file listing with the UNet downscaling inference.\nThe first step derives the RDPS files required for the requested datetime range,\nthe second step downloads them into a local directory and the last step runs the\ninference on that directory.\n",
   "inputs": [
     {

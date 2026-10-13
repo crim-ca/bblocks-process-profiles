@@ -2918,7 +2918,7 @@
         "http://www.w3.org/ns/prov#atLocation": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#string",
-            "@value": "https://hirondelle.crim.ca/weaver/processes/downscaling-unet-workflow/jobs/d6f937f0-bdae-4dd5-9fa3-9e0686ed6715"
+            "@value": "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/jobs/d6f937f0-bdae-4dd5-9fa3-9e0686ed6715"
           }
         ],
         "http://www.w3.org/ns/prov#qualifiedAssociation": [
@@ -2966,7 +2966,7 @@
         ],
         "http://www.w3.org/ns/prov#wasGeneratedBy": [
           {
-            "@id": "urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:downscaling-unet-workflow"
+            "@id": "urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow"
           }
         ],
         "http://www.w3.org/ns/prov#wasStartedBy": [
@@ -4289,7 +4289,7 @@
         ]
       },
       {
-        "@id": "urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:downscaling-unet-workflow",
+        "@id": "urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow",
         "@type": [
           "http://purl.org/wf4ever/wfdesc#Process",
           "http://www.w3.org/ns/prov#Entity"
@@ -4303,7 +4303,7 @@
         "http://www.w3.org/ns/prov#atLocation": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#string",
-            "@value": "https://hirondelle.crim.ca/weaver/processes/downscaling-unet-workflow"
+            "@value": "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow"
           }
         ]
       },
