@@ -5,6 +5,28 @@ it selects Regional Deterministic Prediction System (RDPS) forecast files for a 
 downloads those files, and applies a trained U-Net to produce HRDPS-scale downscaled fields.
 This workflow performs inference, not model training.
 
+### Model and activity classification
+
+The central operation is **machine-learning inference for climate-variable downscaling**.
+The trained Resoterre U-Net is characterized by the **Resoterre RDPS to HRDPS U-Net MLM item**
+in the [STAC Machine Learning Model block](bblocks://ogc.contrib.stac.extensions.mlm).
+That example describes the model's inputs and outputs, tensor structures, training metadata,
+runtime requirements and associated STAC extensions. The
+[published model Item](https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet)
+connects the executable process to that model characterization.
+The [STAC Browser view](https://hirondelle.crim.ca/stac-browser/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet)
+provides an interactive presentation of the same Item. Machine-readable model references use the STAC API URL.
+
+The workflow is both an **ML activity** and a **geoprocessing activity**:
+it applies a trained model to new inputs, making it an inference activity, and transforms
+georeferenced RDPS climate fields into finer-resolution HRDPS-scale fields, making it spatial
+data processing. These are complementary classifications of the same operation, not alternative
+labels. The workflow references the
+[ML activity profile](bblocks://ogc.model.registered-item.ml-activity-profile) and
+[geoprocessing activity definitions](bblocks://ogc.model.registered-item.geoprocessing-activity);
+its process-type example records the climate-downscaling and climate-downscaling-inference
+activity types. File selection and download prepare the model inputs rather than train the model.
+
 ### Processing steps
 
 The sequence follows the descriptions and input/output contracts of the three component processes:
@@ -33,8 +55,25 @@ The workflow returns `forecast_files`, the selected source-file list, and `infer
 a Zarr directory containing the inference results. The downloaded NetCDF directory is an intermediate
 passed between the download and inference steps, not a separate workflow output.
 
-The **Examples** tab provides the CWL application package, process description, deployment reference,
-execution request body, process-type entry, and CWLProv records for an execution.
+### Execution examples and provenance
+
+The **Examples** tab includes the CWL workflow application package, its OGC API process description,
+the Application Package deployment reference and the process-type register entry linking the
+workflow to its model and activity classifications. The **execution request** example provides
+the JSON `inputs` body for the illustrated 2024-05-02 time range, the process execution endpoint,
+and headers for asynchronous submission. The optional configuration is omitted to use the
+inference image's default configuration.
+
+The **CWLProv execution provenance** example records job
+`d6f937f0-bdae-4dd5-9fa3-9e0686ed6715`, captured on 2026-09-28. It describes the workflow
+and individual step runs, their plans, input/output entities, associated agents and PROV
+relationships. Turtle, expanded JSON-LD, N-Triples, PROV-JSON, PROV-N and PROV-XML representations
+are provided with links to their definitions in
+[the PROV representation register](https://ogcincubator.github.io/bblocks-prov-jsonld-alt/).
+The captured packed CWL and job-input document are also linked from that example, so the execution
+metadata can be inspected alongside the workflow and submitted input values. The supplied metadata
+are not a complete BagIt archive of the execution's data payloads.
+
 The provenance content aligns with the process, job, input/output and agent relationships described
 in [draft OGC API - Processes - Part 5: Provenance](https://docs.ogc.org/DRAFTS/26-038.html).
 Metadata alignment does not by itself establish server conformance to that draft.

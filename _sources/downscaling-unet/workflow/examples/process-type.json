@@ -11,7 +11,7 @@
     "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation"
   ],
   "profile": "ospd.process-profiles.downscaling-unet.workflow",
-  "model": "https://hirondelle.crim.ca/stac/collections/ml-model-package/items/unet_rdps_to_hrdps",
+  "model": "https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet",
   "activityTypes": [
     "https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling",
     "https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling-inference"
