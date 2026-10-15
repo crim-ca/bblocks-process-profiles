@@ -1,0 +1,224 @@
+{
+  "id": "ogc-ospd2026-downscaling-generate-file-list",
+  "version": "0.1.3.dev10",
+  "title": "List RDPS forecast files",
+  "description": "List the RDPS forecast files required to cover the requested datetime range.\nEach listed file is prefixed with the provided data root so the result can be\nconsumed directly by the download step.\n",
+  "mutable": true,
+  "keywords": [
+    "RDPS",
+    "forecast",
+    "file listing",
+    "downscaling",
+    "application"
+  ],
+  "metadata": [
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "identifier": "https://orcid.org/0009-0004-9049-2092",
+        "email": "gauvin-st-denis.blaise@ouranos.ca",
+        "name": "Blaise Gauvin St-Denis",
+        "affiliation": "Ouranos"
+      },
+      "role": "https://schema.org/author"
+    },
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "identifier": "https://orcid.org/0000-0001-5393-8359",
+        "email": "smith.trevorj@ouranos.ca",
+        "name": "Trevor James Smith",
+        "affiliation": "Ouranos"
+      },
+      "role": "https://schema.org/author"
+    },
+    {
+      "href": "https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff",
+      "type": "text/plain",
+      "rel": "https://schema.org/citation"
+    },
+    {
+      "href": "https://github.com/Ouranosinc/resoterre",
+      "type": "text/html",
+      "rel": "https://schema.org/codeRepository"
+    },
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "identifier": "https://orcid.org/0000-0003-4862-3349",
+        "email": "francis.charette-migneault@luqia.ca",
+        "name": "Francis Charette-Migneault",
+        "affiliation": "Technologies Luqia"
+      },
+      "role": "https://schema.org/contributor"
+    },
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "email": "nazim.azeli@luqia.ca",
+        "name": "Nazim Azeli",
+        "affiliation": "Technologies Luqia"
+      },
+      "role": "https://schema.org/contributor"
+    },
+    {
+      "value": "2026-09-04T11:45:32-04:00",
+      "role": "https://schema.org/dateCreated"
+    },
+    {
+      "href": "https://spdx.org/licenses/Apache-2.0",
+      "type": "text/plain",
+      "rel": "https://schema.org/license"
+    },
+    {
+      "href": "https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst",
+      "type": "text/plain",
+      "rel": "https://schema.org/releaseNotes"
+    }
+  ],
+  "inputs": {
+    "start_datetime": {
+      "description": "Start datetime in ISO 8601 format, for example 2024-05-01T07:00:00.",
+      "minOccurs": 1,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "string"
+      },
+      "literalDataDomains": [
+        {
+          "default": true,
+          "dataType": {
+            "name": "string"
+          },
+          "valueDefinition": {
+            "anyValue": false
+          }
+        }
+      ]
+    },
+    "end_datetime": {
+      "description": "End datetime in ISO 8601 format, for example 2024-05-01T08:00:00.",
+      "minOccurs": 1,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "string"
+      },
+      "literalDataDomains": [
+        {
+          "default": true,
+          "dataType": {
+            "name": "string"
+          },
+          "valueDefinition": {
+            "anyValue": false
+          }
+        }
+      ]
+    },
+    "requires_previous_forecast_step": {
+      "description": "Whether the previous forecast step is required. Must be true for cumulative variables,\nsuch as precipitation.\n",
+      "minOccurs": 0,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "boolean",
+        "default": true
+      },
+      "literalDataDomains": [
+        {
+          "default": true,
+          "defaultValue": true,
+          "dataType": {
+            "name": "boolean"
+          },
+          "valueDefinition": {
+            "anyValue": false
+          }
+        }
+      ]
+    },
+    "include_year_month_subdirectory": {
+      "description": "Whether the file paths include the year/month subdirectory, as on thredds (true),\nor are stored in a flat directory (false).\n",
+      "minOccurs": 0,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "boolean",
+        "default": true
+      },
+      "literalDataDomains": [
+        {
+          "default": true,
+          "defaultValue": true,
+          "dataType": {
+            "name": "boolean"
+          },
+          "valueDefinition": {
+            "anyValue": false
+          }
+        }
+      ]
+    },
+    "data_root": {
+      "description": "Root location prepended to each listed file. Set to an empty string to get relative paths.\n",
+      "minOccurs": 0,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "string",
+        "default": "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/fileServer/birdhouse/disk3/ouranos/geoconnections/RDPS/"
+      },
+      "literalDataDomains": [
+        {
+          "default": true,
+          "defaultValue": "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/fileServer/birdhouse/disk3/ouranos/geoconnections/RDPS/",
+          "dataType": {
+            "name": "string"
+          },
+          "valueDefinition": {
+            "anyValue": false
+          }
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "forecast_files": {
+      "title": "forecast_files",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentMediaType": "text/plain"
+          },
+          {
+            "type": "string",
+            "contentMediaType": "text/html"
+          },
+          {
+            "type": "string",
+            "format": "binary",
+            "contentMediaType": "application/pdf",
+            "contentEncoding": "base64"
+          }
+        ]
+      },
+      "formats": [
+        {
+          "default": true,
+          "mediaType": "text/plain"
+        },
+        {
+          "mediaType": "text/html"
+        },
+        {
+          "mediaType": "application/pdf"
+        }
+      ]
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "reference",
+    "value"
+  ]
+}

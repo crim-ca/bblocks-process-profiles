@@ -38,6 +38,7 @@ version: 0.1.0
 
 baseURL: https://crim-ca.github.io/bblocks-process-profiles/
 gitHubBaseURL: https://github.com/crim-ca/bblocks-process-profiles/
+gitRepository: https://github.com/crim-ca/bblocks-process-profiles
 
 keywords:
   - OSPD
@@ -69,6 +70,8 @@ imports:
   # W3C PROV serialisations (experimental, under-development): the cwltool CWLProv bundles as
   # W3C PROV-JSONLD examples (`ogc.ogc-utils.prov.w3c-prov-jsonld`), see docs/OPEN-QUESTIONS.md Q-W3C
   - https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/register.json
+  # Registered item and ML activity profiles used by the downscaling process types.
+  - https://ogcincubator.github.io/registered-item-model/build/register.json
 
 schema-oas30-downcompile: False
 

@@ -1,0 +1,40 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Profile of the OGC API - Processes processDescription of `ogc-ospd2026-downscaling-generate-file-list`
+  (CWL CommandLineTool), step of the Resoterre RDPS-to-HRDPS U-Net downscaling workflow. Pins the process id and
+  the input/output names; the input/output schemas are those derived from the CWL.
+allOf:
+- $ref: bblocks://ogc.api.processes.v1.schemas.process
+- $ref: bblocks://ogc.api.processes.v2.schemas.staticIndicator
+- type: object
+  required:
+  - id
+  - version
+  - inputs
+  - outputs
+  properties:
+    id:
+      const: ogc-ospd2026-downscaling-generate-file-list
+    inputs:
+      type: object
+      required:
+      - start_datetime
+      - end_datetime
+      propertyNames:
+        enum:
+        - start_datetime
+        - end_datetime
+        - requires_previous_forecast_step
+        - include_year_month_subdirectory
+        - data_root
+    outputs:
+      type: object
+      required:
+      - forecast_files
+      propertyNames:
+        enum:
+        - forecast_files
+$defs:
+  rawProcessDescription:
+    $ref: bblocks://ogc.api.processes.v1.schemas.process
+  applicationPackage:
+    $ref: bblocks://ogc.api.processes.v2.schemas.ogcapppkg

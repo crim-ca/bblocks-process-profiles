@@ -1,0 +1,40 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Profile of the OGC API - Processes processDescription of `ogc-ospd2026-downscaling-unet` (CWL CommandLineTool),
+  step of the Resoterre RDPS-to-HRDPS U-Net downscaling workflow. Pins the process id and the input/output names;
+  the input/output schemas are those derived from the CWL.
+allOf:
+- $ref: bblocks://ogc.api.processes.v1.schemas.process
+- $ref: bblocks://ogc.api.processes.v2.schemas.staticIndicator
+- type: object
+  required:
+  - id
+  - version
+  - inputs
+  - outputs
+  properties:
+    id:
+      const: ogc-ospd2026-downscaling-unet
+    inputs:
+      type: object
+      required:
+      - input_data
+      propertyNames:
+        enum:
+        - config
+        - start_datetime
+        - end_datetime
+        - input_data
+        - number_of_cores
+        - output_directory
+    outputs:
+      type: object
+      required:
+      - inference_output
+      propertyNames:
+        enum:
+        - inference_output
+$defs:
+  rawProcessDescription:
+    $ref: bblocks://ogc.api.processes.v1.schemas.process
+  applicationPackage:
+    $ref: bblocks://ogc.api.processes.v2.schemas.ogcapppkg

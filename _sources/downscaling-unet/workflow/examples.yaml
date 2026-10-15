@@ -1,0 +1,92 @@
+- title: U-Net workflow CWL Application Package
+  content: >-
+    CWL Workflow deployed as `ogc-ospd2026-downscaling-unet-workflow`. Its steps are described by the
+    `ospd.process-profiles.downscaling-unet.generate-file-list`, `ospd.process-profiles.downscaling-unet.download-files`
+    and `ospd.process-profiles.downscaling-unet.unet` building blocks.
+    The resoterre tag `0.1.3-dev.10` counterpart is <https://github.com/Ouranosinc/resoterre/blob/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl>.
+  snippets:
+    - language: cwl
+      ref: ogc-ospd2026-downscaling-unet-workflow.cwl
+
+- title: U-Net workflow process description
+  base-uri: https://hirondelle.crim.ca/weaver/processes/
+  snippets:
+    - language: json
+      ref: examples/processDescription.json
+
+- title: OGC Application Package deployment reference
+  base-uri: https://hirondelle.crim.ca/weaver/processes/
+  snippets:
+    - language: json
+      ref: examples/ogcapppkg.json
+      schema-ref: "#/$defs/applicationPackage"
+
+- title: Process-type register entry
+  base-uri: https://hirondelle.crim.ca/weaver/processes/
+  snippets:
+    - language: json
+      ref: examples/process-type.json
+      schema-ref: "#/$defs/processTypeEntry"
+
+- title: U-Net workflow execution request
+  content: |
+    Submit the JSON body below to
+    `POST https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/execution`
+    with `Content-Type: application/json`, `Accept: application/json`, and `Prefer: respond-async`.
+    The optional `config` input is omitted so the workflow uses its default inference configuration.
+    The response identifies the job to monitor; this example does not submit a job automatically.
+  snippets:
+    - language: json
+      ref: examples/execute.json
+      schema-ref: "#/$defs/execute"
+      doc-uplift-formats: []
+
+- title: U-Net workflow execution provenance (CWLProv)
+  base-uri: arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/
+  content: |
+    CWLProv captured from job `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715` on 2026-09-28.
+    The records describe the `ogc-ospd2026-downscaling-unet-workflow` execution and its three steps.
+
+    These CWLProv metadata align with the provenance content model described in the
+    [draft OGC API - Processes - Part 5: Provenance (26-038)](https://docs.ogc.org/DRAFTS/26-038.html):
+    the executed process, job activity, input/output entities, associated agents, and their
+    PROV relationships. The draft also describes job provenance retrieval and content negotiation
+    across PROV representations. This example illustrates metadata alignment, not a certification
+    of server endpoint or full draft conformance.
+
+    All six serializations are available in the tabs below. Their representation definitions are provided
+    by the [PROV register](https://ogcincubator.github.io/bblocks-prov-jsonld-alt/):
+
+    | Serialization | Representation definition |
+    | --- | --- |
+    | Turtle and N-Triples | [W3C PROV-O / RDF](bblocks://ogc.ogc-utils.prov.w3c-prov-rdf) |
+    | Expanded JSON-LD | [W3C PROV-O / RDF](bblocks://ogc.ogc-utils.prov.w3c-prov-rdf), related to [PROV-JSONLD](bblocks://ogc.ogc-utils.prov.w3c-prov-jsonld) |
+    | PROV-JSON | [W3C PROV-JSON](bblocks://ogc.ogc-utils.prov.w3c-prov-json) |
+    | PROV-N | [W3C PROV-N](bblocks://ogc.ogc-utils.prov.w3c-prov-n) |
+    | PROV-XML | [W3C PROV-XML](bblocks://ogc.ogc-utils.prov.w3c-prov-xml) |
+
+    The expanded JSON-LD retains named bundles and PROV-Links terms. It is an RDF serialization,
+    rather than the compact statement layout defined by the PROV-JSONLD submission.
+
+    The captured [packed CWL](examples/prov/packed.cwl),
+    [job inputs](examples/prov/primary-job.json), and directory metadata are also retained.
+    These metadata copies are not a complete BagIt archive: the hashed data payloads and the original
+    BagIt checksum manifests are not included. Relative `arcp:` references retain the original
+    research-object identity; they are not live hirondelle download URLs.
+  snippets:
+    - language: turtle
+      ref: examples/prov/metadata/provenance/primary.cwlprov.ttl
+    - language: jsonld
+      ref: examples/prov/metadata/provenance/primary.cwlprov.jsonld
+      schema-ref: "#/$defs/cwlProvExpandedJsonLd"
+      doc-uplift-formats: []
+    - language: nt
+      ref: examples/prov/metadata/provenance/primary.cwlprov.nt
+    - language: json
+      ref: examples/prov/metadata/provenance/primary.cwlprov.json
+      schema-ref: "#/$defs/w3cProvJson"
+      doc-uplift-formats: []
+    - language: provn
+      ref: examples/prov/metadata/provenance/primary.cwlprov.provn
+    - language: xml
+      ref: examples/prov/metadata/provenance/primary.cwlprov.xml

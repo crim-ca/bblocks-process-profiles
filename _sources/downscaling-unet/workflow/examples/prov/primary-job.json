@@ -1,0 +1,8 @@
+{
+    "start_datetime": "2024-05-02T07:00:00",
+    "end_datetime": "2024-05-02T08:00:00",
+    "requires_previous_forecast_step": true,
+    "include_year_month_subdirectory": true,
+    "data_root": "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/fileServer/birdhouse/disk3/ouranos/geoconnections/RDPS/",
+    "config": null
+}

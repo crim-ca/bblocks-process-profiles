@@ -1,0 +1,121 @@
+{
+  "id": "ogc-ospd2026-downscaling-download-files",
+  "version": "0.1.3.dev10",
+  "title": "Download listed files",
+  "description": "Download every file referenced in a file list into the output working directory.\nEntries can be HTTP(S) URLs or local paths reachable from the container.\n",
+  "mutable": true,
+  "keywords": [
+    "RDPS",
+    "downscaling",
+    "download",
+    "application"
+  ],
+  "metadata": [
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "identifier": "https://orcid.org/0009-0004-9049-2092",
+        "email": "gauvin-st-denis.blaise@ouranos.ca",
+        "name": "Blaise Gauvin St-Denis",
+        "affiliation": "Ouranos"
+      },
+      "role": "https://schema.org/author"
+    },
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "identifier": "https://orcid.org/0000-0001-5393-8359",
+        "email": "smith.trevorj@ouranos.ca",
+        "name": "Trevor James Smith",
+        "affiliation": "Ouranos"
+      },
+      "role": "https://schema.org/author"
+    },
+    {
+      "href": "https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff",
+      "type": "text/plain",
+      "rel": "https://schema.org/citation"
+    },
+    {
+      "href": "https://github.com/Ouranosinc/resoterre",
+      "type": "text/html",
+      "rel": "https://schema.org/codeRepository"
+    },
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "identifier": "https://orcid.org/0000-0003-4862-3349",
+        "email": "francis.charette-migneault@luqia.ca",
+        "name": "Francis Charette-Migneault",
+        "affiliation": "Technologies Luqia"
+      },
+      "role": "https://schema.org/contributor"
+    },
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "email": "nazim.azeli@luqia.ca",
+        "name": "Nazim Azeli",
+        "affiliation": "Technologies Luqia"
+      },
+      "role": "https://schema.org/contributor"
+    },
+    {
+      "value": "2026-09-04T11:45:32-04:00",
+      "role": "https://schema.org/dateCreated"
+    },
+    {
+      "href": "https://spdx.org/licenses/Apache-2.0",
+      "type": "text/plain",
+      "rel": "https://schema.org/license"
+    },
+    {
+      "href": "https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst",
+      "type": "text/plain",
+      "rel": "https://schema.org/releaseNotes"
+    }
+  ],
+  "inputs": {
+    "file_list": {
+      "title": "file_list",
+      "description": "Text file holding one file reference per line.",
+      "minOccurs": 1,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "string",
+        "contentMediaType": "text/plain"
+      },
+      "formats": [
+        {
+          "default": true,
+          "mediaType": "text/plain"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "input_data": {
+      "title": "input_data",
+      "description": "Directory holding the downloaded files, ready to be used as the UNet input_data.",
+      "schema": {
+        "type": "string",
+        "format": "binary",
+        "contentMediaType": "application/directory",
+        "contentEncoding": "base64"
+      },
+      "formats": [
+        {
+          "default": true,
+          "mediaType": "application/directory"
+        }
+      ]
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "reference",
+    "value"
+  ]
+}

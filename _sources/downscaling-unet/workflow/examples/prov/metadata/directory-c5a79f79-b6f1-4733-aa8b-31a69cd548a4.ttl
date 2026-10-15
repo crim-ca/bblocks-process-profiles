@@ -1,0 +1,26 @@
+@prefix id: <urn:uuid:> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ro: <http://purl.org/wf4ever/ro#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+id:0de8befb-07ef-4781-a726-2ff5e7ea2e2c a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "c"^^xsd:string ;
+    ore:proxyFor id:9f6cec0c-e321-4281-ae54-d53c7320092f ;
+    ore:proxyIn id:c5a79f79-b6f1-4733-aa8b-31a69cd548a4 .
+
+id:68cd9865-9bbb-4569-a5bb-51dfdc1dd545 a ro:FolderEntry,
+        ore:Proxy,
+        prov:Entity ;
+    ro:entryName "zarr.json"^^xsd:string ;
+    ore:proxyFor id:c89ac928-df58-4f9b-9c53-ea7a3e346e30 ;
+    ore:proxyIn id:c5a79f79-b6f1-4733-aa8b-31a69cd548a4 .
+
+id:c5a79f79-b6f1-4733-aa8b-31a69cd548a4 a ro:Folder,
+        ore:Aggregation,
+        prov:Entity ;
+    ore:aggregates id:0de8befb-07ef-4781-a726-2ff5e7ea2e2c,
+        id:68cd9865-9bbb-4569-a5bb-51dfdc1dd545 .
+
