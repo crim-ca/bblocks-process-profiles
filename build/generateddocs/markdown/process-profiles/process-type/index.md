@@ -492,6 +492,30 @@ properties:
     description: Identifier of the process-profile Building Block.
     type: string
     x-jsonld-id: https://geolabs.github.io/bblocks-process-profiles/def/profile
+  model:
+    description: STAC MLM model Item used by the process, when the process is an ML
+      activity.
+    type: string
+    format: uri
+    x-jsonld-id: https://geolabs.github.io/bblocks-process-profiles/def/model
+    x-jsonld-type: '@id'
+  activityTypes:
+    description: Registered activity types that characterize the process, such as
+      ML inference and geoprocessing.
+    type: array
+    minItems: 1
+    items:
+      type: string
+      format: uri
+    x-jsonld-id: https://geolabs.github.io/bblocks-process-profiles/def/activityType
+    x-jsonld-type: '@id'
+    x-jsonld-container: '@set'
+  inRegister:
+    description: Register that governs the referenced activity types.
+    type: string
+    format: uri
+    x-jsonld-id: https://w3id.org/ogc/rim/inRegister
+    x-jsonld-type: '@id'
   processDescription:
     type: object
     required:
@@ -665,6 +689,19 @@ Links to the schema:
       "@type": "@id"
     },
     "profile": "pp:profile",
+    "model": {
+      "@id": "pp:model",
+      "@type": "@id"
+    },
+    "activityTypes": {
+      "@id": "pp:activityType",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "inRegister": {
+      "@id": "https://w3id.org/ogc/rim/inRegister",
+      "@type": "@id"
+    },
     "processDescription": {
       "@context": {
         "version": "pp:version"

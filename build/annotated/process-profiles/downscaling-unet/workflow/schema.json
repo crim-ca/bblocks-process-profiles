@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Profile of the OGC API - Processes process description for the deployed Resoterre\nRDPS-to-HRDPS climate downscaling U-Net workflow.\n",
+  "allOf": [
+    {
+      "$ref": "https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.json"
+    },
+    {
+      "$ref": "https://geolabs.github.io/bblock-ogcapi-processes-part2/build/annotated/api/processes/v2/schemas/staticIndicator/schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "version",
+        "inputs",
+        "outputs"
+      ],
+      "properties": {
+        "id": {
+          "const": "ogc-ospd2026-downscaling-unet-workflow",
+          "x-jsonld-id": "@id"
+        },
+        "inputs": {
+          "type": "object",
+          "required": [
+            "start_datetime",
+            "end_datetime"
+          ],
+          "propertyNames": {
+            "enum": [
+              "start_datetime",
+              "end_datetime",
+              "requires_previous_forecast_step",
+              "include_year_month_subdirectory",
+              "data_root",
+              "config"
+            ]
+          }
+        },
+        "outputs": {
+          "type": "object",
+          "required": [
+            "forecast_files",
+            "inference_output"
+          ],
+          "propertyNames": {
+            "enum": [
+              "forecast_files",
+              "inference_output"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "execute": {
+      "description": "Execute request using native input values, consistent with the other process profiles. The upstream execute schema rejects plain string values (documented register issue U-01).",
+      "type": "object",
+      "required": [
+        "inputs"
+      ],
+      "properties": {
+        "inputs": {
+          "type": "object",
+          "required": [
+            "start_datetime",
+            "end_datetime"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "start_datetime": {
+              "type": "string"
+            },
+            "end_datetime": {
+              "type": "string"
+            },
+            "requires_previous_forecast_step": {
+              "type": "boolean"
+            },
+            "include_year_month_subdirectory": {
+              "type": "boolean"
+            },
+            "data_root": {
+              "type": "string",
+              "format": "uri"
+            },
+            "config": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/link/schema.json"
+                },
+                {
+                  "$ref": "https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/qualifiedInputValue/schema.json"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "rawProcessDescription": {
+      "$ref": "https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.json"
+    },
+    "applicationPackage": {
+      "$ref": "https://geolabs.github.io/bblock-ogcapi-processes-part2/build/annotated/api/processes/v2/schemas/ogcapppkg/schema.json"
+    },
+    "processTypeEntry": {
+      "$ref": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.json"
+    },
+    "w3cProvJson": {
+      "$ref": "https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/annotated/ogc-utils/prov/w3c-prov-json/schema.json"
+    },
+    "cwlProvExpandedJsonLd": {
+      "description": "Expanded JSON-LD named bundles. RDF semantics are checked with the imported SHACL shapes.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "@graph"
+        ],
+        "properties": {
+          "@id": {
+            "type": "string"
+          },
+          "@graph": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "cwl": {
+      "x-jsonld-id": "pp:cwl",
+      "x-jsonld-type": "@id"
+    },
+    "type": "@type",
+    "title": "http://purl.org/dc/terms/title",
+    "description": "http://purl.org/dc/terms/description",
+    "version": "pp:version",
+    "process": {
+      "x-jsonld-id": "pp:process",
+      "x-jsonld-type": "@id"
+    },
+    "executionUnit": {
+      "x-jsonld-id": "https://w3id.org/ogc/api/processes/executionUnit",
+      "x-jsonld-type": "@id"
+    },
+    "href": "@id",
+    "activityTypes": {
+      "x-jsonld-id": "pp:activityType",
+      "x-jsonld-type": "@id",
+      "x-jsonld-container": "@set"
+    },
+    "inRegister": {
+      "x-jsonld-id": "https://w3id.org/ogc/rim/inRegister",
+      "x-jsonld-type": "@id"
+    },
+    "source": "pp:source",
+    "cwlClass": "pp:cwlClass",
+    "cwlId": "pp:cwlId"
+  },
+  "x-jsonld-vocab": "https://crim-ca.github.io/bblocks-process-profiles/def/",
+  "x-jsonld-prefixes": {
+    "dct": "http://purl.org/dc/terms/",
+    "proc": "https://w3id.org/ogc/api/processes/",
+    "rim": "https://w3id.org/ogc/rim/",
+    "mlact": "https://w3id.org/ogc/rim/ml-activity/",
+    "geoproc": "https://w3id.org/ogc/rim/geoprocessing/"
+  }
+}

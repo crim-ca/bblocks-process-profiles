@@ -1,0 +1,12 @@
+@prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
+@prefix ns1: <pp:> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+
+<https://github.com/Ouranosinc/resoterre/raw/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_generate_file_list.cwl> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
+    :rel "http://www.opengis.net/def/rel/ogc/1.0/executionUnit" .
+
+<https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-generate-file-list> ns1:version "0.1.3.dev10" .
+
+[] :processDescription [ ns1:process <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-generate-file-list> ] ;
+    proc:executionUnit <https://github.com/Ouranosinc/resoterre/raw/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_generate_file_list.cwl> .
+

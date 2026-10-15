@@ -1,0 +1,13 @@
+{
+  "processDescription": {
+    "process": {
+      "id": "ogc-ospd2026-downscaling-generate-file-list",
+      "version": "0.1.3.dev10"
+    }
+  },
+  "executionUnit": {
+    "href": "https://github.com/Ouranosinc/resoterre/raw/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_generate_file_list.cwl",
+    "type": "application/cwl+yaml",
+    "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+  }
+}

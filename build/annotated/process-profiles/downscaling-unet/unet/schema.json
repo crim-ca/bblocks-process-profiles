@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Profile of the OGC API - Processes processDescription of `ogc-ospd2026-downscaling-unet` (CWL CommandLineTool), step of the Resoterre RDPS-to-HRDPS U-Net downscaling workflow. Pins the process id and the input/output names; the input/output schemas are those derived from the CWL.",
+  "allOf": [
+    {
+      "$ref": "https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.json"
+    },
+    {
+      "$ref": "https://geolabs.github.io/bblock-ogcapi-processes-part2/build/annotated/api/processes/v2/schemas/staticIndicator/schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "version",
+        "inputs",
+        "outputs"
+      ],
+      "properties": {
+        "id": {
+          "const": "ogc-ospd2026-downscaling-unet",
+          "x-jsonld-id": "@id"
+        },
+        "inputs": {
+          "type": "object",
+          "required": [
+            "input_data"
+          ],
+          "propertyNames": {
+            "enum": [
+              "config",
+              "start_datetime",
+              "end_datetime",
+              "input_data",
+              "number_of_cores",
+              "output_directory"
+            ]
+          }
+        },
+        "outputs": {
+          "type": "object",
+          "required": [
+            "inference_output"
+          ],
+          "propertyNames": {
+            "enum": [
+              "inference_output"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "rawProcessDescription": {
+      "$ref": "https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.json"
+    },
+    "applicationPackage": {
+      "$ref": "https://geolabs.github.io/bblock-ogcapi-processes-part2/build/annotated/api/processes/v2/schemas/ogcapppkg/schema.json"
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "cwl": {
+      "x-jsonld-id": "pp:cwl",
+      "x-jsonld-type": "@id"
+    },
+    "type": "@type",
+    "title": "http://purl.org/dc/terms/title",
+    "description": "http://purl.org/dc/terms/description",
+    "version": "pp:version",
+    "process": {
+      "x-jsonld-id": "pp:process",
+      "x-jsonld-type": "@id"
+    },
+    "executionUnit": {
+      "x-jsonld-id": "https://w3id.org/ogc/api/processes/executionUnit",
+      "x-jsonld-type": "@id"
+    },
+    "href": "@id",
+    "activityTypes": {
+      "x-jsonld-id": "pp:activityType",
+      "x-jsonld-type": "@id",
+      "x-jsonld-container": "@set"
+    },
+    "inRegister": {
+      "x-jsonld-id": "https://w3id.org/ogc/rim/inRegister",
+      "x-jsonld-type": "@id"
+    },
+    "source": "pp:source",
+    "cwlClass": "pp:cwlClass",
+    "cwlId": "pp:cwlId"
+  },
+  "x-jsonld-vocab": "https://crim-ca.github.io/bblocks-process-profiles/def/",
+  "x-jsonld-prefixes": {
+    "dct": "http://purl.org/dc/terms/",
+    "proc": "https://w3id.org/ogc/api/processes/",
+    "rim": "https://w3id.org/ogc/rim/",
+    "mlact": "https://w3id.org/ogc/rim/ml-activity/",
+    "geoproc": "https://w3id.org/ogc/rim/geoprocessing/"
+  }
+}

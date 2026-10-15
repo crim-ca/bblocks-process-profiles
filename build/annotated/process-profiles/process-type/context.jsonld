@@ -15,6 +15,19 @@
       "@type": "@id"
     },
     "profile": "pp:profile",
+    "model": {
+      "@id": "pp:model",
+      "@type": "@id"
+    },
+    "activityTypes": {
+      "@id": "pp:activityType",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "inRegister": {
+      "@id": "https://w3id.org/ogc/rim/inRegister",
+      "@type": "@id"
+    },
     "processDescription": {
       "@context": {
         "version": "pp:version"

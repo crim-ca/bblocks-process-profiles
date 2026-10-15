@@ -7,6 +7,9 @@ path	@id	schema
 /status	https://geolabs.github.io/bblocks-process-profiles/def/status	/github/workspace/build/annotated/process-profiles/process-type/schema.yaml
 /phase	http://www.w3.org/2004/02/skos/core#broader	/github/workspace/build/annotated/process-profiles/process-type/schema.yaml
 /profile	https://geolabs.github.io/bblocks-process-profiles/def/profile	/github/workspace/build/annotated/process-profiles/process-type/schema.yaml
+/model	https://geolabs.github.io/bblocks-process-profiles/def/model	/github/workspace/build/annotated/process-profiles/process-type/schema.yaml
+/activityTypes	https://geolabs.github.io/bblocks-process-profiles/def/activityType	/github/workspace/build/annotated/process-profiles/process-type/schema.yaml
+/inRegister	https://w3id.org/ogc/rim/inRegister	/github/workspace/build/annotated/process-profiles/process-type/schema.yaml
 /processDescription	https://geolabs.github.io/bblocks-process-profiles/def/processDescription	/github/workspace/build/annotated/process-profiles/process-type/schema.yaml
 /processDescription/id	@id	/github/workspace/build/annotated/process-profiles/process-type/schema.yaml
 /processDescription/version	https://geolabs.github.io/bblocks-process-profiles/def/version	/github/workspace/build/annotated/process-profiles/process-type/schema.yaml

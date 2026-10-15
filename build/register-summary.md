@@ -94,6 +94,30 @@ OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-earth-se
 
 OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-earth-search-process` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.
 
+### `ospd.process-profiles.downscaling-unet.download-files` — Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling step `ogc-ospd2026-downscaling-download-files`
+
+**Type:** schema
+
+OGC API - Processes profile of the Resoterre CWL CommandLineTool `ogc-ospd2026-downscaling-download-files`, a step of the RDPS-to-HRDPS U-Net downscaling workflow.
+
+### `ospd.process-profiles.downscaling-unet.generate-file-list` — Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling step `ogc-ospd2026-downscaling-generate-file-list`
+
+**Type:** schema
+
+OGC API - Processes profile of the Resoterre CWL CommandLineTool `ogc-ospd2026-downscaling-generate-file-list`, a step of the RDPS-to-HRDPS U-Net downscaling workflow.
+
+### `ospd.process-profiles.downscaling-unet.unet` — Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling step `ogc-ospd2026-downscaling-unet`
+
+**Type:** schema
+
+OGC API - Processes profile of the Resoterre CWL CommandLineTool `ogc-ospd2026-downscaling-unet`, a step of the RDPS-to-HRDPS U-Net downscaling workflow.
+
+### `ospd.process-profiles.downscaling-unet.workflow` — Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling workflow
+
+**Type:** schema
+
+Select and download RDPS forecasts, then run Resoterre U-Net downscaling to HRDPS-scale Zarr outputs.
+
 ### `ospd.process-profiles.kindgrove.mangrove` — Process profile: mangrove_cli
 
 **Type:** schema

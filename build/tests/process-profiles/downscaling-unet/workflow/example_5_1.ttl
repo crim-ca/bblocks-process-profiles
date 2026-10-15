@@ -1,0 +1,10 @@
+@prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] :inputs [ proc:data_root "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/fileServer/birdhouse/disk3/ouranos/geoconnections/RDPS/" ;
+            proc:end_datetime "2024-05-02T08:00:00" ;
+            proc:include_year_month_subdirectory true ;
+            proc:requires_previous_forecast_step true ;
+            proc:start_datetime "2024-05-02T07:00:00" ] .
+

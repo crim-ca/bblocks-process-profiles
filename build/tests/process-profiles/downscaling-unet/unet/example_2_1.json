@@ -1,0 +1,224 @@
+{
+  "id": "ogc-ospd2026-downscaling-unet",
+  "version": "0.1.3.dev10",
+  "title": "RDPS-to-HRDPS U-Net downscaling inference",
+  "description": "Run the RDPS to HRDPS U-Net downscaling inference over the provided input directory.\nThe model, regridding matrices, geophysical fields and default configuration are baked\ninto the inference image.\n",
+  "mutable": true,
+  "keywords": [
+    "inference",
+    "U-Net",
+    "HRDPS",
+    "machine learning",
+    "downscaling",
+    "RDPS",
+    "super-resolution",
+    "climate",
+    "application"
+  ],
+  "metadata": [
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "identifier": "https://orcid.org/0009-0004-9049-2092",
+        "email": "gauvin-st-denis.blaise@ouranos.ca",
+        "name": "Blaise Gauvin St-Denis",
+        "affiliation": "Ouranos"
+      },
+      "role": "https://schema.org/author"
+    },
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "identifier": "https://orcid.org/0000-0001-5393-8359",
+        "email": "smith.trevorj@ouranos.ca",
+        "name": "Trevor James Smith",
+        "affiliation": "Ouranos"
+      },
+      "role": "https://schema.org/author"
+    },
+    {
+      "href": "https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff",
+      "type": "text/plain",
+      "rel": "https://schema.org/citation"
+    },
+    {
+      "href": "https://github.com/Ouranosinc/resoterre",
+      "type": "text/html",
+      "rel": "https://schema.org/codeRepository"
+    },
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "identifier": "https://orcid.org/0000-0003-4862-3349",
+        "email": "francis.charette-migneault@luqia.ca",
+        "name": "Francis Charette-Migneault",
+        "affiliation": "Technologies Luqia"
+      },
+      "role": "https://schema.org/contributor"
+    },
+    {
+      "value": {
+        "$schema": "https://schema.org/Person",
+        "email": "nazim.azeli@luqia.ca",
+        "name": "Nazim Azeli",
+        "affiliation": "Technologies Luqia"
+      },
+      "role": "https://schema.org/contributor"
+    },
+    {
+      "value": "2026-01-30T10:42:53-05:00",
+      "role": "https://schema.org/dateCreated"
+    },
+    {
+      "href": "https://spdx.org/licenses/Apache-2.0",
+      "type": "text/plain",
+      "rel": "https://schema.org/license"
+    },
+    {
+      "href": "https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst",
+      "type": "text/plain",
+      "rel": "https://schema.org/releaseNotes"
+    }
+  ],
+  "inputs": {
+    "config": {
+      "title": "config",
+      "description": "Inference configuration YAML",
+      "minOccurs": 0,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "string",
+        "contentMediaType": "application/yaml"
+      },
+      "formats": [
+        {
+          "default": true,
+          "mediaType": "application/yaml"
+        }
+      ]
+    },
+    "start_datetime": {
+      "description": "Optional start datetime (ISO 8601) overriding the config's inference_start_datetime",
+      "minOccurs": 0,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "string"
+      },
+      "literalDataDomains": [
+        {
+          "default": true,
+          "dataType": {
+            "name": "string"
+          },
+          "valueDefinition": {
+            "anyValue": false
+          }
+        }
+      ]
+    },
+    "end_datetime": {
+      "description": "Optional end datetime (ISO 8601) overriding the config's inference_end_datetime",
+      "minOccurs": 0,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "string"
+      },
+      "literalDataDomains": [
+        {
+          "default": true,
+          "dataType": {
+            "name": "string"
+          },
+          "valueDefinition": {
+            "anyValue": false
+          }
+        }
+      ]
+    },
+    "input_data": {
+      "title": "input_data",
+      "description": "Directory containing input NetCDF files to be used for inference",
+      "minOccurs": 1,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "string",
+        "format": "binary",
+        "contentMediaType": "application/directory",
+        "contentEncoding": "base64"
+      },
+      "formats": [
+        {
+          "default": true,
+          "mediaType": "application/directory"
+        }
+      ]
+    },
+    "number_of_cores": {
+      "description": "Internal flag; always emits -j1 to set the number of cores used for inference.",
+      "minOccurs": 0,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "boolean",
+        "default": true
+      },
+      "literalDataDomains": [
+        {
+          "default": true,
+          "defaultValue": true,
+          "dataType": {
+            "name": "boolean"
+          },
+          "valueDefinition": {
+            "anyValue": false
+          }
+        }
+      ]
+    },
+    "output_directory": {
+      "description": "Internal flag; injects the runtime-determined output directory into the command line.",
+      "minOccurs": 0,
+      "maxOccurs": 1,
+      "schema": {
+        "type": "boolean",
+        "default": true
+      },
+      "literalDataDomains": [
+        {
+          "default": true,
+          "defaultValue": true,
+          "dataType": {
+            "name": "boolean"
+          },
+          "valueDefinition": {
+            "anyValue": false
+          }
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "inference_output": {
+      "title": "inference_output",
+      "description": "Zarr output directory containing inference results",
+      "schema": {
+        "type": "string",
+        "format": "binary",
+        "contentMediaType": "application/directory",
+        "contentEncoding": "base64"
+      },
+      "formats": [
+        {
+          "default": true,
+          "mediaType": "application/directory"
+        }
+      ]
+    }
+  },
+  "jobControlOptions": [
+    "async-execute"
+  ],
+  "outputTransmission": [
+    "reference",
+    "value"
+  ]
+}
