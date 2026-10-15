@@ -1038,7 +1038,7 @@ _:N1f8071ab89c74417a7fd81e2f77d850b <http://www.w3.org/1999/02/22-rdf-syntax-ns#
 <urn:uuid:086729d6-a578-43e7-bd56-b52d11a5fec5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openarchives.org/ore/terms/Proxy> .
 <urn:uuid:5ba2e590-7592-4b20-81f3-0021364caf44> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/ro#Folder> .
 <urn:uuid:e8b1e552-e8ed-4221-b9b8-d7abb0c84305> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wf4ever#File> .
-<urn:uuid:299bb331-8dd9-4f58-ae78-9462ffe3f1a8> <https://w3id.org/cwl/prov#hostname> "localhost"^^<http://www.w3.org/2001/XMLSchema#string> .
+<urn:uuid:299bb331-8dd9-4f58-ae78-9462ffe3f1a8> <https://w3id.org/cwl/prov#hostname> "hirondelle.crim.ca"^^<http://www.w3.org/2001/XMLSchema#string> .
 <urn:uuid:214365d4-f105-4de6-852c-df963f3f20e2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#Artifact> .
 <urn:uuid:76e5ebbd-ac61-4232-a74d-c32276bad0dd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/ro#FolderEntry> .
 <urn:uuid:21f9b68a-1718-450e-89ff-736e439ade24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.openarchives.org/ore/terms/Proxy> .

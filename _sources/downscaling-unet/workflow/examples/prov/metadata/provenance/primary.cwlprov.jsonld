@@ -4468,7 +4468,7 @@
         "https://w3id.org/cwl/prov#hostname": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#string",
-            "@value": "localhost"
+            "@value": "hirondelle.crim.ca"
           }
         ]
       },

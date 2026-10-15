@@ -19,7 +19,7 @@ document
   prefix ore <http://www.openarchives.org/ore/terms/>
 
   agent(id:299bb331-8dd9-4f58-ae78-9462ffe3f1a8)
-  agent(id:299bb331-8dd9-4f58-ae78-9462ffe3f1a8, [prov:type='foaf:OnlineAccount', prov:location="https://hirondelle.crim.ca/weaver", cwlprov:hostname="localhost"])
+  agent(id:299bb331-8dd9-4f58-ae78-9462ffe3f1a8, [prov:type='foaf:OnlineAccount', prov:location="https://hirondelle.crim.ca/weaver", cwlprov:hostname="hirondelle.crim.ca"])
   agent(id:299bb331-8dd9-4f58-ae78-9462ffe3f1a8, [prov:type='foaf:OnlineAccount', prov:label="weaver-worker", foaf:accountName="weaver-worker"])
   agent(id:fcbddfc9-0f37-44c9-ad42-38a610f7be9b, [prov:type='schema:SoftwareApplication', prov:type='prov:SoftwareAgent', prov:label="weaver-worker@crim-ca/weaver:6.15.0", foaf:name="weaver-worker@crim-ca/weaver:6.15.0", foaf:account='id:299bb331-8dd9-4f58-ae78-9462ffe3f1a8', schema:name="weaver-worker@crim-ca/weaver:6.15.0"])
   actedOnBehalfOf(id:299bb331-8dd9-4f58-ae78-9462ffe3f1a8, id:fcbddfc9-0f37-44c9-ad42-38a610f7be9b, -)

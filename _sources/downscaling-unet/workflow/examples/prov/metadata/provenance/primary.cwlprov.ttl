@@ -1018,7 +1018,7 @@ id:299bb331-8dd9-4f58-ae78-9462ffe3f1a8 a prov:Agent,
     prov:atLocation "https://hirondelle.crim.ca/weaver"^^xsd:string ;
     prov:wasDerivedFrom data:15401f8d937f5d526951c1bf20dcba16a1271d97 ;
     foaf:accountName "weaver-worker"^^xsd:string ;
-    cwlprov:hostname "localhost"^^xsd:string .
+    cwlprov:hostname "hirondelle.crim.ca"^^xsd:string .
 
 id:2a3f1d78-6dc0-4b05-9ce8-1c811e9c113d a wf4ever:File,
         wfprov:Artifact,
@@ -1760,4 +1760,3 @@ id:e03e35af-4745-4252-b6bf-f3ba7779b7df a ro:Folder,
             prov:atTime "2026-09-28T13:03:17.910333"^^xsd:dateTime ;
             prov:hadRole <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/primary/inference_output> ] ;
     cwlprov:basename "inference_cwl.zarr"^^xsd:string .
-
