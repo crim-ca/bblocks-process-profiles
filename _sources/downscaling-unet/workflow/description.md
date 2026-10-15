@@ -22,8 +22,8 @@ it applies a trained model to new inputs, making it an inference activity, and t
 georeferenced RDPS climate fields into finer-resolution HRDPS-scale fields, making it spatial
 data processing. These are complementary classifications of the same operation, not alternative
 labels. The workflow references the
-[ML activity profile](bblocks://ogc.model.registered-item.ml-activity-profile) and
-[geoprocessing activity definitions](bblocks://ogc.model.registered-item.geoprocessing-activity);
+[ML activity types profile](bblocks://ogc.model.registered-item.ml-activity-types) and
+[geoprocessing activity types profile](bblocks://ogc.model.registered-item.geoprocessing-activity-types);
 its process-type example records the climate-downscaling and climate-downscaling-inference
 activity types. File selection and download prepare the model inputs rather than train the model.
 
