@@ -1,0 +1,106 @@
+@prefix binding: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix mlm: <https://w3id.org/ogc/stac/mlm/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix stac: <https://w3id.org/ogc/stac/core/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+binding:hrdps_geophysical_inputs a oa:SpecificResource,
+        mlm:ModelInput ;
+    dct:hasPart binding:geophysical-structure ;
+    oa:hasSelector binding:geophysical-selector ;
+    oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> ;
+    mlm:io_name "hrdps_geophysical_inputs" .
+
+binding:hrdps_outputs a oa:SpecificResource,
+        mlm:ModelOutput ;
+    dct:hasPart binding:output-structure ;
+    oa:hasSelector binding:output-selector ;
+    oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> ;
+    mlm:io_name "hrdps_outputs" .
+
+binding:rdps_inputs a oa:SpecificResource,
+        mlm:ModelInput ;
+    dct:hasPart binding:rdps-structure ;
+    oa:hasSelector binding:rdps-selector ;
+    oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> ;
+    mlm:io_name "rdps_inputs" .
+
+binding:end-selector a oa:FragmentSelector ;
+    dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;
+    rdf:value "/properties/end_datetime" .
+
+binding:geophysical-selector a oa:FragmentSelector ;
+    dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;
+    rdf:value "/properties/mlm:input/1" .
+
+binding:geophysical-structure a oa:SpecificResource,
+        mlm:InputStructure ;
+    oa:hasSelector binding:geophysical-structure-selector ;
+    oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> .
+
+binding:geophysical-structure-selector a oa:FragmentSelector ;
+    dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;
+    rdf:value "/properties/mlm:input/1/input" .
+
+binding:model-end a time:Instant,
+        oa:SpecificResource ;
+    oa:hasSelector binding:end-selector ;
+    oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> .
+
+binding:model-spatial-domain a oa:SpecificResource ;
+    dct:title "Declared model spatial domain, not a measured execution footprint" ;
+    oa:hasSelector binding:spatial-selector ;
+    oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> .
+
+binding:model-start a time:Instant,
+        oa:SpecificResource ;
+    oa:hasSelector binding:start-selector ;
+    oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> .
+
+binding:model-temporal-domain a time:ProperInterval ;
+    dct:title "Declared model start/end interval, distinct from run execution time" ;
+    time:hasBeginning binding:model-start ;
+    time:hasEnd binding:model-end .
+
+binding:output-selector a oa:FragmentSelector ;
+    dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;
+    rdf:value "/properties/mlm:output/0" .
+
+binding:output-structure a oa:SpecificResource,
+        mlm:ResultStructure ;
+    oa:hasSelector binding:output-structure-selector ;
+    oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> .
+
+binding:output-structure-selector a oa:FragmentSelector ;
+    dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;
+    rdf:value "/properties/mlm:output/0/result" .
+
+binding:rdps-selector a oa:FragmentSelector ;
+    dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;
+    rdf:value "/properties/mlm:input/0" .
+
+binding:rdps-structure a oa:SpecificResource,
+        mlm:InputStructure ;
+    oa:hasSelector binding:rdps-structure-selector ;
+    oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> .
+
+binding:rdps-structure-selector a oa:FragmentSelector ;
+    dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;
+    rdf:value "/properties/mlm:input/0/input" .
+
+binding:spatial-selector a oa:FragmentSelector ;
+    dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;
+    rdf:value "/geometry" .
+
+binding:start-selector a oa:FragmentSelector ;
+    dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;
+    rdf:value "/properties/start_datetime" .
+
+<https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> a prov:Entity,
+        stac:Item ;
+    dct:spatial binding:model-spatial-domain ;
+    dct:temporal binding:model-temporal-domain .
+

@@ -55,6 +55,37 @@
     }
   ],
   "$defs": {
+    "sourceCwl": {
+      "$ref": "https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/CWLWorkflow/schema.json"
+    },
+    "publishedModel": {
+      "description": "Validate the external response's MLM extension content, not full STAC conformance.\nThe current API response omits properties.datetime required by STAC Item.\n",
+      "allOf": [
+        {
+          "$ref": "https://stac-extensions.github.io/mlm/v1.6/schema.json"
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "properties",
+            "geometry",
+            "bbox"
+          ],
+          "properties": {
+            "id": {
+              "const": "ogc-ospd2026-downscaling-unet",
+              "x-jsonld-id": "@id"
+            },
+            "type": {
+              "const": "Feature",
+              "x-jsonld-id": "@type"
+            }
+          }
+        }
+      ]
+    },
     "execute": {
       "description": "Execute request using native input values, consistent with the other process profiles. The upstream execute schema rejects plain string values (documented register issue U-01).",
       "type": "object",

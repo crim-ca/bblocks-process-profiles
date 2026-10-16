@@ -1,0 +1,146 @@
+{
+  "cwlVersion": "v1.2",
+  "class": "Workflow",
+  "$namespaces": {
+    "s": "https://schema.org/",
+    "iana": "https://www.iana.org/assignments/media-types/",
+    "edam": "http://edamontology.org/"
+  },
+  "id": "ogc-ospd2026-downscaling-unet-workflow",
+  "label": "RDPS-to-HRDPS climate downscaling with a U-Net",
+  "doc": "Chain the RDPS forecast file listing with the UNet downscaling inference.\nThe first step derives the RDPS files required for the requested datetime range,\nthe second step downloads them into a local directory and the last step runs the\ninference on that directory.\n",
+  "s:dateCreated": "2026-09-09T10:36:53-04:00",
+  "s:version": "0.1.3.dev10",
+  "s:softwareVersion": "v0.1.3-dev.10",
+  "s:codeRepository": "https://github.com/Ouranosinc/resoterre",
+  "s:license": "https://spdx.org/licenses/Apache-2.0",
+  "s:citation": "https://github.com/Ouranosinc/resoterre/blob/v0.1.3-dev.10/CITATION.cff",
+  "s:releaseNotes": "https://github.com/Ouranosinc/resoterre/blob/v0.1.3-dev.10/CHANGELOG.rst",
+  "s:isBasedOn": "https://raw.githubusercontent.com/Ouranosinc/resoterre/v0.1.3-dev.10/notebooks/ml-model-package/unet_rdps_to_hrdps/unet_rdps_to_hrdps.json",
+  "s:author": [
+    {
+      "class": "s:Person",
+      "s:identifier": "https://orcid.org/0009-0004-9049-2092",
+      "s:email": "gauvin-st-denis.blaise@ouranos.ca",
+      "s:name": "Blaise Gauvin St-Denis",
+      "s:affiliation": "Ouranos"
+    },
+    {
+      "class": "s:Person",
+      "s:identifier": "https://orcid.org/0000-0001-5393-8359",
+      "s:email": "smith.trevorj@ouranos.ca",
+      "s:name": "Trevor James Smith",
+      "s:affiliation": "Ouranos"
+    }
+  ],
+  "s:contributor": [
+    {
+      "class": "s:Person",
+      "s:identifier": "https://orcid.org/0000-0003-4862-3349",
+      "s:email": "francis.charette-migneault@luqia.ca",
+      "s:name": "Francis Charette-Migneault",
+      "s:affiliation": "Technologies Luqia"
+    },
+    {
+      "class": "s:Person",
+      "s:email": "nazim.azeli@luqia.ca",
+      "s:name": "Nazim Azeli",
+      "s:affiliation": "Technologies Luqia"
+    }
+  ],
+  "s:keywords": [
+    "RDPS",
+    "HRDPS",
+    "downscaling",
+    "super-resolution",
+    "U-Net",
+    "machine learning",
+    "inference",
+    "climate",
+    "workflow"
+  ],
+  "inputs": {
+    "start_datetime": {
+      "type": "string",
+      "doc": "Start datetime in ISO 8601 format, for example 2024-05-01T07:00:00."
+    },
+    "end_datetime": {
+      "type": "string",
+      "doc": "End datetime in ISO 8601 format, for example 2024-05-01T08:00:00."
+    },
+    "requires_previous_forecast_step": {
+      "type": "boolean",
+      "default": true,
+      "doc": "Whether the previous forecast step is required. Must be true for cumulative variables,\nsuch as precipitation.\n"
+    },
+    "include_year_month_subdirectory": {
+      "type": "boolean",
+      "default": true,
+      "doc": "Whether the listed paths include the year/month subdirectory, as on thredds (true),\nor are stored in a flat directory (false).\n"
+    },
+    "data_root": {
+      "type": "string",
+      "default": "https://pavics.ouranos.ca/twitcher/ows/proxy/thredds/fileServer/birdhouse/disk3/ouranos/geoconnections/RDPS/",
+      "doc": "Root location prepended to each listed file, used to download the RDPS files."
+    },
+    "config": {
+      "type": [
+        "null",
+        "File"
+      ],
+      "format": [
+        "iana:application/yaml",
+        "edam:format_3750"
+      ],
+      "doc": "Optional inference configuration YAML overriding the one built into the Docker image."
+    }
+  },
+  "outputs": {
+    "forecast_files": {
+      "type": "File",
+      "format": "iana:text/plain",
+      "outputSource": "ogc-ospd2026-downscaling-generate-file-list/forecast_files"
+    },
+    "inference_output": {
+      "type": "Directory",
+      "outputSource": "ogc-ospd2026-downscaling-unet/inference_output"
+    }
+  },
+  "steps": {
+    "ogc-ospd2026-downscaling-generate-file-list": {
+      "run": "ogc-ospd2026-downscaling-generate-file-list.cwl",
+      "in": {
+        "start_datetime": "start_datetime",
+        "end_datetime": "end_datetime",
+        "requires_previous_forecast_step": "requires_previous_forecast_step",
+        "include_year_month_subdirectory": "include_year_month_subdirectory",
+        "data_root": "data_root"
+      },
+      "out": [
+        "forecast_files"
+      ]
+    },
+    "ogc-ospd2026-downscaling-download-files": {
+      "doc": "Download the listed RDPS files into a flat local directory.",
+      "run": "ogc-ospd2026-downscaling-download-files.cwl",
+      "in": {
+        "file_list": "ogc-ospd2026-downscaling-generate-file-list/forecast_files"
+      },
+      "out": [
+        "input_data"
+      ]
+    },
+    "ogc-ospd2026-downscaling-unet": {
+      "run": "ogc-ospd2026-downscaling-unet.cwl",
+      "in": {
+        "config": "config",
+        "input_data": "ogc-ospd2026-downscaling-download-files/input_data",
+        "start_datetime": "start_datetime",
+        "end_datetime": "end_datetime"
+      },
+      "out": [
+        "inference_output"
+      ]
+    }
+  }
+}

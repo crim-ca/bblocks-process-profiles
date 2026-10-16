@@ -4,6 +4,9 @@
 
 <https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-unet> a :ProcessType ;
     :definition "Retrieves RDPS forecast files and applies the Resoterre U-Net model to produce HRDPS-resolution downscaled output." ;
+    :hasStep "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-download-files",
+        "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-generate-file-list",
+        "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-unet-inference" ;
     :inScheme "https://crim-ca.github.io/bblocks-process-profiles/def/process-type" ;
     :model "https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet" ;
     :openeoEquivalence [ :level "none" ;
@@ -12,7 +15,7 @@
         "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation",
         "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation" ;
     :prefLabel "RDPS-to-HRDPS climate downscaling with a U-Net" ;
-    :processDescription <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet> ;
+    :processDescription <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow> ;
     :profile "ospd.process-profiles.downscaling-unet.workflow" ;
     :provenanceClass "http://purl.org/wf4ever/wfprov#WorkflowRun" ;
     :status "submitted" ;
@@ -24,5 +27,5 @@
             ns1:cwlClass "Workflow" ;
             ns1:cwlId "downscaling-unet-workflow" ] .
 
-<https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet> ns1:version "0.1.3-dev.10" .
+<https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow> ns1:version "0.1.3-dev.10" .
 
