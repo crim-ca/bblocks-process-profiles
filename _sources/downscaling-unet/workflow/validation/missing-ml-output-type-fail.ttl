@@ -1,0 +1,15 @@
+@prefix ex: <https://example.org/test/> .
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix mlact: <https://w3id.org/ogc/rim/ml-activity/> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:MissingOutput a owl:Class, acttype:ActivityType ;
+    rdfs:subClassOf mlact:InferenceActivityType ;
+    rim:itemClass acttype:activityTypeItemClass ;
+    rim:objectIdentifier "https://example.org/test/missing-output"^^xsd:anyURI ;
+    rim:validityStatus rim:invalid ;
+    rim:publicationStatus rim:published ;
+    acttype:usedEntityType mlact:ActivityInput .

@@ -1,0 +1,4 @@
+@prefix ex: <https://example.org/test/> .
+@prefix entity: <https://crim-ca.github.io/bblocks-process-profiles/def/entity-type/> .
+
+ex:UnboundInput a entity:RDPSModelInput .

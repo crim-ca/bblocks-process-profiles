@@ -27,6 +27,39 @@ labels. The workflow references the
 its process-type example records the climate-downscaling and climate-downscaling-inference
 activity types. File selection and download prepare the model inputs rather than train the model.
 
+The **Activity types, model bindings and inference enrichment** example supplies the actual
+candidate type definitions, spatial/ML entity contracts, procedure links and submitted registration
+metadata. Its selectable Turtle snippets reuse the imported classes and select the model's two input
+specifications and one output specification in the published Item without duplicating their tensors.
+The captured U-Net step is enriched separately from the original CWLProv records and references
+the versioned Resoterre runtime environment, including its framework and model dependencies.
+
+No governed register action has been established for this execution. Because the upstream ML
+execution class also requires such an action, the enrichment uses a PROV execution with a `dct:type`
+classification, not a claim of full upstream ML execution-profile conformance. Logical model-ready
+inputs and predictions are explicitly marked as reconstructed, not individually captured tensors.
+
+The **Published STAC MLM model Item (external source)** example includes the actual Item fetched
+at build time. It shows the named inputs/outputs, tensor structures, geometry, bounding box and
+temporal properties beside the RDF bindings. Structure and extent bindings select those existing
+objects rather than maintaining copies. The requested forecast valid-time interval is recorded
+separately from execution timestamps and the model's declared temporal domain. No full-domain
+execution footprint is inferred from the model's bounding box.
+
+The enrichment's PROV association references the exact packed CWL plan in the captured provenance,
+linked to its pinned source CWL. Explicit reified statements display every ML predicate mapping,
+including framework, performed tasks, inputs/outputs and structure. They describe, but do not assert,
+the upstream domain-entailing predicates while the register-action modelling conflict is unresolved.
+`rim:validityStatus` is the normal imported RIM predicate, distinct from publication status.
+Local type definitions use `dcat:version "0.1"`; RIM has no `rim:version` property. This definition
+version is distinct from the deployed model/software version `0.1.3-dev.10`.
+
+The standard postprocessor checks the rendered examples and the missing-input/specification cases.
+For the complete merged-graph check, run `python scripts/validate_unet_semantics.py` from the register root.
+This also checks the live model selectors and rejects missing spatial/output type declarations.
+It requires pySHACL 0.30 or later: the postprocessor's older 0.21 validator does not enforce those
+upstream nested activity-type constraints reliably.
+
 ### Processing steps
 
 The sequence follows the descriptions and input/output contracts of the three component processes:

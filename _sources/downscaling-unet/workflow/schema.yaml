@@ -29,6 +29,21 @@ allOf:
         propertyNames:
           enum: [forecast_files, inference_output]
 $defs:
+  sourceCwl:
+    $ref: bblocks://ogc.cwl.v1_2_1.CWLWorkflow
+  publishedModel:
+    description: |
+      Validate the external response's MLM extension content, not full STAC conformance.
+      The current API response omits properties.datetime required by STAC Item.
+    allOf:
+      - $ref: https://stac-extensions.github.io/mlm/v1.6/schema.json
+      - type: object
+        required: [id, type, properties, geometry, bbox]
+        properties:
+          id:
+            const: ogc-ospd2026-downscaling-unet
+          type:
+            const: Feature
   execute:
     description: >-
       Execute request using native input values, consistent with the other process profiles.

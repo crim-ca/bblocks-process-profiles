@@ -1,0 +1,135 @@
+@prefix activity: <https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/> .
+@prefix entity: <https://crim-ca.github.io/bblocks-process-profiles/def/entity-type/> .
+@prefix process: <https://crim-ca.github.io/bblocks-process-profiles/def/process-type/> .
+@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
+@prefix geoproc: <https://w3id.org/ogc/rim/geoprocessing/> .
+@prefix mlact: <https://w3id.org/ogc/rim/ml-activity/> .
+@prefix rim: <https://w3id.org/ogc/rim/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix pplan: <http://purl.org/net/p-plan#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
+@prefix plan: <https://crim-ca.github.io/bblocks-process-profiles/def/plan/> .
+@prefix local: <https://crim-ca.github.io/bblocks-process-profiles/def/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+local:InferenceExecution a owl:Class ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label "Inference execution without an asserted register action" ;
+    rdfs:comment "A PROV execution classified by a candidate activity type using dct:type." .
+
+<https://crim-ca.github.io/bblocks-process-profiles/> a rim:Register ;
+    dct:title "OSPD Process Profiles" .
+
+activity:climate-downscaling a owl:Class, acttype:ActivityType ;
+    rdfs:subClassOf geoproc:GeoprocessingActivityType ;
+    rdfs:label "Climate-variable downscaling" ;
+    dct:description "Transforms georeferenced climate fields to a finer-resolution target grid." ;
+    rim:inRegister <https://crim-ca.github.io/bblocks-process-profiles/> ;
+    rim:itemClass acttype:activityTypeItemClass ;
+    rim:objectIdentifier
+        "https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling"^^xsd:anyURI ;
+    rim:validityStatus rim:invalid ;
+    rim:publicationStatus rim:published ;
+    dcat:version "0.1" ;
+    dct:modified "2026-10-15"^^xsd:date ;
+    skos:note "Published candidate, not an approved type currently in force. Proposal status remains submitted." ;
+    acttype:usedEntityType entity:ClimateField ;
+    acttype:generatedEntityType entity:ClimateField ;
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    acttype:plan plan:downscaling-workflow .
+
+activity:climate-downscaling-inference a owl:Class, acttype:ActivityType ;
+    rdfs:subClassOf activity:climate-downscaling, mlact:InferenceActivityType ;
+    rdfs:label "U-Net RDPS-to-HRDPS downscaling inference" ;
+    dct:description "Runs the Resoterre U-Net on meteorological and static geophysical inputs." ;
+    rim:inRegister <https://crim-ca.github.io/bblocks-process-profiles/> ;
+    rim:itemClass acttype:activityTypeItemClass ;
+    rim:objectIdentifier
+        "https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling-inference"^^xsd:anyURI ;
+    rim:validityStatus rim:invalid ;
+    rim:publicationStatus rim:published ;
+    dcat:version "0.1" ;
+    dct:modified "2026-10-15"^^xsd:date ;
+    skos:note "Published candidate, not an approved type currently in force. Proposal status remains submitted." ;
+    acttype:usedEntityType entity:RDPSModelInput, entity:HRDPSGeophysicalInput ;
+    acttype:generatedEntityType entity:HRDPSPrediction ;
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    acttype:plan
+        <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet> .
+
+<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet>
+    a prov:Plan ;
+    prov:wasDerivedFrom
+        <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl> ;
+    dct:title "Captured packed CWL U-Net step plan" .
+
+entity:ClimateField a owl:Class ;
+    rdfs:subClassOf prov:Entity, geo:SpatialObject ;
+    rdfs:label "Georeferenced gridded climate field" .
+
+entity:RDPSModelInput a owl:Class ;
+    rdfs:subClassOf entity:ClimateField, mlact:ActivityInput ;
+    rdfs:label "Model-ready RDPS meteorological input" .
+
+entity:HRDPSGeophysicalInput a owl:Class ;
+    rdfs:subClassOf entity:ClimateField, mlact:ActivityInput ;
+    rdfs:label "Model-ready static HRDPS geophysical input" .
+
+entity:HRDPSPrediction a owl:Class ;
+    rdfs:subClassOf entity:ClimateField, mlact:ActivityOutput ;
+    rdfs:label "Predicted HRDPS-resolution climate field" .
+
+<https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl>
+    a prov:Plan ;
+    dct:title "Resoterre U-Net inference procedure" .
+
+plan:downscaling-workflow a prov:Plan, pplan:Plan ;
+    dct:title "RDPS selection, download and U-Net inference" ;
+    prov:wasDerivedFrom
+        <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main> ;
+    dct:source
+        <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl> .
+
+plan:select a pplan:Step ;
+    pplan:isStepOfPlan plan:downscaling-workflow ;
+    dct:description "Select forecast files for the requested time range, including any required previous step." ;
+    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-generate-file-list> .
+
+plan:download a pplan:Step ;
+    pplan:isStepOfPlan plan:downscaling-workflow ;
+    pplan:isPrecededBy plan:select ;
+    dct:description "Download the selected RDPS files into the inference input directory." ;
+    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-download-files> .
+
+plan:infer a pplan:Step ;
+    pplan:isStepOfPlan plan:downscaling-workflow ;
+    pplan:isPrecededBy plan:download ;
+    dct:description "Prepare the model inputs, apply U-Net inference and write HRDPS-scale Zarr results." ;
+    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet> .
+
+process:downscaling-unet pp:plan plan:downscaling-workflow .
+
+process:downscaling-generate-file-list a skos:Concept ;
+    skos:prefLabel "Select RDPS forecast files" ;
+    skos:inScheme <https://crim-ca.github.io/bblocks-process-profiles/def/process-type> ;
+    pp:profile "ospd.process-profiles.downscaling-unet.generate-file-list" ;
+    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-generate-file-list> .
+
+process:downscaling-download-files a skos:Concept ;
+    skos:prefLabel "Download selected RDPS files" ;
+    skos:inScheme <https://crim-ca.github.io/bblocks-process-profiles/def/process-type> ;
+    pp:profile "ospd.process-profiles.downscaling-unet.download-files" ;
+    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-download-files> .
+
+process:downscaling-unet-inference a skos:Concept ;
+    skos:prefLabel "Run Resoterre U-Net inference" ;
+    skos:inScheme <https://crim-ca.github.io/bblocks-process-profiles/def/process-type> ;
+    pp:profile "ospd.process-profiles.downscaling-unet.unet" ;
+    pp:activityType activity:climate-downscaling-inference ;
+    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet> .

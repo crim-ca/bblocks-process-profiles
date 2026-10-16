@@ -4,7 +4,7 @@
   "abstract": "Select and download RDPS forecasts, then run Resoterre U-Net downscaling to HRDPS-scale Zarr outputs.",
   "status": "under-development",
   "dateTimeAddition": "2026-10-03T00:00:00Z",
-  "dateOfLastChange": "2026-10-13",
+  "dateOfLastChange": "2026-10-15",
   "version": "0.1",
   "itemClass": "schema",
   "register": "process-profiles",
@@ -49,6 +49,21 @@
     "MLM"
   ],
   "sourceSchema": "schema.yaml",
+  "shaclShapes": [
+    "shapes.shacl"
+  ],
+  "shaclClosures": [
+    "activity-types.ttl",
+    "examples/model-bindings.ttl"
+  ],
+  "resources": [
+    {
+      "title": "Downscaling activity-type definitions",
+      "ref": "activity-types.ttl",
+      "format": "text/turtle",
+      "role": "vocabulary"
+    }
+  ],
   "maturity": "development",
   "highlighted": true,
   "group": "OSPD 2026"
