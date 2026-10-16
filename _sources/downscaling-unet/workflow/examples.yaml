@@ -92,11 +92,17 @@
 
 - title: Published MLM input and output bindings
   content: |
-    Partial RDF views of the two model input definitions and one output definition.
-    The selectors identify the corresponding objects in the published STAC Item.
-    Tensor structures, geometry and temporal-domain properties are selected too; they remain defined
-    by that Item, not copied here. Follow `dct:hasPart` to the selected structure and its JSON Pointer.
-    Model-domain references do not assert that the run covered the entire declared model domain.
+    Partial RDF views of the model input and output definitions.
+    The *selectors* identify the corresponding JSON objects in the published STAC Item.
+    Tensor structures, geometry and temporal-domain properties are selected too. Follow `dct:hasPart`
+    to the selected structure and its JSON Pointer. The geometry and start/end endpoints additionally
+    have source-derived GeoSPARQL WKT and OWL-Time timestamp literals, checked against the live Item
+    by `scripts/validate_unet_semantics.py`. CRS84 preserves GeoJSON longitude/latitude coordinate order.
+    The model-specific inference type references these domains through `dct:spatial` and `dct:temporal`.
+    Model-domain spatiotemporal references do not assert that the run covered the entire declared model domain.
+    Intead, they indicate the potential domains for which the model may be reasonably applied to generate inference
+    outputs, and for which the authors consider its invocation aligned with its training data and geophysical properties.
+    Data domains must be inspected from the source input data and generated inference outputs themselves and respectively.
   snippets:
     - language: turtle
       ref: examples/model-bindings.ttl
@@ -107,6 +113,8 @@
     Merges this resource with the activity definitions, model bindings and original CWLProv graph.
     Its qualified association uses the exact packed CWL plan already identified by CWLProv.
     Requested forecast valid times are separate from execution timestamps and the model's temporal domain.
+    The logical input/output entities reference both model applicability domains, not measured coverage.
+    This does not assign forecast times to static geophysical data or claim spatial/temporal containment.
 
     Reified `rdf:Statement` resources show the exact `mlact:model`, `mlact:framework`,
     `mlact:performsTask`, `mlact:input`, `mlact:output` and `mlact:structure` mappings.

@@ -34,6 +34,7 @@ run:rdps-input a entity:RDPSModelInput ;
     dct:conformsTo binding:rdps_inputs ;
     dct:relation binding:rdps-structure ;
     pp:modelSpatialDomain binding:model-spatial-domain ;
+    pp:modelTemporalDomain binding:model-temporal-domain ;
     dct:temporal run:requested-valid-times ;
     pp:evidenceStatus pp:reconstructed ;
     dct:description "Logical model-ready meteorological input reconstructed from the model contract and procedure." .
@@ -42,6 +43,7 @@ run:geophysical-input a entity:HRDPSGeophysicalInput ;
     dct:conformsTo binding:hrdps_geophysical_inputs ;
     dct:relation binding:geophysical-structure ;
     pp:modelSpatialDomain binding:model-spatial-domain ;
+    pp:modelTemporalDomain binding:model-temporal-domain ;
     pp:evidenceStatus pp:reconstructed ;
     dct:description "Logical static geophysical input reconstructed from the model contract and packaged procedure." .
 
@@ -49,6 +51,7 @@ run:prediction a entity:HRDPSPrediction ;
     dct:conformsTo binding:hrdps_outputs ;
     dct:relation binding:output-structure ;
     pp:modelSpatialDomain binding:model-spatial-domain ;
+    pp:modelTemporalDomain binding:model-temporal-domain ;
     dct:temporal run:requested-valid-times ;
     prov:wasGeneratedBy <urn:uuid:557e2aff-6780-4a25-aaa4-1b7100ceff82> ;
     pp:evidenceStatus pp:reconstructed ;
@@ -70,6 +73,7 @@ pp:evidenceStatus rdfs:label "Evidence status of a semantic enrichment assertion
 pp:reconstructed rdfs:label "Reconstructed logical entity, not independently captured" .
 
 pp:modelSpatialDomain rdfs:label "Declared model spatial domain, not a measured run footprint" .
+pp:modelTemporalDomain rdfs:label "Declared model temporal applicability, not entity validity or execution time" .
 
 run:requested-valid-times a time:ProperInterval ;
     dct:title "Requested forecast valid times, not execution timestamps or model training dates" ;
