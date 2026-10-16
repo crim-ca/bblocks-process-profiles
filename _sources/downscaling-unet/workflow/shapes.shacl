@@ -56,7 +56,12 @@ pp:ModelBindingShape a sh:NodeShape ;
                 sh:path rdf:value ;
                 sh:minCount 1 ;
                 sh:maxCount 1 ;
-                sh:in ( "/properties/mlm:input/0" "/properties/mlm:input/1" "/properties/mlm:output/0" )
+                sh:in (
+                    "/properties/mlm:input/0" "/properties/mlm:input/1" "/properties/mlm:output/0"
+                    "/properties/mlm:input/0/input" "/properties/mlm:input/1/input"
+                    "/properties/mlm:output/0/result" "/geometry"
+                    "/properties/start_datetime" "/properties/end_datetime"
+                )
             ]
         ]
     ] .

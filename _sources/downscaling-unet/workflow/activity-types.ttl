@@ -16,6 +16,7 @@
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix plan: <https://crim-ca.github.io/bblocks-process-profiles/def/plan/> .
 @prefix local: <https://crim-ca.github.io/bblocks-process-profiles/def/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 
 local:InferenceExecution a owl:Class ;
     rdfs:subClassOf prov:Activity ;
@@ -35,10 +36,13 @@ activity:climate-downscaling a owl:Class, acttype:ActivityType ;
         "https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling"^^xsd:anyURI ;
     rim:validityStatus rim:invalid ;
     rim:publicationStatus rim:published ;
+    dcat:version "0.1" ;
+    dct:modified "2026-10-15"^^xsd:date ;
     skos:note "Published candidate, not an approved type currently in force. Proposal status remains submitted." ;
     acttype:usedEntityType entity:ClimateField ;
     acttype:generatedEntityType entity:ClimateField ;
-    acttype:associatedAgentType prov:SoftwareAgent .
+    acttype:associatedAgentType prov:SoftwareAgent ;
+    acttype:plan plan:downscaling-workflow .
 
 activity:climate-downscaling-inference a owl:Class, acttype:ActivityType ;
     rdfs:subClassOf activity:climate-downscaling, mlact:InferenceActivityType ;
@@ -50,12 +54,20 @@ activity:climate-downscaling-inference a owl:Class, acttype:ActivityType ;
         "https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling-inference"^^xsd:anyURI ;
     rim:validityStatus rim:invalid ;
     rim:publicationStatus rim:published ;
+    dcat:version "0.1" ;
+    dct:modified "2026-10-15"^^xsd:date ;
     skos:note "Published candidate, not an approved type currently in force. Proposal status remains submitted." ;
     acttype:usedEntityType entity:RDPSModelInput, entity:HRDPSGeophysicalInput ;
     acttype:generatedEntityType entity:HRDPSPrediction ;
     acttype:associatedAgentType prov:SoftwareAgent ;
     acttype:plan
-        <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl> .
+        <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet> .
+
+<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet>
+    a prov:Plan ;
+    prov:wasDerivedFrom
+        <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl> ;
+    dct:title "Captured packed CWL U-Net step plan" .
 
 entity:ClimateField a owl:Class ;
     rdfs:subClassOf prov:Entity, geo:SpatialObject ;
@@ -79,6 +91,8 @@ entity:HRDPSPrediction a owl:Class ;
 
 plan:downscaling-workflow a prov:Plan, pplan:Plan ;
     dct:title "RDPS selection, download and U-Net inference" ;
+    prov:wasDerivedFrom
+        <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main> ;
     dct:source
         <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl> .
 

@@ -7,6 +7,8 @@
   snippets:
     - language: yaml  # highlighting
       ref: ogc-ospd2026-downscaling-unet-workflow.cwl
+      schema-ref: "#/$defs/sourceCwl"
+      doc-uplift-formats: []
 
 - title: U-Net workflow process description
   base-uri: https://hirondelle.crim.ca/weaver/processes/
@@ -41,21 +43,39 @@
       ref: examples/process-type.json
       schema-ref: "#/$defs/processTypeEntry"
 
+- title: Published STAC MLM model Item (external source)
+  content: |
+    Fetched from the published STAC API when this register is built, not maintained as a local copy.
+    Inspect `properties.mlm:input` for `rdps_inputs` and `hrdps_geophysical_inputs`, and
+    `properties.mlm:output` for `hrdps_outputs`. Each definition includes its tensor contract.
+    `geometry` and `bbox` describe the model's declared spatial domain; `start_datetime` and
+    `end_datetime` are the Item's declared temporal domain, not the captured job's execution dates.
+    The RDF temporal binding uses those two endpoints explicitly; it does not use `datetime`
+    as a substitute or treat the absence of a single timestamp as a missing temporal extent.
+  snippets:
+    - language: json
+      ref: https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet
+      json-path: "$"
+      schema-ref: "#/$defs/publishedModel"
+      expand-level: 4
+      doc-uplift-formats: []
+
 - title: Activity types, model bindings and inference run enrichment
   content: |
     The Turtle selections below define the candidate climate-downscaling and inference activity types,
     specialising the imported geoprocessing and ML activity-type classes rather than copying them.
     They declare spatial and ML input/output entity types and reference the existing CWL procedure.
-    `rim:invalid` means the submitted candidates are not yet in force. `rim:published` means their
-    definitions are visible; it does not mean they have been approved.
+    The status `rim:invalid` means the submitted candidates are not yet in force.
+    Status `rim:published` means their definitions are visible. It does not mean they have been approved.
+    The `rim:validityStatus` is the vocabulary's normal predicate, independent of publication status.
+    The `dcat:version` supplies the local definition version (`0.1`), not the model/software release (`0.1.3-dev.10`).
 
     The model bindings select the existing `rdps_inputs`, `hrdps_geophysical_inputs` and `hrdps_outputs`
     definitions in the published STAC Item using Web Annotation selectors and RFC 6901 JSON Pointers.
     They do not copy tensor shapes or mint fragment identifiers on the STAC server. The Item remains
     the authority for model contracts; these bindings are partial RDF views of its input/output definitions.
 
-    The enrichment reuses the captured U-Net step's UUID. It records CPU-only execution as confirmed
-    by the execution provider, not the model's optional CUDA capability. It describes logical inputs and
+    The enrichment reuses the captured U-Net step's UUID. It describes logical inputs and
     outputs reconstructed from the model and procedure, not independently captured tensors or measured
     tensor shapes. The original six CWLProv serializations are unchanged.
 
@@ -74,7 +94,9 @@
   content: |
     Partial RDF views of the two model input definitions and one output definition.
     The selectors identify the corresponding objects in the published STAC Item.
-    Tensor structures and variable ordering remain defined by that Item, not copied here.
+    Tensor structures, geometry and temporal-domain properties are selected too; they remain defined
+    by that Item, not copied here. Follow `dct:hasPart` to the selected structure and its JSON Pointer.
+    Model-domain references do not assert that the run covered the entire declared model domain.
   snippets:
     - language: turtle
       ref: examples/model-bindings.ttl
@@ -82,9 +104,16 @@
 - title: Captured U-Net inference run enrichment
   content: |
     Semantic enrichment of the captured U-Net step, with reconstructed logical inputs and outputs.
-    This resource merges the activity definitions, model bindings and original CWLProv graph.
-    Runtime execution environment details are extracted and aligned with the MLM definition, along
-    other measured tensor shapes, ML metadata and properties that characteize the inference activity.
+    Merges this resource with the activity definitions, model bindings and original CWLProv graph.
+    Its qualified association uses the exact packed CWL plan already identified by CWLProv.
+    Requested forecast valid times are separate from execution timestamps and the model's temporal domain.
+
+    Reified `rdf:Statement` resources show the exact `mlact:model`, `mlact:framework`,
+    `mlact:performsTask`, `mlact:input`, `mlact:output` and `mlact:structure` mappings.
+    RDF reification describes these statements without asserting them: it deliberately does not
+    entail the upstream register-action classification. Framework and task/data connections are
+    asserted separately through PROV and Dublin Core. Full upstream ML execution conformance remains
+    pending clarification of the upstream class's register-action requirement.
   snippets:
     - language: turtle
       ref: examples/inference-enrichment.ttl

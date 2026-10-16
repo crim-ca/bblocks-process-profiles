@@ -5,6 +5,7 @@ use pySHACL 0.21, which does not enforce the upstream nested activity-type shape
 """
 
 import json
+from datetime import datetime
 from pathlib import Path
 from urllib.request import urlopen
 
@@ -66,7 +67,7 @@ def main() -> None:
     with urlopen(MODEL, timeout=60) as response:
         item = json.load(response)
     bindings = list(closure.subjects(RDF.type, OA.SpecificResource))
-    assert len(bindings) == 3, "Expected two model input bindings and one output binding"
+    assert len(bindings) == 9, "Expected specifications, structures, geometry and both temporal endpoints"
     for binding in bindings:
         selector = closure.value(binding, OA.hasSelector)
         pointer = str(closure.value(selector, RDF.value))
@@ -74,8 +75,21 @@ def main() -> None:
         for token in pointer.lstrip("/").split("/"):
             key = token.replace("~1", "/").replace("~0", "~")
             value = value[int(key)] if isinstance(value, list) else value[key]
-        assert value["name"] == str(closure.value(binding, MLM.io_name)), pointer
-    print("PASS: all three bindings select the named specifications in the published model")
+        name = closure.value(binding, MLM.io_name)
+        if name is not None:
+            assert value["name"] == str(name), pointer
+        elif "structure" in str(binding):
+            assert {"shape", "dim_order", "data_type"} <= value.keys(), pointer
+        elif pointer == "/geometry":
+            assert value["type"] == "Polygon", pointer
+        else:
+            assert isinstance(value, str), pointer
+            datetime.fromisoformat(value.replace("Z", "+00:00"))
+    properties = item["properties"]
+    assert datetime.fromisoformat(properties["start_datetime"].replace("Z", "+00:00")) <= datetime.fromisoformat(
+        properties["end_datetime"].replace("Z", "+00:00")
+    ), "Model temporal interval is reversed"
+    print("PASS: specifications, structures and extents resolve in the published model")
 
     run = URIRef("urn:uuid:557e2aff-6780-4a25-aaa4-1b7100ceff82")
     assert (run, RDF.type, PROV.Activity) in captured
@@ -84,10 +98,37 @@ def main() -> None:
     )) in enrichment
     assert not list(enrichment.triples((None, MLACT.accelerator, None)))
     assert not list(enrichment.triples((None, URIRef("https://w3id.org/ogc/rim/actionType"), None)))
+    packed_plan = URIRef(
+        "arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/"
+        "workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet"
+    )
+    assert (packed_plan, RDF.type, PROV.Plan) in captured
+    assert packed_plan in enrichment.objects(None, PROV.hadPlan)
+    for predicate in (MLACT.model, MLACT.framework, MLACT.performsTask, MLACT.input, MLACT.output, MLACT.structure):
+        assert list(enrichment.subjects(RDF.predicate, predicate)), f"Missing explicit mapping for {predicate}"
+        assert not list(enrichment.triples((None, predicate, None))), f"Unexpected direct assertion: {predicate}"
+    framework_statement = enrichment.value(predicate=RDF.predicate, object=MLACT.framework)
+    assert str(enrichment.value(framework_statement, RDF.object)) == item["properties"]["mlm:framework"]
+    tasks = {
+        str(enrichment.value(statement, RDF.object)).removeprefix(str(MLM))
+        for statement in enrichment.subjects(RDF.predicate, MLACT.performsTask)
+    }
+    assert tasks == set(item["properties"]["mlm:tasks"])
+    structure_statements = list(enrichment.subjects(RDF.predicate, MLACT.structure))
+    assert len(structure_statements) == 3
+    for statement in structure_statements:
+        structure = enrichment.value(statement, RDF.object)
+        assert (structure, RDF.type, OA.SpecificResource) in closure
     for entity in enrichment.subjects(DCTERMS.isPartOf, None):
         container = enrichment.value(entity, DCTERMS.isPartOf)
         assert (container, RDF.type, PROV.Entity) in captured
-    print("PASS: capture identifiers reused; no CUDA or register-action claim introduced")
+    runtime = URIRef(
+        "https://crim-ca.github.io/bblocks-process-profiles/def/run/"
+        "d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/runtime-environment"
+    )
+    assert (run, PROV.used, runtime) in enrichment
+    assert enrichment.value(runtime, DCTERMS.source) is not None
+    print("PASS: captured plan reused; complete ML mappings and runtime reference; no register-action claim")
 
 
 if __name__ == "__main__":
