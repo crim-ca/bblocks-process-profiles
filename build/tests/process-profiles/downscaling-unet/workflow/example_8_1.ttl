@@ -16,6 +16,8 @@ pp:evidenceStatus rdfs:label "Evidence status of a semantic enrichment assertion
 
 pp:modelSpatialDomain rdfs:label "Declared model spatial domain, not a measured run footprint" .
 
+pp:modelTemporalDomain rdfs:label "Declared model temporal applicability, not entity validity or execution time" .
+
 run:geophysical-structure-mapping a rdf:Statement ;
     dct:description "Model contract reference only. Concrete batch shape was not captured." ;
     rdf:object binding:geophysical-structure ;
@@ -82,7 +84,8 @@ run:prediction a entity:HRDPSPrediction ;
     dct:temporal run:requested-valid-times ;
     prov:wasGeneratedBy <urn:uuid:557e2aff-6780-4a25-aaa4-1b7100ceff82> ;
     pp:evidenceStatus pp:reconstructed ;
-    pp:modelSpatialDomain binding:model-spatial-domain .
+    pp:modelSpatialDomain binding:model-spatial-domain ;
+    pp:modelTemporalDomain binding:model-temporal-domain .
 
 run:pytorch a prov:SoftwareAgent ;
     dct:source <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl> ;
@@ -95,7 +98,8 @@ run:geophysical-input a entity:HRDPSGeophysicalInput ;
     dct:description "Logical static geophysical input reconstructed from the model contract and packaged procedure." ;
     dct:relation binding:geophysical-structure ;
     pp:evidenceStatus pp:reconstructed ;
-    pp:modelSpatialDomain binding:model-spatial-domain .
+    pp:modelSpatialDomain binding:model-spatial-domain ;
+    pp:modelTemporalDomain binding:model-temporal-domain .
 
 run:rdps-input a entity:RDPSModelInput ;
     dct:conformsTo binding:rdps_inputs ;
@@ -103,7 +107,8 @@ run:rdps-input a entity:RDPSModelInput ;
     dct:relation binding:rdps-structure ;
     dct:temporal run:requested-valid-times ;
     pp:evidenceStatus pp:reconstructed ;
-    pp:modelSpatialDomain binding:model-spatial-domain .
+    pp:modelSpatialDomain binding:model-spatial-domain ;
+    pp:modelTemporalDomain binding:model-temporal-domain .
 
 run:requested-valid-times a time:ProperInterval ;
     dct:title "Requested forecast valid times, not execution timestamps or model training dates" ;

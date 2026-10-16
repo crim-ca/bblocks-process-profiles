@@ -1,11 +1,13 @@
 @prefix binding: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix mlm: <https://w3id.org/ogc/stac/mlm/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 binding:hrdps_geophysical_inputs a oa:SpecificResource,
         mlm:ModelInput ;
@@ -47,23 +49,29 @@ binding:geophysical-structure-selector a oa:FragmentSelector ;
 
 binding:model-end a time:Instant,
         oa:SpecificResource ;
+    time:inXSDDateTimeStamp "2100-12-31T23:59:59Z"^^xsd:dateTimeStamp ;
     oa:hasSelector binding:end-selector ;
     oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> .
 
-binding:model-spatial-domain a oa:SpecificResource ;
+binding:model-spatial-domain a geo:Geometry,
+        oa:SpecificResource ;
     dct:title "Declared model spatial domain, not a measured execution footprint" ;
+    geo:asWKT """<http://www.opengis.net/def/crs/OGC/1.3/CRS84>
+        POLYGON ((-86.45 37.52, -86.45 53.25, -64.16 53.25, -64.16 37.52, -86.45 37.52))"""^^geo:wktLiteral ;
     oa:hasSelector binding:spatial-selector ;
     oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> .
 
 binding:model-start a time:Instant,
         oa:SpecificResource ;
+    time:inXSDDateTimeStamp "2017-05-22T07:00:00Z"^^xsd:dateTimeStamp ;
     oa:hasSelector binding:start-selector ;
     oa:hasSource <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> .
 
 binding:model-temporal-domain a time:ProperInterval ;
     dct:title "Declared model start/end interval, distinct from run execution time" ;
     time:hasBeginning binding:model-start ;
-    time:hasEnd binding:model-end .
+    time:hasEnd binding:model-end ;
+    prov:wasDerivedFrom <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> .
 
 binding:output-selector a oa:FragmentSelector ;
     dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;

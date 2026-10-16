@@ -52,10 +52,19 @@ inputs and predictions are explicitly marked as reconstructed, not individually 
 
 The **Published STAC MLM model Item (external source)** example includes the actual Item fetched
 at build time. It shows the named inputs/outputs, tensor structures, geometry, bounding box and
-temporal properties beside the RDF bindings. Structure and extent bindings select those existing
-objects rather than maintaining copies. The requested forecast valid-time interval is recorded
-separately from execution timestamps and the model's declared temporal domain. No full-domain
-execution footprint is inferred from the model's bounding box.
+temporal properties beside the RDF bindings. Structure bindings select the existing tensor contracts.
+The extent bindings additionally materialize a GeoSPARQL WKT geometry in longitude/latitude CRS84
+and OWL-Time timestamp literals from the selected source values. These are source-derived RDF views
+provided for readability, but original material remains referenced through explicit `oa:hasSource` links.
+The semantic validation script checks their equality with the live Item and fails on drift.
+The model-specific inference type declares both domains through `dct:spatial` and `dct:temporal`.
+The generic climate-downscaling type does not acquire this particular model's limits since they are
+distinctively applicable to various climate model implementations and training constraints.
+Each spatial input/output class links to its corresponding model specification, and reconstructed
+entities link to both model domains through `pp:modelSpatialDomain` and `pp:modelTemporalDomain`.
+These domains are not validity interval for the input or output data entities, only the recommended
+and applicable domains that the model itself was designed for. The inferred forecast valid-time
+interval is recorded separately from execution timestamps and the model's declared temporal domain.
 
 The enrichment's PROV association references the exact packed CWL plan in the captured provenance,
 linked to its pinned source CWL. Explicit reified statements display every ML predicate mapping,
@@ -67,7 +76,8 @@ version is distinct from the deployed model/software version `0.1.3-dev.10`.
 
 The standard postprocessor checks the rendered examples and the missing-input/specification cases.
 For the complete merged-graph check, run `python scripts/validate_unet_semantics.py` from the register root.
-This also checks the live model selectors and rejects missing spatial/output type declarations.
+This also checks live model selectors, exact source-derived geometry and temporal endpoints,
+and rejects missing spatial/output type declarations, extent literals and applicability links.
 It requires pySHACL 0.30 or later: the postprocessor's older 0.21 validator does not enforce those
 upstream nested activity-type constraints reliably.
 
@@ -790,8 +800,8 @@ Description of the deployed *OGC API - Proceses* process that encapsulates the U
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
-@prefix ns3: <pp:> .
+@prefix ns2: <pp:> .
+@prefix ns3: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -856,31 +866,31 @@ such as precipitation.
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
-                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
-                    :name "Blaise Gauvin St-Denis" ] ],
-        [ :role "https://schema.org/dateCreated" ;
-            :value "2026-09-09T10:36:53-04:00" ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "francis.charette-migneault@luqia.ca" ;
-                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
-                    :name "Francis Charette-Migneault" ] ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+    :metadata [ :role "https://schema.org/contributor" ;
+            :value [ ns3:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "nazim.azeli@luqia.ca" ;
                     :name "Nazim Azeli" ] ],
         [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+            :value [ ns3:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "smith.trevorj@ouranos.ca" ;
                     :identifier "https://orcid.org/0000-0001-5393-8359" ;
                     :name "Trevor James Smith" ] ],
+        [ :role "https://schema.org/contributor" ;
+            :value [ ns3:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "francis.charette-migneault@luqia.ca" ;
+                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
+                    :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/dateCreated" ;
+            :value "2026-09-09T10:36:53-04:00" ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns3:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
+                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
+                    :name "Blaise Gauvin St-Denis" ] ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,
@@ -890,13 +900,13 @@ such as precipitation.
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
                     proc:formats [ proc:mediaType "application/pdf" ],
-                        [ proc:mediaType "text/html" ],
                         [ proc:default "true"^^rdf:JSON ;
-                            proc:mediaType "text/plain" ] ;
+                            proc:mediaType "text/plain" ],
+                        [ proc:mediaType "text/html" ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentMediaType "text/plain" ],
-                                [ proc:type "string" ;
                                     ns1:contentMediaType "text/html" ],
+                                [ proc:type "string" ;
+                                    ns1:contentMediaType "text/plain" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/pdf" ;
@@ -917,7 +927,7 @@ such as precipitation.
         "machine learning",
         "super-resolution",
         "workflow" ;
-    ns3:version "0.1.3.dev10" .
+    ns2:version "0.1.3.dev10" .
 
 <https://github.com/Ouranosinc/resoterre> a <https://crim-ca.github.io/bblocks-process-profiles/def/text/html> ;
     :rel "https://schema.org/codeRepository" .
@@ -1909,6 +1919,7 @@ model, tasks, inputs and outputs without fabricating registration metadata or a 
 @prefix plan: <https://crim-ca.github.io/bblocks-process-profiles/def/plan/> .
 @prefix local: <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix binding: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/> .
 
 local:InferenceExecution a owl:Class ;
     rdfs:subClassOf prov:Activity ;
@@ -1940,6 +1951,8 @@ activity:climate-downscaling-inference a owl:Class, acttype:ActivityType ;
     rdfs:subClassOf activity:climate-downscaling, mlact:InferenceActivityType ;
     rdfs:label "U-Net RDPS-to-HRDPS downscaling inference" ;
     dct:description "Runs the Resoterre U-Net on meteorological and static geophysical inputs." ;
+    dct:spatial binding:model-spatial-domain ;
+    dct:temporal binding:model-temporal-domain ;
     rim:inRegister <https://crim-ca.github.io/bblocks-process-profiles/> ;
     rim:itemClass acttype:activityTypeItemClass ;
     rim:objectIdentifier
@@ -1967,14 +1980,17 @@ entity:ClimateField a owl:Class ;
 
 entity:RDPSModelInput a owl:Class ;
     rdfs:subClassOf entity:ClimateField, mlact:ActivityInput ;
+    rdfs:seeAlso binding:rdps_inputs ;
     rdfs:label "Model-ready RDPS meteorological input" .
 
 entity:HRDPSGeophysicalInput a owl:Class ;
     rdfs:subClassOf entity:ClimateField, mlact:ActivityInput ;
+    rdfs:seeAlso binding:hrdps_geophysical_inputs ;
     rdfs:label "Model-ready static HRDPS geophysical input" .
 
 entity:HRDPSPrediction a owl:Class ;
     rdfs:subClassOf entity:ClimateField, mlact:ActivityOutput ;
+    rdfs:seeAlso binding:hrdps_outputs ;
     rdfs:label "Predicted HRDPS-resolution climate field" .
 
 <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl>
@@ -2030,11 +2046,17 @@ process:downscaling-unet-inference a skos:Concept ;
 
 
 ### Published MLM input and output bindings
-Partial RDF views of the two model input definitions and one output definition.
-The selectors identify the corresponding objects in the published STAC Item.
-Tensor structures, geometry and temporal-domain properties are selected too; they remain defined
-by that Item, not copied here. Follow `dct:hasPart` to the selected structure and its JSON Pointer.
-Model-domain references do not assert that the run covered the entire declared model domain.
+Partial RDF views of the model input and output definitions.
+The *selectors* identify the corresponding JSON objects in the published STAC Item.
+Tensor structures, geometry and temporal-domain properties are selected too. Follow `dct:hasPart`
+to the selected structure and its JSON Pointer. The geometry and start/end endpoints additionally
+have source-derived GeoSPARQL WKT and OWL-Time timestamp literals, checked against the live Item
+by `scripts/validate_unet_semantics.py`. CRS84 preserves GeoJSON longitude/latitude coordinate order.
+The model-specific inference type references these domains through `dct:spatial` and `dct:temporal`.
+Model-domain spatiotemporal references do not assert that the run covered the entire declared model domain.
+Intead, they indicate the potential domains for which the model may be reasonably applied to generate inference
+outputs, and for which the authors consider its invocation aligned with its training data and geophysical properties.
+Data domains must be inspected from the source input data and generated inference outputs themselves and respectively.
 
 #### turtle
 ```turtle
@@ -2046,6 +2068,8 @@ Model-domain references do not assert that the run covered the entire declared m
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet>
     a stac:Item, prov:Entity ;
@@ -2112,8 +2136,11 @@ binding:output-structure-selector a oa:FragmentSelector ;
     dct:conformsTo <https://www.rfc-editor.org/rfc/rfc6901> ;
     rdf:value "/properties/mlm:output/0/result" .
 
-binding:model-spatial-domain a oa:SpecificResource ;
+binding:model-spatial-domain a geo:Geometry, oa:SpecificResource ;
     dct:title "Declared model spatial domain, not a measured execution footprint" ;
+    geo:asWKT
+        """<http://www.opengis.net/def/crs/OGC/1.3/CRS84>
+        POLYGON ((-86.45 37.52, -86.45 53.25, -64.16 53.25, -64.16 37.52, -86.45 37.52))"""^^geo:wktLiteral ;
     oa:hasSource
         <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> ;
     oa:hasSelector binding:spatial-selector .
@@ -2123,10 +2150,13 @@ binding:spatial-selector a oa:FragmentSelector ;
 
 binding:model-temporal-domain a time:ProperInterval ;
     dct:title "Declared model start/end interval, distinct from run execution time" ;
+    prov:wasDerivedFrom
+        <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> ;
     time:hasBeginning binding:model-start ;
     time:hasEnd binding:model-end .
 
 binding:model-start a time:Instant, oa:SpecificResource ;
+    time:inXSDDateTimeStamp "2017-05-22T07:00:00Z"^^xsd:dateTimeStamp ;
     oa:hasSource
         <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> ;
     oa:hasSelector binding:start-selector .
@@ -2135,6 +2165,7 @@ binding:start-selector a oa:FragmentSelector ;
     rdf:value "/properties/start_datetime" .
 
 binding:model-end a time:Instant, oa:SpecificResource ;
+    time:inXSDDateTimeStamp "2100-12-31T23:59:59Z"^^xsd:dateTimeStamp ;
     oa:hasSource
         <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> ;
     oa:hasSelector binding:end-selector .
@@ -2150,6 +2181,8 @@ Semantic enrichment of the captured U-Net step, with reconstructed logical input
 Merges this resource with the activity definitions, model bindings and original CWLProv graph.
 Its qualified association uses the exact packed CWL plan already identified by CWLProv.
 Requested forecast valid times are separate from execution timestamps and the model's temporal domain.
+The logical input/output entities reference both model applicability domains, not measured coverage.
+This does not assign forecast times to static geophysical data or claim spatial/temporal containment.
 
 Reified `rdf:Statement` resources show the exact `mlact:model`, `mlact:framework`,
 `mlact:performsTask`, `mlact:input`, `mlact:output` and `mlact:structure` mappings.
@@ -2196,6 +2229,7 @@ run:rdps-input a entity:RDPSModelInput ;
     dct:conformsTo binding:rdps_inputs ;
     dct:relation binding:rdps-structure ;
     pp:modelSpatialDomain binding:model-spatial-domain ;
+    pp:modelTemporalDomain binding:model-temporal-domain ;
     dct:temporal run:requested-valid-times ;
     pp:evidenceStatus pp:reconstructed ;
     dct:description "Logical model-ready meteorological input reconstructed from the model contract and procedure." .
@@ -2204,6 +2238,7 @@ run:geophysical-input a entity:HRDPSGeophysicalInput ;
     dct:conformsTo binding:hrdps_geophysical_inputs ;
     dct:relation binding:geophysical-structure ;
     pp:modelSpatialDomain binding:model-spatial-domain ;
+    pp:modelTemporalDomain binding:model-temporal-domain ;
     pp:evidenceStatus pp:reconstructed ;
     dct:description "Logical static geophysical input reconstructed from the model contract and packaged procedure." .
 
@@ -2211,6 +2246,7 @@ run:prediction a entity:HRDPSPrediction ;
     dct:conformsTo binding:hrdps_outputs ;
     dct:relation binding:output-structure ;
     pp:modelSpatialDomain binding:model-spatial-domain ;
+    pp:modelTemporalDomain binding:model-temporal-domain ;
     dct:temporal run:requested-valid-times ;
     prov:wasGeneratedBy <urn:uuid:557e2aff-6780-4a25-aaa4-1b7100ceff82> ;
     pp:evidenceStatus pp:reconstructed ;
@@ -2232,6 +2268,7 @@ pp:evidenceStatus rdfs:label "Evidence status of a semantic enrichment assertion
 pp:reconstructed rdfs:label "Reconstructed logical entity, not independently captured" .
 
 pp:modelSpatialDomain rdfs:label "Declared model spatial domain, not a measured run footprint" .
+pp:modelTemporalDomain rdfs:label "Declared model temporal applicability, not entity validity or execution time" .
 
 run:requested-valid-times a time:ProperInterval ;
     dct:title "Requested forecast valid times, not execution timestamps or model training dates" ;

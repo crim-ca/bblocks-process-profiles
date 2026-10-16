@@ -3,8 +3,8 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix modspec: <http://www.opengis.net/def/ont/modspec/> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <http://www.w3.org/ns/oa#> .
+@prefix ns1: <http://www.w3.org/ns/oa#> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -49,23 +49,23 @@
         "OSPD",
         "algae-bloom",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/schema.json> ;
-            prof:hasRole role:schema ] ;
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/calculate-band/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -88,10 +88,10 @@
     rdfs:label "Process profile: download-band-sentinel2-product-safe" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `download-band-sentinel2-product-safe` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.json> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.json> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.download-band-sentinel2-product-safe> ] ;
     dct:hasVersion "0.1" ;
@@ -113,17 +113,17 @@
         "algae-bloom",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-product-safe/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -177,14 +177,14 @@
         "OSPD",
         "algae-bloom",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/context.jsonld> ;
             prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/download-band-sentinel2-stac-item/schema.yaml> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
@@ -218,10 +218,10 @@
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/plot-image/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.plot-image> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/plot-image/index.md> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/plot-image/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.plot-image> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -242,6 +242,10 @@
         "algae-bloom",
         "process profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/schema.json> ;
             prof:hasRole role:schema ],
@@ -253,11 +257,7 @@
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/plot-image/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -280,12 +280,12 @@
     rdfs:label "Process profile: reproject-image" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `reproject-image` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.reproject-image> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/reproject-image/index.json> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/reproject-image/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/reproject-image/index.json> ] ;
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.reproject-image> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -306,6 +306,11 @@
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/schema.yaml> ;
             prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/context.jsonld> ;
@@ -313,12 +318,7 @@
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/reproject-image/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -341,12 +341,12 @@
     rdfs:label "Process profile: select-products-sentinel2" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `select-products-sentinel2` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.select-products-sentinel2> ],
+        [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/select-products-sentinel2/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/select-products-sentinel2/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.select-products-sentinel2> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/select-products-sentinel2/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -368,10 +368,11 @@
         "OSPD",
         "algae-bloom",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.yaml> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/context.jsonld> ;
@@ -380,11 +381,10 @@
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/select-products-sentinel2/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -407,12 +407,12 @@
     rdfs:label "Process profile: algae-usecase-workflow-copernicus" ;
     dct:abstract "OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-copernicus` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus/index.md> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus/index.md> ] ;
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -431,12 +431,7 @@
         "algae-bloom",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/context.jsonld> ;
             prof:hasRole role:mapping ],
@@ -444,6 +439,11 @@
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/schema.json> ;
             prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus/schema.yaml> ;
@@ -470,12 +470,12 @@
     rdfs:label "Process profile: algae-usecase-workflow-copernicus-process" ;
     dct:abstract "OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-copernicus-process` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus-process> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus-process/index.md> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus-process/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus-process/index.md> ] ;
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-copernicus-process> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -502,10 +502,6 @@
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.yaml> ;
-            prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/context.jsonld> ;
@@ -514,7 +510,11 @@
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-copernicus-process/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -539,10 +539,10 @@
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-earth-search> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search/index.md> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.algae-bloom.workflow-earth-search> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -561,22 +561,22 @@
         "algae-bloom",
         "process profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -632,19 +632,19 @@
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -667,10 +667,10 @@
     rdfs:label "Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling step `ogc-ospd2026-downscaling-download-files`" ;
     dct:abstract "OGC API - Processes profile of the Resoterre CWL CommandLineTool `ogc-ospd2026-downscaling-download-files`, a step of the RDPS-to-HRDPS U-Net downscaling workflow."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-07T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/download-files/index.md> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.downscaling-unet.download-files> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/download-files/index.md> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/download-files/index.json> ] ;
     dct:hasVersion "0.1" ;
@@ -717,10 +717,10 @@
     dct:created "2026-10-07T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/generate-file-list/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/generate-file-list/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.downscaling-unet.generate-file-list> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.downscaling-unet.generate-file-list> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/generate-file-list/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -735,18 +735,18 @@
         "OSPD",
         "climate downscaling",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/generate-file-list/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/generate-file-list/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/generate-file-list/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/generate-file-list/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
         <bblocks://ogc.api.processes.v2.schemas.ogcapppkg>,
@@ -763,12 +763,12 @@
     rdfs:label "Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling step `ogc-ospd2026-downscaling-unet`" ;
     dct:abstract "OGC API - Processes profile of the Resoterre CWL CommandLineTool `ogc-ospd2026-downscaling-unet`, a step of the RDPS-to-HRDPS U-Net downscaling workflow."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-07T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/unet/index.md> ],
+        [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.downscaling-unet.unet> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/unet/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/unet/index.md> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/unet/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -784,17 +784,17 @@
         "climate downscaling",
         "process profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/unet/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/unet/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/unet/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/unet/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
         <bblocks://ogc.api.processes.v2.schemas.ogcapppkg>,
@@ -811,12 +811,12 @@
     rdfs:label "Process profile: calculate_indices" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `calculate_indices` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.calculate-indices> ],
+        [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/calculate-indices/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/calculate-indices/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.calculate-indices> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/calculate-indices/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -842,15 +842,15 @@
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/calculate-indices/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/calculate-indices/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/calculate-indices/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -873,10 +873,10 @@
     rdfs:label "Process profile: download_band" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `download_band` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.download-band> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/download-band/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.download-band> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/download-band/index.json> ] ;
     dct:hasVersion "0.1" ;
@@ -904,15 +904,15 @@
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/download-band/context.jsonld> ;
             prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/download-band/schema.yaml> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/download-band/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -935,12 +935,12 @@
     rdfs:label "Process profile: estimate_biomass" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `estimate_biomass` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.estimate-biomass> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/estimate-biomass/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/estimate-biomass/index.json> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/estimate-biomass/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.estimate-biomass> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -957,22 +957,22 @@
         "kindgrove-steps",
         "process profile" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/estimate-biomass/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/estimate-biomass/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/estimate-biomass/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/estimate-biomass/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/estimate-biomass/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -995,12 +995,12 @@
     rdfs:label "Process profile: export_stac" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `export_stac` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/export-stac/index.json> ],
+        [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.export-stac> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/export-stac/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/export-stac/index.json> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/export-stac/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -1018,11 +1018,10 @@
         "kindgrove-steps",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/export-stac/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/export-stac/schema.yaml> ;
@@ -1031,10 +1030,11 @@
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/export-stac/context.jsonld> ;
             prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/export-stac/schema.json> ;
-            prof:hasRole role:schema ] ;
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -1057,12 +1057,12 @@
     rdfs:label "Process profile: mangrove-workflow-steps" ;
     dct:abstract "OGC API - Processes profile of the CWL Workflow `mangrove-workflow-steps` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.mangrove-workflow-steps> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/mangrove-workflow-steps/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/mangrove-workflow-steps/index.json> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/mangrove-workflow-steps/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.mangrove-workflow-steps> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -1091,19 +1091,19 @@
         "kindgrove-steps",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/mangrove-workflow-steps/context.jsonld> ;
-            prof:hasRole role:mapping ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/mangrove-workflow-steps/schema.yaml> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/mangrove-workflow-steps/schema.yaml> ;
-            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/mangrove-workflow-steps/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/mangrove-workflow-steps/schema.json> ;
@@ -1133,10 +1133,10 @@
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.parse-aoi-steps> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/parse-aoi-steps/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/parse-aoi-steps/index.md> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/parse-aoi-steps/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/parse-aoi-steps/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -1153,23 +1153,23 @@
         "OSPD",
         "kindgrove-steps",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/parse-aoi-steps/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/parse-aoi-steps/schema.yaml> ;
             prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/parse-aoi-steps/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/parse-aoi-steps/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.bbox>,
         <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
@@ -1195,10 +1195,10 @@
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.reproject-band> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/reproject-band/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/reproject-band/index.md> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/reproject-band/index.md> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/reproject-band/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -1219,10 +1219,6 @@
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/reproject-band/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
@@ -1231,7 +1227,11 @@
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/reproject-band/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -1254,10 +1254,10 @@
     rdfs:label "Process profile: select_scene" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `select_scene` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/select-scene/index.json> ],
-        [ dct:format "text/html" ;
+    dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove-steps.select-scene> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/select-scene/index.json> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/select-scene/index.md> ] ;
     dct:hasVersion "0.1" ;
@@ -1276,7 +1276,12 @@
         "OSPD",
         "kindgrove-steps",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+    prof:hasResource [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/select-scene/context.jsonld> ;
             prof:hasRole role:mapping ],
@@ -1287,12 +1292,7 @@
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/select-scene/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -1350,23 +1350,23 @@
         "kindgrove",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -1412,10 +1412,11 @@
         "kindgrove",
         "manually-corrected",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.json> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/context.jsonld> ;
@@ -1424,11 +1425,10 @@
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/mangrove-workflow/schema.json> ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.bbox>,
         <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
@@ -1454,10 +1454,10 @@
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.kindgrove.parse-aoi> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/parse-aoi/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/parse-aoi/index.json> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/parse-aoi/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/parse-aoi/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -1474,23 +1474,23 @@
         "OSPD",
         "kindgrove",
         "process profile" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove/parse-aoi/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.bbox>,
         <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
@@ -1514,12 +1514,12 @@
     rdfs:label "Process profile: crop" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `crop` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.crop> ],
-        [ dct:format "application/json" ;
+    dct:description [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/crop/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/crop/index.md> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/crop/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.crop> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -1538,22 +1538,22 @@
         "process profile",
         "water-bodies" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld> ;
-            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/crop/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -1576,12 +1576,12 @@
     rdfs:label "Process profile: detect_water_body" ;
     dct:abstract "OGC API - Processes profile of the CWL Workflow `detect_water_body` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.detect-water-body> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/detect-water-body/index.md> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/detect-water-body/index.json> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/detect-water-body/index.md> ] ;
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.detect-water-body> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -1603,7 +1603,15 @@
         "Workflow",
         "process profile",
         "water-bodies" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
@@ -1611,14 +1619,6 @@
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/detect-water-body/schema.json> ;
             prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
@@ -1644,10 +1644,10 @@
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/norm-diff/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.norm-diff> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/norm-diff/index.json> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/norm-diff/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.norm-diff> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -1668,19 +1668,19 @@
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/context.jsonld> ;
             prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/schema.yaml> ;
-            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/norm-diff/schema.json> ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -1703,12 +1703,12 @@
     rdfs:label "Process profile: otsu" ;
     dct:abstract "OGC API - Processes profile of the CWL CommandLineTool `otsu` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/otsu/index.json> ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.otsu> ],
         [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/otsu/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.water-bodies.otsu> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/otsu/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -1724,18 +1724,18 @@
         "OSPD",
         "process profile",
         "water-bodies" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/otsu/context.jsonld> ;
-            prof:hasRole role:mapping ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/otsu/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/otsu/schema.yaml> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/otsu/schema.json> ;
-            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/otsu/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
@@ -1786,15 +1786,7 @@
         "manually-corrected",
         "process profile",
         "water-bodies" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
@@ -1802,7 +1794,15 @@
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/stac/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -1849,23 +1849,23 @@
         "manually-corrected",
         "process profile",
         "water-bodies" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld> ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
             prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -1883,18 +1883,18 @@
 
 <https://crim-ca.github.io/bblocks-process-profiles/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N3b4b17adafb543d8bb161e5b1550eafc ;
+    prov:wasAttributedTo _:N7b996ec9a13d43f8a697ab861111f55e ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-10-16T02:43:36.472640"^^xsd:dateTime ;
-            prov:startedAtTime "2026-10-16T02:43:36.180906"^^xsd:dateTime ;
+            prov:endedAtTime "2026-10-16T21:31:57.247486"^^xsd:dateTime ;
+            prov:startedAtTime "2026-10-16T21:31:56.955845"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
-                    dct:format "application/json" ;
-                    dct:hasVersion "git:426662915eebc67e4ba541a38c410d295b05f890" ;
-                    rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/build/register.json> ],
-                [ a prov:Entity ;
                     dct:format "application/yaml" ;
-                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
-            prov:wasAssociatedWith _:N3b4b17adafb543d8bb161e5b1550eafc ] .
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
+                [ a prov:Entity ;
+                    dct:format "application/json" ;
+                    dct:hasVersion "git:fb4b11d8d1b1bb3dd6c07327891c67b4ce2b3520" ;
+                    rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/build/register.json> ] ;
+            prov:wasAssociatedWith _:N7b996ec9a13d43f8a697ab861111f55e ] .
 
 <https://docs.ogc.org/DRAFTS/26-038.html> rdfs:label "Draft OGC API - Processes - Part 5: Provenance (26-038)" .
 
@@ -1911,10 +1911,10 @@
     dct:created "2026-10-03T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/workflow/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/workflow/index.json> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.downscaling-unet.workflow> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.downscaling-unet.workflow> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/workflow/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -1939,13 +1939,26 @@
         "process profile" ;
     prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.registered-item.ml-activity-types> ;
-            prof:hasArtifact <https://ogcincubator.github.io/registered-item-model/_sources/ml-activity-types/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.model.registered-item.activity-type> ;
+            prof:hasArtifact <https://ogcincubator.github.io/registered-item-model/_sources/activity-type/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.raster-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.model.registered-item.core-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.core-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:format "text/turtle" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/activity-types.ttl> ;
+            prof:hasRole <https://crim-ca.github.io/vocabulary> ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
+            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -1954,18 +1967,9 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.registered-item.activity-type> ;
-            prof:hasArtifact <https://ogcincubator.github.io/registered-item-model/_sources/activity-type/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ospd.process-profiles.downscaling-unet.workflow> ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/workflow/schema.yaml> ;
-            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.contrib.stac.components.assets-ontology> ;
@@ -1973,8 +1977,8 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.registered-item.core-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.processing-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/processing-ontology/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
@@ -1982,8 +1986,22 @@
             prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.processing-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/processing-ontology/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.model.registered-item.ml-activity-types> ;
+            prof:hasArtifact <https://ogcincubator.github.io/registered-item-model/_sources/ml-activity-types/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/workflow/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.api.records.v1.schemas.linkTemplate> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.model.registered-item.geoprocessing-activity-types> ;
+            prof:hasArtifact <https://ogcincubator.github.io/registered-item-model/_sources/geoprocessing-activity-types/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -1997,36 +2015,18 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.registered-item.geoprocessing-activity-types> ;
-            prof:hasArtifact <https://ogcincubator.github.io/registered-item-model/_sources/geoprocessing-activity-types/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.contrib.stac.extensions.raster-ontology> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.contrib.stac.core-ontology> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
+            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.model.cross-domain.prov> ;
-            prof:hasArtifact <https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.api.records.v1.schemas.linkTemplate> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:format "text/turtle" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/activity-types.ttl> ;
-            prof:hasRole <https://crim-ca.github.io/vocabulary> ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/workflow/schema.json> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ospd.process-profiles.downscaling-unet.workflow> ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:schema ] ;
     bblocks:dependsOn <bblocks://eoap.cct.cwl-to-ogcprocess>,
         <bblocks://ogc.api.processes.v1.schemas.link>,
         <bblocks://ogc.api.processes.v1.schemas.process>,
@@ -2056,10 +2056,10 @@
     dct:created "2026-09-22T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/bblock/ospd.process-profiles.process-type> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/process-type/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/process-type/index.json> ] ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/process-type/index.json> ],
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/process-type/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
@@ -2082,14 +2082,14 @@
             dct:format "application/json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml> ;
-            prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:mapping ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/process-type/schema.yaml> ;
+            prof:hasRole role:schema ] ;
     bblocks:hasSourceJsonLdContext <https://crim-ca.github.io/bblocks-process-profiles/_sources/process-type/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/dev> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
@@ -2125,7 +2125,7 @@ All mappings are proposed correspondences offered for review, not settled equiva
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:license [ rdfs:label "Apache-2.0" ;
             rdfs:seeAlso <https://crim-ca.github.io/bblocks-process-profiles/LICENSE> ] ;
-    dct:modified "2026-10-16T02:38:33.990291"^^xsd:dateTime ;
+    dct:modified "2026-10-16T21:27:43.809099"^^xsd:dateTime ;
     owl:imports <https://geolabs.github.io/bblock-ogcapi-processes-part2/build/register.json>,
         <https://geolabs.github.io/bblocks-eoap-cct/build/register.json>,
         <https://geolabs.github.io/bblocks-generic-provenance-profile/build/register.json>,
@@ -2172,20 +2172,20 @@ All mappings are proposed correspondences offered for review, not settled equiva
     skos:prefLabel "Building Blocks - OSPD Process Profiles" ;
     prof:hasResource [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
             dct:type "application/ld+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://crim-ca.github.io/bblocks-process-profiles/build/bblocks.jsonld> ],
-        [ rdfs:label "This Building Blocks Register in JSON format" ;
-            dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://crim-ca.github.io/bblocks-process-profiles/build/register.json> ],
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://crim-ca.github.io/bblocks-process-profiles/build/bblocks.jsonld> ],
         [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
             dct:type "text/turtle" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://crim-ca.github.io/bblocks-process-profiles/build/bblocks.ttl> ] ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://crim-ca.github.io/bblocks-process-profiles/build/bblocks.ttl> ],
+        [ rdfs:label "This Building Blocks Register in JSON format" ;
+            dct:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://crim-ca.github.io/bblocks-process-profiles/build/register.json> ] ;
     foaf:homepage <https://crim-ca.github.io/bblocks-process-profiles/> ;
     bblocks:hasValidationReport <https://crim-ca.github.io/bblocks-process-profiles/build/tests/report.html> .
 
-_:N3b4b17adafb543d8bb161e5b1550eafc a prov:Agent,
+_:N7b996ec9a13d43f8a697ab861111f55e a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.36" ;
