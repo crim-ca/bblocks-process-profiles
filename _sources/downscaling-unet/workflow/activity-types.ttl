@@ -17,6 +17,7 @@
 @prefix plan: <https://crim-ca.github.io/bblocks-process-profiles/def/plan/> .
 @prefix local: <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix binding: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/> .
 
 local:InferenceExecution a owl:Class ;
     rdfs:subClassOf prov:Activity ;
@@ -48,6 +49,8 @@ activity:climate-downscaling-inference a owl:Class, acttype:ActivityType ;
     rdfs:subClassOf activity:climate-downscaling, mlact:InferenceActivityType ;
     rdfs:label "U-Net RDPS-to-HRDPS downscaling inference" ;
     dct:description "Runs the Resoterre U-Net on meteorological and static geophysical inputs." ;
+    dct:spatial binding:model-spatial-domain ;
+    dct:temporal binding:model-temporal-domain ;
     rim:inRegister <https://crim-ca.github.io/bblocks-process-profiles/> ;
     rim:itemClass acttype:activityTypeItemClass ;
     rim:objectIdentifier
@@ -75,14 +78,17 @@ entity:ClimateField a owl:Class ;
 
 entity:RDPSModelInput a owl:Class ;
     rdfs:subClassOf entity:ClimateField, mlact:ActivityInput ;
+    rdfs:seeAlso binding:rdps_inputs ;
     rdfs:label "Model-ready RDPS meteorological input" .
 
 entity:HRDPSGeophysicalInput a owl:Class ;
     rdfs:subClassOf entity:ClimateField, mlact:ActivityInput ;
+    rdfs:seeAlso binding:hrdps_geophysical_inputs ;
     rdfs:label "Model-ready static HRDPS geophysical input" .
 
 entity:HRDPSPrediction a owl:Class ;
     rdfs:subClassOf entity:ClimateField, mlact:ActivityOutput ;
+    rdfs:seeAlso binding:hrdps_outputs ;
     rdfs:label "Predicted HRDPS-resolution climate field" .
 
 <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl>

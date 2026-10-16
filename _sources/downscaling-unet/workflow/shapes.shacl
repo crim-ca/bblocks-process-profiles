@@ -6,6 +6,50 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix binding: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pp:ModelSpatialDomainShape a sh:NodeShape ;
+    sh:targetNode binding:model-spatial-domain ;
+    sh:class geo:Geometry ;
+    sh:property [
+        sh:path geo:asWKT ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype geo:wktLiteral
+    ] .
+
+pp:ModelTemporalDomainShape a sh:NodeShape ;
+    sh:targetNode binding:model-temporal-domain ;
+    sh:class time:ProperInterval ;
+    sh:property [ sh:path time:hasBeginning ; sh:hasValue binding:model-start ; sh:maxCount 1 ] ;
+    sh:property [ sh:path time:hasEnd ; sh:hasValue binding:model-end ; sh:maxCount 1 ] .
+
+pp:ModelTemporalEndpointShape a sh:NodeShape ;
+    sh:targetNode binding:model-start, binding:model-end ;
+    sh:class time:Instant ;
+    sh:property [
+        sh:path time:inXSDDateTimeStamp ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTimeStamp
+    ] .
+
+pp:ModelApplicabilityShape a sh:NodeShape ;
+    sh:targetNode
+        <https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling-inference> ;
+    sh:property [ sh:path dct:spatial ; sh:hasValue binding:model-spatial-domain ] ;
+    sh:property [ sh:path dct:temporal ; sh:hasValue binding:model-temporal-domain ] .
+
+pp:EntityModelDomainShape a sh:NodeShape ;
+    sh:targetClass
+        <https://crim-ca.github.io/bblocks-process-profiles/def/entity-type/RDPSModelInput>,
+        <https://crim-ca.github.io/bblocks-process-profiles/def/entity-type/HRDPSGeophysicalInput>,
+        <https://crim-ca.github.io/bblocks-process-profiles/def/entity-type/HRDPSPrediction> ;
+    sh:property [ sh:path pp:modelSpatialDomain ; sh:hasValue binding:model-spatial-domain ] ;
+    sh:property [ sh:path pp:modelTemporalDomain ; sh:hasValue binding:model-temporal-domain ] .
 
 pp:InferenceExecutionShape a sh:NodeShape ;
     sh:targetClass pp:InferenceExecution ;

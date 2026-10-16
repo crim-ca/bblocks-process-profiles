@@ -41,10 +41,19 @@ inputs and predictions are explicitly marked as reconstructed, not individually 
 
 The **Published STAC MLM model Item (external source)** example includes the actual Item fetched
 at build time. It shows the named inputs/outputs, tensor structures, geometry, bounding box and
-temporal properties beside the RDF bindings. Structure and extent bindings select those existing
-objects rather than maintaining copies. The requested forecast valid-time interval is recorded
-separately from execution timestamps and the model's declared temporal domain. No full-domain
-execution footprint is inferred from the model's bounding box.
+temporal properties beside the RDF bindings. Structure bindings select the existing tensor contracts.
+The extent bindings additionally materialize a GeoSPARQL WKT geometry in longitude/latitude CRS84
+and OWL-Time timestamp literals from the selected source values. These are source-derived RDF views
+provided for readability, but original material remains referenced through explicit `oa:hasSource` links.
+The semantic validation script checks their equality with the live Item and fails on drift.
+The model-specific inference type declares both domains through `dct:spatial` and `dct:temporal`.
+The generic climate-downscaling type does not acquire this particular model's limits since they are
+distinctively applicable to various climate model implementations and training constraints.
+Each spatial input/output class links to its corresponding model specification, and reconstructed
+entities link to both model domains through `pp:modelSpatialDomain` and `pp:modelTemporalDomain`.
+These domains are not validity interval for the input or output data entities, only the recommended
+and applicable domains that the model itself was designed for. The inferred forecast valid-time
+interval is recorded separately from execution timestamps and the model's declared temporal domain.
 
 The enrichment's PROV association references the exact packed CWL plan in the captured provenance,
 linked to its pinned source CWL. Explicit reified statements display every ML predicate mapping,
@@ -56,7 +65,8 @@ version is distinct from the deployed model/software version `0.1.3-dev.10`.
 
 The standard postprocessor checks the rendered examples and the missing-input/specification cases.
 For the complete merged-graph check, run `python scripts/validate_unet_semantics.py` from the register root.
-This also checks the live model selectors and rejects missing spatial/output type declarations.
+This also checks live model selectors, exact source-derived geometry and temporal endpoints,
+and rejects missing spatial/output type declarations, extent literals and applicability links.
 It requires pySHACL 0.30 or later: the postprocessor's older 0.21 validator does not enforce those
 upstream nested activity-type constraints reliably.
 
