@@ -1,0 +1,53 @@
+@prefix activity: <https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/> .
+@prefix entity: <https://crim-ca.github.io/bblocks-process-profiles/def/entity-type/> .
+@prefix binding: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/> .
+@prefix run: <https://crim-ca.github.io/bblocks-process-profiles/def/run/d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix mlm: <https://w3id.org/ogc/stac/mlm/> .
+@prefix pp: <https://crim-ca.github.io/bblocks-process-profiles/def/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<urn:uuid:557e2aff-6780-4a25-aaa4-1b7100ceff82> a prov:Activity, pp:InferenceExecution ;
+    dct:type activity:climate-downscaling-inference ;
+    dct:subject mlm:downscaling, mlm:super-resolution ;
+    prov:used
+        <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet>,
+        run:rdps-input, run:geophysical-input, run:cpu ;
+    prov:wasAssociatedWith run:pytorch ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent run:pytorch ;
+        prov:hadPlan
+            <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl>
+    ] ;
+    dct:description "CPU-only inference, confirmed by the execution provider. No register action is asserted." .
+
+run:rdps-input a entity:RDPSModelInput ;
+    dct:conformsTo binding:rdps_inputs ;
+    pp:evidenceStatus pp:reconstructed ;
+    dct:description "Logical model-ready meteorological input reconstructed from the model contract and procedure." .
+
+run:geophysical-input a entity:HRDPSGeophysicalInput ;
+    dct:conformsTo binding:hrdps_geophysical_inputs ;
+    pp:evidenceStatus pp:reconstructed ;
+    dct:description "Logical static geophysical input reconstructed from the model contract and packaged procedure." .
+
+run:prediction a entity:HRDPSPrediction ;
+    dct:conformsTo binding:hrdps_outputs ;
+    prov:wasGeneratedBy <urn:uuid:557e2aff-6780-4a25-aaa4-1b7100ceff82> ;
+    pp:evidenceStatus pp:reconstructed ;
+    dct:description "Logical predicted fields in the captured Zarr directory, not a separately captured tensor." ;
+    dct:isPartOf <urn:uuid:e03e35af-4745-4252-b6bf-f3ba7779b7df> .
+
+run:cpu a prov:Entity ;
+    dct:title "CPU-only execution" ;
+    dct:description "Provider-confirmed CPU execution. CPU architecture and instruction set were not recorded." .
+
+run:pytorch a prov:SoftwareAgent ;
+    dct:title "PyTorch" ;
+    dct:source
+        <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl> .
+
+pp:evidenceStatus rdfs:label "Evidence status of a semantic enrichment assertion" .
+pp:reconstructed rdfs:label "Reconstructed logical entity, not independently captured" .

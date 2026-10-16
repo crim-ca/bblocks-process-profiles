@@ -1,0 +1,4 @@
+@prefix ex: <https://example.org/test/> .
+@prefix pp: <https://crim-ca.github.io/bblocks-process-profiles/def/> .
+
+ex:IncompleteRun a pp:InferenceExecution .
