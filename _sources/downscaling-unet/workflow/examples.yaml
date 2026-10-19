@@ -33,7 +33,8 @@
   content: |
     Register entry for the `ogc-ospd2026-downscaling-unet-workflow` process type, which ties all elements together.
     The `processType` is a URI that identifies the process type in the *OGC API - Processes* register.
-    The `processDescription` is a URI that points to the process description document.
+    The `processDescription` identifies the deployed process and links its description at `href`.
+    The `plan` is the OGC Application Package at `/package`, whose `executionUnit` is the pinned CWL.
     The `phase` and `profile` provide higher-level representation and cateogies that characterize the workflow.
     The `provenanceClass` is represented as [`wfprov:WorkflowRun`](http://purl.org/wf4ever/wfprov#WorkflowRun)
     in alignment with the generated provenance metadata obtained from the job execution of the workflow process.

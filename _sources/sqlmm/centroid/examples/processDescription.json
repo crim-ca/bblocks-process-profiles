@@ -1,0 +1,80 @@
+{
+  "id": "Centroid",
+  "title": "Computes the centroid of a polygon. ",
+  "description": "This service shall return the point that is the geometric centre of gravity of the geometry InputPolygon.",
+  "version": "2.0.0",
+  "jobControlOptions": [
+    "sync-execute",
+    "async-execute",
+    "dismiss"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ],
+  "inputs": {
+    "InputPolygon": {
+      "title": "Polygon to get the centroid",
+      "description": "The centroid which is not necessarily within the geometry.",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "UTF-8",
+            "contentMediaType": "text/xml",
+            "contentSchema": "http://fooa/gml/3.1.0/polygon.xsd"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "base64",
+            "contentMediaType": "text/xml",
+            "contentSchema": "http://fooa/gml/3.1.0/polygon.xsd"
+          }
+        ]
+      },
+      "metadata": [
+        {
+          "title": "Mon test  "
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "Result": {
+      "title": "The Centroid",
+      "description": "JSON String / GML Entity of the centroid",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "UTF-8",
+            "contentMediaType": "text/xml",
+            "contentSchema": "http://fooa/gml/3.1.0/point.xsd"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "metadata": [
+        {
+          "title": "Mon test  "
+        }
+      ]
+    }
+  },
+  "mutable": false,
+  "metadata": [
+    {
+      "title": "Demo"
+    }
+  ],
+  "links": [
+    {
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/execute",
+      "type": "application/json",
+      "title": "Execute End Point",
+      "href": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Centroid/execution"
+    }
+  ]
+}

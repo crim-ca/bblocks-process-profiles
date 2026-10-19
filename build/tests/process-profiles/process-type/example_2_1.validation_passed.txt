@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.process-type - Process type register entry
-Generated 2026-10-16T21:27:56.106029+00:00
+Generated 2026-10-19T15:56:21.894895+00:00
 === Files ===
 Using examples/kindgrove-mangrove.json from examples
 JSON-LD context is present - uplifting

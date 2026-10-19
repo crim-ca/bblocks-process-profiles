@@ -1,112 +1,112 @@
 Validation report for ospd.process-profiles.downscaling-unet.workflow - Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling workflow
-Generated 2026-10-16T21:29:58.602176+00:00
+Generated 2026-10-19T15:59:43.740163+00:00
 === Files ===
 Using examples/prov/metadata/provenance/primary.cwlprov.ttl from examples
 Output Turtle example_10_1.ttl created
 === End Files ===
 
 === SHACL ===
-Error processing closure source ../eo-ontology/skos.ttl: [Errno 2] No such file or directory: '/eo-ontology/skos.ttl' - SHACL validation will run against an incomplete closure graph
-Error processing closure source ../raster-ontology/skos.ttl: [Errno 2] No such file or directory: '/raster-ontology/skos.ttl' - SHACL validation will run against an incomplete closure graph
-Error processing closure source skos.ttl: [Errno 2] No such file or directory: '/github/skos.ttl' - SHACL validation will run against an incomplete closure graph
-Error processing closure source ../mlm-ontology/skos.ttl: [Errno 2] No such file or directory: '/mlm-ontology/skos.ttl' - SHACL validation will run against an incomplete closure graph
-Error processing closure source ../classification-ontology/ontology.ttl: [Errno 2] No such file or directory: '/classification-ontology/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../raster-ontology/skos.ttl: <urlopen error [Errno 2] No such file or directory: 'raster-ontology/skos.ttl'> - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../mlm-ontology/skos.ttl: <urlopen error [Errno 2] No such file or directory: 'mlm-ontology/skos.ttl'> - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../classification-ontology/ontology.ttl: <urlopen error [Errno 2] No such file or directory: 'classification-ontology/ontology.ttl'> - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../eo-ontology/skos.ttl: <urlopen error [Errno 2] No such file or directory: 'eo-ontology/skos.ttl'> - SHACL validation will run against an incomplete closure graph
+Error processing closure source skos.ttl: [Errno 2] No such file or directory: '/skos.ttl' - SHACL validation will run against an incomplete closure graph
 Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/processing-ontology/ontology.ttl
- - /github/workspace/_sources/downscaling-unet/workflow/examples/model-bindings.ttl
- - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/core-ontology/ontology.ttl
- - https://defs.opengis.net/prez-backend/object?uri=http://www.opengis.net/ont/geosparql&_mediatype=text/turtle
- - https://www.w3.org/ns/prov-o
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/classification-ontology/ontology.ttl
- - https://www.w3.org/ns/prov-o#
- - https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/SchemaSaladOntology/ontology.ttl
- - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/ml-activity-types/ontology.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/raster-ontology/ontology.ttl
- - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/geoprocessing-activity-types/ontology.ttl
+ - /workspace/_sources/downscaling-unet/workflow/examples/model-bindings.ttl
  - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/core-ontology/ontology.ttl
- - /github/workspace/_sources/downscaling-unet/workflow/activity-types.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/eo-ontology/ontology.ttl
- - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/activity-type/ontology.ttl
- - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
+ - https://www.w3.org/ns/prov-o#
+ - https://defs.opengis.net/prez-backend/object?uri=http://www.opengis.net/ont/geosparql&_mediatype=text/turtle
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/raster-ontology/ontology.ttl
  - https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/CWLOntology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/classification-ontology/ontology.ttl
+ - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/ml-activity-types/ontology.ttl
+ - /workspace/_sources/downscaling-unet/workflow/activity-types.ttl
+ - https://www.w3.org/ns/prov-o
+ - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/geoprocessing-activity-types/ontology.ttl
+ - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/activity-type/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/eo-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/SchemaSaladOntology/ontology.ttl
+ - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/core-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
  - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/mlm-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/processing-ontology/ontology.ttl
 Validation result for _sources/downscaling-unet/workflow/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/downscaling-unet/workflow/shapes.shacl:
- - Shape pp:ModelApplicabilityShape: <https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling-inference>
- - Shape pp:ModelBindingShape/sh:property/sh:node: *none*
  - Shape pp:EntityModelDomainShape: *none*
- - Shape pp:ModelTemporalEndpointShape: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/model-start>,<https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/model-end>
  - Shape pp:InferenceExecutionShape/sh:property/sh:qualifiedValueShape: *none*
- - Shape pp:ModelSpatialDomainShape: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/model-spatial-domain>
+ - Shape pp:ModelBindingShape: *none*
  - Shape pp:InferenceExecutionShape/sh:property/sh:qualifiedValueShape: *none*
  - Shape pp:ModelTemporalDomainShape: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/model-temporal-domain>
+ - Shape pp:ModelApplicabilityShape: <https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling-inference>
+ - Shape pp:ModelBindingShape/sh:property/sh:node: *none*
+ - Shape pp:ModelTemporalEndpointShape: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/model-end>,<https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/model-start>
+ - Shape pp:ModelSpatialDomainShape: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/model-spatial-domain>
  - Shape pp:InferenceExecutionShape: *none*
- - Shape pp:ModelBindingShape: *none*
 
 Validation result for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: id:269d569d-0e9c-4552-ad6b-e293081950fb,id:557e2aff-6780-4a25-aaa4-1b7100ceff82,id:1952284c-add8-42b4-8ce3-bddd879b78a4,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
- - Shape <https://www.ogc.org/rules/prov/#End-shape>: id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedEnd
- - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: id:8ef6afbe-99f5-4818-a28c-dbebfab18739,data:b0b8131b1ddb3844e9c99a8a21275d6b69f83a32,id:ef9e8776-6737-4161-8bd8-a8832a2026b7,id:5a809806-a87d-492b-a347-87fda765c5aa,id:64917a1a-5a08-4e85-bc75-620a28b4c7af,id:fd511bc6-a0f7-4ef9-bcdd-7b5f0de69a53,id:4c5b2ceb-43d2-418a-bf6a-6da4b52eece1,data:f6884f40ecf0afe7042ad0b40f7c707eca97c85f,id:0fb98e0b-ff91-4375-be3d-1a670a1cceb6,id:3067bad4-212d-459f-b9e8-68624ec34107,id:4a8a5c86-788c-46dc-ad6c-79caf54862bd,id:f3f33a70-059f-4915-8a85-f7220ed32c10,id:cb633724-d4da-4a03-9273-9690b8db07dc,id:4758f7b8-ad15-4cd5-8941-e5c825ecd267,id:8e2a1d6f-918e-4802-abc5-c474da0668f6,data:6a14cf08d67bd2ce06ab2a19d0a3abe4f1cd07c0,id:82c76d5f-fa3a-48f3-8019-01722a803728,id:1167a87c-0dd0-4160-9b30-2cbfbc5159b9,id:115defa8-bd18-4f7c-9647-d577ba233199,id:a9c59d33-b33b-4b0f-9e22-b142b064e850,id:219fbb51-3abc-4604-8ce0-5d38943cd20b,<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-generate-file-list>,data:858c6586e39ce110071b85496c5d10ce56f65737,id:bcb963d9-74b3-4d27-9cbb-be096b3dc8be,id:cefe35cb-0a4d-4c74-bc66-8ef4aad62157,id:21f9b68a-1718-450e-89ff-736e439ade24,id:1f481246-cf82-4a65-837e-2f7a67a0bc81,id:5313bfa4-2a93-48a7-b4d9-9aaf2cdaa8cc,data:42ff0e44c0c6e716c6839ef543cc5b3f1803f375,id:1b8b9c64-8561-49c3-a950-341bbe2b6ecc,id:ef40b3be-6158-4b83-93be-9cfd5c891d50,id:0d3831ee-6eb4-44e3-92e0-b8c5411beb70,data:9986fb7232ad5f2117925abe701200da3295b129,data:838cdfa4bbf09d1aedd26d79b46bfa8778ede2e0,data:e31b165b1bab514924915aec3f7a211060a66b72,id:bd974fc1-d986-43a1-8549-0c3bf25c6a06,id:1c8aff8f-0643-44cb-b796-e622252b99cb,id:98579e66-6fa5-4bb6-a146-42b493b80a56,id:10fcaffa-f20d-455c-9cde-3938b0d34f63,data:839a6cd2045316aec66daf92217e5b7d56eea773,id:535dbc71-f956-4ede-a06a-0a7d48522541,data:6310c7c70d4dea8cfedae440937496fea9187e13,data:3b49e113b88c1a2a22fbc9e57f0bc3f85bbcd88f,id:9f6cec0c-e321-4281-ae54-d53c7320092f,id:af60ddf2-2292-457e-9fc8-03195bd2e222,id:aa4df5e5-2f8a-4d78-a066-9f9c6d3e69d6,id:54660f6e-00c7-49d3-a4ae-2f55d63e72be,id:b2148155-d3b8-41e6-9679-4c20136add9a,id:dd656ae2-2a3b-44bd-914c-168d67593542,id:bf7ff611-a987-4fca-b6e1-f3a5d9f77c12,id:0d86f8bc-9d16-4518-81bd-a099dd5ef42f,data:1278d2d22edbde5f428706c731e21f21439bc65a,id:c5a79f79-b6f1-4733-aa8b-31a69cd548a4,id:68cd9865-9bbb-4569-a5bb-51dfdc1dd545,id:a014d029-c016-4f2a-a1b1-b11a0855a812,id:c77cf727-2f15-41a7-a867-bbc90f258bcd,id:22d1626d-9fab-4990-9542-6fe472b0ec0b,id:49f14c8a-fcb6-44c9-bd55-343465be3ea8,id:17d9a9f3-94e7-4af7-8cf6-bb4cd3294264,id:214365d4-f105-4de6-852c-df963f3f20e2,id:7112c323-f862-4edf-823d-8713c956e7b8,data:9e788e8d8cd94a8253db3fda822461075c7860b3,id:e6b114d6-0d6e-493a-9f67-c08695d56b9a,id:5dd495fb-438d-414d-9686-e6c18cc5de70,id:b0530a2a-9d1b-4b5a-bc0e-ccbed86cc68f,id:086729d6-a578-43e7-bd56-b52d11a5fec5,id:169244df-0261-40d4-8463-8704ed4454b2,id:ed64c6c0-d2fe-405b-a679-873e9378ce13,id:0de8befb-07ef-4781-a726-2ff5e7ea2e2c,id:2d471606-b878-47f3-bac0-8afa1494a587,<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow>,id:eb06aa88-5b24-4c7e-9461-4eaeb1a0e915,data:97377a8b3e8073782a7754060459121aae95e55f,id:d9357459-f2f1-4cee-90b6-1f9bb5817ba9,data:7cf47f0bf872b144609fe56f4c93a67c52580f92,id:04c48f00-2a31-414e-8dcf-550d2e0d9e5e,id:67328804-2777-4b03-8b83-33ed4e73fbd7,id:1467dd89-becd-44ce-a4b7-214374154af8,id:4a3f40cb-9ae9-49d5-b523-001d5ef34258,id:b5f33b35-bc59-47a4-aa56-081a3e8d657f,id:76e5ebbd-ac61-4232-a74d-c32276bad0dd,id:c89ac928-df58-4f9b-9c53-ea7a3e346e30,id:2b1bbd59-b513-459b-a4df-780f9981f469,id:3abbff82-5d97-4c4f-8685-8d54b9966b68,id:00242f0a-952f-42ca-879e-8229d3e5d1af,id:7166c01e-fedb-40a9-b2a6-b2241af42f01,id:7620fba6-011b-4b1c-a0b5-bb1a8ad4220b,id:e770e2c3-d2cf-415c-a286-084ad8e48a9b,data:d65b6ce75a3d6a05aa746d14e17e8db052591eef,<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet>,id:aed4e2f0-05c9-443c-8723-df4191db8350,id:e5628b84-0c48-490e-974f-33676a15e0eb,data:9f63c602bd86e3b9e9d27a144624b3ea9eae8c01,data:3a735ebb434053ad1013d865f5b525b3745ccd62,data:644e201526525f62152815a76a2dc773450f3dd9,data:08f463fc47ce9d1fa89569c16476d0e45c34f310,id:51f5c8e3-ab1b-4932-b711-939c297afe9c,id:e03e35af-4745-4252-b6bf-f3ba7779b7df,id:5ba2e590-7592-4b20-81f3-0021364caf44,id:d954c4ff-e1b0-4683-aaa0-e5656e8c53eb,data:43152ac5118a9b30e797552806cc637700be2d33,id:ed017d34-d80c-4002-9bdd-dce1a7b8bf5b,id:0b9161c7-8458-47ef-bcef-2b7941cc392a,wf:main,id:2a3f1d78-6dc0-4b05-9ce8-1c811e9c113d,id:14cb603b-3c4a-45fa-b084-41d17ff6b609,<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-download-files>,id:b5416f49-d57e-48b7-bb19-b11958a1986f,id:09da0ffe-44e2-4ec7-9319-c7f6c6d548b3,data:b76c777ed4aada27e890675e2d4b3ba256e75d0b,id:34af085e-e630-4e20-b93c-e3093f9375cb,id:6f0281ba-1194-452e-904a-d46a9beb0d90,id:e8a13b12-0947-4ca2-83f2-26091ed778fa,id:8afb0d90-10c4-4992-9f67-4ab6538db393,id:56a3880f-53d8-4a4b-be3f-98fbbf5e7536,id:02d4cac8-f668-43a0-a3a1-2ec543866077,data:f9f42733877ddd3ff73d2ea26b68d6fb95bd96b3,id:b3c6b84a-7c00-4390-98e4-4fe048452a61,id:16b24af2-823a-4dba-8ec7-0d561b6a2362,id:63352efb-88c0-4372-9d20-8237dcb1afb8,data:9cc4b256897c4375720764ab3801813dcdb1d841,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715,data:a2c154b6007400462db1077253a356f0a1e802ac,id:384db0d2-c2ce-4e8f-b802-b64a1f5258d2,id:efb72089-ce95-4564-a98b-0bfe4dc19987,id:3e248f4b-06a4-4c42-a0fd-fb03f62233d9,id:fecd7374-eee5-411d-868e-6b2332756303,data:a087195005376a251158496109a6ae17c02201cd,id:96cde5e2-954a-4cbd-8896-606f37b67d54,id:57626af8-6aed-4b0c-aedc-718c1c736d7c,data:d1080cf4467bf66bf194174dedac2d2aa0e09e15,data:ec07392e53c16bb5ae0b2ceb86e4d1d9bd373514,id:3af9bb2d-c9b4-4ec1-ba02-00a45e1c6556,data:ffd868999a8cf5cf3ef9388cd7cc6b5f2c242c2e,id:ce00c079-c385-459d-ac17-0b75e88028b2,data:2fe6384ed4f8574294c979beeb7b2fecd9139945,id:a0e5020c-1ae1-4f33-9315-d38063eb99cf,id:3acbfe97-7894-484e-a26c-442cfa9dc769,id:5cdab797-85c0-448e-99ac-e188113a67ee,id:e8b1e552-e8ed-4221-b9b8-d7abb0c84305,id:89639925-5599-4923-91b4-09dc26268637,id:146ea858-e761-466b-ad8c-6ee9d0dfb0c3,id:e46ca512-de08-4837-b091-7eebd399d9f9,id:ac53e892-9a5c-48d9-8f83-f9ed8bd8aeaf,id:baf08ce9-a8d4-428d-9227-0271e14fb06c,id:697201e7-498b-448b-8e23-ef35a3840fce,id:ba8dd7a3-9c47-498e-a38c-3a6096106325,id:be0f0ed4-b983-4114-9cca-e8930f2052db,id:ea8af2a3-1556-400b-9a50-78f76876c9f0,id:ca2830c6-342d-41e6-83ca-279278f5cd2d,id:12f4ec7f-c33a-4865-97c9-4d98de26f07b,id:8e4fb43e-e8e6-4b31-872b-232a945cea82,id:ba580cd2-a720-44b3-92c0-2cdb253b57d0,id:74cbe49f-4ab4-4495-9e56-0755fe62480b,id:03392687-031f-4dec-9c4e-652ecf83a461,id:f2ffc8eb-a2f7-4dc4-88e8-966e0e08bdab,id:1132eea1-c358-4d27-9576-0a8bb06fccaf,data:df8bc7726ad986303185f5e4950a5523230286b9,id:328cdb26-444b-425c-ab1f-1bcd44d818c1,id:e0c9eb4f-92d8-41ac-b675-b8914297115a,id:2e7415eb-959c-47a2-8393-d3553a68e595,id:69f3d7f3-4965-4a74-827b-3ae96641a1f9,data:3102f6d7a018ebae572f457d711ed7e1e7a11bc2,id:aa502308-dba0-42a5-ab75-4ca1d7d87d7f,id:72727ccf-79c2-405b-a199-20a8399fd1c5,id:fe5fbf3b-b348-4b60-a71a-548bfe1f0dba,data:da608269e186b62ae70f9049281b57593ac1fd4f,id:a009ea40-1004-4dec-91f8-906e7fbb5238,id:09079993-2b4e-4449-bbe1-6de5373c4de4,id:7fab507f-fe02-4462-a33c-1a97099831d1,id:e2b89b06-0252-46fb-a59e-8d00fd27a501,id:3f135eba-11b8-44e1-8907-f76dabf7aa84,id:5c2f73e8-6f21-4717-95e5-5964e2f8cd76
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: id:fd511bc6-a0f7-4ef9-bcdd-7b5f0de69a53/prov:qualifiedGeneration,id:e03e35af-4745-4252-b6bf-f3ba7779b7df/prov:qualifiedGeneration
- - Shape <https://www.ogc.org/rules/prov/#Start-shape>: id:1952284c-add8-42b4-8ce3-bddd879b78a4/prov:qualifiedStart,id:557e2aff-6780-4a25-aaa4-1b7100ceff82/prov:qualifiedStart,id:fa1f8c28-529c-4629-aa0c-d9729325fc54/prov:qualifiedStart,id:269d569d-0e9c-4552-ad6b-e293081950fb/prov:qualifiedStart,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedStart,id:fa1f8c28-529c-4629-aa0c-d9729325fc54/prov:qualifiedStart
- - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet>,wf:main,<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-generate-file-list>,<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-download-files>
  - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
- - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedUsage,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedUsage,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedUsage,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedUsage,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedUsage
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-generate-file-list>,<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet>,wf:main,<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-download-files>
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: id:b2148155-d3b8-41e6-9679-4c20136add9a,id:5a809806-a87d-492b-a347-87fda765c5aa,id:e03e35af-4745-4252-b6bf-f3ba7779b7df,id:a0e5020c-1ae1-4f33-9315-d38063eb99cf,id:5ba2e590-7592-4b20-81f3-0021364caf44,id:3acbfe97-7894-484e-a26c-442cfa9dc769,id:d954c4ff-e1b0-4683-aaa0-e5656e8c53eb,id:c5a79f79-b6f1-4733-aa8b-31a69cd548a4,id:ed017d34-d80c-4002-9bdd-dce1a7b8bf5b,id:89639925-5599-4923-91b4-09dc26268637,id:0b9161c7-8458-47ef-bcef-2b7941cc392a,id:146ea858-e761-466b-ad8c-6ee9d0dfb0c3,id:49f14c8a-fcb6-44c9-bd55-343465be3ea8,id:cb633724-d4da-4a03-9273-9690b8db07dc,id:e46ca512-de08-4837-b091-7eebd399d9f9,id:e5628b84-0c48-490e-974f-33676a15e0eb,id:e6b114d6-0d6e-493a-9f67-c08695d56b9a,id:5dd495fb-438d-414d-9686-e6c18cc5de70,id:b0530a2a-9d1b-4b5a-bc0e-ccbed86cc68f,id:169244df-0261-40d4-8463-8704ed4454b2,id:115defa8-bd18-4f7c-9647-d577ba233199,id:a9c59d33-b33b-4b0f-9e22-b142b064e850,id:8afb0d90-10c4-4992-9f67-4ab6538db393,id:ed64c6c0-d2fe-405b-a679-873e9378ce13,id:2d471606-b878-47f3-bac0-8afa1494a587,id:02d4cac8-f668-43a0-a3a1-2ec543866077,id:74cbe49f-4ab4-4495-9e56-0755fe62480b,id:d9357459-f2f1-4cee-90b6-1f9bb5817ba9,id:67328804-2777-4b03-8b83-33ed4e73fbd7,id:4a3f40cb-9ae9-49d5-b523-001d5ef34258,id:00242f0a-952f-42ca-879e-8229d3e5d1af,id:384db0d2-c2ce-4e8f-b802-b64a1f5258d2,id:a009ea40-1004-4dec-91f8-906e7fbb5238,id:efb72089-ce95-4564-a98b-0bfe4dc19987,id:7fab507f-fe02-4462-a33c-1a97099831d1,id:fecd7374-eee5-411d-868e-6b2332756303,id:9f6cec0c-e321-4281-ae54-d53c7320092f,id:aed4e2f0-05c9-443c-8723-df4191db8350,id:aa4df5e5-2f8a-4d78-a066-9f9c6d3e69d6
- - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715,id:1952284c-add8-42b4-8ce3-bddd879b78a4,id:269d569d-0e9c-4552-ad6b-e293081950fb,id:557e2aff-6780-4a25-aaa4-1b7100ceff82
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: data:e31b165b1bab514924915aec3f7a211060a66b72,id:0fb98e0b-ff91-4375-be3d-1a670a1cceb6,data:08f463fc47ce9d1fa89569c16476d0e45c34f310,id:aa4df5e5-2f8a-4d78-a066-9f9c6d3e69d6,id:5ba2e590-7592-4b20-81f3-0021364caf44,data:97377a8b3e8073782a7754060459121aae95e55f,wf:main,id:76e5ebbd-ac61-4232-a74d-c32276bad0dd,id:b5f33b35-bc59-47a4-aa56-081a3e8d657f,data:644e201526525f62152815a76a2dc773450f3dd9,id:ed017d34-d80c-4002-9bdd-dce1a7b8bf5b,id:5313bfa4-2a93-48a7-b4d9-9aaf2cdaa8cc,id:5c2f73e8-6f21-4717-95e5-5964e2f8cd76,id:56a3880f-53d8-4a4b-be3f-98fbbf5e7536,id:98579e66-6fa5-4bb6-a146-42b493b80a56,id:00242f0a-952f-42ca-879e-8229d3e5d1af,data:d1080cf4467bf66bf194174dedac2d2aa0e09e15,id:1b8b9c64-8561-49c3-a950-341bbe2b6ecc,data:6a14cf08d67bd2ce06ab2a19d0a3abe4f1cd07c0,id:72727ccf-79c2-405b-a199-20a8399fd1c5,id:7fab507f-fe02-4462-a33c-1a97099831d1,data:f6884f40ecf0afe7042ad0b40f7c707eca97c85f,id:4758f7b8-ad15-4cd5-8941-e5c825ecd267,id:ea8af2a3-1556-400b-9a50-78f76876c9f0,id:8ef6afbe-99f5-4818-a28c-dbebfab18739,id:d954c4ff-e1b0-4683-aaa0-e5656e8c53eb,id:1467dd89-becd-44ce-a4b7-214374154af8,data:9986fb7232ad5f2117925abe701200da3295b129,id:96cde5e2-954a-4cbd-8896-606f37b67d54,id:fd511bc6-a0f7-4ef9-bcdd-7b5f0de69a53,id:e5628b84-0c48-490e-974f-33676a15e0eb,id:7112c323-f862-4edf-823d-8713c956e7b8,data:b76c777ed4aada27e890675e2d4b3ba256e75d0b,id:3af9bb2d-c9b4-4ec1-ba02-00a45e1c6556,id:e46ca512-de08-4837-b091-7eebd399d9f9,data:f9f42733877ddd3ff73d2ea26b68d6fb95bd96b3,id:69f3d7f3-4965-4a74-827b-3ae96641a1f9,id:63352efb-88c0-4372-9d20-8237dcb1afb8,id:7166c01e-fedb-40a9-b2a6-b2241af42f01,id:c89ac928-df58-4f9b-9c53-ea7a3e346e30,id:e03e35af-4745-4252-b6bf-f3ba7779b7df,id:57626af8-6aed-4b0c-aedc-718c1c736d7c,data:ec07392e53c16bb5ae0b2ceb86e4d1d9bd373514,<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-download-files>,id:e0c9eb4f-92d8-41ac-b675-b8914297115a,id:ef9e8776-6737-4161-8bd8-a8832a2026b7,id:d9357459-f2f1-4cee-90b6-1f9bb5817ba9,id:2e7415eb-959c-47a2-8393-d3553a68e595,id:e8a13b12-0947-4ca2-83f2-26091ed778fa,id:22d1626d-9fab-4990-9542-6fe472b0ec0b,id:09079993-2b4e-4449-bbe1-6de5373c4de4,id:0de8befb-07ef-4781-a726-2ff5e7ea2e2c,data:ffd868999a8cf5cf3ef9388cd7cc6b5f2c242c2e,id:bd974fc1-d986-43a1-8549-0c3bf25c6a06,id:be0f0ed4-b983-4114-9cca-e8930f2052db,id:cefe35cb-0a4d-4c74-bc66-8ef4aad62157,id:6f0281ba-1194-452e-904a-d46a9beb0d90,id:1132eea1-c358-4d27-9576-0a8bb06fccaf,id:e6b114d6-0d6e-493a-9f67-c08695d56b9a,id:697201e7-498b-448b-8e23-ef35a3840fce,data:858c6586e39ce110071b85496c5d10ce56f65737,id:68cd9865-9bbb-4569-a5bb-51dfdc1dd545,id:8afb0d90-10c4-4992-9f67-4ab6538db393,id:b2148155-d3b8-41e6-9679-4c20136add9a,id:e770e2c3-d2cf-415c-a286-084ad8e48a9b,id:115defa8-bd18-4f7c-9647-d577ba233199,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715,id:12f4ec7f-c33a-4865-97c9-4d98de26f07b,id:b5416f49-d57e-48b7-bb19-b11958a1986f,id:5dd495fb-438d-414d-9686-e6c18cc5de70,id:a0e5020c-1ae1-4f33-9315-d38063eb99cf,<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet>,id:0b9161c7-8458-47ef-bcef-2b7941cc392a,id:384db0d2-c2ce-4e8f-b802-b64a1f5258d2,id:cb633724-d4da-4a03-9273-9690b8db07dc,data:a087195005376a251158496109a6ae17c02201cd,id:3067bad4-212d-459f-b9e8-68624ec34107,id:1167a87c-0dd0-4160-9b30-2cbfbc5159b9,id:aed4e2f0-05c9-443c-8723-df4191db8350,id:8e4fb43e-e8e6-4b31-872b-232a945cea82,id:ba580cd2-a720-44b3-92c0-2cdb253b57d0,id:9f6cec0c-e321-4281-ae54-d53c7320092f,id:89639925-5599-4923-91b4-09dc26268637,id:086729d6-a578-43e7-bd56-b52d11a5fec5,data:b0b8131b1ddb3844e9c99a8a21275d6b69f83a32,id:4a8a5c86-788c-46dc-ad6c-79caf54862bd,id:3e248f4b-06a4-4c42-a0fd-fb03f62233d9,id:17d9a9f3-94e7-4af7-8cf6-bb4cd3294264,id:fecd7374-eee5-411d-868e-6b2332756303,id:e8b1e552-e8ed-4221-b9b8-d7abb0c84305,id:0d86f8bc-9d16-4518-81bd-a099dd5ef42f,id:09da0ffe-44e2-4ec7-9319-c7f6c6d548b3,data:3a735ebb434053ad1013d865f5b525b3745ccd62,id:3acbfe97-7894-484e-a26c-442cfa9dc769,id:219fbb51-3abc-4604-8ce0-5d38943cd20b,data:838cdfa4bbf09d1aedd26d79b46bfa8778ede2e0,id:2b1bbd59-b513-459b-a4df-780f9981f469,id:146ea858-e761-466b-ad8c-6ee9d0dfb0c3,id:64917a1a-5a08-4e85-bc75-620a28b4c7af,id:03392687-031f-4dec-9c4e-652ecf83a461,id:bcb963d9-74b3-4d27-9cbb-be096b3dc8be,id:c5a79f79-b6f1-4733-aa8b-31a69cd548a4,data:43152ac5118a9b30e797552806cc637700be2d33,id:bf7ff611-a987-4fca-b6e1-f3a5d9f77c12,id:0d3831ee-6eb4-44e3-92e0-b8c5411beb70,id:82c76d5f-fa3a-48f3-8019-01722a803728,id:3abbff82-5d97-4c4f-8685-8d54b9966b68,id:74cbe49f-4ab4-4495-9e56-0755fe62480b,id:ac53e892-9a5c-48d9-8f83-f9ed8bd8aeaf,id:fe5fbf3b-b348-4b60-a71a-548bfe1f0dba,id:b0530a2a-9d1b-4b5a-bc0e-ccbed86cc68f,id:4c5b2ceb-43d2-418a-bf6a-6da4b52eece1,id:4a3f40cb-9ae9-49d5-b523-001d5ef34258,id:efb72089-ce95-4564-a98b-0bfe4dc19987,id:3f135eba-11b8-44e1-8907-f76dabf7aa84,id:a009ea40-1004-4dec-91f8-906e7fbb5238,<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow>,data:3b49e113b88c1a2a22fbc9e57f0bc3f85bbcd88f,id:16b24af2-823a-4dba-8ec7-0d561b6a2362,id:a9c59d33-b33b-4b0f-9e22-b142b064e850,id:54660f6e-00c7-49d3-a4ae-2f55d63e72be,id:5a809806-a87d-492b-a347-87fda765c5aa,id:f2ffc8eb-a2f7-4dc4-88e8-966e0e08bdab,id:f3f33a70-059f-4915-8a85-f7220ed32c10,id:ce00c079-c385-459d-ac17-0b75e88028b2,id:535dbc71-f956-4ede-a06a-0a7d48522541,data:9cc4b256897c4375720764ab3801813dcdb1d841,<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-generate-file-list>,id:1c8aff8f-0643-44cb-b796-e622252b99cb,id:e2b89b06-0252-46fb-a59e-8d00fd27a501,data:7cf47f0bf872b144609fe56f4c93a67c52580f92,id:67328804-2777-4b03-8b83-33ed4e73fbd7,id:ba8dd7a3-9c47-498e-a38c-3a6096106325,id:49f14c8a-fcb6-44c9-bd55-343465be3ea8,data:df8bc7726ad986303185f5e4950a5523230286b9,id:ed64c6c0-d2fe-405b-a679-873e9378ce13,id:baf08ce9-a8d4-428d-9227-0271e14fb06c,id:8e2a1d6f-918e-4802-abc5-c474da0668f6,data:6310c7c70d4dea8cfedae440937496fea9187e13,data:a2c154b6007400462db1077253a356f0a1e802ac,id:dd656ae2-2a3b-44bd-914c-168d67593542,id:aa502308-dba0-42a5-ab75-4ca1d7d87d7f,id:2d471606-b878-47f3-bac0-8afa1494a587,id:5cdab797-85c0-448e-99ac-e188113a67ee,id:34af085e-e630-4e20-b93c-e3093f9375cb,data:839a6cd2045316aec66daf92217e5b7d56eea773,data:da608269e186b62ae70f9049281b57593ac1fd4f,data:3102f6d7a018ebae572f457d711ed7e1e7a11bc2,id:2a3f1d78-6dc0-4b05-9ce8-1c811e9c113d,id:214365d4-f105-4de6-852c-df963f3f20e2,id:21f9b68a-1718-450e-89ff-736e439ade24,id:51f5c8e3-ab1b-4932-b711-939c297afe9c,data:9f63c602bd86e3b9e9d27a144624b3ea9eae8c01,data:2fe6384ed4f8574294c979beeb7b2fecd9139945,data:42ff0e44c0c6e716c6839ef543cc5b3f1803f375,id:169244df-0261-40d4-8463-8704ed4454b2,id:02d4cac8-f668-43a0-a3a1-2ec543866077,id:04c48f00-2a31-414e-8dcf-550d2e0d9e5e,data:d65b6ce75a3d6a05aa746d14e17e8db052591eef,id:af60ddf2-2292-457e-9fc8-03195bd2e222,id:7620fba6-011b-4b1c-a0b5-bb1a8ad4220b,id:14cb603b-3c4a-45fa-b084-41d17ff6b609,id:ca2830c6-342d-41e6-83ca-279278f5cd2d,id:328cdb26-444b-425c-ab1f-1bcd44d818c1,id:10fcaffa-f20d-455c-9cde-3938b0d34f63,id:eb06aa88-5b24-4c7e-9461-4eaeb1a0e915,id:1f481246-cf82-4a65-837e-2f7a67a0bc81,id:c77cf727-2f15-41a7-a867-bbc90f258bcd,data:1278d2d22edbde5f428706c731e21f21439bc65a,id:b3c6b84a-7c00-4390-98e4-4fe048452a61,id:a014d029-c016-4f2a-a1b1-b11a0855a812,id:ef40b3be-6158-4b83-93be-9cfd5c891d50,data:9e788e8d8cd94a8253db3fda822461075c7860b3
+ - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedUsage,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedUsage,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedUsage,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedUsage,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedUsage
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-influencer>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
  - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: id:67328804-2777-4b03-8b83-33ed4e73fbd7,id:fecd7374-eee5-411d-868e-6b2332756303,id:49f14c8a-fcb6-44c9-bd55-343465be3ea8,id:ed64c6c0-d2fe-405b-a679-873e9378ce13,id:aa4df5e5-2f8a-4d78-a066-9f9c6d3e69d6,id:3acbfe97-7894-484e-a26c-442cfa9dc769,id:5ba2e590-7592-4b20-81f3-0021364caf44,id:e6b114d6-0d6e-493a-9f67-c08695d56b9a,id:2d471606-b878-47f3-bac0-8afa1494a587,id:146ea858-e761-466b-ad8c-6ee9d0dfb0c3,id:c5a79f79-b6f1-4733-aa8b-31a69cd548a4,id:ed017d34-d80c-4002-9bdd-dce1a7b8bf5b,id:8afb0d90-10c4-4992-9f67-4ab6538db393,id:b2148155-d3b8-41e6-9679-4c20136add9a,id:115defa8-bd18-4f7c-9647-d577ba233199,id:00242f0a-952f-42ca-879e-8229d3e5d1af,id:74cbe49f-4ab4-4495-9e56-0755fe62480b,id:b0530a2a-9d1b-4b5a-bc0e-ccbed86cc68f,id:5dd495fb-438d-414d-9686-e6c18cc5de70,id:a0e5020c-1ae1-4f33-9315-d38063eb99cf,id:4a3f40cb-9ae9-49d5-b523-001d5ef34258,id:efb72089-ce95-4564-a98b-0bfe4dc19987,id:7fab507f-fe02-4462-a33c-1a97099831d1,id:169244df-0261-40d4-8463-8704ed4454b2,id:a009ea40-1004-4dec-91f8-906e7fbb5238,id:0b9161c7-8458-47ef-bcef-2b7941cc392a,id:02d4cac8-f668-43a0-a3a1-2ec543866077,id:384db0d2-c2ce-4e8f-b802-b64a1f5258d2,id:cb633724-d4da-4a03-9273-9690b8db07dc,id:a9c59d33-b33b-4b0f-9e22-b142b064e850,id:d954c4ff-e1b0-4683-aaa0-e5656e8c53eb,id:aed4e2f0-05c9-443c-8723-df4191db8350,id:e5628b84-0c48-490e-974f-33676a15e0eb,id:5a809806-a87d-492b-a347-87fda765c5aa,id:e46ca512-de08-4837-b091-7eebd399d9f9,id:e03e35af-4745-4252-b6bf-f3ba7779b7df,id:9f6cec0c-e321-4281-ae54-d53c7320092f,id:89639925-5599-4923-91b4-09dc26268637,id:d9357459-f2f1-4cee-90b6-1f9bb5817ba9
+ - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: id:fd511bc6-a0f7-4ef9-bcdd-7b5f0de69a53/prov:qualifiedGeneration,id:e03e35af-4745-4252-b6bf-f3ba7779b7df/prov:qualifiedGeneration
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-influencer>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Start-shape>: id:269d569d-0e9c-4552-ad6b-e293081950fb/prov:qualifiedStart,id:fa1f8c28-529c-4629-aa0c-d9729325fc54/prov:qualifiedStart,id:557e2aff-6780-4a25-aaa4-1b7100ceff82/prov:qualifiedStart,id:1952284c-add8-42b4-8ce3-bddd879b78a4/prov:qualifiedStart,id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedStart,id:fa1f8c28-529c-4629-aa0c-d9729325fc54/prov:qualifiedStart
+ - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#End-shape>: id:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/prov:qualifiedEnd
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
   Validation Report
@@ -120,20 +120,20 @@ Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+ - Shape stac:LinkShape: *none*
+ - Shape stac:AssetShape: *none*
  - Shape stac:CollectionShape: *none*
  - Shape stac:ItemShape: *none*
- - Shape stac:AssetShape: *none*
- - Shape stac:LinkShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/classification-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/classification-ontology/shapes.shacl:
- - Shape classification:BitFieldShape: *none*
- - Shape classification:ClassShape: *none*
  - Shape classification:ClassesUsageShape: *none*
  - Shape classification:BitfieldsUsageShape: *none*
+ - Shape classification:ClassShape: *none*
+ - Shape classification:BitFieldShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
   Validation Report
@@ -148,74 +148,74 @@ Validation result for https://opengeospatial.github.io/bblocks/registereditems/g
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:FeatureShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/eo-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/eo-ontology/shapes.shacl:
- - Shape eo:CenterWavelengthShape: *none*
- - Shape eo:SnowCoverShape: *none*
- - Shape eo:SolarIlluminationShape: *none*
- - Shape eo:FullWidthHalfMaxShape: *none*
  - Shape eo:CommonNameShape: *none*
+ - Shape eo:FullWidthHalfMaxShape: *none*
+ - Shape eo:CenterWavelengthShape: *none*
  - Shape eo:CloudCoverShape: *none*
+ - Shape eo:SolarIlluminationShape: *none*
+ - Shape eo:SnowCoverShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/mlm-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/mlm-ontology/shapes.shacl:
- - Shape _:naaade93b497b419383e1a4911e2bbc2fb71: *none*
- - Shape mlm:VariableDimensionResolutionShape: *none*
+ - Shape mlm:ValueScalingShape: *none*
  - Shape mlm:ValueScalingOrderShape: *none*
- - Shape mlm:TensorStructureOrderShape: *none*
- - Shape mlm:ResultStructureShape/sh:property/sh:or/rdf:first: *none*
- - Shape mlm:InputStructureShape/sh:property/sh:or/rdf:first: *none*
- - Shape mlm:ModelRootShape: *none*
- - Shape _:naaade93b497b419383e1a4911e2bbc2fb53: *none*
  - Shape mlm:AcceleratorShape: *none*
+ - Shape mlm:ModelRootShape: *none*
+ - Shape mlm:ResultStructureShape/sh:property/sh:or/rdf:first: *none*
+ - Shape mlm:InputStructureShape: *none*
  - Shape mlm:BandVariableReferenceShape: *none*
- - Shape mlm:ModelOutputShape: *none*
- - Shape _:naaade93b497b419383e1a4911e2bbc2fb72: *none*
- - Shape mlm:VariableReferenceResolutionShape: *none*
- - Shape mlm:ModelAssetShape: *none*
+ - Shape _:n76aa7019464b4b1a99b7c8f4ae6103b6b54: *none*
  - Shape mlm:StackedReferenceOrderShape: *none*
+ - Shape _:n76aa7019464b4b1a99b7c8f4ae6103b6b72: *none*
+ - Shape mlm:VariableReferenceResolutionShape: *none*
  - Shape mlm:ResultStructureShape: *none*
  - Shape mlm:ModelInputShape: *none*
- - Shape _:naaade93b497b419383e1a4911e2bbc2fb54: *none*
- - Shape mlm:InputStructureShape: *none*
- - Shape mlm:ValueScalingShape: *none*
+ - Shape _:n76aa7019464b4b1a99b7c8f4ae6103b6b71: *none*
+ - Shape mlm:ModelOutputShape: *none*
+ - Shape mlm:InputStructureShape/sh:property/sh:or/rdf:first: *none*
+ - Shape mlm:ModelAssetShape: *none*
+ - Shape mlm:TensorStructureOrderShape: *none*
+ - Shape mlm:VariableDimensionResolutionShape: *none*
+ - Shape _:n76aa7019464b4b1a99b7c8f4ae6103b6b53: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/processing-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/processing-ontology/shapes.shacl:
+ - Shape processing:VersionShape: *none*
  - Shape processing:FacilityShape: *none*
  - Shape processing:ExpressionShape: *none*
- - Shape processing:VersionShape: *none*
- - Shape processing:LineageShape: *none*
- - Shape processing:SoftwareShape: *none*
  - Shape processing:DatetimeShape: *none*
+ - Shape processing:LineageShape: *none*
  - Shape processing:LevelShape: *none*
+ - Shape processing:SoftwareShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl:
- - Shape raster:HistogramUsageShape: *none*
- - Shape raster:BitsPerSampleShape: *none*
- - Shape raster:OffsetShape: *none*
- - Shape raster:SpatialResolutionShape: *none*
- - Shape raster:SamplingShape: *none*
  - Shape raster:HistogramShape: *none*
+ - Shape raster:OffsetShape: *none*
  - Shape raster:ScaleShape: *none*
+ - Shape raster:SpatialResolutionShape: *none*
+ - Shape raster:BitsPerSampleShape: *none*
+ - Shape raster:SamplingShape: *none*
+ - Shape raster:HistogramUsageShape: *none*
 
 Validation result for https://ogcincubator.github.io/registered-item-model/_sources/geoprocessing-activity-types/shapes.shacl:
   Validation Report
@@ -223,14 +223,14 @@ Validation result for https://ogcincubator.github.io/registered-item-model/_sour
   
 Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/geoprocessing-activity-types/shapes.shacl:
  - Shape geoproc:GeoprocessingActivityTypeShape: *none*
- - Shape geoproc:GeoprocessingActivityTypeShape/sh:or/rdf:first: *none*
- - Shape _:n5689a21a1edf4d50be472fb613254e6ab20: *none*
  - Shape geoproc:SpatialDataTypeShape: *none*
+ - Shape _:n2bab6d9af4734c0782bf58f9946f26ffb21: *none*
  - Shape geoproc:GeoprocessingActivityTypesShape: <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType>
- - Shape geoproc:GeoprocessingActivityTypesShape/sh:property/sh:node: *none*
- - Shape geoproc:SpatialDataTypeShape/sh:property/sh:qualifiedValueShape: *none*
+ - Shape geoproc:GeoprocessingActivityTypeShape/sh:or/rdf:first: *none*
  - Shape geoproc:GeoprocessingActivityTypeShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n5689a21a1edf4d50be472fb613254e6ab21: *none*
+ - Shape geoproc:GeoprocessingActivityTypesShape/sh:property/sh:node: *none*
+ - Shape _:n2bab6d9af4734c0782bf58f9946f26ffb20: *none*
+ - Shape geoproc:SpatialDataTypeShape/sh:property/sh:qualifiedValueShape: *none*
 
 Validation result for https://ogcincubator.github.io/registered-item-model/_sources/activity-type/shapes.shacl:
   Validation Report
@@ -246,37 +246,37 @@ Validation result for https://ogcincubator.github.io/registered-item-model/_sour
   
 Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:
  - Shape rim:CommitmentShape: *none*
- - Shape rim:RegisterShape: *none*
+ - Shape rim:TextShape: *none*
  - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape rim:TextShape/sh:or/rdf:first: *none*
- - Shape rim:TextShape: *none*
- - Shape rim:RegisterItemClassShape: *none*
- - Shape rim:RegisterItemShape: *none*
  - Shape rim:ConceptShape: *none*
- - Shape rim:RegisterSpecificationShape: *none*
+ - Shape rim:RegisterShape: *none*
+ - Shape rim:RegisterItemShape: *none*
  - Shape rim:RegisterActionShape: *none*
+ - Shape rim:RegisterItemClassShape: *none*
  - Shape rim:ConceptVersionShape: *none*
+ - Shape rim:RegisterSpecificationShape: *none*
 
 Validation result for https://ogcincubator.github.io/registered-item-model/_sources/ml-activity-types/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/ml-activity-types/shapes.shacl:
- - Shape _:ndf42cb129f424f9ea7dfbd52c67b9fa5b55: *none*
- - Shape mlact:MLActivityTypeShape: *none*
- - Shape mlact:ActivityOutputShape: *none*
- - Shape mlact:ActivityInputShape: *none*
- - Shape mlact:MLActivityTypesShape: <https://w3id.org/ogc/rim/ml-activity/MLActivityType>
- - Shape mlact:MLActivityTypesShape/sh:property/sh:node: *none*
- - Shape mlact:InferenceActivityTypeShape: *none*
- - Shape mlact:InferenceActivityTypeShape/sh:property/sh:qualifiedValueShape: *none*
- - Shape mlact:MLActivityShape: *none*
  - Shape mlact:InferenceActivityTypesShape/sh:property/sh:node: *none*
- - Shape _:ndf42cb129f424f9ea7dfbd52c67b9fa5b47: *none*
- - Shape _:ndf42cb129f424f9ea7dfbd52c67b9fa5b46: *none*
+ - Shape mlact:InferenceActivityTypeShape/sh:property/sh:qualifiedValueShape: *none*
+ - Shape _:n5cbd7fbebba14c0aa3ef1b0b25bf3f6db47: *none*
+ - Shape mlact:ActivityInputShape: *none*
+ - Shape mlact:InferenceActivityTypeShape: *none*
+ - Shape mlact:ActivityOutputShape: *none*
  - Shape mlact:InferenceActivityTypesShape: <https://w3id.org/ogc/rim/ml-activity/InferenceActivityType>
- - Shape _:ndf42cb129f424f9ea7dfbd52c67b9fa5b54: *none*
+ - Shape mlact:MLActivityTypeShape: *none*
  - Shape mlact:MLActivityTypeShape/sh:property/sh:qualifiedValueShape: *none*
+ - Shape _:n5cbd7fbebba14c0aa3ef1b0b25bf3f6db54: *none*
+ - Shape _:n5cbd7fbebba14c0aa3ef1b0b25bf3f6db55: *none*
+ - Shape _:n5cbd7fbebba14c0aa3ef1b0b25bf3f6db46: *none*
+ - Shape mlact:MLActivityTypesShape/sh:property/sh:node: *none*
+ - Shape mlact:MLActivityTypesShape: <https://w3id.org/ogc/rim/ml-activity/MLActivityType>
+ - Shape mlact:MLActivityShape: *none*
 
 === End SHACL ===
 

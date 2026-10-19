@@ -1,0 +1,85 @@
+{
+  "id": "SAGA.shapes_tools.19",
+  "title": "Get Shapes Extents",
+  "description": "Get Shapes Extents",
+  "version": "1.0.0",
+  "jobControlOptions": [
+    "sync-execute",
+    "async-execute",
+    "dismiss"
+  ],
+  "outputTransmission": [
+    "value",
+    "reference"
+  ],
+  "inputs": {
+    "SHAPES": {
+      "title": "Shapes",
+      "description": "Shapes",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "utf-8",
+            "contentMediaType": "text/xml"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "base64",
+            "contentMediaType": "application/vnd.google-earth.kml+xml"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      }
+    },
+    "OUTPUT": {
+      "title": "Get Extent for ...",
+      "description": "Get Extent for ...",
+      "minOccurs": 0,
+      "schema": {
+        "type": "string",
+        "default": "each shape",
+        "enum": [
+          "all shapes",
+          "each shape",
+          "each shape's part"
+        ],
+        "nullable": true
+      }
+    }
+  },
+  "outputs": {
+    "EXTENTS": {
+      "title": "Extents",
+      "description": "Extents",
+      "schema": {
+        "oneOf": [
+          {
+            "type": "string",
+            "contentEncoding": "utf-8",
+            "contentMediaType": "text/xml"
+          },
+          {
+            "type": "string",
+            "contentEncoding": "base64",
+            "contentMediaType": "application/vnd.google-earth.kml+xml"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      }
+    }
+  },
+  "mutable": false,
+  "links": [
+    {
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/execute",
+      "type": "application/json",
+      "title": "Execute End Point",
+      "href": "https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.shapes_tools.19/execution"
+    }
+  ]
+}

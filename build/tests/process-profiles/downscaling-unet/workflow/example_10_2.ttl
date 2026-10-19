@@ -1,22 +1,22 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ns1: <https://w3id.org/cwl/prov#> .
 @prefix ns2: <http://www.openarchives.org/ore/terms/> .
-@prefix ns3: <http://purl.org/wf4ever/wfdesc#> .
-@prefix ns4: <http://schema.org/> .
+@prefix ns3: <http://schema.org/> .
+@prefix ns4: <http://purl.org/wf4ever/wfdesc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:hash::sha1:3102f6d7a018ebae572f457d711ed7e1e7a11bc2> a prov:Entity,
         prov:Organization ;
-    ns4:name "Computer Research Institute of Montréal"^^xsd:string ;
+    ns3:name "Computer Research Institute of Montréal"^^xsd:string ;
     prov:wasAttributedTo <urn:hash::sha1:644e201526525f62152815a76a2dc773450f3dd9> ;
     foaf:name "Computer Research Institute of Montréal"^^xsd:string .
 
 <urn:hash::sha1:838cdfa4bbf09d1aedd26d79b46bfa8778ede2e0> a prov:Entity,
         prov:Organization ;
     rdfs:label "Server Provider"^^xsd:string ;
-    ns4:name "Computer Research Institute of Montréal (CRIM)"^^xsd:string ;
+    ns3:name "Computer Research Institute of Montréal (CRIM)"^^xsd:string ;
     prov:atLocation "http://pavics-weaver.readthedocs.org/en/latest/"^^xsd:string ;
     prov:wasAttributedTo <urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97> ;
     prov:wasDerivedFrom <urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97> ;
@@ -181,11 +181,11 @@
 <urn:uuid:fecd7374-eee5-411d-868e-6b2332756303#ore> prov:asInBundle <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/metadata/directory-fecd7374-eee5-411d-868e-6b2332756303.ttl> ;
     prov:mentionOf <urn:uuid:fecd7374-eee5-411d-868e-6b2332756303> .
 
-<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main> a ns3:Workflow,
+<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main> a ns4:Workflow,
         prov:Entity,
         prov:Plan ;
     rdfs:label "Prospective provenance"^^xsd:string ;
-    ns3:hasSubProcess <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-download-files>,
+    ns4:hasSubProcess <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-download-files>,
         <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-generate-file-list>,
         <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet> .
 
@@ -196,7 +196,7 @@
 <urn:hash::sha1:1278d2d22edbde5f428706c731e21f21439bc65a> a <http://purl.org/wf4ever/wfprov#Artifact>,
         prov:Entity .
 
-<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow> a ns3:Process,
+<urn:hash::sha1:15401f8d937f5d526951c1bf20dcba16a1271d97:ogc-ospd2026-downscaling-unet-workflow> a ns4:Process,
         prov:Entity ;
     rdfs:label "Process Description"^^xsd:string ;
     prov:atLocation "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow"^^xsd:string .
@@ -657,15 +657,15 @@
     prov:pairEntity <urn:uuid:e2b89b06-0252-46fb-a59e-8d00fd27a501> ;
     prov:pairKey "zarr.json"^^xsd:string .
 
-<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-download-files> a ns3:Process,
+<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-download-files> a ns4:Process,
         prov:Entity,
         prov:Plan .
 
-<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-generate-file-list> a ns3:Process,
+<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-generate-file-list> a ns4:Process,
         prov:Entity,
         prov:Plan .
 
-<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet> a ns3:Process,
+<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet> a ns4:Process,
         prov:Entity,
         prov:Plan .
 
@@ -828,11 +828,11 @@
     prov:specializationOf <urn:hash::sha1:df8bc7726ad986303185f5e4950a5523230286b9> ;
     ns1:basename "0"^^xsd:string .
 
-<urn:uuid:fcbddfc9-0f37-44c9-ad42-38a610f7be9b> a ns4:SoftwareApplication,
+<urn:uuid:fcbddfc9-0f37-44c9-ad42-38a610f7be9b> a ns3:SoftwareApplication,
         prov:Agent,
         prov:SoftwareAgent ;
     rdfs:label "weaver-worker@crim-ca/weaver:6.15.0"^^xsd:string ;
-    ns4:name "weaver-worker@crim-ca/weaver:6.15.0"^^xsd:string ;
+    ns3:name "weaver-worker@crim-ca/weaver:6.15.0"^^xsd:string ;
     foaf:account <urn:uuid:299bb331-8dd9-4f58-ae78-9462ffe3f1a8> ;
     foaf:name "weaver-worker@crim-ca/weaver:6.15.0"^^xsd:string .
 
@@ -1272,7 +1272,7 @@
     prov:specializationOf <urn:uuid:299bb331-8dd9-4f58-ae78-9462ffe3f1a8> ;
     prov:specificEntity <https://doi.org/10.5281/zenodo.14210717> .
 
-<urn:uuid:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715> a ns3:ProcessRun,
+<urn:uuid:d6f937f0-bdae-4dd5-9fa3-9e0686ed6715> a ns4:ProcessRun,
         <http://purl.org/wf4ever/wfprov#WorkflowRun>,
         prov:Activity,
         prov:Entity ;

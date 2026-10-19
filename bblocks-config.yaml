@@ -72,6 +72,8 @@ imports:
   - https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/register.json
   # Registered item and ML activity profiles used by the downscaling process types.
   - https://ogcincubator.github.io/registered-item-model/build/register.json
+  # Generic Process Profiles (Concept / Generic Profile, GeoLabs), published by GeoLabs.
+  - https://geolabs.github.io/bblocks-generic-profiles/build/register.json
 
 schema-oas30-downcompile: False
 
