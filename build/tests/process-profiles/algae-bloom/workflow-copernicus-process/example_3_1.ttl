@@ -38,12 +38,6 @@ to evaluate algae bloom for water quality assessment.
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
             proc:role schema:license ],
-        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value "2.1.0" ;
-            proc:role schema:softwareVersion ],
-        [ rdf:value "https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/se2waq/" ;
-            proc:role schema:isBasedOn ],
         [ rdf:value [ a ns4:Person ;
                     ns4:email "francis.charette-migneault@crim.ca" ;
                     ns4:identifier "http://orcid.org/0000-0003-4862-3349" ;
@@ -52,10 +46,16 @@ to evaluate algae bloom for water quality assessment.
         [ rdf:value """Processing on Sentinel-2 bands to evaluate algae bloom.
 """ ;
             proc:role schema:name ],
+        [ rdf:value "2.1.0" ;
+            proc:role schema:softwareVersion ],
         [ rdf:value """Performs band calculation on Sentinel-2 product bands
 to evaluate algae bloom for water quality assessment.
 """ ;
-            proc:role schema:description ] ;
+            proc:role schema:description ],
+        [ rdf:value "https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/se2waq/" ;
+            proc:role schema:isBasedOn ],
+        [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
+            proc:role schema:codeRepository ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;

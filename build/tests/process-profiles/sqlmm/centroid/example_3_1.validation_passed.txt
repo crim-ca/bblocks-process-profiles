@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.sqlmm.centroid - Process profile: Centroid
-Generated 2026-10-19T15:56:52.050953+00:00
+Generated 2026-10-19T16:53:50.037249+00:00
 === Files ===
 Using examples/processDescription.inherited.json from examples
 JSON-LD context is present - uplifting
