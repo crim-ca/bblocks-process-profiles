@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.sqlmm.union - Process profile: Union
-Generated 2026-10-19T14:55:35.073097+00:00
+Generated 2026-10-19T15:57:17.392275+00:00
 === Files ===
 Using examples/processDescription.inherited.json from examples
 JSON-LD context is present - uplifting

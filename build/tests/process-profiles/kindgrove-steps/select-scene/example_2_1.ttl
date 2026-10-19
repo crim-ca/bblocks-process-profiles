@@ -1,7 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <http://schema.org/> .
-@prefix ns3: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <http://schema.org/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -59,22 +59,22 @@
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "Select the least cloudy Sentinel-2 L2A scene over a bounding box" ;
-            proc:role schema:description ],
+    proc:metadata [ rdf:value "select_scene" ;
+            proc:role schema:name ],
         [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
             proc:role schema:license ],
-        [ rdf:value [ a ns2:Person ;
-                    ns2:affiliation "GeoLabs" ;
-                    ns2:name "Gérald Fenoy" ] ;
-            proc:role schema:contributor ],
-        [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
-            proc:role schema:codeRepository ],
-        [ rdf:value "select_scene" ;
-            proc:role schema:name ],
+        [ rdf:value "Select the least cloudy Sentinel-2 L2A scene over a bounding box" ;
+            proc:role schema:description ],
         [ rdf:value "0.1.0" ;
             proc:role schema:softwareVersion ],
-        [ rdf:value [ a ns2:Person ;
-                    ns2:name "Cameron Sajedi" ] ;
+        [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
+            proc:role schema:codeRepository ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:affiliation "GeoLabs" ;
+                    ns3:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ],
+        [ rdf:value [ a ns3:Person ;
+                    ns3:name "Cameron Sajedi" ] ;
             proc:role schema:author ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
@@ -82,5 +82,5 @@
     proc:outputs [ ns4:stac_item [ dcterms:description "" ;
                     dcterms:title "stac_item" ;
                     proc:schema [ proc:type "string" ;
-                            ns3:contentMediaType "application/octet-stream" ] ] ] .
+                            ns2:contentMediaType "application/octet-stream" ] ] ] .
 

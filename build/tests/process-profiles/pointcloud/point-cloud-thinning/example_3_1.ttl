@@ -43,12 +43,12 @@
             ns3:PERCENT [ dcterms:description "Reduce the number of points to this percentage." ;
                     dcterms:title "Percent" ;
                     proc:keywords "percentage" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning -- input `percentage`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Point cloud thinning (simple) -- input `percentage`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Point cloud thinning (simple) -- input `percentage`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/percentage> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Point cloud thinning -- input `percentage`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "50"^^rdf:JSON ;
                             proc:nullable true ;
@@ -75,12 +75,12 @@
                     dcterms:title "Thinned Points" ;
                     proc:keywords "LAS",
                         "point cloud" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning -- output `result`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
-                        [ dcterms:title "Implementation Profile: Point cloud thinning (simple) -- output `result`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Point cloud thinning (simple) -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ],
+                        [ dcterms:title "Generic Profile: Point cloud thinning -- output `result`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/outputs/result> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
                     proc:schema [ ns2:oneOf [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
                                     ns2:contentMediaType "application/x-ogc-lasf" ] ] ] ] .

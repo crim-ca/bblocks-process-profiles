@@ -385,18 +385,7 @@ Entries can be HTTP(S) URLs or local paths reachable from the container.
                     proc:schema [ proc:type "string" ;
                             ns2:contentMediaType "text/plain" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/author" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
-                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
-                    :name "Blaise Gauvin St-Denis" ] ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "nazim.azeli@luqia.ca" ;
-                    :name "Nazim Azeli" ] ],
-        [ :role "https://schema.org/dateCreated" ;
+    :metadata [ :role "https://schema.org/dateCreated" ;
             :value "2026-09-04T11:45:32-04:00" ],
         [ :role "https://schema.org/author" ;
             :value [ ns1:schema "https://schema.org/Person" ;
@@ -410,6 +399,17 @@ Entries can be HTTP(S) URLs or local paths reachable from the container.
                     :email "francis.charette-migneault@luqia.ca" ;
                     :identifier "https://orcid.org/0000-0003-4862-3349" ;
                     :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/contributor" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "nazim.azeli@luqia.ca" ;
+                    :name "Nazim Azeli" ] ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
+                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
+                    :name "Blaise Gauvin St-Denis" ] ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,

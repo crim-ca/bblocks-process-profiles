@@ -351,8 +351,8 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <http://www.iana.org/assignments/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -364,7 +364,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "Compute radiometric indices." ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.RadiometricIndices/execution> ] ;
     pp:version "1.0.0" ;
     proc:inputs [ ns1:channels [ dcterms:description "Blue channel index" ;
@@ -394,10 +394,10 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                     ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/jpeg" ],
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ] ] ] ;
+                                    ns2:contentMediaType "image/jpeg" ] ] ] ;
             ns1:out [ dcterms:description "Radiometric indices output image" ;
                     dcterms:title "Radiometric indices output image" ;
                     proc:schema [ proc:default "\"float\""^^rdf:JSON ;
@@ -420,17 +420,17 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns4:out [ dcterms:description "Radiometric indices output image" ;
+    proc:outputs [ ns3:out [ dcterms:description "Radiometric indices output image" ;
                     dcterms:title "Radiometric indices output image" ;
                     proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/jpeg" ],
+                                [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
                                     ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ],
-                                [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/jpeg" ] ] ] ] .
+                                    ns2:contentMediaType "image/png" ] ] ] ] .
 
 
 ```
@@ -846,9 +846,9 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns3: <http://www.iana.org/assignments/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -865,49 +865,49 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     dcterms:title "Compute radiometric indices." ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.RadiometricIndices/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns2:channels [ dcterms:description "Blue channel index" ;
+    proc:inputs [ ns3:channels [ dcterms:description "Blue channel index" ;
                     dcterms:title "Blue channel index" ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns2:channels.green [ dcterms:description "Green channel index" ;
+            ns3:channels.green [ dcterms:description "Green channel index" ;
                     dcterms:title "Green channel index" ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns2:channels.mir [ dcterms:description "Mir channel index" ;
+            ns3:channels.mir [ dcterms:description "Mir channel index" ;
                     dcterms:title "Mir channel index" ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns2:channels.nir [ dcterms:description "NIR channel index" ;
+            ns3:channels.nir [ dcterms:description "NIR channel index" ;
                     dcterms:title "NIR channel index" ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns2:channels.red [ dcterms:description "Red channel index" ;
+            ns3:channels.red [ dcterms:description "Red channel index" ;
                     dcterms:title "Red channel index" ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:type "integer" ] ] ;
-            ns2:in [ dcterms:description "Input image" ;
+            ns3:in [ dcterms:description "Input image" ;
                     dcterms:title "Input image" ;
                     proc:keywords "GeoTIFF",
                         "raster" ;
-                    proc:metadata [ dcterms:title "Implementation Profile: Radiometric index -- input `rasters`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/rasters> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
-                        [ dcterms:title "Generic Profile: Radiometric index -- input `rasters`" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Radiometric index -- input `rasters`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index/inputs/rasters> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
+                        [ dcterms:title "Implementation Profile: Radiometric index -- input `rasters`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index/inputs/rasters> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/jpeg" ],
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ] ] ] ;
-            ns2:out [ dcterms:description "Radiometric indices output image" ;
+                                    ns1:contentMediaType "image/jpeg" ] ] ] ;
+            ns3:out [ dcterms:description "Radiometric indices output image" ;
                     dcterms:title "Radiometric indices output image" ;
                     proc:schema [ proc:default "\"float\""^^rdf:JSON ;
                             proc:enum "double",
@@ -917,7 +917,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 "uint16",
                                 "uint8" ;
                             proc:type "string" ] ] ;
-            ns2:ram [ dcterms:description "Available memory for processing (in MB)." ;
+            ns3:ram [ dcterms:description "Available memory for processing (in MB)." ;
                     dcterms:title "Available memory for processing (in MB)." ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "256"^^rdf:JSON ;
@@ -938,7 +938,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns4:out [ dcterms:description "Radiometric indices output image" ;
+    proc:outputs [ ns2:out [ dcterms:description "Radiometric indices output image" ;
                     dcterms:title "Radiometric indices output image" ;
                     proc:keywords "GeoTIFF",
                         "raster" ;
@@ -950,13 +950,13 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/jpeg" ],
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ] ] ] ] .
+                                    ns1:contentMediaType "image/jpeg" ] ] ] ] .
 
 
 ```

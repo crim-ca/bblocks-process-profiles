@@ -28,13 +28,13 @@
                             proc:type "string" ] ] ;
             ns2:SHAPES [ dcterms:description "Shapes" ;
                     dcterms:title "Shapes" ;
-                    proc:schema [ ns1:oneOf [ proc:type "object" ],
-                                [ proc:type "string" ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "utf-8" ;
                                     ns1:contentMediaType "text/xml" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/vnd.google-earth.kml+xml" ] ] ] ] ;
+                                    ns1:contentMediaType "application/vnd.google-earth.kml+xml" ],
+                                [ proc:type "object" ] ] ] ] ;
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
@@ -46,8 +46,8 @@
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "utf-8" ;
                                     ns1:contentMediaType "text/xml" ],
+                                [ proc:type "object" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/vnd.google-earth.kml+xml" ],
-                                [ proc:type "object" ] ] ] ] .
+                                    ns1:contentMediaType "application/vnd.google-earth.kml+xml" ] ] ] ] .
 

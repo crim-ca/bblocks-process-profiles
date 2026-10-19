@@ -2,7 +2,7 @@
   "title": "Validation report for ospd.process-profiles.downscaling-unet.generate-file-list - Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling step `ogc-ospd2026-downscaling-generate-file-list`",
   "bblockName": "Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling step `ogc-ospd2026-downscaling-generate-file-list`",
   "bblockId": "ospd.process-profiles.downscaling-unet.generate-file-list",
-  "generated": "2026-10-19T14:57:16.429453+00:00",
+  "generated": "2026-10-19T15:59:10.791913+00:00",
   "result": true,
   "items": [
     {

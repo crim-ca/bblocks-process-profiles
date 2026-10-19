@@ -2,7 +2,7 @@
   "title": "Validation report for ospd.process-profiles.pointcloud.point-cloud-thinning - Process profile: SAGA.pointcloud_tools.9",
   "bblockName": "Process profile: SAGA.pointcloud_tools.9",
   "bblockId": "ospd.process-profiles.pointcloud.point-cloud-thinning",
-  "generated": "2026-10-19T14:54:53.232135+00:00",
+  "generated": "2026-10-19T15:56:24.397038+00:00",
   "result": true,
   "items": [
     {
