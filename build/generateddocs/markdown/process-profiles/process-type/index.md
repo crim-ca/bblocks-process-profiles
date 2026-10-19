@@ -809,10 +809,6 @@ properties:
 x-jsonld-extra-terms:
   ProcessType: http://www.w3.org/2004/02/skos/core#Concept
   Plan: http://www.w3.org/ns/prov#Plan
-  source: https://geolabs.github.io/bblocks-process-profiles/def/source
-  cwl:
-    x-jsonld-id: https://geolabs.github.io/bblocks-process-profiles/def/cwl
-    x-jsonld-type: '@id'
 x-jsonld-prefixes:
   skos: http://www.w3.org/2004/02/skos/core#
   prov: http://www.w3.org/ns/prov#
@@ -836,11 +832,6 @@ Links to the schema:
   "@context": {
     "ProcessType": "skos:Concept",
     "Plan": "prov:Plan",
-    "source": "pp:source",
-    "cwl": {
-      "@id": "pp:cwl",
-      "@type": "@id"
-    },
     "id": "@id",
     "type": "@type",
     "prefLabel": "skos:prefLabel",

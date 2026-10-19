@@ -119,7 +119,8 @@ plan:infer a pplan:Step ;
     dct:description "Prepare the model inputs, apply U-Net inference and write HRDPS-scale Zarr results." ;
     dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet> .
 
-process:downscaling-unet pp:plan plan:downscaling-workflow .
+<https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/package>
+    dct:relation plan:downscaling-workflow .
 
 process:downscaling-generate-file-list a skos:Concept ;
     skos:prefLabel "Select RDPS forecast files" ;

@@ -42,14 +42,14 @@ process:downscaling-generate-file-list a skos:Concept ;
     skos:prefLabel "Select RDPS forecast files" ;
     pp:profile "ospd.process-profiles.downscaling-unet.generate-file-list" .
 
-process:downscaling-unet pp:plan plan:downscaling-workflow .
-
 process:downscaling-unet-inference a skos:Concept ;
     dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet> ;
     skos:inScheme local:process-type ;
     skos:prefLabel "Run Resoterre U-Net inference" ;
     pp:activityType activity:climate-downscaling-inference ;
     pp:profile "ospd.process-profiles.downscaling-unet.unet" .
+
+<https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/package> dct:relation plan:downscaling-workflow .
 
 <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet> a prov:Plan ;
     dct:title "Captured packed CWL U-Net step plan" ;

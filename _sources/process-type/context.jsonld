@@ -20,8 +20,6 @@
     "model": { "@id": "pp:model", "@type": "@id" },
     "activityTypes": { "@id": "pp:activityType", "@type": "@id", "@container": "@set" },
     "inRegister": { "@id": "https://w3id.org/ogc/rim/inRegister", "@type": "@id" },
-    "source": "pp:source",
-    "cwl": { "@id": "pp:cwl", "@type": "@id" },
     "processDescription": {
       "@id": "pp:processDescription",
       "@context": {

@@ -2,11 +2,6 @@
   "@context": {
     "ProcessType": "skos:Concept",
     "Plan": "prov:Plan",
-    "source": "pp:source",
-    "cwl": {
-      "@id": "pp:cwl",
-      "@type": "@id"
-    },
     "id": "@id",
     "type": "@type",
     "prefLabel": "skos:prefLabel",

@@ -799,8 +799,8 @@ Description of the deployed *OGC API - Proceses* process that encapsulates the U
 ```ttl
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
 @prefix ns3: <pp:> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -819,7 +819,7 @@ inference on that directory.
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentMediaType "application/yaml" ] ] ;
+                            ns1:contentMediaType "application/yaml" ] ] ;
             proc:data_root [ dcterms:description "Root location prepended to each listed file, used to download the RDPS files." ;
                     proc:literalDataDomains [ proc:dataType [ proc:name "string" ] ;
                             proc:default "true"^^rdf:JSON ;
@@ -866,31 +866,31 @@ such as precipitation.
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/contributor" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "nazim.azeli@luqia.ca" ;
-                    :name "Nazim Azeli" ] ],
-        [ :role "https://schema.org/author" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "smith.trevorj@ouranos.ca" ;
-                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
-                    :name "Trevor James Smith" ] ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "francis.charette-migneault@luqia.ca" ;
-                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
-                    :name "Francis Charette-Migneault" ] ],
-        [ :role "https://schema.org/author" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
+    :metadata [ :role "https://schema.org/author" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "gauvin-st-denis.blaise@ouranos.ca" ;
                     :identifier "https://orcid.org/0009-0004-9049-2092" ;
                     :name "Blaise Gauvin St-Denis" ] ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "smith.trevorj@ouranos.ca" ;
+                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
+                    :name "Trevor James Smith" ] ],
         [ :role "https://schema.org/dateCreated" ;
             :value "2026-09-09T10:36:53-04:00" ],
+        [ :role "https://schema.org/contributor" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "francis.charette-migneault@luqia.ca" ;
+                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
+                    :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/contributor" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "nazim.azeli@luqia.ca" ;
+                    :name "Nazim Azeli" ] ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,
@@ -903,21 +903,21 @@ such as precipitation.
                         [ proc:mediaType "application/pdf" ],
                         [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "text/plain" ] ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentMediaType "text/html" ],
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentMediaType "text/plain" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/pdf" ;
-                                    ns2:format "binary" ],
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/pdf" ;
+                                    ns1:format "binary" ],
                                 [ proc:type "string" ;
-                                    ns2:contentMediaType "text/plain" ] ] ] ;
+                                    ns1:contentMediaType "text/html" ] ] ] ;
             proc:inference_output [ dcterms:title "inference_output" ;
                     proc:formats [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "application/directory" ] ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentEncoding "base64" ;
-                            ns2:contentMediaType "application/directory" ;
-                            ns2:format "binary" ] ] ] ;
+                            ns1:contentEncoding "base64" ;
+                            ns1:contentMediaType "application/directory" ;
+                            ns1:format "binary" ] ] ] ;
     proc:keywords "HRDPS",
         "RDPS",
         "U-Net",
@@ -1007,7 +1007,8 @@ to obtain the `ogc-ospd2026-downscaling-unet-workflow` process.
 ### Process-type register entry
 Register entry for the `ogc-ospd2026-downscaling-unet-workflow` process type, which ties all elements together.
 The `processType` is a URI that identifies the process type in the *OGC API - Processes* register.
-The `processDescription` is a URI that points to the process description document.
+The `processDescription` identifies the deployed process and links its description at `href`.
+The `plan` is the OGC Application Package at `/package`, whose `executionUnit` is the pinned CWL.
 The `phase` and `profile` provide higher-level representation and cateogies that characterize the workflow.
 The `provenanceClass` is represented as [`wfprov:WorkflowRun`](http://purl.org/wf4ever/wfprov#WorkflowRun)
 in alignment with the generated provenance metadata obtained from the job execution of the workflow process.
@@ -1035,17 +1036,24 @@ in alignment with the generated provenance metadata obtained from the job execut
   "inRegister": "https://crim-ca.github.io/bblocks-process-profiles/",
   "processDescription": {
     "id": "ogc-ospd2026-downscaling-unet-workflow",
-    "version": "0.1.3-dev.10"
+    "version": "0.1.3-dev.10",
+    "href": "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow"
   },
-  "source": {
-    "cwl": "https://github.com/Ouranosinc/resoterre/blob/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl",
+  "plan": {
+    "id": "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/package",
+    "type": "Plan",
+    "executionUnit": {
+      "href": "https://github.com/Ouranosinc/resoterre/raw/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl",
+      "type": "application/cwl+yaml",
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+    },
     "cwlClass": "Workflow",
     "cwlId": "downscaling-unet-workflow",
-    "license": "https://spdx.org/licenses/Apache-2.0"
+    "license": "https://spdx.org/licenses/Apache-2.0",
+    "cctDependencies": [],
+    "candidateCctDependencies": []
   },
   "provenanceClass": "http://purl.org/wf4ever/wfprov#WorkflowRun",
-  "cctDependencies": [],
-  "candidateCctDependencies": [],
   "hasStep": [
     "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-generate-file-list",
     "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-download-files",
@@ -1083,17 +1091,24 @@ in alignment with the generated provenance metadata obtained from the job execut
   "inRegister": "https://crim-ca.github.io/bblocks-process-profiles/",
   "processDescription": {
     "id": "ogc-ospd2026-downscaling-unet-workflow",
-    "version": "0.1.3-dev.10"
+    "version": "0.1.3-dev.10",
+    "href": "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow"
   },
-  "source": {
-    "cwl": "https://github.com/Ouranosinc/resoterre/blob/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl",
+  "plan": {
+    "id": "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/package",
+    "type": "Plan",
+    "executionUnit": {
+      "href": "https://github.com/Ouranosinc/resoterre/raw/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl",
+      "type": "application/cwl+yaml",
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+    },
     "cwlClass": "Workflow",
     "cwlId": "downscaling-unet-workflow",
-    "license": "https://spdx.org/licenses/Apache-2.0"
+    "license": "https://spdx.org/licenses/Apache-2.0",
+    "cctDependencies": [],
+    "candidateCctDependencies": []
   },
   "provenanceClass": "http://purl.org/wf4ever/wfprov#WorkflowRun",
-  "cctDependencies": [],
-  "candidateCctDependencies": [],
   "hasStep": [
     "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-generate-file-list",
     "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-download-files",
@@ -1110,6 +1125,7 @@ in alignment with the generated provenance metadata obtained from the job execut
 ```ttl
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix ns1: <pp:> .
+@prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rim: <https://w3id.org/ogc/rim/> .
 
 <https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-unet> a :ProcessType ;
@@ -1124,6 +1140,7 @@ in alignment with the generated provenance metadata obtained from the job execut
     :phase "https://geolabs.github.io/bblocks-process-profiles/def/phase/data-retrieval",
         "https://geolabs.github.io/bblocks-process-profiles/def/phase/export-aggregation",
         "https://geolabs.github.io/bblocks-process-profiles/def/phase/scientific-computation" ;
+    :plan <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/package> ;
     :prefLabel "RDPS-to-HRDPS climate downscaling with a U-Net" ;
     :processDescription <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow> ;
     :profile "ospd.process-profiles.downscaling-unet.workflow" ;
@@ -1131,13 +1148,18 @@ in alignment with the generated provenance metadata obtained from the job execut
     :status "submitted" ;
     rim:inRegister <https://crim-ca.github.io/bblocks-process-profiles/> ;
     ns1:activityType <https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling>,
-        <https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling-inference> ;
-    ns1:source [ :license "https://spdx.org/licenses/Apache-2.0" ;
-            ns1:cwl <https://github.com/Ouranosinc/resoterre/blob/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl> ;
-            ns1:cwlClass "Workflow" ;
-            ns1:cwlId "downscaling-unet-workflow" ] .
+        <https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling-inference> .
+
+<https://github.com/Ouranosinc/resoterre/raw/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
+    :rel "http://www.opengis.net/def/rel/ogc/1.0/executionUnit" .
 
 <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow> ns1:version "0.1.3-dev.10" .
+
+<https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/package> a :Plan ;
+    :license "https://spdx.org/licenses/Apache-2.0" ;
+    proc:executionUnit <https://github.com/Ouranosinc/resoterre/raw/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl> ;
+    ns1:cwlClass "Workflow" ;
+    ns1:cwlId "downscaling-unet-workflow" .
 
 
 ```
@@ -2021,7 +2043,8 @@ plan:infer a pplan:Step ;
     dct:description "Prepare the model inputs, apply U-Net inference and write HRDPS-scale Zarr results." ;
     dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet> .
 
-process:downscaling-unet pp:plan plan:downscaling-workflow .
+<https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/package>
+    dct:relation plan:downscaling-workflow .
 
 process:downscaling-generate-file-list a skos:Concept ;
     skos:prefLabel "Select RDPS forecast files" ;

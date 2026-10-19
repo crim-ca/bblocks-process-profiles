@@ -2,7 +2,7 @@
   "title": "Validation report for ospd.process-profiles.raster.band-math-multiband - Process profile: OTB.BandMathX",
   "bblockName": "Process profile: OTB.BandMathX",
   "bblockId": "ospd.process-profiles.raster.band-math-multiband",
-  "generated": "2026-10-19T14:47:49.093718+00:00",
+  "generated": "2026-10-19T14:54:59.931848+00:00",
   "result": true,
   "items": [
     {

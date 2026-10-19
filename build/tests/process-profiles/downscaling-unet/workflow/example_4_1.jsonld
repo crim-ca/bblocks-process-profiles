@@ -20,17 +20,24 @@
   "inRegister": "https://crim-ca.github.io/bblocks-process-profiles/",
   "processDescription": {
     "id": "ogc-ospd2026-downscaling-unet-workflow",
-    "version": "0.1.3-dev.10"
+    "version": "0.1.3-dev.10",
+    "href": "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow"
   },
-  "source": {
-    "cwl": "https://github.com/Ouranosinc/resoterre/blob/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl",
+  "plan": {
+    "id": "https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/package",
+    "type": "Plan",
+    "executionUnit": {
+      "href": "https://github.com/Ouranosinc/resoterre/raw/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl",
+      "type": "application/cwl+yaml",
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+    },
     "cwlClass": "Workflow",
     "cwlId": "downscaling-unet-workflow",
-    "license": "https://spdx.org/licenses/Apache-2.0"
+    "license": "https://spdx.org/licenses/Apache-2.0",
+    "cctDependencies": [],
+    "candidateCctDependencies": []
   },
   "provenanceClass": "http://purl.org/wf4ever/wfprov#WorkflowRun",
-  "cctDependencies": [],
-  "candidateCctDependencies": [],
   "hasStep": [
     "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-generate-file-list",
     "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-download-files",

@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.raster.extract-roi - Process profile: OTB.ExtractROI
-Generated 2026-10-19T14:47:52.415101+00:00
+Generated 2026-10-19T14:55:03.328539+00:00
 === Files ===
 Using examples/process-type.json from examples
 JSON-LD context is present - uplifting

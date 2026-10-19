@@ -684,26 +684,26 @@ into the inference image.
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/contributor" ;
+    :metadata [ :role "https://schema.org/author" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
+                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
+                    :name "Blaise Gauvin St-Denis" ] ],
+        [ :role "https://schema.org/contributor" ;
             :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "francis.charette-migneault@luqia.ca" ;
                     :identifier "https://orcid.org/0000-0003-4862-3349" ;
                     :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/dateCreated" ;
+            :value "2026-01-30T10:42:53-05:00" ],
         [ :role "https://schema.org/author" ;
             :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "smith.trevorj@ouranos.ca" ;
                     :identifier "https://orcid.org/0000-0001-5393-8359" ;
                     :name "Trevor James Smith" ] ],
-        [ :role "https://schema.org/dateCreated" ;
-            :value "2026-01-30T10:42:53-05:00" ],
-        [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
-                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
-                    :name "Blaise Gauvin St-Denis" ] ],
         [ :role "https://schema.org/contributor" ;
             :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
