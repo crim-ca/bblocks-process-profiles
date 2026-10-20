@@ -7,8 +7,10 @@ name: OSPD Process Profiles
 abstract: |
   OGC API - Processes profiles for the deployable CWL processes of the OSPD 2026 reference
   workflows (W1 Algae Bloom, W2 KindGrove mangrove biomass, W3 Water Bodies detection, W2b a
-  step-decomposed reimplementation of KindGrove), each linked to its CWL source, the generic
-  provenance profile, the EOAP CWL custom types and the openEO Building Blocks.
+  step-decomposed reimplementation of KindGrove) and of the RDPS-to-HRDPS U-Net climate
+  downscaling workflow with its STAC MLM model, each linked to its CWL source, the generic
+  provenance profile, the EOAP CWL custom types and the openEO Building Blocks. It also holds
+  the Geonovum testbed operation profiles (SQL/MM, raster, vector, terrain, point cloud).
 
 description: |
   This register is produced by GeoLabs under OSPD 2026 (D100 Workflow Profiler, D120 OGC API
@@ -27,6 +29,16 @@ description: |
   - proposed openEO equivalences (`ogc.openeo.*`) with an explicit level
     (exactMatch / closeMatch / none) and rationale;
   - a representative execution example.
+
+  The CRIM fork adds the `downscaling-unet` workflow, whose profile also covers:
+
+  - ML and geoprocessing activity types (`ogc.model.registered-item.*`) bound to the STAC MLM
+    model description (`ogc.contrib.stac.extensions.mlm`), with SHACL validation;
+  - the model spatial and temporal domain (GeoSPARQL, OWL-Time);
+  - an Application Package plan related to the captured CWLProv plan.
+
+  The Geonovum testbed operations (SQL/MM, raster, vector, terrain, point cloud) are
+  implementation profiles of the imported generic profiles register.
 
   All mappings are proposed correspondences offered for review, not settled equivalences.
 
@@ -49,6 +61,9 @@ keywords:
   - W3C PROV
   - openEO
   - process type
+  - machine learning
+  - STAC MLM
+  - climate downscaling
 
 imports:
   # OGC main register
