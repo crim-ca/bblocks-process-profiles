@@ -19,12 +19,12 @@
                             ns1:items [ proc:type "string" ;
                                     ns1:contentMediaType "application/octet-stream" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "norm_diff" ;
+    proc:metadata [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ],
+        [ rdf:value "norm_diff" ;
             proc:role schema:name ],
         [ rdf:value "1.4.1" ;
-            proc:role schema:softwareVersion ],
-        [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ] ;
+            proc:role schema:softwareVersion ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;

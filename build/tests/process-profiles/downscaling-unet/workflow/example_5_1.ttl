@@ -1,16 +1,16 @@
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ns1: <vcs:> .
-@prefix ns2: <ml-aoi:> .
+@prefix ns1: <sci:> .
+@prefix ns2: <vcs:> .
 @prefix ns3: <file:> .
 @prefix ns4: <mlm:> .
 @prefix ns5: <application:> .
-@prefix ns6: <cube:> .
-@prefix ns7: <sci:> .
+@prefix ns6: <ml-aoi:> .
+@prefix ns7: <cube:> .
 @prefix ns8: <pp:> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///workspace/ogc-ospd2026-downscaling-unet> a :Feature ;
+<file:///github/workspace/ogc-ospd2026-downscaling-unet> a :Feature ;
     :assets [ :citation <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/CITATION.cff> ;
             :configuration <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/configs/downscaling/downscaling_rdps_to_hrdps_cwl.yaml> ;
             :container <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/docker/Dockerfile.inference> ;
@@ -40,7 +40,7 @@
         <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_generate_file_list.cwl>,
         <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl>,
         <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl> ;
-    :properties [ ns6:dimensions [ :rlat [ a :spatial ;
+    :properties [ ns7:dimensions [ :rlat [ a :spatial ;
                             dct:description "Row coordinate of the 512x512 HRDPS target array in its rotated-pole grid. The geographic positions are provided by the two-dimensional lat/lon auxiliary coordinates." ;
                             :axis "y" ;
                             :extent 0,
@@ -57,7 +57,7 @@
                             :extent "2017-05-22T07:00:00Z",
                                 "2100-12-31T23:59:59Z" ;
                             :unit "s" ] ] ;
-            ns6:variables [ :GZ500 [ a :data ;
+            ns7:variables [ :GZ500 [ a :data ;
                             dct:description "RDPS geopotential height at 500 hPa, normalized before inference." ;
                             :data_type "float32" ;
                             :dimensions "rlat",
@@ -192,16 +192,16 @@
             :end_datetime "2100-12-31T23:59:59Z" ;
             :experimental true ;
             :license "Apache-2.0" ;
-            :providers [ dct:description "Deployment host and inference-container processor." ;
-                    :name "CRIM" ;
-                    :roles "host",
-                        "processor" ;
-                    :url "https://www.crim.ca/" ],
-                [ dct:description "Producer and licensor of the model." ;
+            :providers [ dct:description "Producer and licensor of the model." ;
                     :name "Ouranos" ;
                     :roles "licensor",
                         "producer" ;
-                    :url "https://www.ouranos.ca/" ] ;
+                    :url "https://www.ouranos.ca/" ],
+                [ dct:description "Deployment host and inference-container processor." ;
+                    :name "CRIM" ;
+                    :roles "host",
+                        "processor" ;
+                    :url "https://www.crim.ca/" ] ;
             :start_datetime "2017-05-22T07:00:00Z" ;
             ns4:accelerator "cuda" ;
             ns4:accelerator_constrained false ;
@@ -233,19 +233,7 @@
                     :training_batch_size 64 ;
                     :validation_period_start "2023-01-10 00:00:00" ;
                     :weight_decay "1e-05" ] ;
-            ns4:input [ dct:description "Static orography and land-fraction channels on the 512x512 target grid. The geographic lat/lon are auxiliary coordinates over rlat/rlon." ;
-                    :input [ :data_type "float32" ;
-                            :dim_order "batch",
-                                "rlat",
-                                "rlon",
-                                "variables" ;
-                            :shape -1,
-                                2,
-                                512 ] ;
-                    :name "hrdps_geophysical_inputs" ;
-                    :variables "orog",
-                        "sftlf" ],
-                [ dct:description "Fourteen normalized RDPS meteorological channels on the 128x128 coarse rotated grid. Each flexible batch element represents one independently selected valid time. The time identifies samples in the surrounding dataset but is not a tensor axis because the U-Net does not jointly process a temporal sequence." ;
+            ns4:input [ dct:description "Fourteen normalized RDPS meteorological channels on the 128x128 coarse rotated grid. Each flexible batch element represents one independently selected valid time. The time identifies samples in the surrounding dataset but is not a tensor axis because the U-Net does not jointly process a temporal sequence." ;
                     :input [ :data_type "float32" ;
                             :dim_order "batch",
                                 "rlat",
@@ -268,7 +256,19 @@
                         "UU850",
                         "UU_model_levels",
                         "VV850",
-                        "VV_model_levels" ] ;
+                        "VV_model_levels" ],
+                [ dct:description "Static orography and land-fraction channels on the 512x512 target grid. The geographic lat/lon are auxiliary coordinates over rlat/rlon." ;
+                    :input [ :data_type "float32" ;
+                            :dim_order "batch",
+                                "rlat",
+                                "rlon",
+                                "variables" ;
+                            :shape -1,
+                                2,
+                                512 ] ;
+                    :name "hrdps_geophysical_inputs" ;
+                    :variables "orog",
+                        "sftlf" ] ;
             ns4:name "UNet RDPS HRDPS Downscaling" ;
             ns4:output [ dct:description "Four continuous HRDPS fields reconstructed for the same valid time on the 512x512 target rotated grid." ;
                     :name "hrdps_outputs" ;
@@ -291,11 +291,11 @@
                 "super-resolution" ;
             ns4:total_parameters 9871888 ;
             ns8:version "0.1.3-dev.10" ;
-            ns7:citation "Gauvin St-Denis, B., and Smith, T. J. resoterre (version 0.1.3-dev.10). Ouranos." ;
-            ns1:branch "main" ;
-            ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
-            ns1:tag "v0.1.3-dev.10" ;
-            ns1:type "git" ] ;
+            ns1:citation "Gauvin St-Denis, B., and Smith, T. J. resoterre (version 0.1.3-dev.10). Ouranos." ;
+            ns2:branch "main" ;
+            ns2:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+            ns2:tag "v0.1.3-dev.10" ;
+            ns2:type "git" ] ;
     :stac_extensions "https://stac-extensions.github.io/application/v0.1.0/schema.json",
         "https://stac-extensions.github.io/datacube/v2.3.0/schema.json",
         "https://stac-extensions.github.io/file/v2.1.0/schema.json",
@@ -314,10 +314,10 @@
 
 <https://github.com/Ouranosinc/resoterre.git> dct:title "resoterre source repository" ;
     :rel "vcs" ;
-    ns1:branch "main" ;
-    ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
-    ns1:tag "v0.1.3-dev.10" ;
-    ns1:type "git" .
+    ns2:branch "main" ;
+    ns2:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+    ns2:tag "v0.1.3-dev.10" ;
+    ns2:type "git" .
 
 <https://hirondelle.crim.ca/stac/> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/json> ;
     :rel "root" .
@@ -329,8 +329,8 @@
         "HRDPS train samples",
         "HRDPS validate samples" ;
     :rel "derived_from" ;
-    ns2:role "label" ;
-    ns2:split "test",
+    ns6:role "label" ;
+    ns6:split "test",
         "train",
         "validate" .
 
@@ -341,8 +341,8 @@
         "RDPS train samples",
         "RDPS validate samples" ;
     :rel "derived_from" ;
-    ns2:role "feature" ;
-    ns2:split "test",
+    ns6:role "feature" ;
+    ns6:split "test",
         "train",
         "validate" .
 
@@ -398,10 +398,10 @@
     dct:description "CWL CommandLineTool downloading the listed RDPS files into a local directory." ;
     dct:title "RDPS download CWL tool" ;
     :rel "application" ;
-    ns1:branch "main" ;
-    ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
-    ns1:tag "v0.1.3-dev.10" ;
-    ns1:type "git" .
+    ns2:branch "main" ;
+    ns2:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+    ns2:tag "v0.1.3-dev.10" ;
+    ns2:type "git" .
 
 <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_generate_file_list.cwl> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
     ns5:languages "Common Workflow Language" ;
@@ -410,10 +410,10 @@
     dct:description "CWL CommandLineTool listing the RDPS files required for a requested datetime range." ;
     dct:title "RDPS file listing CWL tool" ;
     :rel "application" ;
-    ns1:branch "main" ;
-    ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
-    ns1:tag "v0.1.3-dev.10" ;
-    ns1:type "git" .
+    ns2:branch "main" ;
+    ns2:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+    ns2:tag "v0.1.3-dev.10" ;
+    ns2:type "git" .
 
 <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
     ns5:languages "Common Workflow Language" ;
@@ -422,10 +422,10 @@
     dct:description "CWL CommandLineTool running the U-Net downscaling inference on the downloaded RDPS data." ;
     dct:title "U-Net inference CWL tool" ;
     :rel "application" ;
-    ns1:branch "main" ;
-    ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
-    ns1:tag "v0.1.3-dev.10" ;
-    ns1:type "git" .
+    ns2:branch "main" ;
+    ns2:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+    ns2:tag "v0.1.3-dev.10" ;
+    ns2:type "git" .
 
 <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
     ns5:languages "Common Workflow Language" ;
@@ -434,10 +434,10 @@
     dct:description "CWL Workflow chaining the file listing, download and U-Net inference steps." ;
     dct:title "RDPS-to-HRDPS downscaling CWL workflow" ;
     :rel "application" ;
-    ns1:branch "main" ;
-    ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
-    ns1:tag "v0.1.3-dev.10" ;
-    ns1:type "git" .
+    ns2:branch "main" ;
+    ns2:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+    ns2:tag "v0.1.3-dev.10" ;
+    ns2:type "git" .
 
 <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/scripts/meta_workflows/downscaling/rdps_to_hrdps.smk> a <https://crim-ca.github.io/bblocks-process-profiles/def/text/x-snakemake> ;
     ns5:entrypoint "scripts/meta_workflows/downscaling/rdps_to_hrdps.smk" ;

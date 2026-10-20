@@ -10,7 +10,7 @@ path	@id	schema
 /keywords		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/descriptionType/schema.yaml
 /metadata		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/descriptionType/schema.yaml
 /title		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/descriptionType/schema.yaml
-/id	@id	/workspace/build/annotated/process-profiles/kindgrove-steps/export-stac/schema.yaml
+/id	@id	/github/workspace/build/annotated/process-profiles/kindgrove-steps/export-stac/schema.yaml
 /jobControlOptions		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processSummary/schema.yaml
 /links		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processSummary/schema.yaml
 /links/href		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/link/schema.yaml
@@ -20,7 +20,7 @@ path	@id	schema
 /links/type		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/link/schema.yaml
 /outputTransmission		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processSummary/schema.yaml
 /version		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processSummary/schema.yaml
-/inputs	https://w3id.org/ogc/api/processes/inputs	/workspace/build/annotated/process-profiles/kindgrove-steps/export-stac/schema.yaml
+/inputs	https://w3id.org/ogc/api/processes/inputs	/github/workspace/build/annotated/process-profiles/kindgrove-steps/export-stac/schema.yaml
 /inputs/maxOccurs	https://w3id.org/ogc/api/processes/maxOccurs	https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputDescription/schema.yaml
 /inputs/minOccurs	https://w3id.org/ogc/api/processes/minOccurs	https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputDescription/schema.yaml
 /inputs/schema	https://w3id.org/ogc/api/processes/schema	https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/inputDescription/schema.yaml
@@ -60,6 +60,6 @@ path	@id	schema
 /inputs/schema/_oneOf/1/type		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/schema/schema.yaml
 /inputs/schema/_oneOf/1/uniqueItems		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/schema/schema.yaml
 /inputs/schema/_oneOf/1/writeOnly		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/schema/schema.yaml
-/outputs	https://w3id.org/ogc/api/processes/outputs	/workspace/build/annotated/process-profiles/kindgrove-steps/export-stac/schema.yaml
+/outputs	https://w3id.org/ogc/api/processes/outputs	/github/workspace/build/annotated/process-profiles/kindgrove-steps/export-stac/schema.yaml
 /outputs/schema	https://w3id.org/ogc/api/processes/schema	https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/outputDescription/schema.yaml
 /mutable		https://geolabs.github.io/bblock-ogcapi-processes-part2/build/annotated/api/processes/v2/schemas/staticIndicator/schema.yaml

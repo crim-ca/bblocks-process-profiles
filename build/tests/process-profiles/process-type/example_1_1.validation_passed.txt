@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.process-type - Process type register entry
-Generated 2026-10-20T19:13:37.404408+00:00
+Generated 2026-10-20T19:48:44.033310+00:00
 === Files ===
 Using examples/reproject-image.json from examples
 JSON-LD context is present - uplifting

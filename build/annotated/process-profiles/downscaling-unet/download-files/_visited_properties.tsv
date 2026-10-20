@@ -10,7 +10,7 @@ path	@id	schema
 /keywords		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/descriptionType/schema.yaml
 /metadata		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/descriptionType/schema.yaml
 /title		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/descriptionType/schema.yaml
-/id	@id	/workspace/build/annotated/process-profiles/downscaling-unet/download-files/schema.yaml
+/id	@id	/github/workspace/build/annotated/process-profiles/downscaling-unet/download-files/schema.yaml
 /jobControlOptions		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processSummary/schema.yaml
 /links		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/processSummary/schema.yaml
 /links/href		https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/link/schema.yaml
