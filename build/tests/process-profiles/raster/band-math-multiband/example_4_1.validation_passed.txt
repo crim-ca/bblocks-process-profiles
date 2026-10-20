@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.raster.band-math-multiband - Process profile: OTB.BandMathX
-Generated 2026-10-19T16:53:32.853891+00:00
+Generated 2026-10-20T19:13:46.305278+00:00
 === Files ===
 Using examples/process-type.json from examples
 JSON-LD context is present - uplifting

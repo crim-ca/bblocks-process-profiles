@@ -2,7 +2,7 @@
 
 ## Authoritative validation: passing (2026-10-06)
 
-`./build.sh` (Docker, `ghcr.io/opengeospatial/bblocks-postprocess:latest`): **52/52 building
+`./build.sh` (Docker, `ghcr.io/opengeospatial/bblocks-postprocess:latest`): **63/63 building
 blocks, 0 errors**, no empty RDF graph. Supersedes the 2026-09-24 28/28 below, not a correction
 of it: the `sqlmm`/`raster`/`vector` workflow groups (SQL/MM, GDAL/OTB and SAGA operations on
 the Geonovum testbed, `ospd.process-profiles.{sqlmm,raster,vector}.*`) were added over several

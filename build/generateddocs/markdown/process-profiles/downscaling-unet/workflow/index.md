@@ -799,8 +799,8 @@ Description of the deployed *OGC API - Proceses* process that encapsulates the U
 ```ttl
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
+@prefix ns1: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
 @prefix ns3: <pp:> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -819,7 +819,7 @@ inference on that directory.
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/yaml" ] ] ;
+                            ns2:contentMediaType "application/yaml" ] ] ;
             proc:data_root [ dcterms:description "Root location prepended to each listed file, used to download the RDPS files." ;
                     proc:literalDataDomains [ proc:dataType [ proc:name "string" ] ;
                             proc:default "true"^^rdf:JSON ;
@@ -866,31 +866,31 @@ such as precipitation.
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "smith.trevorj@ouranos.ca" ;
-                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
-                    :name "Trevor James Smith" ] ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "nazim.azeli@luqia.ca" ;
-                    :name "Nazim Azeli" ] ],
-        [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
-                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
-                    :name "Blaise Gauvin St-Denis" ] ],
-        [ :role "https://schema.org/dateCreated" ;
-            :value "2026-09-09T10:36:53-04:00" ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+    :metadata [ :role "https://schema.org/contributor" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "francis.charette-migneault@luqia.ca" ;
                     :identifier "https://orcid.org/0000-0003-4862-3349" ;
                     :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "smith.trevorj@ouranos.ca" ;
+                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
+                    :name "Trevor James Smith" ] ],
+        [ :role "https://schema.org/dateCreated" ;
+            :value "2026-09-09T10:36:53-04:00" ],
+        [ :role "https://schema.org/contributor" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "nazim.azeli@luqia.ca" ;
+                    :name "Nazim Azeli" ] ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
+                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
+                    :name "Blaise Gauvin St-Denis" ] ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,
@@ -899,25 +899,25 @@ such as precipitation.
     :outputTransmission "reference",
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
-                    proc:formats [ proc:mediaType "text/html" ],
+                    proc:formats [ proc:mediaType "application/pdf" ],
+                        [ proc:mediaType "text/html" ],
                         [ proc:default "true"^^rdf:JSON ;
-                            proc:mediaType "text/plain" ],
-                        [ proc:mediaType "application/pdf" ] ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/pdf" ;
-                                    ns1:format "binary" ],
+                            proc:mediaType "text/plain" ] ;
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/pdf" ;
+                                    ns2:format "binary" ],
                                 [ proc:type "string" ;
-                                    ns1:contentMediaType "text/plain" ],
+                                    ns2:contentMediaType "text/html" ],
                                 [ proc:type "string" ;
-                                    ns1:contentMediaType "text/html" ] ] ] ;
+                                    ns2:contentMediaType "text/plain" ] ] ] ;
             proc:inference_output [ dcterms:title "inference_output" ;
                     proc:formats [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "application/directory" ] ;
                     proc:schema [ proc:type "string" ;
-                            ns1:contentEncoding "base64" ;
-                            ns1:contentMediaType "application/directory" ;
-                            ns1:format "binary" ] ] ] ;
+                            ns2:contentEncoding "base64" ;
+                            ns2:contentMediaType "application/directory" ;
+                            ns2:format "binary" ] ] ] ;
     proc:keywords "HRDPS",
         "RDPS",
         "U-Net",

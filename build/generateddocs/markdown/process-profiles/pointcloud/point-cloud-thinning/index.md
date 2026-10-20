@@ -580,8 +580,8 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
@@ -602,7 +602,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
             ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.9/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns1:INPUT [ dcterms:description "Points" ;
+    proc:inputs [ ns2:INPUT [ dcterms:description "Points" ;
                     dcterms:title "Points" ;
                     proc:keywords "LAS",
                         "point cloud" ;
@@ -612,43 +612,43 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                         [ dcterms:title "Generic Profile: Point cloud thinning -- input `points`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/points> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-lasf" ] ] ] ;
-            ns1:NUMBER [ dcterms:description "Number of Points" ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-lasf" ] ] ] ;
+            ns2:NUMBER [ dcterms:description "Number of Points" ;
                     dcterms:title "Number of Points" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "0"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "integer" ] ] ;
-            ns1:PERCENT [ dcterms:description "Reduce the number of points to this percentage." ;
+            ns2:PERCENT [ dcterms:description "Reduce the number of points to this percentage." ;
                     dcterms:title "Percent" ;
                     proc:keywords "percentage" ;
-                    proc:metadata [ dcterms:title "Implementation Profile: Point cloud thinning (simple) -- input `percentage`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/percentage> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
-                        [ dcterms:title "Generic Profile: Point cloud thinning -- input `percentage`" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning -- input `percentage`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning/inputs/percentage> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
+                        [ dcterms:title "Implementation Profile: Point cloud thinning (simple) -- input `percentage`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/inputs/percentage> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "50"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
-                            ns2:format "float" ;
-                            ns2:maximum 100 ;
-                            ns2:minimum 0 ] ] ] ;
+                            ns1:format "float" ;
+                            ns1:maximum 100 ;
+                            ns1:minimum 0 ] ] ] ;
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
-    proc:metadata [ dcterms:title "Process Concept: Point Cloud Processing" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Generic Profile: Point cloud thinning" ;
+    proc:metadata [ dcterms:title "Generic Profile: Point cloud thinning" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-thinning> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
         [ dcterms:title "Implementation Profile: Point cloud thinning (simple)" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ] ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
+        [ dcterms:title "Process Concept: Point Cloud Processing" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
@@ -662,9 +662,9 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                         [ dcterms:title "Implementation Profile: Point cloud thinning (simple) -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-thinning/outputs/result> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-lasf" ] ] ] ] .
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-lasf" ] ] ] ] .
 
 
 ```

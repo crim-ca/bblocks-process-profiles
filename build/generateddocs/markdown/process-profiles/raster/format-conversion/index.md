@@ -200,8 +200,8 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
@@ -214,25 +214,25 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "Convert raster data from one format to another. " ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns1:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Gdal_Translate/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns1:Format [ dcterms:description "Select the output format by usig short name of the format (use gda-config --formats for list of available formats on your platform)." ;
+    proc:inputs [ ns2:Format [ dcterms:description "Select the output format by usig short name of the format (use gda-config --formats for list of available formats on your platform)." ;
                     dcterms:title "Format of the output data" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"GTiff\""^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns1:GCP [ dcterms:description "Ground Point Control in the form : pixel,line,eating,northing(,elev)." ;
+            ns2:GCP [ dcterms:description "Ground Point Control in the form : pixel,line,eating,northing(,elev)." ;
                     dcterms:title "Ground Point Control" ;
                     proc:maxOccurs "unbounded" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns1:InputDSN [ dcterms:description "The input data source name to use as source for convertion." ;
+            ns2:InputDSN [ dcterms:description "The input data source name to use as source for convertion." ;
                     dcterms:title "The input data source name" ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:OutputDSN [ dcterms:description "The output data source name to use as source for convertion." ;
+            ns2:OutputDSN [ dcterms:description "The output data source name to use as source for convertion." ;
                     dcterms:title "The output data source name" ;
                     proc:schema [ proc:type "string" ] ] ] ;
     proc:jobControlOptions "async-execute",
@@ -576,12 +576,12 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:inputs [ ns1:Format [ dcterms:description "Select the output format by usig short name of the format (use gda-config --formats for list of available formats on your platform)." ;
                     dcterms:title "Format of the output data" ;
                     proc:keywords "format" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Raster format conversion -- input `targetFormat`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/inputs/targetFormat> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Raster format conversion -- input `targetFormat`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Raster format conversion -- input `targetFormat`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-format-conversion/inputs/targetFormat> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Raster format conversion -- input `targetFormat`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/inputs/targetFormat> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"GTiff\""^^rdf:JSON ;
                             proc:nullable true ;
@@ -626,12 +626,12 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                     dcterms:title "The resulting converted file" ;
                     proc:keywords "GeoTIFF",
                         "raster" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Raster format conversion -- output `raster`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/outputs/raster> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
-                        [ dcterms:title "Implementation Profile: Raster format conversion -- output `raster`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Raster format conversion -- output `raster`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-format-conversion/outputs/raster> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ],
+                        [ dcterms:title "Generic Profile: Raster format conversion -- output `raster`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion/outputs/raster> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
                     proc:schema [ proc:type "string" ] ] ] .
 
 
