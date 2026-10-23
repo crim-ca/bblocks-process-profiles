@@ -353,8 +353,8 @@
   },
   "x-bblocks-metadata": {
     "itemIdentifier": "ospd.process-profiles.process-type",
-    "register": "https://geolabs.github.io/bblocks-process-profiles/build/register.json",
+    "register": "https://crim-ca.github.io/bblocks-process-profiles/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-10-21"
+    "dateOfLastChange": "2026-10-23"
   }
 }

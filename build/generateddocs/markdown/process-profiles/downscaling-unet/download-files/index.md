@@ -388,6 +388,14 @@ Entries can be HTTP(S) URLs or local paths reachable from the container.
     :metadata [ :role "https://schema.org/contributor" ;
             :value [ ns1:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
+                    :email "francis.charette-migneault@luqia.ca" ;
+                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
+                    :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/dateCreated" ;
+            :value "2026-09-04T11:45:32-04:00" ],
+        [ :role "https://schema.org/contributor" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
                     :email "nazim.azeli@luqia.ca" ;
                     :name "Nazim Azeli" ] ],
         [ :role "https://schema.org/author" ;
@@ -396,14 +404,6 @@ Entries can be HTTP(S) URLs or local paths reachable from the container.
                     :email "smith.trevorj@ouranos.ca" ;
                     :identifier "https://orcid.org/0000-0001-5393-8359" ;
                     :name "Trevor James Smith" ] ],
-        [ :role "https://schema.org/dateCreated" ;
-            :value "2026-09-04T11:45:32-04:00" ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "francis.charette-migneault@luqia.ca" ;
-                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
-                    :name "Francis Charette-Migneault" ] ],
         [ :role "https://schema.org/author" ;
             :value [ ns1:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
@@ -574,6 +574,11 @@ x-jsonld-prefixes:
   rim: https://w3id.org/ogc/rim/
   mlact: https://w3id.org/ogc/rim/ml-activity/
   geoproc: https://w3id.org/ogc/rim/geoprocessing/
+x-bblocks-metadata:
+  itemIdentifier: ospd.process-profiles.downscaling-unet.download-files
+  register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-23'
 
 ```
 

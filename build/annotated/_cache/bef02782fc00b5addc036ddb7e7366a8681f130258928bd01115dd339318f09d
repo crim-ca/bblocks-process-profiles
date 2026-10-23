@@ -3,12 +3,12 @@
   "name": "Registered Item Model",
   "abstract": "A base RDF and SHACL model for register items, register item classes and register\ngovernance metadata, aligned with ISO 19135:2026 (*Geographic information \u2014 Registration\nand register governance*). Sub-registers profile this model rather than inventing their own.\n",
   "description": "A register is a catalogue with systematic governance: a content information model\n(what an item looks like) plus management metadata (who governs it, what state it is\nin, how it changes). ISO 19135:2026 defines one such register model \u2014 separating a\n**concept plane** (meaning: concepts and concept versions) from a **content plane**\n(representation: register item classes and register items) and adding a governance\nlayer of roles, statuses, actions and commitments.\n\nThis repository publishes that model as a single base [OGC Building\nBlock](https://ogcincubator.github.io/bblocks-docs/), independent of any one register's\nown content schema. Any register \u2014 a CSV catalogue, the OGC Definitions Server, a\nGitHub-managed vocabulary, or a Building Blocks register itself \u2014 maps its own\nschema's identifiers, statuses and roles onto this base model via a JSON-LD context,\nso that management metadata from otherwise unrelated registers becomes one queryable\ngraph. A sub-register's rules are expressed as a profile of this base block (null,\nadditive, or constrained), always validating against it.\n\nRegister vs. registry: the **register** is the governed information (items,\nidentifiers, statuses, roles, processes); the **register system** \u2014 often loosely\ncalled the \"registry\" \u2014 is merely the information system it happens to run on. This\nmodel describes the former, independent of the latter.\n",
-  "modified": "2026-10-19T06:19:44.480316",
+  "modified": "2026-10-21T12:09:46.049423",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"f470eb472692ab3e5845074dc94405af89b2f182",
-      "shortCommitId": "\"f470eb",
-      "date": "2026-10-14T12:20:08+00:00\""
+      "commitId": "\"dc0fd35d6cd8801a5efabb93634cef74ca14d45d",
+      "shortCommitId": "\"dc0fd3",
+      "date": "2026-10-21T09:10:03+00:00\""
     }
   },
   "gitRepository": "https://github.com/ogcincubator/registered-item-model",
@@ -68,7 +68,7 @@
         "plan"
       ],
       "dateTimeAddition": "2026-09-23T00:00:00Z",
-      "dateOfLastChange": "2026-10-19",
+      "dateOfLastChange": "2026-10-21",
       "ontology": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/activity-type/ontology.ttl",
       "sourceFiles": "https://ogcincubator.github.io/registered-item-model/_sources/activity-type/",
       "validationPassed": true,
@@ -97,9 +97,9 @@
       "itemClass": "schema",
       "version": "0.2",
       "shaclShapes": {},
+      "dateOfLastChange": "2026-10-21",
       "ldContext": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/concept-version/context.jsonld",
       "ontology": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/concept-version/ontology.ttl",
-      "dateOfLastChange": "2026-09-25",
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/concept-version/schema.yaml",
         "application/json": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/concept-version/schema.json"
@@ -136,9 +136,9 @@
       "itemClass": "schema",
       "version": "0.2",
       "shaclShapes": {},
+      "dateOfLastChange": "2026-10-21",
       "ldContext": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register/context.jsonld",
       "ontology": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register/ontology.ttl",
-      "dateOfLastChange": "2026-09-25",
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register/schema.yaml",
         "application/json": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register/schema.json"
@@ -206,7 +206,7 @@
         "metadata"
       ],
       "dateTimeAddition": "2026-09-17T00:00:00Z",
-      "dateOfLastChange": "2026-10-19",
+      "dateOfLastChange": "2026-10-21",
       "ontology": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/core-ontology/ontology.ttl",
       "sourceFiles": "https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/",
       "validationPassed": true,
@@ -277,7 +277,7 @@
         "register"
       ],
       "dateTimeAddition": "2026-09-23T00:00:00Z",
-      "dateOfLastChange": "2026-10-19",
+      "dateOfLastChange": "2026-10-21",
       "ontology": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/geoprocessing-activity-types/ontology.ttl",
       "sourceFiles": "https://ogcincubator.github.io/registered-item-model/_sources/geoprocessing-activity-types/",
       "validationPassed": true,
@@ -359,7 +359,7 @@
         "activity type"
       ],
       "dateTimeAddition": "2026-09-17T00:00:00Z",
-      "dateOfLastChange": "2026-10-19",
+      "dateOfLastChange": "2026-10-21",
       "ontology": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/ml-activity-types/ontology.ttl",
       "sourceFiles": "https://ogcincubator.github.io/registered-item-model/_sources/ml-activity-types/",
       "validationPassed": false,
@@ -394,9 +394,9 @@
         "bblocks://ogc.model.registered-item.rim.register"
       ],
       "shaclShapes": {},
+      "dateOfLastChange": "2026-10-21",
       "ldContext": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-item-class/context.jsonld",
       "ontology": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-item-class/ontology.ttl",
-      "dateOfLastChange": "2026-09-25",
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-item-class/schema.yaml",
         "application/json": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-item-class/schema.json"
@@ -434,9 +434,9 @@
         "bblocks://ogc.model.registered-item.rim.register"
       ],
       "shaclShapes": {},
+      "dateOfLastChange": "2026-10-21",
       "ldContext": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-specification/context.jsonld",
       "ontology": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-specification/ontology.ttl",
-      "dateOfLastChange": "2026-09-25",
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-specification/schema.yaml",
         "application/json": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-specification/schema.json"
@@ -478,9 +478,9 @@
         "bblocks://ogc.model.registered-item.rim.register-item-class"
       ],
       "shaclShapes": {},
+      "dateOfLastChange": "2026-10-21",
       "ldContext": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/registered-item/context.jsonld",
       "ontology": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/registered-item/ontology.ttl",
-      "dateOfLastChange": "2026-09-25",
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/registered-item/schema.yaml",
         "application/json": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/registered-item/schema.json"
@@ -520,9 +520,9 @@
         "bblocks://ogc.model.registered-item.rim.registered-item"
       ],
       "shaclShapes": {},
+      "dateOfLastChange": "2026-10-21",
       "ldContext": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-action/context.jsonld",
       "ontology": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-action/ontology.ttl",
-      "dateOfLastChange": "2026-09-25",
       "schema": {
         "application/yaml": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-action/schema.yaml",
         "application/json": "https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/rim/register-action/schema.json"
