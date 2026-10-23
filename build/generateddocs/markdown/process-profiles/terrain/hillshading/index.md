@@ -559,10 +559,10 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                     dcterms:title "Elevation" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-aaigrid" ],
@@ -644,16 +644,16 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                     dcterms:title "Analytical Hillshading" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ] .
+                                    ns1:contentMediaType "image/png" ] ] ] ] .
 
 
 ```
@@ -1300,9 +1300,9 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://w3id.org/ogc/api/schema/> .
 @prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
@@ -1328,42 +1328,42 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:inputs [ ns3:AZIMUTH [ dcterms:description "Direction of the light source, measured in degree clockwise from the North direction." ;
                     dcterms:title "Azimuth" ;
                     proc:keywords "azimuth" ;
-                    proc:metadata [ dcterms:title "Implementation Profile: Analytical hillshading -- input `azimuth`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/azimuth> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
-                        [ dcterms:title "Generic Profile: Analytical hillshading -- input `azimuth`" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- input `azimuth`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
+                        [ dcterms:title "Implementation Profile: Analytical hillshading -- input `azimuth`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/azimuth> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "315"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
-                            ns1:format "float" ;
-                            ns1:maximum 360 ;
-                            ns1:minimum 0 ] ] ;
-            ns3:DATE_MIN [ dcterms:description "Day" ;
+                            ns3:format "float" ;
+                            ns3:maximum 360 ;
+                            ns3:minimum 0 ] ] ;
+            ns2:DATE_MIN [ dcterms:description "Day" ;
                     dcterms:title "Day (min value)" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:nullable true ;
                             proc:type "string" ;
-                            ns1:format "date" ] ] ;
-            ns3:DECLINATION [ dcterms:description "Height of the light source, measured in degree above the horizon." ;
+                            ns3:format "date" ] ] ;
+            ns2:DECLINATION [ dcterms:description "Height of the light source, measured in degree above the horizon." ;
                     dcterms:title "Height" ;
                     proc:keywords "altitude" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- input `altitude`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Analytical hillshading -- input `altitude`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Analytical hillshading -- input `altitude`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/altitude> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Analytical hillshading -- input `altitude`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "45"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
-                            ns1:format "float" ;
-                            ns1:maximum 90 ;
-                            ns1:minimum 0 ] ] ;
-            ns3:ELEVATION [ dcterms:description "Elevation" ;
+                            ns3:format "float" ;
+                            ns3:maximum 90 ;
+                            ns3:minimum 0 ] ] ;
+            ns2:ELEVATION [ dcterms:description "Elevation" ;
                     dcterms:title "Elevation" ;
                     proc:keywords "GeoTIFF",
                         "elevation" ;
@@ -1373,26 +1373,26 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                         [ dcterms:title "Implementation Profile: Analytical hillshading -- input `elevation`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/elevation> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns3:oneOf [ proc:type "string" ;
+                                    ns3:contentEncoding "base64" ;
+                                    ns3:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns3:contentEncoding "base64" ;
+                                    ns3:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns3:contentEncoding "base64" ;
+                                    ns3:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ] ] ] ;
-            ns3:EXAGGERATION [ dcterms:description "The terrain exaggeration factor allows one to increase the shading contrasts in flat areas." ;
+                                    ns3:contentEncoding "base64" ;
+                                    ns3:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
+            ns2:EXAGGERATION [ dcterms:description "The terrain exaggeration factor allows one to increase the shading contrasts in flat areas." ;
                     dcterms:title "Exaggeration" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
-                            ns1:format "float" ] ] ;
-            ns3:METHOD [ dcterms:description "Shading Method" ;
+                            ns3:format "float" ] ] ;
+            ns2:METHOD [ dcterms:description "Shading Method" ;
                     dcterms:title "Shading Method" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"Standard\""^^rdf:JSON ;
@@ -1424,8 +1424,8 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                     proc:schema [ proc:default "10"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
-                            ns1:format "float" ] ] ;
-            ns3:SHADOW [ dcterms:description "Choose 'slim' to trace grid node's shadow, 'fat' to trace the whole cell's shadow. The first is slightly faster but might show some artifacts." ;
+                            ns3:format "float" ] ] ;
+            ns2:SHADOW [ dcterms:description "Choose 'slim' to trace grid node's shadow, 'fat' to trace the whole cell's shadow. The first is slightly faster but might show some artifacts." ;
                     dcterms:title "Shadow" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"slim\""^^rdf:JSON ;
@@ -1439,10 +1439,10 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                     proc:schema [ proc:default "12"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
-                            ns1:format "float" ;
-                            ns1:maximum 24 ;
-                            ns1:minimum 0 ] ] ;
-            ns3:UNIT [ dcterms:description "Unit" ;
+                            ns3:format "float" ;
+                            ns3:maximum 24 ;
+                            ns3:minimum 0 ] ] ;
+            ns2:UNIT [ dcterms:description "Unit" ;
                     dcterms:title "Unit" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"radians\""^^rdf:JSON ;
@@ -1465,28 +1465,28 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns2:SHADE [ dcterms:description "The angle between the surface and the incoming light beams, measured in radians." ;
+    proc:outputs [ ns1:SHADE [ dcterms:description "The angle between the surface and the incoming light beams, measured in radians." ;
                     dcterms:title "Analytical Hillshading" ;
                     proc:keywords "GeoTIFF",
                         "raster" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- output `result`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
-                        [ dcterms:title "Implementation Profile: Analytical hillshading -- output `result`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Analytical hillshading -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ],
+                        [ dcterms:title "Generic Profile: Analytical hillshading -- output `result`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/outputs/result> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
+                    proc:schema [ ns3:oneOf [ proc:type "string" ;
+                                    ns3:contentEncoding "base64" ;
+                                    ns3:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns3:contentEncoding "base64" ;
+                                    ns3:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns3:contentEncoding "base64" ;
+                                    ns3:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ] ] ] ] .
+                                    ns3:contentEncoding "base64" ;
+                                    ns3:contentMediaType "application/x-ogc-envi" ] ] ] ] .
 
 
 ```
@@ -2065,6 +2065,11 @@ x-jsonld-prefixes:
   prov: http://www.w3.org/ns/prov#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+x-bblocks-metadata:
+  itemIdentifier: ospd.process-profiles.terrain.hillshading
+  register: https://geolabs.github.io/bblocks-process-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-21'
 
 ```
 

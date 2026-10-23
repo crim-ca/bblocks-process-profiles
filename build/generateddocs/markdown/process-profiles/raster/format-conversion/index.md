@@ -200,9 +200,9 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
 @prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns3: <http://www.iana.org/assignments/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -242,7 +242,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns1:Result [ dcterms:description "The file name resulting of the convertion" ;
+    proc:outputs [ ns3:Result [ dcterms:description "The file name resulting of the convertion" ;
                     dcterms:title "The resulting converted file" ;
                     proc:schema [ proc:type "string" ] ] ] .
 
@@ -609,13 +609,13 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
-    proc:metadata [ dcterms:title "Generic Profile: Raster format conversion" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-        [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
         [ dcterms:title "My Demo" ],
+        [ dcterms:title "Generic Profile: Raster format conversion" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
         [ dcterms:title "Implementation Profile: Raster format conversion" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-format-conversion> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ] ;
@@ -1158,6 +1158,11 @@ x-jsonld-prefixes:
   prov: http://www.w3.org/ns/prov#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+x-bblocks-metadata:
+  itemIdentifier: ospd.process-profiles.raster.format-conversion
+  register: https://geolabs.github.io/bblocks-process-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-21'
 
 ```
 

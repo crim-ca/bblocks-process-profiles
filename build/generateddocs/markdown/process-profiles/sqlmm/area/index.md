@@ -192,8 +192,8 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
@@ -212,14 +212,14 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     proc:inputs [ ns3:InputPolygon [ dcterms:description "URI to a set of GML that describes the polygon." ;
                     dcterms:title "Polygon to compute are" ;
                     proc:metadata [ dcterms:title "Mon test" ] ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "text/xml" ;
-                                    ns2:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "text/xml" ;
+                                    ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "UTF-8" ;
-                                    ns2:contentMediaType "text/xml" ;
-                                    ns2:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ] ;
+                                    ns1:contentEncoding "UTF-8" ;
+                                    ns1:contentMediaType "text/xml" ;
+                                    ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ] ;
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
@@ -231,7 +231,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                     dcterms:title "Computed Area" ;
                     proc:metadata [ dcterms:title "Mon test  " ] ;
                     proc:schema [ proc:type "number" ;
-                            ns2:format "float" ] ] ] .
+                            ns1:format "float" ] ] ] .
 
 
 ```
@@ -492,8 +492,8 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns3: <http://www.iana.org/assignments/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
@@ -514,34 +514,32 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
             ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/GetArea/execution> ] ;
     pp:version "2.0.0" ;
-    proc:inputs [ ns1:InputPolygon [ dcterms:description "URI to a set of GML that describes the polygon." ;
+    proc:inputs [ ns2:InputPolygon [ dcterms:description "URI to a set of GML that describes the polygon." ;
                     dcterms:title "Polygon to compute are" ;
                     proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Implementation Profile: Area -- input `geometry`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                    proc:metadata [ dcterms:title "Mon test" ],
                         [ dcterms:title "Generic Profile: Geometry measure -- input `geometry`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/inputs/geometry> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Mon test" ] ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentEncoding "UTF-8" ;
-                                    ns2:contentMediaType "text/xml" ;
-                                    ns2:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
+                        [ dcterms:title "Implementation Profile: Area -- input `geometry`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/inputs/geometry> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "text/xml" ;
+                                    ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "text/xml" ;
-                                    ns2:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ] ;
+                                    ns1:contentEncoding "UTF-8" ;
+                                    ns1:contentMediaType "text/xml" ;
+                                    ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ] ;
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
     proc:metadata [ dcterms:title "Process Concept: Vector Geometry Processing" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/vector-geometry-processing> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Implementation Profile: Area" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
+        [ dcterms:title "Demo" ],
         [ dcterms:title "Generic Profile: Geometry measure" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
@@ -552,15 +550,15 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:outputs [ ns4:Area [ dcterms:description "The Computed Area Value" ;
                     dcterms:title "Computed Area" ;
                     proc:keywords "number" ;
-                    proc:metadata [ dcterms:title "Mon test  " ],
-                        [ dcterms:title "Generic Profile: Geometry measure -- output `result`" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Geometry measure -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/geometry-measure/outputs/result> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
                         [ dcterms:title "Implementation Profile: Area -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/area/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ],
+                        [ dcterms:title "Mon test  " ] ;
                     proc:schema [ proc:type "number" ;
-                            ns2:format "float" ] ] ] .
+                            ns1:format "float" ] ] ] .
 
 
 ```
@@ -1032,6 +1030,11 @@ x-jsonld-prefixes:
   prov: http://www.w3.org/ns/prov#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+x-bblocks-metadata:
+  itemIdentifier: ospd.process-profiles.sqlmm.area
+  register: https://geolabs.github.io/bblocks-process-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-21'
 
 ```
 

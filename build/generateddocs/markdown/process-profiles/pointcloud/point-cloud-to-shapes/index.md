@@ -186,8 +186,8 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
 @prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns3: <http://www.iana.org/assignments/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -198,7 +198,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "Point Cloud to Shapes" ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5/execution> ] ;
     pp:version "1.0.0" ;
     proc:inputs [ ns2:POINTS [ dcterms:description "Points" ;
@@ -212,7 +212,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns4:SHAPES [ dcterms:description "Shapes" ;
+    proc:outputs [ ns3:SHAPES [ dcterms:description "Shapes" ;
                     dcterms:title "Shapes" ;
                     proc:schema [ ns1:oneOf [ proc:type "object" ],
                                 [ proc:type "string" ;
@@ -478,9 +478,9 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <http://www.iana.org/assignments/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <http://www.iana.org/assignments/> .
+@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -496,10 +496,10 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     dcterms:title "Point Cloud to Shapes" ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.pointcloud_tools.5/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns4:POINTS [ dcterms:description "Points" ;
+    proc:inputs [ ns2:POINTS [ dcterms:description "Points" ;
                     dcterms:title "Points" ;
                     proc:keywords "LAS",
                         "point cloud" ;
@@ -515,19 +515,19 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
-    proc:metadata [ dcterms:title "Generic Profile: Point cloud to features" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+    proc:metadata [ dcterms:title "Implementation Profile: Point cloud to shapes" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
         [ dcterms:title "Process Concept: Point Cloud Processing" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Implementation Profile: Point cloud to shapes" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-shapes> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ] ;
+        [ dcterms:title "Generic Profile: Point cloud to features" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-to-features> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns3:SHAPES [ dcterms:description "Shapes" ;
+    proc:outputs [ ns4:SHAPES [ dcterms:description "Shapes" ;
                     dcterms:title "Shapes" ;
                     proc:keywords "GML",
                         "feature collection" ;
@@ -1018,6 +1018,11 @@ x-jsonld-prefixes:
   prov: http://www.w3.org/ns/prov#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+x-bblocks-metadata:
+  itemIdentifier: ospd.process-profiles.pointcloud.point-cloud-to-shapes
+  register: https://geolabs.github.io/bblocks-process-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-21'
 
 ```
 
