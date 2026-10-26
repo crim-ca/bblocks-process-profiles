@@ -621,8 +621,8 @@ OGC API - Processes processDescription returned by Weaver for the deployed CWL.
 ```ttl
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
 @prefix ns3: <pp:> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -640,7 +640,7 @@ into the inference image.
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentMediaType "application/yaml" ] ] ;
+                            ns1:contentMediaType "application/yaml" ] ] ;
             proc:end_datetime [ dcterms:description "Optional end datetime (ISO 8601) overriding the config's inference_end_datetime" ;
                     proc:literalDataDomains [ proc:dataType [ proc:name "string" ] ;
                             proc:default "true"^^rdf:JSON ;
@@ -655,9 +655,9 @@ into the inference image.
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentEncoding "base64" ;
-                            ns2:contentMediaType "application/directory" ;
-                            ns2:format "binary" ] ] ;
+                            ns1:contentEncoding "base64" ;
+                            ns1:contentMediaType "application/directory" ;
+                            ns1:format "binary" ] ] ;
             proc:number_of_cores [ dcterms:description "Internal flag; always emits -j1 to set the number of cores used for inference." ;
                     proc:literalDataDomains [ proc:dataType [ proc:name "boolean" ] ;
                             proc:default "true"^^rdf:JSON ;
@@ -684,31 +684,31 @@ into the inference image.
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/dateCreated" ;
-            :value "2026-01-30T10:42:53-05:00" ],
-        [ :role "https://schema.org/author" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "smith.trevorj@ouranos.ca" ;
-                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
-                    :name "Trevor James Smith" ] ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
+    :metadata [ :role "https://schema.org/contributor" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "nazim.azeli@luqia.ca" ;
                     :name "Nazim Azeli" ] ],
         [ :role "https://schema.org/author" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "gauvin-st-denis.blaise@ouranos.ca" ;
                     :identifier "https://orcid.org/0009-0004-9049-2092" ;
                     :name "Blaise Gauvin St-Denis" ] ],
         [ :role "https://schema.org/contributor" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "francis.charette-migneault@luqia.ca" ;
                     :identifier "https://orcid.org/0000-0003-4862-3349" ;
                     :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "smith.trevorj@ouranos.ca" ;
+                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
+                    :name "Trevor James Smith" ] ],
+        [ :role "https://schema.org/dateCreated" ;
+            :value "2026-01-30T10:42:53-05:00" ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,
@@ -721,9 +721,9 @@ into the inference image.
                     proc:formats [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "application/directory" ] ;
                     proc:schema [ proc:type "string" ;
-                            ns2:contentEncoding "base64" ;
-                            ns2:contentMediaType "application/directory" ;
-                            ns2:format "binary" ] ] ] ;
+                            ns1:contentEncoding "base64" ;
+                            ns1:contentMediaType "application/directory" ;
+                            ns1:format "binary" ] ] ] ;
     proc:keywords "HRDPS",
         "RDPS",
         "U-Net",

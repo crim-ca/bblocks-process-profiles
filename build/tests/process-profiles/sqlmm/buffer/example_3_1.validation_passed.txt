@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.sqlmm.buffer - Process profile: Buffer
-Generated 2026-10-26T17:04:43.944156+00:00
+Generated 2026-10-26T17:27:26.089403+00:00
 === Files ===
 Using examples/processDescription.inherited.json from examples
 JSON-LD context is present - uplifting

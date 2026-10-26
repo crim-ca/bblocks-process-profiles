@@ -155,7 +155,7 @@ Metadata alignment does not by itself establish server conformance to that draft
 
 ## Examples
 
-### (1/10) U-Net workflow CWL Application Package
+### Overview of the single U-Net example
 **All the examples of this block describe one single use case**, the RDPS-to-HRDPS U-Net inference job
 `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715`. They are not distinct examples. Each one shows a different facet of
 the same workflow: its CWL Application Package, process description, deployment, process type, model and
@@ -166,6 +166,8 @@ published or runtime resources.
 
 ![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.svg)
 
+
+### (1/10) U-Net workflow CWL Application Package
 CWL Workflow deployed as `ogc-ospd2026-downscaling-unet-workflow`. Its steps are described by the
 `ospd.process-profiles.downscaling-unet.generate-file-list`, `ospd.process-profiles.downscaling-unet.download-files`
 and `ospd.process-profiles.downscaling-unet.unet` building blocks.
@@ -835,8 +837,8 @@ Description of the deployed *OGC API - Proceses* process that encapsulates the U
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
-@prefix ns3: <pp:> .
+@prefix ns2: <pp:> .
+@prefix ns3: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -901,27 +903,27 @@ such as precipitation.
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "smith.trevorj@ouranos.ca" ;
-                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
-                    :name "Trevor James Smith" ] ],
+    :metadata [ :role "https://schema.org/dateCreated" ;
+            :value "2026-09-09T10:36:53-04:00" ],
         [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+            :value [ ns3:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "gauvin-st-denis.blaise@ouranos.ca" ;
                     :identifier "https://orcid.org/0009-0004-9049-2092" ;
                     :name "Blaise Gauvin St-Denis" ] ],
-        [ :role "https://schema.org/dateCreated" ;
-            :value "2026-09-09T10:36:53-04:00" ],
         [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+            :value [ ns3:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "nazim.azeli@luqia.ca" ;
                     :name "Nazim Azeli" ] ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns3:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "smith.trevorj@ouranos.ca" ;
+                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
+                    :name "Trevor James Smith" ] ],
         [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+            :value [ ns3:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "francis.charette-migneault@luqia.ca" ;
                     :identifier "https://orcid.org/0000-0003-4862-3349" ;
@@ -934,10 +936,10 @@ such as precipitation.
     :outputTransmission "reference",
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
-                    proc:formats [ proc:mediaType "application/pdf" ],
-                        [ proc:mediaType "text/html" ],
-                        [ proc:default "true"^^rdf:JSON ;
-                            proc:mediaType "text/plain" ] ;
+                    proc:formats [ proc:default "true"^^rdf:JSON ;
+                            proc:mediaType "text/plain" ],
+                        [ proc:mediaType "application/pdf" ],
+                        [ proc:mediaType "text/html" ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentMediaType "text/html" ],
                                 [ proc:type "string" ;
@@ -962,7 +964,7 @@ such as precipitation.
         "machine learning",
         "super-resolution",
         "workflow" ;
-    ns3:version "0.1.3.dev10" .
+    ns2:version "0.1.3.dev10" .
 
 <https://github.com/Ouranosinc/resoterre> a <https://crim-ca.github.io/bblocks-process-profiles/def/text/html> ;
     :rel "https://schema.org/codeRepository" .

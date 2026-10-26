@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.sqlmm.disjoint - Process profile: Disjoint
-Generated 2026-10-26T17:04:54.825020+00:00
+Generated 2026-10-26T17:27:36.890095+00:00
 === Files ===
 Using examples/process-type.json from examples
 JSON-LD context is present - uplifting
