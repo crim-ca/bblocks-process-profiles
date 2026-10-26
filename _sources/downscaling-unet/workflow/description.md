@@ -13,7 +13,7 @@ the example artefacts (yellow) relate to each other, to the blocks of this regis
 to the imported blocks that define them (grey) and to the published
 or runtime resources (green). Each arrow is labelled with the relation or the fields that carry it. The legend is at the top right of the graph.
 
-![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.svg)
+![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)
 
 The graph is defined in
 [`diagrams/bblocks-interactions.dot`](https://github.com/crim-ca/bblocks-process-profiles/blob/master/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.dot)
@@ -137,7 +137,7 @@ It shows the job and wrapping workflow runs, the agents, the three step runs mat
 process profiles, the submitted inputs and the two results. Data links between steps are declared
 in the CWL wiring and not observed in the captured records, and are drawn as such.
 
-![Synthetic view of the CWLProv execution provenance of job d6f937f0](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/execution-provenance.svg)
+![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)
 
 The provenance content aligns with the process, job, input/output and agent relationships described
 in [draft OGC API - Processes - Part 5: Provenance](https://docs.ogc.org/DRAFTS/26-038.html).
