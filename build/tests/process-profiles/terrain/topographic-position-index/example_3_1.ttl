@@ -38,10 +38,10 @@
                                     ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ],
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
                                     ns2:contentMediaType "image/tiff" ] ] ] ;
@@ -103,12 +103,12 @@
     proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Implementation Profile: Topographic position index" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
         [ dcterms:title "Generic Profile: Terrain derivative" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+        [ dcterms:title "Implementation Profile: Topographic position index" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/topographic-position-index> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ] ;
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
@@ -130,8 +130,8 @@
                                     ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/tiff" ],
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-aaigrid" ] ] ] ] .
+                                    ns2:contentMediaType "image/tiff" ] ] ] ] .
 

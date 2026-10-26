@@ -1,0 +1,15 @@
+title: Process profiles of the downscaling steps
+subtitle: ospd.process-profiles.downscaling-unet.*
+mappings:
+  - step: "*generate-file-list"
+    profile: ospd.process-profiles.downscaling-unet.generate-file-list
+    short: generate-file-list
+    phase: selection-filtering
+  - step: "*download-files"
+    profile: ospd.process-profiles.downscaling-unet.download-files
+    short: download-files
+    phase: data-retrieval
+  - step: "*unet"
+    profile: ospd.process-profiles.downscaling-unet.unet
+    short: unet
+    phase: scientific-computation

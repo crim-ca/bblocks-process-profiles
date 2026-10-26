@@ -1,0 +1,58 @@
+flowchart TB
+  classDef local fill:#cfe2ff,stroke:#2b5fa3,color:#000
+  classDef imported fill:#e9ecef,stroke:#6c757d,color:#000
+  classDef example fill:#fff8d6,stroke:#b8962e,color:#000
+  classDef external fill:#d8f3dc,stroke:#2d6a4f,color:#000
+
+  RDPS["RDPS forecast files"]:::external
+  EXE["execute.json"]:::example
+  WEAVER["Weaver OGC API - Processes"]:::external
+  HRDPS["HRDPS-scale Zarr output"]:::external
+  RDPS --> WEAVER
+  EXE -- "submitted to" --> WEAVER
+  WEAVER --> HRDPS
+
+  WF["downscaling-unet.workflow"]:::local
+  STEPS["generate-file-list<br/>download-files<br/>unet"]:::local
+  PT["process-type"]:::local
+  WF -- "steps" --> STEPS
+  WF -- "process type" --> PT
+
+  PKG["ogcapppkg.json"]:::example
+  PD["processDescription.json"]:::example
+  CWL["Workflow CWL"]:::example
+  PTE["process-type.json"]:::example
+  ACT["activity-types.ttl"]:::example
+  BND["model-bindings.ttl"]:::example
+  ENR["inference-enrichment.ttl"]:::example
+  PROV["CWLProv execution provenance"]:::example
+  ITEM["STAC MLM Item (published)"]:::external
+
+  PKG -- "deployed on" --> WEAVER
+  PKG -- "wraps" --> PD
+  PKG -- "wraps" --> CWL
+  PTE -- "plan" --> PKG
+  PTE -- "classified by" --> ACT
+  BND -- "selects" --> ITEM
+  BND -- "uses types of" --> ACT
+  ENR -- "reuses" --> BND
+  ENR -- "enriches" --> PROV
+  WEAVER -- "captured as" --> PROV
+
+  APKG["v2.schemas.ogcapppkg"]:::imported
+  PROC["v1.schemas.process<br/>v2.schemas.staticIndicator"]:::imported
+  CCT["eoap.cct.cwl-to-ogcprocess"]:::imported
+  CWLS["cwl.v1_2_1.CWLWorkflow"]:::imported
+  ACTB["registered-item.ml-activity-types<br/>registered-item.geoprocessing-activity-types"]:::imported
+  MLM["stac.extensions.mlm"]:::imported
+  PROVB["bbr.provenance.provenance<br/>bbr.provenance.execution<br/>prov.w3c-prov-*"]:::imported
+
+  PKG --> APKG
+  PD --> PROC
+  PD -- "mapped by" --> CCT
+  CWL --> CWLS
+  CWL -- "mapped by" --> CCT
+  ACT --> ACTB
+  ITEM --> MLM
+  PROV --> PROVB
+  PTE --> PT

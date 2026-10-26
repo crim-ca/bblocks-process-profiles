@@ -29,11 +29,11 @@
         "value" ;
     proc:outputs [ ns2:SHAPES [ dcterms:description "Shapes" ;
                     dcterms:title "Shapes" ;
-                    proc:schema [ ns1:oneOf [ proc:type "object" ],
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/vnd.google-earth.kml+xml" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "utf-8" ;
                                     ns1:contentMediaType "text/xml" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/vnd.google-earth.kml+xml" ] ] ] ] .
+                                [ proc:type "object" ] ] ] ] .
 

@@ -68,6 +68,8 @@ The workflow block adds, beyond the common artefacts above:
 
 - ML and geoprocessing activity types, with SHACL shapes, reusing `ogc.model.registered-item.*`
   and the STAC `mlm` extension (`ogc.contrib.stac.extensions.mlm`)
+- an interaction graph of the blocks and example artefacts and a synthetic view of the captured provenance,
+  generated with `scripts/generate_unet_diagrams.py` (Mermaid CLI and `scripts/prov_synth.py`)
 - model-domain spatial and temporal extents derived from the MLM Item, as GeoSPARQL and OWL-Time
 - bindings of the MLM inputs, outputs and structure to the workflow, and a link between the
   Application Package plan and the captured CWLProv plan

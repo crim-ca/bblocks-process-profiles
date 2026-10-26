@@ -950,9 +950,9 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
@@ -968,21 +968,21 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
             ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.0/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns3:ELEVATION [ dcterms:description "Elevation" ;
+    proc:inputs [ ns1:ELEVATION [ dcterms:description "Elevation" ;
                     dcterms:title "Elevation" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ] ] ] ;
-            ns3:METHOD [ dcterms:description "Method" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ] ] ] ;
+            ns1:METHOD [ dcterms:description "Method" ;
                     dcterms:title "Method" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"9 parameter 2nd order polynom (Zevenbergen & Thorne 1987)\""^^rdf:JSON ;
@@ -999,7 +999,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                 "maximum triangle slope (Tarboton 1997)" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns3:UNIT_ASPECT [ dcterms:description "Aspect Units" ;
+            ns1:UNIT_ASPECT [ dcterms:description "Aspect Units" ;
                     dcterms:title "Aspect Units" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"radians\""^^rdf:JSON ;
@@ -1007,7 +1007,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                 "radians" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns3:UNIT_SLOPE [ dcterms:description "Slope Units" ;
+            ns1:UNIT_SLOPE [ dcterms:description "Slope Units" ;
                     dcterms:title "Slope Units" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"radians\""^^rdf:JSON ;
@@ -1022,174 +1022,174 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns2:ASPECT [ dcterms:description "Aspect" ;
+    proc:outputs [ ns3:ASPECT [ dcterms:description "Aspect" ;
                     dcterms:title "Aspect" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
-            ns2:C_CROS [ dcterms:description "Zevenbergen & Thorne (1987) refer to this as plan curvature" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ] ] ] ;
+            ns3:C_CROS [ dcterms:description "Zevenbergen & Thorne (1987) refer to this as plan curvature" ;
                     dcterms:title "Cross-Sectional Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
-            ns2:C_GENE [ dcterms:description "General Curvature" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ] ] ] ;
+            ns3:C_GENE [ dcterms:description "General Curvature" ;
                     dcterms:title "General Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
-            ns2:C_LONG [ dcterms:description "Zevenbergen & Thorne (1987) refer to this as profile curvature" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ] ] ] ;
+            ns3:C_LONG [ dcterms:description "Zevenbergen & Thorne (1987) refer to this as profile curvature" ;
                     dcterms:title "Longitudinal Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
-            ns2:C_MAXI [ dcterms:description "Maximal Curvature" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
+            ns3:C_MAXI [ dcterms:description "Maximal Curvature" ;
                     dcterms:title "Maximal Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
-            ns2:C_MINI [ dcterms:description "Minimal Curvature" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
+            ns3:C_MINI [ dcterms:description "Minimal Curvature" ;
                     dcterms:title "Minimal Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ] ] ] ;
-            ns2:C_PLAN [ dcterms:description "Plan Curvature" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ] ] ] ;
+            ns3:C_PLAN [ dcterms:description "Plan Curvature" ;
                     dcterms:title "Plan Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ] ] ] ;
-            ns2:C_PROF [ dcterms:description "Profile Curvature" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
+            ns3:C_PROF [ dcterms:description "Profile Curvature" ;
                     dcterms:title "Profile Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
-            ns2:C_ROTO [ dcterms:description "Flow Line Curvature" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ] ] ] ;
+            ns3:C_ROTO [ dcterms:description "Flow Line Curvature" ;
                     dcterms:title "Flow Line Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
-            ns2:C_TANG [ dcterms:description "Tangential Curvature" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ] ] ] ;
+            ns3:C_TANG [ dcterms:description "Tangential Curvature" ;
                     dcterms:title "Tangential Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ] ] ] ;
-            ns2:C_TOTA [ dcterms:description "Total Curvature" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ] ] ] ;
+            ns3:C_TOTA [ dcterms:description "Total Curvature" ;
                     dcterms:title "Total Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
-            ns2:SLOPE [ dcterms:description "Slope" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ] ] ] ;
+            ns3:SLOPE [ dcterms:description "Slope" ;
                     dcterms:title "Slope" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ] .
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ] ] ] ] .
 
 
 ```
@@ -2248,16 +2248,16 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
             ns3:METHOD [ dcterms:description "Method" ;
                     dcterms:title "Method" ;
                     proc:minOccurs 0 ;
@@ -2311,13 +2311,13 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                     dcterms:title "Aspect" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/tiff" ] ] ] ;
@@ -2325,32 +2325,60 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                     dcterms:title "Cross-Sectional Curvature" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
+                                    ns1:contentMediaType "image/png" ] ] ] ;
             ns2:C_GENE [ dcterms:description "General Curvature" ;
                     dcterms:title "General Curvature" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/png" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
+            ns2:C_LONG [ dcterms:description "Zevenbergen & Thorne (1987) refer to this as profile curvature" ;
+                    dcterms:title "Longitudinal Curvature" ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+            ns2:C_MAXI [ dcterms:description "Maximal Curvature" ;
+                    dcterms:title "Maximal Curvature" ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
-            ns2:C_LONG [ dcterms:description "Zevenbergen & Thorne (1987) refer to this as profile curvature" ;
-                    dcterms:title "Longitudinal Curvature" ;
+                                    ns1:contentMediaType "image/png" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
+            ns2:C_MINI [ dcterms:description "Minimal Curvature" ;
+                    dcterms:title "Minimal Curvature" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/tiff" ],
@@ -2363,34 +2391,6 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
-            ns2:C_MAXI [ dcterms:description "Maximal Curvature" ;
-                    dcterms:title "Maximal Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
-            ns2:C_MINI [ dcterms:description "Minimal Curvature" ;
-                    dcterms:title "Minimal Curvature" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
             ns2:C_PLAN [ dcterms:description "Plan Curvature" ;
                     dcterms:title "Plan Curvature" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
@@ -2398,10 +2398,10 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                     ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
@@ -2409,27 +2409,27 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                     dcterms:title "Profile Curvature" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
+                                    ns1:contentMediaType "image/png" ] ] ] ;
             ns2:C_ROTO [ dcterms:description "Flow Line Curvature" ;
                     dcterms:title "Flow Line Curvature" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
@@ -2443,10 +2443,10 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                     ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
             ns2:C_TOTA [ dcterms:description "Total Curvature" ;
                     dcterms:title "Total Curvature" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
@@ -2465,12 +2465,12 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                     dcterms:title "Slope" ;
                     proc:keywords "GeoTIFF",
                         "raster" ;
-                    proc:metadata [ dcterms:title "Implementation Profile: Slope -- output `result`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ],
-                        [ dcterms:title "Generic Profile: Terrain derivative -- output `result`" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Terrain derivative -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
+                        [ dcterms:title "Implementation Profile: Slope -- output `result`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/slope/outputs/result> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-envi" ],
@@ -2987,11 +2987,6 @@ x-jsonld-prefixes:
   prov: http://www.w3.org/ns/prov#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-x-bblocks-metadata:
-  itemIdentifier: ospd.process-profiles.terrain.slope
-  register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
-  version: '0.1'
-  dateOfLastChange: '2026-10-23'
 
 ```
 

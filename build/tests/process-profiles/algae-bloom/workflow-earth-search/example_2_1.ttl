@@ -67,9 +67,6 @@ and returned as output with raw data, color map and plot visualization. Each out
 will be named with the ID of the original product to distinguish them in case of multiple matches.
 """ ;
             proc:role schema:description ],
-        [ rdf:value """Algae bloom for water quality assessment on Sentinel-2 L2A imagery offered by Earth-Search platform.
-""" ;
-            proc:role schema:name ],
         [ rdf:value "2.0.0" ;
             proc:role schema:softwareVersion ],
         [ rdf:value [ a ns2:Person ;
@@ -78,7 +75,10 @@ will be named with the ID of the original product to distinguish them in case of
                     ns2:name "Francis Charette-Migneault" ] ;
             proc:role schema:author ],
         [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ] ;
+            proc:role schema:license ],
+        [ rdf:value """Algae bloom for water quality assessment on Sentinel-2 L2A imagery offered by Earth-Search platform.
+""" ;
+            proc:role schema:name ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;

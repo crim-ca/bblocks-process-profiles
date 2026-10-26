@@ -24,12 +24,12 @@
                     proc:schema [ proc:type "object" ;
                             ns2:properties [ ns2:bbox [ proc:type "array" ;
                                             ns2:items [ proc:type "number" ] ;
-                                            ns2:oneOf [ dcterms:description "2D bbox" ;
-                                                    ns2:maxItems 4 ;
-                                                    ns2:minItems 4 ],
-                                                [ dcterms:description "3D bbox" ;
+                                            ns2:oneOf [ dcterms:description "3D bbox" ;
                                                     ns2:maxItems 6 ;
-                                                    ns2:minItems 6 ] ] ;
+                                                    ns2:minItems 6 ],
+                                                [ dcterms:description "2D bbox" ;
+                                                    ns2:maxItems 4 ;
+                                                    ns2:minItems 4 ] ] ;
                                     ns2:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
                                             proc:enum "CRS84",
                                                 "CRS84h" ;

@@ -92,11 +92,5 @@
     "rim": "https://w3id.org/ogc/rim/",
     "mlact": "https://w3id.org/ogc/rim/ml-activity/",
     "geoproc": "https://w3id.org/ogc/rim/geoprocessing/"
-  },
-  "x-bblocks-metadata": {
-    "itemIdentifier": "ospd.process-profiles.downscaling-unet.download-files",
-    "register": "https://crim-ca.github.io/bblocks-process-profiles/build/register.json",
-    "version": "0.1",
-    "dateOfLastChange": "2026-10-23"
   }
 }

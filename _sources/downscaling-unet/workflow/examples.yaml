@@ -1,5 +1,15 @@
-- title: U-Net workflow CWL Application Package
-  content: >-
+- title: (1/10) U-Net workflow CWL Application Package
+  content: |
+    **All the examples of this block describe one single use case**, the RDPS-to-HRDPS U-Net inference job
+    `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715`. They are not distinct examples. Each one shows a different facet of
+    the same workflow: its CWL Application Package, process description, deployment, process type, model and
+    activity semantics, execution request and captured provenance. The graph below shows how they relate to
+    each other and to the blocks that define them. Blue boxes are blocks of this register, yellow boxes are
+    the artefacts of the examples, grey boxes are imported blocks (`ogc.` prefix omitted) and green boxes are
+    published or runtime resources.
+
+    ![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.svg)
+
     CWL Workflow deployed as `ogc-ospd2026-downscaling-unet-workflow`. Its steps are described by the
     `ospd.process-profiles.downscaling-unet.generate-file-list`, `ospd.process-profiles.downscaling-unet.download-files`
     and `ospd.process-profiles.downscaling-unet.unet` building blocks.
@@ -10,7 +20,7 @@
       schema-ref: "#/$defs/sourceCwl"
       doc-uplift-formats: []
 
-- title: U-Net workflow process description
+- title: (2/10) U-Net workflow process description
   base-uri: https://hirondelle.crim.ca/weaver/processes/
   content: |
     Description of the deployed *OGC API - Proceses* process that encapsulates the U-Net workflow as a CWL Application Package.
@@ -18,7 +28,7 @@
     - language: json
       ref: examples/processDescription.json
 
-- title: OGC Application Package deployment reference
+- title: (3/10) OGC Application Package deployment reference
   base-uri: https://hirondelle.crim.ca/weaver/processes/
   content: |
     OGC Application Package that combines the Process Description and the CWL into a common deployable artifact.
@@ -29,7 +39,7 @@
       ref: examples/ogcapppkg.json
       schema-ref: "#/$defs/applicationPackage"
 
-- title: Process-type register entry
+- title: (4/10) Process-type register entry
   content: |
     Register entry for the `ogc-ospd2026-downscaling-unet-workflow` process type, which ties all elements together.
     The `processType` is a URI that identifies the process type in the *OGC API - Processes* register.
@@ -44,7 +54,7 @@
       ref: examples/process-type.json
       schema-ref: "#/$defs/processTypeEntry"
 
-- title: Published STAC MLM model Item (external source)
+- title: (5/10) Published STAC MLM model Item (external source)
   content: |
     Fetched from the published STAC API when this register is built, not maintained as a local copy.
     Inspect `properties.mlm:input` for `rdps_inputs` and `hrdps_geophysical_inputs`, and
@@ -61,7 +71,7 @@
       expand-level: 4
       doc-uplift-formats: []
 
-- title: Activity types, model bindings and inference run enrichment
+- title: (6/10) Activity types, model bindings and inference run enrichment
   content: |
     The Turtle selections below define the candidate climate-downscaling and inference activity types,
     specialising the imported geoprocessing and ML activity-type classes rather than copying them.
@@ -91,7 +101,7 @@
     - language: turtle
       ref: activity-types.ttl
 
-- title: Published MLM input and output bindings
+- title: (7/10) Published MLM input and output bindings
   content: |
     Partial RDF views of the model input and output definitions.
     The *selectors* identify the corresponding JSON objects in the published STAC Item.
@@ -108,7 +118,7 @@
     - language: turtle
       ref: examples/model-bindings.ttl
 
-- title: Captured U-Net inference run enrichment
+- title: (8/10) Captured U-Net inference run enrichment
   content: |
     Semantic enrichment of the captured U-Net step, with reconstructed logical inputs and outputs.
     Merges this resource with the activity definitions, model bindings and original CWLProv graph.
@@ -129,7 +139,7 @@
       shacl-closure:
         - examples/prov/metadata/provenance/primary.cwlprov.ttl
 
-- title: U-Net workflow execution request
+- title: (9/10) U-Net workflow execution request
   content: |
     Submit the JSON body below to
     `POST https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/execution`
@@ -142,11 +152,14 @@
       schema-ref: "#/$defs/execute"
       doc-uplift-formats: []
 
-- title: U-Net workflow execution provenance (CWLProv)
+- title: (10/10) U-Net workflow execution provenance (CWLProv)
   base-uri: arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/
   content: |
     CWLProv captured from job `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715` on 2026-09-28.
     The records describe the `ogc-ospd2026-downscaling-unet-workflow` execution and its three steps.
+    This is the provenance of the same job as the other examples, not a separate scenario.
+
+    ![Synthetic view of the CWLProv execution provenance of job d6f937f0](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/execution-provenance.svg)
 
     These CWLProv metadata align with the provenance content model described in the
     [draft OGC API - Processes - Part 5: Provenance (26-038)](https://docs.ogc.org/DRAFTS/26-038.html):
