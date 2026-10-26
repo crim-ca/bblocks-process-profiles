@@ -28,7 +28,7 @@ or runtime resources (green). Arrows from an artefact to a block indicate the bl
 
 The graph is defined in
 [`diagrams/bblocks-interactions.mmd`](https://github.com/crim-ca/bblocks-process-profiles/blob/master/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.mmd)
-as a Mermaid flowchart. Run `python scripts/generate_unet_diagrams.py` to refresh the SVG files.
+as a Mermaid flowchart. Run `python diagrams/generate_diagrams.py` to refresh the SVG files.
 
 ### Model and activity classification
 
@@ -89,7 +89,7 @@ Local type definitions use `dcat:version "0.1"`; RIM has no `rim:version` proper
 version is distinct from the deployed model/software version `0.1.3-dev.10`.
 
 The standard postprocessor checks the rendered examples and the missing-input/specification cases.
-For the complete merged-graph check, run `python scripts/validate_unet_semantics.py` from the register root.
+For the complete merged-graph check, run `python tests/validate_semantics.py` from the block directory.
 This also checks live model selectors, exact source-derived geometry and temporal endpoints,
 and rejects missing spatial/output type declarations, extent literals and applicability links.
 It requires pySHACL 0.30 or later: the postprocessor's older 0.21 validator does not enforce those
@@ -160,9 +160,8 @@ Metadata alignment does not by itself establish server conformance to that draft
 `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715`. They are not distinct examples. Each one shows a different facet of
 the same workflow: its CWL Application Package, process description, deployment, process type, model and
 activity semantics, execution request and captured provenance. The graph below shows how they relate to
-each other and to the blocks that define them. Blue boxes are blocks of this register, yellow boxes are
-the artefacts of the examples, grey boxes are imported blocks (`ogc.` prefix omitted) and green boxes are
-published or runtime resources.
+each other and to the blocks that define them. The legend in the graph explains the box colours, and the edge
+labels name the fields that carry the main relations.
 
 ![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.svg)
 
@@ -837,8 +836,8 @@ Description of the deployed *OGC API - Proceses* process that encapsulates the U
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <pp:> .
-@prefix ns3: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
+@prefix ns2: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
+@prefix ns3: <pp:> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -906,24 +905,24 @@ such as precipitation.
     :metadata [ :role "https://schema.org/dateCreated" ;
             :value "2026-09-09T10:36:53-04:00" ],
         [ :role "https://schema.org/author" ;
-            :value [ ns3:schema "https://schema.org/Person" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "gauvin-st-denis.blaise@ouranos.ca" ;
                     :identifier "https://orcid.org/0009-0004-9049-2092" ;
                     :name "Blaise Gauvin St-Denis" ] ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns3:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "nazim.azeli@luqia.ca" ;
-                    :name "Nazim Azeli" ] ],
         [ :role "https://schema.org/author" ;
-            :value [ ns3:schema "https://schema.org/Person" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "smith.trevorj@ouranos.ca" ;
                     :identifier "https://orcid.org/0000-0001-5393-8359" ;
                     :name "Trevor James Smith" ] ],
         [ :role "https://schema.org/contributor" ;
-            :value [ ns3:schema "https://schema.org/Person" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "nazim.azeli@luqia.ca" ;
+                    :name "Nazim Azeli" ] ],
+        [ :role "https://schema.org/contributor" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "francis.charette-migneault@luqia.ca" ;
                     :identifier "https://orcid.org/0000-0003-4862-3349" ;
@@ -936,10 +935,10 @@ such as precipitation.
     :outputTransmission "reference",
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
-                    proc:formats [ proc:default "true"^^rdf:JSON ;
-                            proc:mediaType "text/plain" ],
+                    proc:formats [ proc:mediaType "text/html" ],
                         [ proc:mediaType "application/pdf" ],
-                        [ proc:mediaType "text/html" ] ;
+                        [ proc:default "true"^^rdf:JSON ;
+                            proc:mediaType "text/plain" ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentMediaType "text/html" ],
                                 [ proc:type "string" ;
@@ -964,7 +963,7 @@ such as precipitation.
         "machine learning",
         "super-resolution",
         "workflow" ;
-    ns2:version "0.1.3.dev10" .
+    ns3:version "0.1.3.dev10" .
 
 <https://github.com/Ouranosinc/resoterre> a <https://crim-ca.github.io/bblocks-process-profiles/def/text/html> ;
     :rel "https://schema.org/codeRepository" .
@@ -2111,7 +2110,7 @@ The *selectors* identify the corresponding JSON objects in the published STAC It
 Tensor structures, geometry and temporal-domain properties are selected too. Follow `dct:hasPart`
 to the selected structure and its JSON Pointer. The geometry and start/end endpoints additionally
 have source-derived GeoSPARQL WKT and OWL-Time timestamp literals, checked against the live Item
-by `scripts/validate_unet_semantics.py`. CRS84 preserves GeoJSON longitude/latitude coordinate order.
+by `tests/validate_semantics.py`. CRS84 preserves GeoJSON longitude/latitude coordinate order.
 The model-specific inference type references these domains through `dct:spatial` and `dct:temporal`.
 Model-domain spatiotemporal references do not assert that the run covered the entire declared model domain.
 Intead, they indicate the potential domains for which the model may be reasonably applied to generate inference

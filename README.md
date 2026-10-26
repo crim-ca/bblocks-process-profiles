@@ -69,7 +69,7 @@ The workflow block adds, beyond the common artefacts above:
 - ML and geoprocessing activity types, with SHACL shapes, reusing `ogc.model.registered-item.*`
   and the STAC `mlm` extension (`ogc.contrib.stac.extensions.mlm`)
 - an interaction graph of the blocks and example artefacts and a synthetic view of the captured provenance,
-  generated with `scripts/generate_unet_diagrams.py` (Mermaid CLI and `scripts/prov_synth.py`)
+  generated with `_sources/downscaling-unet/workflow/diagrams/generate_diagrams.py` (Mermaid CLI and `scripts/prov_synth.py`)
 - model-domain spatial and temporal extents derived from the MLM Item, as GeoSPARQL and OWL-Time
 - bindings of the MLM inputs, outputs and structure to the workflow, and a link between the
   Application Package plan and the captured CWLProv plan
@@ -120,7 +120,7 @@ python3 scripts/run_workflows.py --sources-root DIR --runs-root DIR --build-imag
 python3 scripts/generate.py --sources-root DIR --runs-root DIR   # regenerate only, never downloads
 python3 scripts/validate_offline.py --deps-root ../   # pre-check only
 ./build.sh                                             # authoritative validation (Docker)
-python3 scripts/validate_unet_semantics.py             # SHACL/RDF checks of the downscaling workflow (CRIM)
+python3 _sources/downscaling-unet/workflow/tests/validate_semantics.py           # SHACL/RDF checks of the downscaling workflow (CRIM)
 ./view.sh                                              # http://localhost:9090
 ```
 

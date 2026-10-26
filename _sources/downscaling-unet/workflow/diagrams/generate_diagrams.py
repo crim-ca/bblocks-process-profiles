@@ -2,7 +2,7 @@
 """
 Regenerate the diagrams of the downscaling-unet workflow block.
 
-Two SVG files are written under ``_sources/downscaling-unet/workflow/diagrams``:
+Two SVG files are written next to this script:
 
 * ``bblocks-interactions.svg`` rendered from the Mermaid definition ``bblocks-interactions.mmd``
   with the Mermaid CLI (``mmdc``), which needs a Chrome or Chromium executable.
@@ -14,16 +14,16 @@ The Mermaid definition remains the source of truth for the interaction graph.
 """
 
 import argparse
+import json
 import shutil
 import subprocess
 import sys
 import tempfile
-import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-BLOCK = ROOT / "_sources/downscaling-unet/workflow"
-DIAGRAMS = BLOCK / "diagrams"
+DIAGRAMS = Path(__file__).resolve().parent
+BLOCK = DIAGRAMS.parent
+ROOT = BLOCK.parents[2]
 PROV_METADATA = BLOCK / "examples/prov/metadata"
 PROV_TITLE = "CWLProv execution of the U-Net workflow (job d6f937f0)"
 

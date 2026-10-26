@@ -4,9 +4,8 @@
     `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715`. They are not distinct examples. Each one shows a different facet of
     the same workflow: its CWL Application Package, process description, deployment, process type, model and
     activity semantics, execution request and captured provenance. The graph below shows how they relate to
-    each other and to the blocks that define them. Blue boxes are blocks of this register, yellow boxes are
-    the artefacts of the examples, grey boxes are imported blocks (`ogc.` prefix omitted) and green boxes are
-    published or runtime resources.
+    each other and to the blocks that define them. The legend in the graph explains the box colours, and the edge
+    labels name the fields that carry the main relations.
 
     ![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.svg)
 
@@ -110,7 +109,7 @@
     Tensor structures, geometry and temporal-domain properties are selected too. Follow `dct:hasPart`
     to the selected structure and its JSON Pointer. The geometry and start/end endpoints additionally
     have source-derived GeoSPARQL WKT and OWL-Time timestamp literals, checked against the live Item
-    by `scripts/validate_unet_semantics.py`. CRS84 preserves GeoJSON longitude/latitude coordinate order.
+    by `tests/validate_semantics.py`. CRS84 preserves GeoJSON longitude/latitude coordinate order.
     The model-specific inference type references these domains through `dct:spatial` and `dct:temporal`.
     Model-domain spatiotemporal references do not assert that the run covered the entire declared model domain.
     Intead, they indicate the potential domains for which the model may be reasonably applied to generate inference

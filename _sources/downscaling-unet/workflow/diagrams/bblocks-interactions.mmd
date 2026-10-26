@@ -33,11 +33,11 @@ flowchart TB
   PKG -- "wraps" --> CWL
   PTE -- "plan" --> PKG
   PTE -- "classified by" --> ACT
-  BND -- "selects" --> ITEM
+  BND -- "selects<br/>(oa:hasSelector JSON pointers)" --> ITEM
   BND -- "uses types of" --> ACT
   ENR -- "reuses" --> BND
-  ENR -- "enriches" --> PROV
-  WEAVER -- "captured as" --> PROV
+  ENR -- "enriches<br/>(same prov:Activity IRI, prov:hadPlan,<br/>dct:isPartOf the captured output)" --> PROV
+  WEAVER -- "captured as<br/>(cwltool --provenance, job URL in prov:atLocation)" --> PROV
 
   APKG["v2.schemas.ogcapppkg"]:::imported
   PROC["v1.schemas.process<br/>v2.schemas.staticIndicator"]:::imported
@@ -45,6 +45,7 @@ flowchart TB
   CWLS["cwl.v1_2_1.CWLWorkflow"]:::imported
   ACTB["registered-item.ml-activity-types<br/>registered-item.geoprocessing-activity-types"]:::imported
   MLM["stac.extensions.mlm"]:::imported
+  STACX["stac.extensions.ml-aoi<br/>datacube, file, application,<br/>vcs, version, scientific"]:::imported
   PROVB["bbr.provenance.provenance<br/>bbr.provenance.execution<br/>prov.w3c-prov-*"]:::imported
 
   PKG --> APKG
@@ -54,5 +55,14 @@ flowchart TB
   CWL -- "mapped by" --> CCT
   ACT --> ACTB
   ITEM --> MLM
+  ITEM -- "stac_extensions" --> STACX
   PROV --> PROVB
   PTE --> PT
+
+  subgraph LEGEND["Legend"]
+    direction LR
+    L1["Block of this register"]:::local
+    L2["Imported block (ogc. prefix omitted)"]:::imported
+    L3["Example artefact"]:::example
+    L4["Published or runtime resource"]:::external
+  end

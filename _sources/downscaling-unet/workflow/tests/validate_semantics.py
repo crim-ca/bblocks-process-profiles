@@ -1,6 +1,6 @@
 """Validate U-Net activity contracts and the separate execution enrichment.
 
-Run in the resoterre environment with pySHACL >= 0.30. Older postprocessor images
+Run in the resoterre environment with pySHACL >= 0.30, from any directory. Older postprocessor images
 use pySHACL 0.21, which does not enforce the upstream nested activity-type shapes.
 """
 
@@ -12,8 +12,7 @@ from urllib.request import urlopen
 import pyshacl
 from rdflib import DCTERMS, RDF, Graph, Literal, Namespace, URIRef
 
-ROOT = Path(__file__).resolve().parents[1]
-BLOCK = ROOT / "_sources/downscaling-unet/workflow"
+BLOCK = Path(__file__).resolve().parents[1]
 REGISTER = "https://ogcincubator.github.io/registered-item-model/_sources/"
 MODEL = "https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet"
 MLACT = Namespace("https://w3id.org/ogc/rim/ml-activity/")
@@ -79,7 +78,7 @@ def main() -> None:
             "https://crim-ca.github.io/bblocks-process-profiles/def/InferenceExecutionShape"
         ),
     }
-    fixtures = sorted((BLOCK / "tests").glob("*.ttl")) + sorted((BLOCK / "validation").glob("*.ttl"))
+    fixtures = sorted((BLOCK / "tests").glob("*-fail.ttl"))
     for fixture in fixtures:
         graph = closure + Graph().parse(fixture)
         conforms, results, report = pyshacl.validate(graph, shacl_graph=shapes, advanced=True)

@@ -3,7 +3,7 @@
   "name": "OSPD Process Profiles",
   "abstract": "OGC API - Processes profiles for the deployable CWL processes of the OSPD 2026 reference\nworkflows (W1 Algae Bloom, W2 KindGrove mangrove biomass, W3 Water Bodies detection, W2b a\nstep-decomposed reimplementation of KindGrove) and of the RDPS-to-HRDPS U-Net climate\ndownscaling workflow with its STAC MLM model, each linked to its CWL source, the generic\nprovenance profile, the EOAP CWL custom types and the openEO Building Blocks. It also holds\nthe Geonovum testbed operation profiles (SQL/MM, raster, vector, terrain, point cloud).\n",
   "description": "This register is produced by GeoLabs under OSPD 2026 (D100 Workflow Profiler, D120 OGC API\nProcesses Profiler). It holds one Building Block per deployable CWL process (`CommandLineTool`\nor `Workflow`) identified in the workflow observability investigation.\n\nEach process profile combines:\n\n- a reference to the source CWL (linked by URL at a pinned commit, never copied);\n- an OGC API - Processes Part 1 `processDescription` derived with the\n  `eoap.cct.cwl-to-ogcprocess` mapping (deviations are documented, not hidden);\n- a provenance view expressed as an instance of the generic provenance profile\n  (`ogc.bbr.provenance.*`);\n- a candidate process-type entry (`ospd.process-profiles.process-type`) for the OSPD\n  process-type register (Activity 4);\n- proposed openEO equivalences (`ogc.openeo.*`) with an explicit level\n  (exactMatch / closeMatch / none) and rationale;\n- a representative execution example.\n\nThe CRIM fork adds the `downscaling-unet` workflow, whose profile also covers:\n\n- ML and geoprocessing activity types (`ogc.model.registered-item.*`) bound to the STAC MLM\n  model description (`ogc.contrib.stac.extensions.mlm`), with SHACL validation;\n- the model spatial and temporal domain (GeoSPARQL, OWL-Time);\n- an Application Package plan related to the captured CWLProv plan.\n\nThe Geonovum testbed operations (SQL/MM, raster, vector, terrain, point cloud) are\nimplementation profiles of the imported generic profiles register.\n\nAll mappings are proposed correspondences offered for review, not settled equivalences.\n",
-  "modified": "2026-10-26T17:26:42.970771",
+  "modified": "2026-10-26T17:45:42.433138",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "origin/master",
@@ -11,8 +11,8 @@
       "date": "42d0c6f + local gitRepository config"
     }
   },
-  "gitRepository": "https://github.com/crim-ca/bblocks-process-profiles",
   "gitHubRepository": "https://github.com/crim-ca/bblocks-process-profiles/",
+  "gitRepository": "https://github.com/crim-ca/bblocks-process-profiles",
   "baseURL": "https://crim-ca.github.io/bblocks-process-profiles/",
   "license": {
     "name": "Apache-2.0",
@@ -3090,7 +3090,7 @@
       "sourceLdContext": "https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/context.jsonld",
       "resolvedSchemaProperties": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/downscaling-unet/workflow/resolvedProperties.json",
       "sourceFiles": "https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/",
-      "validationPassed": true,
+      "validationPassed": false,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/build/tests/process-profiles/downscaling-unet/workflow/",
       "documentation": {
         "markdown": {

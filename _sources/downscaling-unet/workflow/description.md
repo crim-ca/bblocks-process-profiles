@@ -17,7 +17,7 @@ or runtime resources (green). Arrows from an artefact to a block indicate the bl
 
 The graph is defined in
 [`diagrams/bblocks-interactions.mmd`](https://github.com/crim-ca/bblocks-process-profiles/blob/master/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.mmd)
-as a Mermaid flowchart. Run `python scripts/generate_unet_diagrams.py` to refresh the SVG files.
+as a Mermaid flowchart. Run `python diagrams/generate_diagrams.py` to refresh the SVG files.
 
 ### Model and activity classification
 
@@ -78,7 +78,7 @@ Local type definitions use `dcat:version "0.1"`; RIM has no `rim:version` proper
 version is distinct from the deployed model/software version `0.1.3-dev.10`.
 
 The standard postprocessor checks the rendered examples and the missing-input/specification cases.
-For the complete merged-graph check, run `python scripts/validate_unet_semantics.py` from the register root.
+For the complete merged-graph check, run `python tests/validate_semantics.py` from the block directory.
 This also checks live model selectors, exact source-derived geometry and temporal endpoints,
 and rejects missing spatial/output type declarations, extent literals and applicability links.
 It requires pySHACL 0.30 or later: the postprocessor's older 0.21 validator does not enforce those
