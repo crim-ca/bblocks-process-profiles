@@ -78,7 +78,7 @@ def main() -> None:
             "https://crim-ca.github.io/bblocks-process-profiles/def/InferenceExecutionShape"
         ),
     }
-    fixtures = sorted((BLOCK / "tests").glob("*-fail.ttl"))
+    fixtures = sorted((BLOCK / "validation").glob("*-fail.ttl"))
     for fixture in fixtures:
         graph = closure + Graph().parse(fixture)
         conforms, results, report = pyshacl.validate(graph, shacl_graph=shapes, advanced=True)

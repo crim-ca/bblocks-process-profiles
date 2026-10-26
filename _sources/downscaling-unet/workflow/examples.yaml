@@ -109,7 +109,7 @@
     Tensor structures, geometry and temporal-domain properties are selected too. Follow `dct:hasPart`
     to the selected structure and its JSON Pointer. The geometry and start/end endpoints additionally
     have source-derived GeoSPARQL WKT and OWL-Time timestamp literals, checked against the live Item
-    by `tests/validate_semantics.py`. CRS84 preserves GeoJSON longitude/latitude coordinate order.
+    by `validation/validate_semantics.py`. CRS84 preserves GeoJSON longitude/latitude coordinate order.
     The model-specific inference type references these domains through `dct:spatial` and `dct:temporal`.
     Model-domain spatiotemporal references do not assert that the run covered the entire declared model domain.
     Intead, they indicate the potential domains for which the model may be reasonably applied to generate inference

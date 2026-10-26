@@ -21,14 +21,14 @@ This workflow performs inference, not model training.
 All **Examples** of this block describe one single use case, the RDPS-to-HRDPS U-Net inference
 job `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715`, each from a different angle. The graph below shows how
 the example artefacts (yellow) relate to each other, to the blocks of this register (blue),
-to the imported blocks that define them (grey, `ogc.` prefix omitted) and to the published
-or runtime resources (green). Arrows from an artefact to a block indicate the block it conforms to.
+to the imported blocks that define them (grey) and to the published
+or runtime resources (green). Each arrow is labelled with the relation or the fields that carry it. The legend is at the bottom left of the graph.
 
 ![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.svg)
 
 The graph is defined in
-[`diagrams/bblocks-interactions.mmd`](https://github.com/crim-ca/bblocks-process-profiles/blob/master/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.mmd)
-as a Mermaid flowchart. Run `python diagrams/generate_diagrams.py` to refresh the SVG files.
+[`diagrams/bblocks-interactions.dot`](https://github.com/crim-ca/bblocks-process-profiles/blob/master/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.dot)
+as a Graphviz graph. Run `python diagrams/generate_diagrams.py` to refresh the SVG files.
 
 ### Model and activity classification
 
@@ -88,9 +88,10 @@ the upstream domain-entailing predicates while the register-action modelling con
 Local type definitions use `dcat:version "0.1"`; RIM has no `rim:version` property. This definition
 version is distinct from the deployed model/software version `0.1.3-dev.10`.
 
-The standard postprocessor checks the rendered examples and the missing-input/specification cases.
-For the complete merged-graph check, run `python tests/validate_semantics.py` from the block directory.
-This also checks live model selectors, exact source-derived geometry and temporal endpoints,
+The standard postprocessor checks the rendered examples.
+The `validation/` directory holds the negative fixtures and a script that needs pySHACL >= 0.30,
+which is newer than the postprocessor image. Run `python validation/validate_semantics.py` for the complete
+merged-graph check. It also checks live model selectors, exact source-derived geometry and temporal endpoints,
 and rejects missing spatial/output type declarations, extent literals and applicability links.
 It requires pySHACL 0.30 or later: the postprocessor's older 0.21 validator does not enforce those
 upstream nested activity-type constraints reliably.
@@ -835,8 +836,8 @@ Description of the deployed *OGC API - Proceses* process that encapsulates the U
 ```ttl
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
+@prefix ns1: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
 @prefix ns3: <pp:> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -855,7 +856,7 @@ inference on that directory.
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "application/yaml" ] ] ;
+                            ns2:contentMediaType "application/yaml" ] ] ;
             proc:data_root [ dcterms:description "Root location prepended to each listed file, used to download the RDPS files." ;
                     proc:literalDataDomains [ proc:dataType [ proc:name "string" ] ;
                             proc:default "true"^^rdf:JSON ;
@@ -902,31 +903,31 @@ such as precipitation.
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/dateCreated" ;
-            :value "2026-09-09T10:36:53-04:00" ],
+    :metadata [ :role "https://schema.org/contributor" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "francis.charette-migneault@luqia.ca" ;
+                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
+                    :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/contributor" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "nazim.azeli@luqia.ca" ;
+                    :name "Nazim Azeli" ] ],
         [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "gauvin-st-denis.blaise@ouranos.ca" ;
                     :identifier "https://orcid.org/0009-0004-9049-2092" ;
                     :name "Blaise Gauvin St-Denis" ] ],
         [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "smith.trevorj@ouranos.ca" ;
                     :identifier "https://orcid.org/0000-0001-5393-8359" ;
                     :name "Trevor James Smith" ] ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "nazim.azeli@luqia.ca" ;
-                    :name "Nazim Azeli" ] ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "francis.charette-migneault@luqia.ca" ;
-                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
-                    :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/dateCreated" ;
+            :value "2026-09-09T10:36:53-04:00" ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,
@@ -935,25 +936,25 @@ such as precipitation.
     :outputTransmission "reference",
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
-                    proc:formats [ proc:mediaType "text/html" ],
-                        [ proc:mediaType "application/pdf" ],
+                    proc:formats [ proc:mediaType "application/pdf" ],
                         [ proc:default "true"^^rdf:JSON ;
-                            proc:mediaType "text/plain" ] ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentMediaType "text/html" ],
+                            proc:mediaType "text/plain" ],
+                        [ proc:mediaType "text/html" ] ;
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentMediaType "text/html" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/pdf" ;
-                                    ns1:format "binary" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/pdf" ;
+                                    ns2:format "binary" ],
                                 [ proc:type "string" ;
-                                    ns1:contentMediaType "text/plain" ] ] ] ;
+                                    ns2:contentMediaType "text/plain" ] ] ] ;
             proc:inference_output [ dcterms:title "inference_output" ;
                     proc:formats [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "application/directory" ] ;
                     proc:schema [ proc:type "string" ;
-                            ns1:contentEncoding "base64" ;
-                            ns1:contentMediaType "application/directory" ;
-                            ns1:format "binary" ] ] ] ;
+                            ns2:contentEncoding "base64" ;
+                            ns2:contentMediaType "application/directory" ;
+                            ns2:format "binary" ] ] ] ;
     proc:keywords "HRDPS",
         "RDPS",
         "U-Net",
@@ -2110,7 +2111,7 @@ The *selectors* identify the corresponding JSON objects in the published STAC It
 Tensor structures, geometry and temporal-domain properties are selected too. Follow `dct:hasPart`
 to the selected structure and its JSON Pointer. The geometry and start/end endpoints additionally
 have source-derived GeoSPARQL WKT and OWL-Time timestamp literals, checked against the live Item
-by `tests/validate_semantics.py`. CRS84 preserves GeoJSON longitude/latitude coordinate order.
+by `validation/validate_semantics.py`. CRS84 preserves GeoJSON longitude/latitude coordinate order.
 The model-specific inference type references these domains through `dct:spatial` and `dct:temporal`.
 Model-domain spatiotemporal references do not assert that the run covered the entire declared model domain.
 Intead, they indicate the potential domains for which the model may be reasonably applied to generate inference

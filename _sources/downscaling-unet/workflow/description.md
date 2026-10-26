@@ -10,14 +10,14 @@ This workflow performs inference, not model training.
 All **Examples** of this block describe one single use case, the RDPS-to-HRDPS U-Net inference
 job `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715`, each from a different angle. The graph below shows how
 the example artefacts (yellow) relate to each other, to the blocks of this register (blue),
-to the imported blocks that define them (grey, `ogc.` prefix omitted) and to the published
-or runtime resources (green). Arrows from an artefact to a block indicate the block it conforms to.
+to the imported blocks that define them (grey) and to the published
+or runtime resources (green). Each arrow is labelled with the relation or the fields that carry it. The legend is at the bottom left of the graph.
 
 ![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.svg)
 
 The graph is defined in
-[`diagrams/bblocks-interactions.mmd`](https://github.com/crim-ca/bblocks-process-profiles/blob/master/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.mmd)
-as a Mermaid flowchart. Run `python diagrams/generate_diagrams.py` to refresh the SVG files.
+[`diagrams/bblocks-interactions.dot`](https://github.com/crim-ca/bblocks-process-profiles/blob/master/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.dot)
+as a Graphviz graph. Run `python diagrams/generate_diagrams.py` to refresh the SVG files.
 
 ### Model and activity classification
 
@@ -77,9 +77,10 @@ the upstream domain-entailing predicates while the register-action modelling con
 Local type definitions use `dcat:version "0.1"`; RIM has no `rim:version` property. This definition
 version is distinct from the deployed model/software version `0.1.3-dev.10`.
 
-The standard postprocessor checks the rendered examples and the missing-input/specification cases.
-For the complete merged-graph check, run `python tests/validate_semantics.py` from the block directory.
-This also checks live model selectors, exact source-derived geometry and temporal endpoints,
+The standard postprocessor checks the rendered examples.
+The `validation/` directory holds the negative fixtures and a script that needs pySHACL >= 0.30,
+which is newer than the postprocessor image. Run `python validation/validate_semantics.py` for the complete
+merged-graph check. It also checks live model selectors, exact source-derived geometry and temporal endpoints,
 and rejects missing spatial/output type declarations, extent literals and applicability links.
 It requires pySHACL 0.30 or later: the postprocessor's older 0.21 validator does not enforce those
 upstream nested activity-type constraints reliably.

@@ -279,8 +279,8 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -291,13 +291,13 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
 <https://geolabs.github.io/bblocks-process-profiles/def/process/stac> dcterms:description "Process converted from CWL" ;
     dcterms:title "stac" ;
     pp:version "1.4.1" ;
-    proc:inputs [ ns3:item [ dcterms:description "" ;
+    proc:inputs [ ns2:item [ dcterms:description "" ;
                     dcterms:title "item" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "array" ;
                             ns1:items [ proc:type "string" ] ] ] ;
-            ns3:rasters [ dcterms:description "" ;
+            ns2:rasters [ dcterms:description "" ;
                     dcterms:title "rasters" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
@@ -305,16 +305,16 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                             ns1:items [ proc:type "string" ;
                                     ns1:contentMediaType "application/octet-stream" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "1.4.1" ;
-            proc:role schema:softwareVersion ],
-        [ rdf:value "Process converted from CWL" ;
+    proc:metadata [ rdf:value "Process converted from CWL" ;
             proc:role schema:description ],
         [ rdf:value "stac" ;
-            proc:role schema:name ] ;
+            proc:role schema:name ],
+        [ rdf:value "1.4.1" ;
+            proc:role schema:softwareVersion ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns2:stac_catalog [ dcterms:description "" ;
+    proc:outputs [ ns3:stac_catalog [ dcterms:description "" ;
                     dcterms:title "stac_catalog" ;
                     proc:schema [ proc:type "object" ;
                             ns1:format "stac-catalog" ;
@@ -562,8 +562,8 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -574,13 +574,13 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
 <https://geolabs.github.io/bblocks-process-profiles/def/process/stac> dcterms:description "Process converted from CWL" ;
     dcterms:title "stac" ;
     pp:version "1.4.1" ;
-    proc:inputs [ ns3:item [ dcterms:description "" ;
+    proc:inputs [ ns2:item [ dcterms:description "" ;
                     dcterms:title "item" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "array" ;
                             ns1:items [ proc:type "string" ] ] ] ;
-            ns3:rasters [ dcterms:description "" ;
+            ns2:rasters [ dcterms:description "" ;
                     dcterms:title "rasters" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
@@ -590,14 +590,14 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
     proc:jobControlOptions "async-execute" ;
     proc:metadata [ rdf:value "1.4.1" ;
             proc:role schema:softwareVersion ],
-        [ rdf:value "stac" ;
-            proc:role schema:name ],
         [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ] ;
+            proc:role schema:description ],
+        [ rdf:value "stac" ;
+            proc:role schema:name ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns2:stac_catalog [ dcterms:description "" ;
+    proc:outputs [ ns3:stac_catalog [ dcterms:description "" ;
                     dcterms:title "stac_catalog" ;
                     proc:schema [ proc:type "object" ;
                             ns1:format "stac-collection" ;
@@ -735,9 +735,9 @@ Part 2 deploy body: the execution unit is a link to the pinned CWL.
 
 [] proc:inputs [ ns1:item "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A",
                 "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A" ;
-            ns1:rasters [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2B_10TFK_20210713_0_L2A/otsu.tif" ;
+            ns1:rasters [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2A_10TFK_20220524_0_L2A/otsu.tif" ;
                     proc:type "image/tiff; application=geotiff" ],
-                [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2A_10TFK_20220524_0_L2A/otsu.tif" ;
+                [ ns1:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2B_10TFK_20210713_0_L2A/otsu.tif" ;
                     proc:type "image/tiff; application=geotiff" ] ] ;
     proc:response "document" .
 
@@ -982,8 +982,8 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 
 <urn:example:entity:stac:in:rasters> a prov:Entity,
         <https://ospd.example.org/ogc-api/processes/stac#inputs/rasters> ;
-    rdf:value [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2A_10TFK_20220524_0_L2A/otsu.tif" ],
-        [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2B_10TFK_20210713_0_L2A/otsu.tif" ] .
+    rdf:value [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2B_10TFK_20210713_0_L2A/otsu.tif" ],
+        [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2A_10TFK_20220524_0_L2A/otsu.tif" ] .
 
 <urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:1.5.0> a prov:SoftwareAgent ;
     pp:name "container image ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:1.5.0" .
@@ -2785,10 +2785,10 @@ id:006f10ba-bce7-4602-bc25-46f0ca2c5724 a wfprov:ProcessRun,
             prov:agent id:39955f0d-0ccf-44b0-b0a9-70d1dd48559c ;
             prov:hadPlan <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/water-bodies/node_water_bodies> ] ;
     prov:qualifiedStart [ a prov:Start ;
-            prov:atTime "2026-09-23T22:14:43.790754"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T22:09:37.996102"^^xsd:dateTime ;
             prov:hadActivity id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 ],
         [ a prov:Start ;
-            prov:atTime "2026-09-23T22:09:37.996102"^^xsd:dateTime ;
+            prov:atTime "2026-09-23T22:14:43.790754"^^xsd:dateTime ;
             prov:hadActivity id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 ] .
 
 id:0c932b2b-21cb-4d36-8eda-c9d07f86bf53 a prov:Entity,
@@ -2935,9 +2935,9 @@ id:511850b1-b1bc-44cd-8316-bdd367fefd98 a wfprov:Artifact,
         prov:Collection,
         prov:Entity ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member data:09dd884abf8f162fa6ed55f0e958ce9586b8bffd ],
+            provext:member data:5f0002427ab880579cf6a5a5c704bd399f3310f2 ],
         [ a provext:Membership ;
-            provext:member data:5f0002427ab880579cf6a5a5c704bd399f3310f2 ] .
+            provext:member data:09dd884abf8f162fa6ed55f0e958ce9586b8bffd ] .
 
 id:5fa19808-d14c-4c01-8bd1-05a7a8845019 a wf4ever:File,
         wfprov:Artifact,
@@ -2973,17 +2973,17 @@ id:afa01c29-85ed-418e-b3a4-99ff6f4b06cf a ro:Folder,
         "id:7d9076f9-073d-4667-84e9-131fd7fda68c"^^xsd:QName,
         "id:a9451218-986b-4920-9d23-62638b8aea56"^^xsd:QName ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 ;
-            prov:atTime "2026-09-23T22:17:45.465410"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/primary/stac> ],
-        [ a prov:Generation ;
             prov:activity id:fbfd9735-117b-4cdd-9707-61f171585925 ;
             prov:atTime "2026-09-23T22:17:45.432581"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/stac_catalog> ] ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/stac_catalog> ],
+        [ a prov:Generation ;
+            prov:activity id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 ;
+            prov:atTime "2026-09-23T22:17:45.465410"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/primary/stac> ] ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:a782f6a0-89d7-46ac-9c76-c6569903f8e1 ],
-        [ a provext:Membership ;
             provext:member id:0d06dfcd-e7b7-4fad-a2a5-66cddd416313 ],
+        [ a provext:Membership ;
+            provext:member id:a782f6a0-89d7-46ac-9c76-c6569903f8e1 ],
         [ a provext:Membership ;
             provext:member id:df33a1dc-d46c-4154-9213-04cfb8cc55c4 ],
         [ a provext:Membership ;
@@ -2994,9 +2994,9 @@ id:b6924a3c-a25c-4107-bdd7-2b5b2bff912e a wfprov:Artifact,
         prov:Collection,
         prov:Entity ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member data:ba936cb0e062bea4078e8b56371ca8fe054093dd ],
+            provext:member data:bc74f4f071a5a33f00ab88a6d6385b5e6638b86c ],
         [ a provext:Membership ;
-            provext:member data:bc74f4f071a5a33f00ab88a6d6385b5e6638b86c ] .
+            provext:member data:ba936cb0e062bea4078e8b56371ca8fe054093dd ] .
 
 id:d8353ab3-7279-484e-a461-b04ae4b52890 a prov:Agent,
         prov:SoftwareAgent ;
@@ -3027,13 +3027,13 @@ id:fbfd9735-117b-4cdd-9707-61f171585925 a wfprov:ProcessRun,
             prov:atTime "2026-09-23T22:17:40.502305"^^xsd:dateTime ;
             prov:hadActivity id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 ] ;
     prov:qualifiedUsage [ a prov:Usage ;
-            prov:atTime "2026-09-23T22:17:40.581639"^^xsd:dateTime ;
-            prov:entity id:25ff238f-e08b-4dee-a1f9-485e90a02a52 ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/item> ],
-        [ a prov:Usage ;
             prov:atTime "2026-09-23T22:17:40.582084"^^xsd:dateTime ;
             prov:entity id:3d637621-61a3-4c53-8aaf-70daadac3593 ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/rasters> ] .
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/rasters> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T22:17:40.581639"^^xsd:dateTime ;
+            prov:entity id:25ff238f-e08b-4dee-a1f9-485e90a02a52 ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/item> ] .
 
 data:09dd884abf8f162fa6ed55f0e958ce9586b8bffd a wfprov:Artifact,
         prov:Entity ;

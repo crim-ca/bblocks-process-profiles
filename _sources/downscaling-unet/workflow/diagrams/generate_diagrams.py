@@ -4,21 +4,19 @@ Regenerate the diagrams of the downscaling-unet workflow block.
 
 Two SVG files are written next to this script:
 
-* ``bblocks-interactions.svg`` rendered from the Mermaid definition ``bblocks-interactions.mmd``
-  with the Mermaid CLI (``mmdc``), which needs a Chrome or Chromium executable.
+* ``bblocks-interactions.svg`` rendered from the Graphviz definition ``bblocks-interactions.dot``
+  with ``dot``. Graphviz places the edge labels beside the lines, which Mermaid cannot do.
 * ``execution-provenance.svg`` rendered by ``prov_synth.py`` from the CWLProv metadata
   captured in the workflow examples.
 
-The viewer does not render Mermaid code blocks, so the block documentation references the SVG files.
-The Mermaid definition remains the source of truth for the interaction graph.
+The viewer does not render diagram code blocks, so the block documentation references the SVG files.
+The Graphviz definition remains the source of truth for the interaction graph.
 """
 
 import argparse
-import json
 import shutil
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 DIAGRAMS = Path(__file__).resolve().parent
@@ -28,21 +26,12 @@ PROV_METADATA = BLOCK / "examples/prov/metadata"
 PROV_TITLE = "CWLProv execution of the U-Net workflow (job d6f937f0)"
 
 
-def render_interactions(mmdc: str, chrome: str) -> Path:
+def render_interactions(dot: str) -> Path:
     """
-    Render the Mermaid interaction graph to SVG with plain-text labels.
+    Render the Graphviz interaction graph to SVG.
     """
     output = DIAGRAMS / "bblocks-interactions.svg"
-    with tempfile.TemporaryDirectory() as tmp:
-        puppeteer = Path(tmp) / "puppeteer.json"
-        puppeteer.write_text(json.dumps({"executablePath": chrome, "args": ["--no-sandbox"]}))
-        config = Path(tmp) / "mermaid.json"
-        config.write_text(json.dumps({"flowchart": {"htmlLabels": False}}))
-        subprocess.run(
-            [mmdc, "-p", str(puppeteer), "-c", str(config), "-b", "white",
-             "-i", str(DIAGRAMS / "bblocks-interactions.mmd"), "-o", str(output)],
-            check=True,
-        )
+    subprocess.run([dot, "-Tsvg", str(DIAGRAMS / "bblocks-interactions.dot"), "-o", str(output)], check=True)
     return output
 
 
@@ -61,15 +50,13 @@ def render_provenance() -> Path:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--mmdc", default=shutil.which("mmdc"), help="path to the Mermaid CLI")
-    parser.add_argument("--chrome", default=shutil.which("google-chrome") or shutil.which("chromium"),
-                        help="path to the Chrome or Chromium executable used by the Mermaid CLI")
+    parser.add_argument("--dot", default=shutil.which("dot"), help="path to the Graphviz dot executable")
     parser.add_argument("--only", choices=["interactions", "provenance"], help="render only one diagram")
     args = parser.parse_args()
     if args.only != "provenance":
-        if not args.mmdc or not args.chrome:
-            parser.error("the Mermaid CLI (--mmdc) and a Chrome executable (--chrome) are required")
-        print(render_interactions(args.mmdc, args.chrome))
+        if not args.dot:
+            parser.error("Graphviz dot is required, install it or use --dot")
+        print(render_interactions(args.dot))
     if args.only != "interactions":
         print(render_provenance())
     return 0

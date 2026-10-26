@@ -319,8 +319,8 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
 @prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns4: <http://www.iana.org/assignments/> .
+@prefix ns3: <http://www.iana.org/assignments/> .
+@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -332,7 +332,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "Extracts an image envelope." ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.ImageEnvelope/execution> ] ;
     pp:version "1.0.0" ;
     proc:inputs [ ns2:elev [ dcterms:description "This parameter allows selecting a directory containing Digital Elevation Model files. Note that this directory should contain only DEM files. Unexpected behaviour might occurs if other images are found in this directory." ;
@@ -355,13 +355,13 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                     dcterms:title "Input image filename." ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/jpeg" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/png" ] ] ] ;
             ns2:proj [ dcterms:description "Projection to be used to compute the envelope (default is WGS84)" ;
                     dcterms:title "Projection to be used to compute the envelope (default is WGS84)" ;
                     proc:minOccurs 0 ;
@@ -379,15 +379,15 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns3:out [ dcterms:description "Vector data file containing the envelope." ;
+    proc:outputs [ ns4:out [ dcterms:description "Vector data file containing the envelope." ;
                     dcterms:title "Vector data file containing the envelope." ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "utf-8" ;
-                                    ns1:contentMediaType "text/xml" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "utf-8" ;
                                     ns1:contentMediaType "application/vnd.google-earth.kml+xml" ],
                                 [ proc:type "object" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "utf-8" ;
+                                    ns1:contentMediaType "text/xml" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/zip" ] ] ] ] .
@@ -822,18 +822,18 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                     dcterms:title "Input image filename." ;
                     proc:keywords "GeoTIFF",
                         "raster" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Raster extent -- input `raster`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Raster extent -- input `raster`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Raster extent -- input `raster`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/inputs/raster> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Raster extent -- input `raster`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/inputs/raster> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/jpeg" ] ] ] ;
@@ -851,12 +851,12 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
-    proc:metadata [ dcterms:title "Implementation Profile: Raster extent" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
-        [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+        [ dcterms:title "Implementation Profile: Raster extent" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
         [ dcterms:title "Generic Profile: Raster extent" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
@@ -867,22 +867,22 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                     dcterms:title "Vector data file containing the envelope." ;
                     proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Implementation Profile: Raster extent -- output `result`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ],
-                        [ dcterms:title "Generic Profile: Raster extent -- output `result`" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Raster extent -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-extent/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
+                        [ dcterms:title "Implementation Profile: Raster extent -- output `result`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-extent/outputs/result> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "utf-8" ;
-                                    ns1:contentMediaType "text/xml" ],
-                                [ proc:type "object" ],
-                                [ proc:type "string" ;
                                     ns1:contentEncoding "utf-8" ;
                                     ns1:contentMediaType "application/vnd.google-earth.kml+xml" ],
                                 [ proc:type "string" ;
+                                    ns1:contentEncoding "utf-8" ;
+                                    ns1:contentMediaType "text/xml" ],
+                                [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/zip" ] ] ] ] .
+                                    ns1:contentMediaType "application/zip" ],
+                                [ proc:type "object" ] ] ] ] .
 
 
 ```

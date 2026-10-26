@@ -161,9 +161,9 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns4: <http://www.iana.org/assignments/> .
+@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -174,10 +174,10 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "IsSimple test " ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns2:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/IsSimple/execution> ] ;
     pp:version "2.0.0" ;
-    proc:inputs [ ns2:InputPolygon [ dcterms:description "the first geometry to compare against." ;
+    proc:inputs [ ns4:InputPolygon [ dcterms:description "the first geometry to compare against." ;
                     dcterms:title "the first geometry" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
@@ -469,11 +469,11 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/is-simple/inputs/geometry> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentEncoding "UTF-8" ;
                                     ns1:contentMediaType "text/xml" ;
                                     ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "UTF-8" ;
+                                    ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "text/xml" ;
                                     ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ] ;
     proc:jobControlOptions "async-execute",

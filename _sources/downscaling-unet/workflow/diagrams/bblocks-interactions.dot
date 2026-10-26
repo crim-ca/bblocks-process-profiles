@@ -1,0 +1,84 @@
+digraph interactions {
+  graph [rankdir=TB, nodesep=0.35, ranksep=0.75, fontname="Helvetica", fontsize=11, pad=0.3, newrank=true];
+  node [shape=box, style="filled,rounded", fontname="Helvetica", fontsize=11, penwidth=1.3, margin="0.14,0.07"];
+  edge [fontname="Helvetica", fontsize=9, color="#444444", arrowsize=0.7];
+
+  node [fillcolor="#cfe2ff", color="#2b5fa3"];
+  WF [label="ospd.process-profiles.\ndownscaling-unet.workflow", ordering=out];
+  S1 [label="ospd.process-profiles.\ndownscaling-unet.generate-file-list"];
+  S2 [label="ospd.process-profiles.\ndownscaling-unet.download-files"];
+  S3 [label="ospd.process-profiles.\ndownscaling-unet.unet"];
+  PT [label="ospd.process-profiles.\nprocess-type"];
+
+  node [fillcolor="#fff8d6", color="#b8962e"];
+  EXE [label="execute.json"];
+  PKG [label="ogcapppkg.json"];
+  PD [label="processDescription.json"];
+  CWL [label="Workflow CWL"];
+  PTE [label="process-type.json"];
+  ACT [label="activity-types.ttl"];
+  BND [label="model-bindings.ttl"];
+  ENR [label="inference-enrichment.ttl"];
+  PROV [label="CWLProv execution\nprovenance"];
+
+  node [fillcolor="#d8f3dc", color="#2d6a4f"];
+  RDPS [label="RDPS forecast files"];
+  WEAVER [label="Weaver\nOGC API - Processes"];
+  HRDPS [label="HRDPS-scale\nZarr output"];
+  ITEM [label="STAC MLM Item\n(published)"];
+
+  node [fillcolor="#e9ecef", color="#6c757d"];
+  APKG [label="ogc.api.processes.v2.schemas.ogcapppkg"];
+  PROC [label="ogc.api.processes.v1.schemas.process,\nogc.api.processes.v2.schemas.staticIndicator"];
+  CCT [label="eoap.cct.cwl-to-ogcprocess"];
+  CWLS [label="ogc.cwl.v1_2_1.CWLWorkflow"];
+  ACTB [label="ogc.model.registered-item.ml-activity-types,\nogc.model.registered-item.geoprocessing-activity-types"];
+  MLM [label="ogc.contrib.stac.extensions.mlm"];
+  STACX [label="ogc.contrib.stac.extensions.file,\nogc.contrib.stac.extensions.application,\nogc.contrib.stac.extensions.vcs,\nogc.contrib.stac.extensions.version,\nogc.contrib.stac.extensions.scientific"];
+  MLMX [label="ogc.contrib.stac.extensions.ml-aoi,\nogc.contrib.stac.extensions.datacube,\nogc.contrib.stac.extensions.eo,\nogc.contrib.stac.extensions.raster"];
+  PROVB [label="ogc.bbr.provenance.provenance,\nogc.bbr.provenance.execution,\nogc.ogc-utils.prov.w3c-prov-*"];
+
+  RDPS -> WEAVER [label="  input data"];
+  EXE -> WEAVER [label="  submitted to"];
+  WEAVER -> HRDPS [label="  produces"];
+
+  WF -> S1 [label="  step 1"];
+  WF -> S2 [label="  step 2"];
+  WF -> S3 [label="  step 3"];
+  WF -> PT [label="  process type"];
+
+  PKG -> WEAVER [label="  deployed on"];
+  PKG -> PD [label="  wraps"];
+  PKG -> CWL [label="  wraps"];
+  PTE -> PKG [label="  plan"];
+  PTE -> ACT [label="  classified by"];
+  PTE -> PT [label="  conforms to"];
+  ACT -> BND [label="  dct:spatial, dct:temporal,\l  rdfs:seeAlso\l"];
+  BND -> ITEM [label="  selects\l  (oa:hasSelector JSON pointers)\l"];
+  ENR -> BND [label="  reuses"];
+  ENR -> PROV [label="  enriches\l  (same prov:Activity IRI, prov:hadPlan,\l  dct:isPartOf the captured output)\l"];
+  WEAVER -> PROV [label="  captured as\l  (cwltool --provenance,\l  job URL in prov:atLocation)\l"];
+
+  PKG -> APKG [label="  conforms to"];
+  PD -> PROC [label="  conforms to"];
+  PD -> CCT [label="  mapped by"];
+  CWL -> CWLS [label="  conforms to"];
+  CWL -> CCT [label="  mapped by"];
+  ACT -> ACTB [label="  subclasses types of"];
+  ITEM -> MLM [label="  stac_extensions"];
+  ITEM -> STACX [label="  stac_extensions"];
+  ITEM -> MLMX [label="  stac_extensions\l  (ml-aoi, datacube)\l"];
+  MLM -> MLMX [label="  references in its schema\l  and best practices\l"];
+  PROV -> PROVB [label="  conforms to"];
+
+  LEGEND [shape=plaintext, style="", label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="4" CELLPADDING="5">
+      <TR><TD COLSPAN="1" BORDER="0"><B>Legend</B></TD></TR>
+      <TR><TD BGCOLOR="#cfe2ff" COLOR="#2b5fa3">Block of this register</TD></TR>
+      <TR><TD BGCOLOR="#e9ecef" COLOR="#6c757d">Imported block</TD></TR>
+      <TR><TD BGCOLOR="#fff8d6" COLOR="#b8962e">Example artefact</TD></TR>
+      <TR><TD BGCOLOR="#d8f3dc" COLOR="#2d6a4f">Published or runtime resource</TD></TR>
+    </TABLE>>];
+  CWLS -> LEGEND [style=invis, weight=2];
+  {rank=sink; LEGEND -> PROVB -> MLMX -> STACX [style=invis]}
+}
