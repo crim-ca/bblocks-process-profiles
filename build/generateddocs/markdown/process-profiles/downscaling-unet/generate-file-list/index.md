@@ -599,8 +599,8 @@ OGC API - Processes processDescription returned by Weaver for the deployed CWL.
 ```ttl
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <pp:> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <pp:> .
 @prefix ns3: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -661,11 +661,16 @@ such as precipitation.
     :metadata [ :role "https://schema.org/contributor" ;
             :value [ ns3:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
-                    :email "francis.charette-migneault@luqia.ca" ;
-                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
-                    :name "Francis Charette-Migneault" ] ],
+                    :email "nazim.azeli@luqia.ca" ;
+                    :name "Nazim Azeli" ] ],
         [ :role "https://schema.org/dateCreated" ;
             :value "2026-09-04T11:45:32-04:00" ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns3:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "smith.trevorj@ouranos.ca" ;
+                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
+                    :name "Trevor James Smith" ] ],
         [ :role "https://schema.org/author" ;
             :value [ ns3:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
@@ -675,14 +680,9 @@ such as precipitation.
         [ :role "https://schema.org/contributor" ;
             :value [ ns3:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
-                    :email "nazim.azeli@luqia.ca" ;
-                    :name "Nazim Azeli" ] ],
-        [ :role "https://schema.org/author" ;
-            :value [ ns3:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "smith.trevorj@ouranos.ca" ;
-                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
-                    :name "Trevor James Smith" ] ],
+                    :email "francis.charette-migneault@luqia.ca" ;
+                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
+                    :name "Francis Charette-Migneault" ] ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,
@@ -691,24 +691,24 @@ such as precipitation.
     :outputTransmission "reference",
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
-                    proc:formats [ proc:mediaType "text/html" ],
-                        [ proc:default "true"^^rdf:JSON ;
+                    proc:formats [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "text/plain" ],
+                        [ proc:mediaType "text/html" ],
                         [ proc:mediaType "application/pdf" ] ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentMediaType "text/plain" ],
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/pdf" ;
+                                    ns1:format "binary" ],
                                 [ proc:type "string" ;
-                                    ns2:contentMediaType "text/html" ],
+                                    ns1:contentMediaType "text/plain" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/pdf" ;
-                                    ns2:format "binary" ] ] ] ] ;
+                                    ns1:contentMediaType "text/html" ] ] ] ] ;
     proc:keywords "RDPS",
         "application",
         "downscaling",
         "file listing",
         "forecast" ;
-    ns1:version "0.1.3.dev10" .
+    ns2:version "0.1.3.dev10" .
 
 <https://github.com/Ouranosinc/resoterre> a <https://crim-ca.github.io/bblocks-process-profiles/def/text/html> ;
     :rel "https://schema.org/codeRepository" .

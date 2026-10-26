@@ -362,9 +362,9 @@ OGC API - Processes processDescription derived from the CWL.
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <http://schema.org/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <http://schema.org/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -383,53 +383,53 @@ OGC API - Processes processDescription derived from the CWL.
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "object" ;
-                            ns2:properties [ ns2:bbox [ proc:type "array" ;
-                                            ns2:items [ proc:type "number" ] ;
-                                            ns2:oneOf [ dcterms:description "3D bbox" ;
-                                                    ns2:maxItems 6 ;
-                                                    ns2:minItems 6 ],
-                                                [ dcterms:description "2D bbox" ;
-                                                    ns2:maxItems 4 ;
-                                                    ns2:minItems 4 ] ] ;
-                                    ns2:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
+                            ns1:properties [ ns1:bbox [ proc:type "array" ;
+                                            ns1:items [ proc:type "number" ] ;
+                                            ns1:oneOf [ dcterms:description "2D bbox" ;
+                                                    ns1:maxItems 4 ;
+                                                    ns1:minItems 4 ],
+                                                [ dcterms:description "3D bbox" ;
+                                                    ns1:maxItems 6 ;
+                                                    ns1:minItems 6 ] ] ;
+                                    ns1:crs [ proc:default "\"CRS84\""^^rdf:JSON ;
                                             proc:enum "CRS84",
                                                 "CRS84h" ;
                                             proc:type "string" ] ] ;
-                            ns2:required "bbox" ] ] ] ;
+                            ns1:required "bbox" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value [ a ns3:Person ;
-                    ns3:name "Cameron Sajedi" ] ;
+    proc:metadata [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
+            proc:role schema:license ],
+        [ rdf:value [ a ns2:Person ;
+                    ns2:identifier "https://orcid.org/0000-0002-9617-8641" ;
+                    ns2:name "Gérald Fenoy" ] ;
+            proc:role schema:contributor ],
+        [ rdf:value [ a ns2:Person ;
+                    ns2:name "Cameron Sajedi" ] ;
             proc:role schema:author ],
+        [ rdf:value "0.0.1" ;
+            proc:role schema:softwareVersion ],
         [ rdf:value "parse_aoi" ;
             proc:role schema:name ],
         [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
             proc:role schema:codeRepository ],
-        [ rdf:value [ a ns3:Person ;
-                    ns3:identifier "https://orcid.org/0000-0002-9617-8641" ;
-                    ns3:name "Gérald Fenoy" ] ;
-            proc:role schema:contributor ],
         [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ],
-        [ rdf:value "https://github.com/starling-foundries/KindGrove?tab=MIT-1-ov-file#readme" ;
-            proc:role schema:license ],
-        [ rdf:value "0.0.1" ;
-            proc:role schema:softwareVersion ] ;
+            proc:role schema:description ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns1:east [ dcterms:description "" ;
+    proc:outputs [ ns3:east [ dcterms:description "" ;
                     dcterms:title "east" ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:north [ dcterms:description "" ;
+            ns3:north [ dcterms:description "" ;
                     dcterms:title "north" ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:output_dir [ dcterms:description "" ;
+            ns3:output_dir [ dcterms:description "" ;
                     dcterms:title "output_dir" ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:south [ dcterms:description "" ;
+            ns3:south [ dcterms:description "" ;
                     dcterms:title "south" ;
                     proc:schema [ proc:type "number" ] ] ;
-            ns1:west [ dcterms:description "" ;
+            ns3:west [ dcterms:description "" ;
                     dcterms:title "west" ;
                     proc:schema [ proc:type "number" ] ] ] .
 
@@ -2668,10 +2668,10 @@ id:32497dfb-a6ea-4996-a29e-3700668da867 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/step_1" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:3ad94428-01ae-451b-a3f4-af56b73e6981 ;
-            prov:hadPlan <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1> ],
+            prov:agent id:a6977d92-2fbb-47e7-a784-4bfcb0da723b ],
         [ a prov:Association ;
-            prov:agent id:a6977d92-2fbb-47e7-a784-4bfcb0da723b ] ;
+            prov:agent id:3ad94428-01ae-451b-a3f4-af56b73e6981 ;
+            prov:hadPlan <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1> ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T10:03:16.994695"^^xsd:dateTime ;
             prov:hadActivity id:ec5cc9e1-3e83-4551-a759-4745c5b5040b ] ;
@@ -2683,13 +2683,9 @@ id:32497dfb-a6ea-4996-a29e-3700668da867 a wfprov:ProcessRun,
             prov:entity id:cf0be29b-e4d9-4fd3-bd1b-2ed80a4095a9 ;
             prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/days_back> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503452"^^xsd:dateTime ;
-            prov:entity id:930cbb58-e736-4bd6-97e8-f8d6fdb3ecca ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/north> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503865"^^xsd:dateTime ;
-            prov:entity data:e71003c6b7dd4093ce139ac0c51a6ba38d54a439 ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/output_dir> ],
+            prov:atTime "2026-09-23T10:01:12.503903"^^xsd:dateTime ;
+            prov:entity id:d061c0fb-cd9b-4026-acea-7aa18b482246 ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/west> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T10:01:12.503436"^^xsd:dateTime ;
             prov:entity id:43bb865a-d8cd-4787-8345-a30f5433a956 ;
@@ -2699,9 +2695,13 @@ id:32497dfb-a6ea-4996-a29e-3700668da867 a wfprov:ProcessRun,
             prov:entity id:a98d2a32-f817-4ba9-9a35-66d4b22bc9de ;
             prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/south> ],
         [ a prov:Usage ;
-            prov:atTime "2026-09-23T10:01:12.503903"^^xsd:dateTime ;
-            prov:entity id:d061c0fb-cd9b-4026-acea-7aa18b482246 ;
-            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/west> ],
+            prov:atTime "2026-09-23T10:01:12.503865"^^xsd:dateTime ;
+            prov:entity data:e71003c6b7dd4093ce139ac0c51a6ba38d54a439 ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/output_dir> ],
+        [ a prov:Usage ;
+            prov:atTime "2026-09-23T10:01:12.503452"^^xsd:dateTime ;
+            prov:entity id:930cbb58-e736-4bd6-97e8-f8d6fdb3ecca ;
+            prov:hadRole <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/step_1/north> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T10:01:12.503371"^^xsd:dateTime ;
             prov:entity id:980cdadc-8748-4ee0-8e50-02285fada4ac ;
@@ -2756,13 +2756,13 @@ id:639b3f31-e75a-4bcb-891c-0a3a8d2301e3 a wfprov:Artifact,
         prov:Collection,
         prov:Entity ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:84fd2907-ae91-49e6-b896-5337cf88d4e4 ],
-        [ a provext:Membership ;
-            provext:member id:c5bac52b-0236-4d46-9e95-2715e4ebb57f ],
+            provext:member id:0b639232-1377-4260-9361-ccfad1f07653 ],
         [ a provext:Membership ;
             provext:member id:8cae0f0e-8136-47a3-91de-2df4cb915caa ],
         [ a provext:Membership ;
-            provext:member id:0b639232-1377-4260-9361-ccfad1f07653 ] .
+            provext:member id:84fd2907-ae91-49e6-b896-5337cf88d4e4 ],
+        [ a provext:Membership ;
+            provext:member id:c5bac52b-0236-4d46-9e95-2715e4ebb57f ] .
 
 id:74500aa8-7eb8-4831-a5d7-b57b0d559a7f a wfprov:Artifact,
         prov:Collection,
@@ -2821,11 +2821,11 @@ id:ef051260-da6b-471f-b7ec-77a3f03338f9 a wfprov:Artifact,
         prov:Collection,
         prov:Entity ;
     provext:qualifiedMembership [ a provext:Membership ;
+            provext:member id:3d6a2dea-df15-41de-943f-5c75ffc145fd ],
+        [ a provext:Membership ;
             provext:member id:05148d8f-b41a-430e-ab3c-e47863420580 ],
         [ a provext:Membership ;
             provext:member id:5aa7a676-73f7-4cd5-bcc3-8c24e71dd6e0 ],
-        [ a provext:Membership ;
-            provext:member id:3d6a2dea-df15-41de-943f-5c75ffc145fd ],
         [ a provext:Membership ;
             provext:member id:371c06f9-5e4f-482d-a56d-17457d592305 ] .
 
@@ -2846,11 +2846,11 @@ id:3efd1082-30b0-4081-aac3-595258d0235a a ro:Folder,
     provext:qualifiedMembership [ a provext:Membership ;
             provext:member id:1ec302cf-1d77-48c8-9550-86945f3a70ef ],
         [ a provext:Membership ;
+            provext:member id:30f546f9-0831-4994-946d-88f0365ffd8a ],
+        [ a provext:Membership ;
             provext:member id:1a78bcc2-8056-4262-8f95-eff699d2deeb ],
         [ a provext:Membership ;
-            provext:member id:311c03b4-81b7-421a-8cd4-b744019dc39b ],
-        [ a provext:Membership ;
-            provext:member id:30f546f9-0831-4994-946d-88f0365ffd8a ] ;
+            provext:member id:311c03b4-81b7-421a-8cd4-b744019dc39b ] ;
     cwlprov:basename "mangrove-analysis-20260923-080315" .
 
 id:3ad94428-01ae-451b-a3f4-af56b73e6981 a wfprov:WorkflowEngine,
@@ -2865,10 +2865,10 @@ id:a475ab91-5a11-4da1-8e90-fc280da2c643 a wfprov:ProcessRun,
         prov:Activity ;
     rdfs:label "Run of workflow/packed.cwl#main/parse_aoi" ;
     prov:qualifiedAssociation [ a prov:Association ;
-            prov:agent id:3ad94428-01ae-451b-a3f4-af56b73e6981 ;
-            prov:hadPlan <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/parse_aoi> ],
+            prov:agent id:aef78493-9502-4ecb-9d44-f04f881f4650 ],
         [ a prov:Association ;
-            prov:agent id:aef78493-9502-4ecb-9d44-f04f881f4650 ] ;
+            prov:agent id:3ad94428-01ae-451b-a3f4-af56b73e6981 ;
+            prov:hadPlan <arcp://uuid,ec5cc9e1-3e83-4551-a759-4745c5b5040b/workflow/packed.cwl#main/parse_aoi> ] ;
     prov:qualifiedEnd [ a prov:End ;
             prov:atTime "2026-09-23T10:01:12.461683"^^xsd:dateTime ;
             prov:hadActivity id:ec5cc9e1-3e83-4551-a759-4745c5b5040b ] ;

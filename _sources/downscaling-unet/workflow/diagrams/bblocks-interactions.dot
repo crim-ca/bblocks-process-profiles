@@ -41,6 +41,9 @@ digraph interactions {
   RDPS -> WEAVER [label="  input data"];
   EXE -> WEAVER [label="  submitted to"];
   WEAVER -> HRDPS [label="  produces"];
+  EXE -> RDPS [label="  selects\l  (data_root, start_datetime,\l  end_datetime)\l"];
+  ENR -> RDPS [label="  prov:used (run:rdps-input,\l  reconstructed logical entity)\l"];
+  ENR -> HRDPS [label="  run:prediction prov:wasGeneratedBy,\l  dct:isPartOf the captured output\l"];
 
   WF -> S1 [label="  step 1"];
   WF -> S2 [label="  step 2"];
@@ -51,10 +54,10 @@ digraph interactions {
   PKG -> PD [label="  wraps"];
   PKG -> CWL [label="  wraps"];
   PTE -> PKG [label="  plan"];
-  PTE -> ACT [label="  classified by"];
+  PTE -> ACT [label="  classified by (activityTypes)\l  climate-downscaling,\l  climate-downscaling-inference\l"];
   PTE -> PT [label="  conforms to"];
   ACT -> BND [label="  dct:spatial, dct:temporal,\l  rdfs:seeAlso\l"];
-  BND -> ITEM [label="  selects\l  (oa:hasSelector JSON pointers)\l"];
+  BND -> ITEM [label="  selects (oa:hasSelector JSON pointers)\l  mlm:input, mlm:output (name, input, result),\l  geometry, start_datetime, end_datetime\l"];
   ENR -> BND [label="  reuses"];
   ENR -> PROV [label="  enriches\l  (same prov:Activity IRI, prov:hadPlan,\l  dct:isPartOf the captured output)\l"];
   WEAVER -> PROV [label="  captured as\l  (cwltool --provenance,\l  job URL in prov:atLocation)\l"];
@@ -67,8 +70,8 @@ digraph interactions {
   ACT -> ACTB [label="  subclasses types of"];
   ITEM -> MLM [label="  stac_extensions"];
   ITEM -> STACX [label="  stac_extensions"];
-  ITEM -> MLMX [label="  stac_extensions\l  (ml-aoi, datacube)\l"];
-  MLM -> MLMX [label="  references in its schema\l  and best practices\l"];
+  ITEM -> MLMX [label="  stac_extensions"];
+  MLM -> MLMX [label="  references in its JSON schema and best practices,\l  and in the SHACL validations added by its block\l"];
   PROV -> PROVB [label="  conforms to"];
 
   LEGEND [shape=plaintext, style="", label=<
