@@ -14,6 +14,7 @@ The Graphviz definition remains the source of truth for the interaction graph.
 """
 
 import argparse
+import re
 import shutil
 import subprocess
 import sys
@@ -26,12 +27,30 @@ PROV_METADATA = BLOCK / "examples/prov/metadata"
 PROV_TITLE = "CWLProv execution of the U-Net workflow (job d6f937f0)"
 
 
+def join_waypoint_edges(svg: str) -> str:
+    """
+    Close the small gaps Graphviz leaves where an edge is split on invisible waypoint nodes.
+    """
+    pattern = re.compile(r'(<title>(?:[^<]*&#45;&gt;RPT|RPT&#45;&gt;RPT2|RPT2&#45;&gt;[^<]*)</title>\s*<path[^>]* d=")([^"]*)"')
+    matches = list(pattern.finditer(svg))
+    if len(matches) != 3:
+        return svg
+    first, middle, last = (m.group(2) for m in matches)
+    first_end = re.findall(r"-?[\d.]+,-?[\d.]+", first)[-1]
+    last_start = re.findall(r"-?[\d.]+,-?[\d.]+", last)[0]
+    points = re.findall(r"-?[\d.]+,-?[\d.]+", middle)
+    points[0], points[-1] = first_end, last_start
+    fixed = f"M{points[0]}C" + " ".join(points[1:])
+    return svg.replace(f'd="{middle}"', f'd="{fixed}"', 1)
+
+
 def render_interactions(dot: str) -> Path:
     """
     Render the Graphviz interaction graph to SVG.
     """
     output = DIAGRAMS / "bblocks-interactions.svg"
     subprocess.run([dot, "-Tsvg", str(DIAGRAMS / "bblocks-interactions.dot"), "-o", str(output)], check=True)
+    output.write_text(join_waypoint_edges(output.read_text(encoding="utf-8")), encoding="utf-8")
     return output
 
 

@@ -1,13 +1,18 @@
 digraph interactions {
-  graph [rankdir=TB, nodesep=0.35, ranksep=0.75, fontname="Helvetica", fontsize=11, pad=0.3, newrank=true];
-  node [shape=box, style="filled,rounded", fontname="Helvetica", fontsize=11, penwidth=1.3, margin="0.14,0.07"];
+  graph [rankdir=TB, nodesep=0.25, ranksep=0.9, fontname="Helvetica", fontsize=11, pad=0.3];
+  node [shape=box, style="filled", fontname="Helvetica", fontsize=11, penwidth=1.3, margin="0.14,0.07"];
   edge [fontname="Helvetica", fontsize=9, color="#444444", arrowsize=0.7];
 
   node [fillcolor="#cfe2ff", color="#2b5fa3"];
-  WF [label="ospd.process-profiles.\ndownscaling-unet.workflow", ordering=out];
-  S1 [label="ospd.process-profiles.\ndownscaling-unet.generate-file-list"];
-  S2 [label="ospd.process-profiles.\ndownscaling-unet.download-files"];
-  S3 [label="ospd.process-profiles.\ndownscaling-unet.unet"];
+  WF [label="ospd.process-profiles.\ndownscaling-unet.workflow"];
+  subgraph cluster_steps {
+    label="Steps of the workflow"; labeljust=l; style="rounded,dashed"; color="#2b5fa3"; fontsize=10;
+    S1 [label="ospd.process-profiles.\ndownscaling-unet.generate-file-list"];
+    S2 [label="ospd.process-profiles.\ndownscaling-unet.download-files"];
+    S3 [label="ospd.process-profiles.\ndownscaling-unet.unet"];
+    {rank=same; S1; S2; S3}
+    S1 -> S2 -> S3 [style=invis];
+  }
   PT [label="ospd.process-profiles.\nprocess-type"];
 
   node [fillcolor="#fff8d6", color="#b8962e"];
@@ -38,41 +43,51 @@ digraph interactions {
   MLMX [label="ogc.contrib.stac.extensions.ml-aoi,\nogc.contrib.stac.extensions.datacube,\nogc.contrib.stac.extensions.eo,\nogc.contrib.stac.extensions.raster"];
   PROVB [label="ogc.bbr.provenance.provenance,\nogc.bbr.provenance.execution,\nogc.ogc-utils.prov.w3c-prov-*"];
 
-  RDPS -> WEAVER [label="  input data"];
-  EXE -> WEAVER [label="  submitted to"];
-  WEAVER -> HRDPS [label="  produces"];
-  EXE -> RDPS [label="  selects\l  (data_root, start_datetime,\l  end_datetime)\l"];
-  ENR -> RDPS [label="  prov:used (run:rdps-input,\l  reconstructed logical entity)\l"];
-  ENR -> HRDPS [label="  run:prediction prov:wasGeneratedBy,\l  dct:isPartOf the captured output\l"];
+  RDPS -> WEAVER [weight=50, label="  input data"];
+  EXE -> WEAVER [xlabel="  submitted to      \r \r"];
+  WEAVER -> HRDPS [weight=50, label="  produces"];
+  EXE -> RDPS [taillabel="selects\l(data_root,\lstart_datetime,\lend_datetime)\l", labeldistance=6.8, labelangle=34];
+  ENR -> RDPS [weight=20, label="  prov:used (run:rdps-input,\l  reconstructed logical entity)\l"];
+  ENR -> HRDPS [taillabel="run:prediction\lprov:wasGeneratedBy,\ldct:isPartOf the\lcaptured output\l", labeldistance=18, labelangle=-58];
 
-  WF -> S1 [label="  step 1"];
-  WF -> S2 [label="  step 2"];
   WF -> S3 [label="  step 3"];
-  WF -> PT [label="  process type"];
+  WF -> S2 [label="  step 2"];
+  WF -> S1 [label="  step 1"];
+  WF -> PT [minlen=2, label="  process type"];
 
-  PKG -> WEAVER [label="  deployed on"];
+  PKG -> WEAVER [xlabel="  deployed on      \r"];
   PKG -> PD [label="  wraps"];
   PKG -> CWL [label="  wraps"];
   PTE -> PKG [label="  plan"];
-  PTE -> ACT [label="  classified by (activityTypes)\l  climate-downscaling,\l  climate-downscaling-inference\l"];
+  PTE -> ACT [minlen=2, taillabel="classified by (activityTypes)\lclimate-downscaling,\lclimate-downscaling-inference\l", labeldistance=13, labelangle=33];
   PTE -> PT [label="  conforms to"];
-  ACT -> BND [label="  dct:spatial, dct:temporal,\l  rdfs:seeAlso\l"];
+  ACT:se -> BND [xlabel="  dct:spatial,      \r  dct:temporal,      \r  rdfs:seeAlso      \r"];
   BND -> ITEM [label="  selects (oa:hasSelector JSON pointers)\l  mlm:input, mlm:output (name, input, result),\l  geometry, start_datetime, end_datetime\l"];
-  ENR -> BND [label="  reuses"];
-  ENR -> PROV [label="  enriches\l  (same prov:Activity IRI, prov:hadPlan,\l  dct:isPartOf the captured output)\l"];
-  WEAVER -> PROV [label="  captured as\l  (cwltool --provenance,\l  job URL in prov:atLocation)\l"];
+  ENR -> BND [headlabel="reuses", labeldistance=10, labelangle=-15];
+  ENR -> PROV [headlabel="  enriches\l  (same prov:Activity IRI, prov:hadPlan,\l  dct:isPartOf the captured output)\l", labeldistance=12, labelangle=-14, labelfontsize=9, fontsize=9];
+  RPT [shape=box, fixedsize=true, width=0.9, height=0.01, style=invis, label=""];
+  RDPS:e -> RPT [arrowhead=none, weight=20, headclip=false, tailclip=true];
+  RPT2 [shape=box, fixedsize=true, width=0.9, height=0.01, style=invis, label=""];
+  RPT -> RPT2 [arrowhead=none, weight=20, headclip=false, tailclip=false];
+  {rank=same; RPT2; HRDPS}
+  HRDPS -> RPT2 [style=invis];
+  RPT2 -> PROV [weight=2, tailclip=false, label="  input recorded as\l  prov:used entities\l"];
+  {rank=same; RPT; WEAVER}
+  WEAVER -> RPT [style=invis];
+  HRDPS -> PROV [weight=50, label="  output recorded as\l  prov:wasGeneratedBy\l"];
+  WEAVER -> PROV [xlabel="  captured as      \r  (cwltool --provenance,      \r  job URL in prov:atLocation)      \r"];
 
   PKG -> APKG [label="  conforms to"];
   PD -> PROC [label="  conforms to"];
   PD -> CCT [label="  mapped by"];
   CWL -> CWLS [label="  conforms to"];
   CWL -> CCT [label="  mapped by"];
-  ACT -> ACTB [label="  subclasses types of"];
-  ITEM -> MLM [label="  stac_extensions"];
-  ITEM -> STACX [label="  stac_extensions"];
-  ITEM -> MLMX [label="  stac_extensions"];
+  ACT:sw -> ACTB [minlen=2, label="  subclasses types of"];
+  ITEM -> MLM [label="  stac_extensions\l  model description: tasks, inputs and outputs,\l  framework, accelerator\l"];
+  ITEM -> STACX [label="  stac_extensions\l  provenance: source revision (vcs),\l  release (version), citation (scientific)\l  assets: integrity (file),\l  runtime and containers (application)\l"];
+  ITEM -> MLMX [label="  stac_extensions\l  interpretability: data dimensions and variables\l  (datacube), training area of interest (ml-aoi)\l"];
   MLM -> MLMX [label="  references in its JSON schema and best practices,\l  and in the SHACL validations added by its block\l"];
-  PROV -> PROVB [label="  conforms to"];
+  PROV -> PROVB [xlabel="  conforms to"];
 
   LEGEND [shape=plaintext, style="", label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="4" CELLPADDING="5">
@@ -82,6 +97,17 @@ digraph interactions {
       <TR><TD BGCOLOR="#fff8d6" COLOR="#b8962e">Example artefact</TD></TR>
       <TR><TD BGCOLOR="#d8f3dc" COLOR="#2d6a4f">Published or runtime resource</TD></TR>
     </TABLE>>];
-  CWLS -> LEGEND [style=invis, weight=2];
-  {rank=sink; LEGEND -> PROVB -> MLMX -> STACX [style=invis]}
+  SPC [shape=box, style=invis, label="", fixedsize=true, width=0.6, height=0.01];
+  SPC2 [shape=box, style=invis, label="", fixedsize=true, width=0.1, height=0.01];
+  {rank=same; PTE; SPC; EXE; SPC2; ENR}
+  PTE -> SPC -> EXE -> SPC2 -> ENR [style=invis]
+  {rank=same; BND; WEAVER}
+  BND -> WEAVER [style=invis]
+  {rank=same; ITEM; HRDPS}
+  ITEM -> HRDPS -> PROV [style=invis]
+  SPC3 [shape=box, style=invis, label="", fixedsize=true, width=9, height=0.01];
+  {rank=same; WF; SPC3; LEGEND}
+  WF -> SPC3 -> LEGEND [style=invis]
+  {rank=same; MLM; MLMX; STACX; PROVB}
+  MLM -> MLMX -> STACX -> PROVB [style=invis]
 }
