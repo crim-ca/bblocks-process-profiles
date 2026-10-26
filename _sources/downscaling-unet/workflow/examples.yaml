@@ -160,6 +160,13 @@
     The records describe the `ogc-ospd2026-downscaling-unet-workflow` execution and its three steps.
     This is the provenance of the same job as the other examples, not a separate scenario.
 
+    <style>
+    .markdown-text img[src*="execution-provenance"] { max-height: none; width: 100%; }
+    .v-row:has(img[src*="execution-provenance"]) > .v-col:has(.cm-viewer-wrapper) > div[style*="max-height"] {
+      max-height: none !important; flex: 1 1 0; min-height: 0; height: 0;
+    }
+    </style>
+
     ![Synthetic view of the CWLProv execution provenance of job d6f937f0](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/execution-provenance.svg)
 
     These CWLProv metadata align with the provenance content model described in the

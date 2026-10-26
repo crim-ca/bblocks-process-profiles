@@ -11,7 +11,7 @@ All **Examples** of this block describe one single use case, the RDPS-to-HRDPS U
 job `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715`, each from a different angle. The graph below shows how
 the example artefacts (yellow) relate to each other, to the blocks of this register (blue),
 to the imported blocks that define them (grey) and to the published
-or runtime resources (green). Each arrow is labelled with the relation or the fields that carry it. The legend is at the bottom left of the graph.
+or runtime resources (green). Each arrow is labelled with the relation or the fields that carry it. The legend is at the top right of the graph.
 
 ![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.svg)
 
