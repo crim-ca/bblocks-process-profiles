@@ -22,9 +22,9 @@ All **Examples** of this block describe one single use case, the RDPS-to-HRDPS U
 job `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715`, each from a different angle. The graph below shows how
 the example artefacts (yellow) relate to each other, to the blocks of this register (blue),
 to the imported blocks that define them (grey) and to the published
-or runtime resources (green). Each arrow is labelled with the relation or the fields that carry it. The legend is at the bottom left of the graph.
+or runtime resources (green). Each arrow is labelled with the relation or the fields that carry it. The legend is at the top right of the graph.
 
-![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.svg)
+![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)
 
 The graph is defined in
 [`diagrams/bblocks-interactions.dot`](https://github.com/crim-ca/bblocks-process-profiles/blob/master/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.dot)
@@ -148,7 +148,7 @@ It shows the job and wrapping workflow runs, the agents, the three step runs mat
 process profiles, the submitted inputs and the two results. Data links between steps are declared
 in the CWL wiring and not observed in the captured records, and are drawn as such.
 
-![Synthetic view of the CWLProv execution provenance of job d6f937f0](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/execution-provenance.svg)
+![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)
 
 The provenance content aligns with the process, job, input/output and agent relationships described
 in [draft OGC API - Processes - Part 5: Provenance](https://docs.ogc.org/DRAFTS/26-038.html).
@@ -164,7 +164,7 @@ activity semantics, execution request and captured provenance. The graph below s
 each other and to the blocks that define them. The legend in the graph explains the box colours, and the edge
 labels name the fields that carry the main relations.
 
-![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.svg)
+![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)
 
 
 ### (1/10) U-Net workflow CWL Application Package
@@ -903,31 +903,31 @@ such as precipitation.
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/dateCreated" ;
-            :value "2026-09-09T10:36:53-04:00" ],
-        [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
-                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
-                    :name "Blaise Gauvin St-Denis" ] ],
-        [ :role "https://schema.org/contributor" ;
+    :metadata [ :role "https://schema.org/contributor" ;
             :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "nazim.azeli@luqia.ca" ;
                     :name "Nazim Azeli" ] ],
-        [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "smith.trevorj@ouranos.ca" ;
-                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
-                    :name "Trevor James Smith" ] ],
+        [ :role "https://schema.org/dateCreated" ;
+            :value "2026-09-09T10:36:53-04:00" ],
         [ :role "https://schema.org/contributor" ;
             :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "francis.charette-migneault@luqia.ca" ;
                     :identifier "https://orcid.org/0000-0003-4862-3349" ;
                     :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
+                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
+                    :name "Blaise Gauvin St-Denis" ] ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "smith.trevorj@ouranos.ca" ;
+                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
+                    :name "Trevor James Smith" ] ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,
@@ -936,18 +936,18 @@ such as precipitation.
     :outputTransmission "reference",
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
-                    proc:formats [ proc:mediaType "application/pdf" ],
+                    proc:formats [ proc:default "true"^^rdf:JSON ;
+                            proc:mediaType "text/plain" ],
                         [ proc:mediaType "text/html" ],
-                        [ proc:default "true"^^rdf:JSON ;
-                            proc:mediaType "text/plain" ] ;
+                        [ proc:mediaType "application/pdf" ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentMediaType "text/plain" ],
                                 [ proc:type "string" ;
+                                    ns1:contentMediaType "text/html" ],
+                                [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/pdf" ;
-                                    ns1:format "binary" ],
-                                [ proc:type "string" ;
-                                    ns1:contentMediaType "text/html" ] ] ] ;
+                                    ns1:format "binary" ] ] ] ;
             proc:inference_output [ dcterms:title "inference_output" ;
                     proc:formats [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "application/directory" ] ;
@@ -2419,7 +2419,14 @@ CWLProv captured from job `d6f937f0-bdae-4dd5-9fa3-9e0686ed6715` on 2026-09-28.
 The records describe the `ogc-ospd2026-downscaling-unet-workflow` execution and its three steps.
 This is the provenance of the same job as the other examples, not a separate scenario.
 
-![Synthetic view of the CWLProv execution provenance of job d6f937f0](https://crim-ca.github.io/bblocks-process-profiles/_sources/downscaling-unet/workflow/diagrams/execution-provenance.svg)
+<style>
+.markdown-text img[src*="execution-provenance"] { max-height: none; width: 100%; }
+.v-row:has(img[src*="execution-provenance"]) > .v-col:has(.cm-viewer-wrapper) > div[style*="max-height"] {
+  max-height: none !important; flex: 1 1 0; min-height: 0; height: 0;
+}
+</style>
+
+![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)
 
 These CWLProv metadata align with the provenance content model described in the
 [draft OGC API - Processes - Part 5: Provenance (26-038)](https://docs.ogc.org/DRAFTS/26-038.html):
@@ -22190,6 +22197,11 @@ x-jsonld-prefixes:
   rim: https://w3id.org/ogc/rim/
   mlact: https://w3id.org/ogc/rim/ml-activity/
   geoproc: https://w3id.org/ogc/rim/geoprocessing/
+x-bblocks-metadata:
+  itemIdentifier: ospd.process-profiles.downscaling-unet.workflow
+  register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-27'
 
 ```
 

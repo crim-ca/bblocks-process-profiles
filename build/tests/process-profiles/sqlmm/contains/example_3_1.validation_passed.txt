@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.sqlmm.contains - Process profile: Contains
-Generated 2026-10-26T18:14:04.404329+00:00
+Generated 2026-10-27T01:48:54.951644+00:00
 === Files ===
 Using examples/processDescription.inherited.json from examples
 JSON-LD context is present - uplifting

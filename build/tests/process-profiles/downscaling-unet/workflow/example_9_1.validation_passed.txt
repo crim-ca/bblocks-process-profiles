@@ -1,36 +1,36 @@
 Validation report for ospd.process-profiles.downscaling-unet.workflow - Process profile: OSPD 2026 RDPS-to-HRDPS U-Net downscaling workflow
-Generated 2026-10-26T18:16:33.094682+00:00
+Generated 2026-10-27T01:51:34.498981+00:00
 === Files ===
 Using examples/inference-enrichment.ttl from examples
 Output Turtle example_9_1.ttl created
 === End Files ===
 
 === SHACL ===
-Error processing closure source skos.ttl: [Errno 2] No such file or directory: '/skos.ttl' - SHACL validation will run against an incomplete closure graph
-Error processing closure source ../classification-ontology/ontology.ttl: <urlopen error [Errno 2] No such file or directory: 'classification-ontology/ontology.ttl'> - SHACL validation will run against an incomplete closure graph
-Error processing closure source ../eo-ontology/skos.ttl: <urlopen error [Errno 2] No such file or directory: 'eo-ontology/skos.ttl'> - SHACL validation will run against an incomplete closure graph
-Error processing closure source ../mlm-ontology/skos.ttl: <urlopen error [Errno 2] No such file or directory: 'mlm-ontology/skos.ttl'> - SHACL validation will run against an incomplete closure graph
-Error processing closure source ../raster-ontology/skos.ttl: <urlopen error [Errno 2] No such file or directory: 'raster-ontology/skos.ttl'> - SHACL validation will run against an incomplete closure graph
+Error processing closure source skos.ttl: [Errno 2] No such file or directory: '/github/skos.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../mlm-ontology/skos.ttl: [Errno 2] No such file or directory: '/mlm-ontology/skos.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../classification-ontology/ontology.ttl: [Errno 2] No such file or directory: '/classification-ontology/ontology.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../eo-ontology/skos.ttl: [Errno 2] No such file or directory: '/eo-ontology/skos.ttl' - SHACL validation will run against an incomplete closure graph
+Error processing closure source ../raster-ontology/skos.ttl: [Errno 2] No such file or directory: '/raster-ontology/skos.ttl' - SHACL validation will run against an incomplete closure graph
 Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
- - https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/CWLOntology/ontology.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/raster-ontology/ontology.ttl
- - /workspace/_sources/downscaling-unet/workflow/examples/model-bindings.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/core-ontology/ontology.ttl
+ - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/ml-activity-types/ontology.ttl
  - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/eo-ontology/ontology.ttl
+ - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/activity-type/ontology.ttl
+ - https://defs.opengis.net/prez-backend/object?uri=http://www.opengis.net/ont/geosparql&_mediatype=text/turtle
+ - https://www.w3.org/ns/prov-o
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
+ - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/core-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/processing-ontology/ontology.ttl
+ - /github/workspace/_sources/downscaling-unet/workflow/examples/model-bindings.ttl
+ - https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/CWLOntology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
+ - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/geoprocessing-activity-types/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/SchemaSaladOntology/ontology.ttl
+ - /github/workspace/_sources/downscaling-unet/workflow/activity-types.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/classification-ontology/ontology.ttl
+ - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/raster-ontology/ontology.ttl
  - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/mlm-ontology/ontology.ttl
  - https://www.w3.org/ns/prov-o#
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/components/assets-ontology/ontology.ttl
- - https://defs.opengis.net/prez-backend/object?uri=http://www.opengis.net/ont/geosparql&_mediatype=text/turtle
- - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/core-ontology/ontology.ttl
- - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/geoprocessing-activity-types/ontology.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/core-ontology/ontology.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/processing-ontology/ontology.ttl
- - https://ogcincubator.github.io/bblocks-stac/build/annotated/contrib/stac/extensions/classification-ontology/ontology.ttl
- - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/ml-activity-types/ontology.ttl
- - https://ogcincubator.github.io/registered-item-model/build/annotated/model/registered-item/activity-type/ontology.ttl
- - https://www.w3.org/ns/prov-o
- - https://ogcincubator.github.io/bblocks-ogcapi-records/build/annotated/api/records/records-ontology/ontology.ttl
- - https://ogcincubator.github.io/bblocks-cwl/build/annotated/cwl/v1_2_1/SchemaSaladOntology/ontology.ttl
- - /workspace/_sources/downscaling-unet/workflow/activity-types.ttl
 Using snippet SHACL closures:
  - examples/prov/metadata/provenance/primary.cwlprov.ttl
 Validation result for _sources/downscaling-unet/workflow/shapes.shacl:
@@ -38,77 +38,77 @@ Validation result for _sources/downscaling-unet/workflow/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/downscaling-unet/workflow/shapes.shacl:
- - Shape pp:ModelBindingShape: *none*
- - Shape pp:ModelBindingShape/sh:property/sh:node: *none*
- - Shape pp:InferenceExecutionShape/sh:property/sh:qualifiedValueShape: *none*
- - Shape pp:EntityModelDomainShape: run:rdps-input,run:geophysical-input,run:prediction
- - Shape pp:InferenceExecutionShape/sh:property/sh:qualifiedValueShape: *none*
- - Shape pp:InferenceExecutionShape: <urn:uuid:557e2aff-6780-4a25-aaa4-1b7100ceff82>
- - Shape pp:ModelTemporalDomainShape: binding:model-temporal-domain
- - Shape pp:ModelTemporalEndpointShape: binding:model-end,binding:model-start
- - Shape pp:ModelApplicabilityShape: activity:climate-downscaling-inference
  - Shape pp:ModelSpatialDomainShape: binding:model-spatial-domain
+ - Shape pp:ModelApplicabilityShape: activity:climate-downscaling-inference
+ - Shape pp:InferenceExecutionShape/sh:property/sh:qualifiedValueShape: *none*
+ - Shape pp:EntityModelDomainShape: run:prediction,run:geophysical-input,run:rdps-input
+ - Shape pp:InferenceExecutionShape: <urn:uuid:557e2aff-6780-4a25-aaa4-1b7100ceff82>
+ - Shape pp:ModelBindingShape/sh:property/sh:node: *none*
+ - Shape pp:ModelBindingShape: *none*
+ - Shape pp:InferenceExecutionShape/sh:property/sh:qualifiedValueShape: *none*
+ - Shape pp:ModelTemporalEndpointShape: binding:model-start,binding:model-end
+ - Shape pp:ModelTemporalDomainShape: binding:model-temporal-domain
 
 Validation result for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
- - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: <urn:uuid:557e2aff-6780-4a25-aaa4-1b7100ceff82>
- - Shape <https://www.ogc.org/rules/prov/#End-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-generated>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
- - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-influencer>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Start-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-agent>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-wasAssociatedWith>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Usage-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-alternateOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: run:runtime-environment
+ - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadMember>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Activity-shape>: <urn:uuid:557e2aff-6780-4a25-aaa4-1b7100ceff82>
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAttribution>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-hadUsage>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedAssociation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedEnd>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Generation-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasRevisionOf>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
  - Shape <https://www.ogc.org/rules/prov/#EmptyCollection-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDelegation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Plan-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedRevision>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Entity-shape>: run:runtime-environment
- - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-used>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Invalidation-shape>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-entity>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedCommunication>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasEndedBy>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-invalidated>: *none*
- - Shape <https://www.ogc.org/rules/prov/#Collection-shape>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-specializationOf>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedGeneration>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedInfluence>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Bundle-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedStart>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#InstantaneousEvent-shape>: *none*
  - Shape <https://www.ogc.org/rules/prov/#prop-wasInformedBy>: *none*
- - Shape <https://www.ogc.org/rules/prov/#prop-wasInfluencedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasQuotedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasStartedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadActivity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadGeneration>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasGeneratedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-atLocation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasDerivedFrom>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPlan>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedQuotation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedDerivation>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-qualifiedUsage>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-activity>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#End-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadRole>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-wasAttributedTo>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-hadPrimarySource>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#Start-shape>: *none*
+ - Shape <https://www.ogc.org/rules/prov/#prop-influencer>: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/components/assets-ontology/shapes.shacl:
   Validation Report
@@ -122,9 +122,9 @@ Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/core-
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/core-ontology/shapes.shacl:
+ - Shape stac:LinkShape: *none*
  - Shape stac:AssetShape: *none*
  - Shape stac:CollectionShape: *none*
- - Shape stac:LinkShape: *none*
  - Shape stac:ItemShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/classification-ontology/shapes.shacl:
@@ -132,10 +132,10 @@ Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/exten
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/classification-ontology/shapes.shacl:
- - Shape classification:ClassShape: *none*
- - Shape classification:BitFieldShape: *none*
- - Shape classification:BitfieldsUsageShape: *none*
  - Shape classification:ClassesUsageShape: *none*
+ - Shape classification:BitfieldsUsageShape: *none*
+ - Shape classification:BitFieldShape: *none*
+ - Shape classification:ClassShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
   Validation Report
@@ -149,90 +149,90 @@ Validation result for https://opengeospatial.github.io/bblocks/registereditems/g
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: *none*
- - Shape geojson:GeometryShape: *none*
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:FeatureShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/eo-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/eo-ontology/shapes.shacl:
- - Shape eo:CloudCoverShape: *none*
- - Shape eo:SolarIlluminationShape: *none*
- - Shape eo:CenterWavelengthShape: *none*
- - Shape eo:FullWidthHalfMaxShape: *none*
  - Shape eo:SnowCoverShape: *none*
+ - Shape eo:CenterWavelengthShape: *none*
+ - Shape eo:SolarIlluminationShape: *none*
  - Shape eo:CommonNameShape: *none*
+ - Shape eo:CloudCoverShape: *none*
+ - Shape eo:FullWidthHalfMaxShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/mlm-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/mlm-ontology/shapes.shacl:
- - Shape mlm:VariableReferenceResolutionShape: *none*
- - Shape mlm:BandVariableReferenceShape: *none*
+ - Shape mlm:ModelOutputShape: *none*
+ - Shape mlm:InputStructureShape: *none*
+ - Shape mlm:ValueScalingOrderShape: *none*
+ - Shape mlm:InputStructureShape/sh:property/sh:or/rdf:first: *none*
  - Shape mlm:VariableDimensionResolutionShape: *none*
- - Shape mlm:ModelRootShape: *none*
- - Shape mlm:ModelInputShape: *none*
+ - Shape _:n1d5ccebf191f492890ee2ecfb7452eb1b71: *none*
+ - Shape mlm:ModelAssetShape: *none*
+ - Shape mlm:BandVariableReferenceShape: *none*
+ - Shape mlm:ValueScalingShape: *none*
+ - Shape mlm:ResultStructureShape: *none*
+ - Shape mlm:AcceleratorShape: *none*
+ - Shape mlm:VariableReferenceResolutionShape: *none*
+ - Shape _:n1d5ccebf191f492890ee2ecfb7452eb1b72: *none*
+ - Shape _:n1d5ccebf191f492890ee2ecfb7452eb1b53: *none*
  - Shape mlm:TensorStructureOrderShape: *none*
  - Shape mlm:ResultStructureShape/sh:property/sh:or/rdf:first: *none*
- - Shape mlm:ResultStructureShape: *none*
- - Shape _:n62fb5e13fdf24a56b19aa3e1bdc66783b53: *none*
- - Shape _:n62fb5e13fdf24a56b19aa3e1bdc66783b54: *none*
+ - Shape mlm:ModelInputShape: *none*
+ - Shape _:n1d5ccebf191f492890ee2ecfb7452eb1b54: *none*
+ - Shape mlm:ModelRootShape: *none*
  - Shape mlm:StackedReferenceOrderShape: *none*
- - Shape mlm:ModelAssetShape: *none*
- - Shape mlm:ModelOutputShape: *none*
- - Shape mlm:InputStructureShape/sh:property/sh:or/rdf:first: *none*
- - Shape _:n62fb5e13fdf24a56b19aa3e1bdc66783b71: *none*
- - Shape mlm:AcceleratorShape: *none*
- - Shape mlm:InputStructureShape: *none*
- - Shape mlm:ValueScalingShape: *none*
- - Shape _:n62fb5e13fdf24a56b19aa3e1bdc66783b72: *none*
- - Shape mlm:ValueScalingOrderShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/processing-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/processing-ontology/shapes.shacl:
- - Shape processing:LineageShape: *none*
- - Shape processing:SoftwareShape: *none*
- - Shape processing:DatetimeShape: *none*
- - Shape processing:ExpressionShape: *none*
  - Shape processing:LevelShape: *none*
- - Shape processing:VersionShape: *none*
  - Shape processing:FacilityShape: *none*
+ - Shape processing:DatetimeShape: *none*
+ - Shape processing:SoftwareShape: *none*
+ - Shape processing:LineageShape: *none*
+ - Shape processing:ExpressionShape: *none*
+ - Shape processing:VersionShape: *none*
 
 Validation result for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-stac/_sources/extensions/raster-ontology/shapes.shacl:
- - Shape raster:SamplingShape: *none*
  - Shape raster:BitsPerSampleShape: *none*
- - Shape raster:OffsetShape: *none*
  - Shape raster:ScaleShape: *none*
- - Shape raster:HistogramShape: *none*
  - Shape raster:SpatialResolutionShape: *none*
+ - Shape raster:SamplingShape: *none*
  - Shape raster:HistogramUsageShape: *none*
+ - Shape raster:HistogramShape: *none*
+ - Shape raster:OffsetShape: *none*
 
 Validation result for https://ogcincubator.github.io/registered-item-model/_sources/geoprocessing-activity-types/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/geoprocessing-activity-types/shapes.shacl:
- - Shape geoproc:SpatialDataTypeShape/sh:property/sh:qualifiedValueShape: *none*
- - Shape geoproc:GeoprocessingActivityTypesShape/sh:property/sh:node: *none*
- - Shape geoproc:GeoprocessingActivityTypesShape: <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType>
+ - Shape _:nf214d694008346b58d44d4ef8f185fc8b21: *none*
  - Shape geoproc:GeoprocessingActivityTypeShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape _:n50fbb1d003e1486a932b8451391141b4b20: *none*
+ - Shape geoproc:GeoprocessingActivityTypeShape/sh:or/rdf:first: *none*
+ - Shape geoproc:SpatialDataTypeShape/sh:property/sh:qualifiedValueShape: *none*
  - Shape geoproc:GeoprocessingActivityTypeShape: *none*
  - Shape geoproc:SpatialDataTypeShape: *none*
- - Shape _:n50fbb1d003e1486a932b8451391141b4b21: *none*
- - Shape geoproc:GeoprocessingActivityTypeShape/sh:or/rdf:first: *none*
+ - Shape geoproc:GeoprocessingActivityTypesShape/sh:property/sh:node: *none*
+ - Shape _:nf214d694008346b58d44d4ef8f185fc8b20: *none*
+ - Shape geoproc:GeoprocessingActivityTypesShape: <https://w3id.org/ogc/rim/geoprocessing/GeoprocessingActivityType>
 
 Validation result for https://ogcincubator.github.io/registered-item-model/_sources/activity-type/shapes.shacl:
   Validation Report
@@ -247,38 +247,38 @@ Validation result for https://ogcincubator.github.io/registered-item-model/_sour
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/core-ontology/shapes.shacl:
- - Shape rim:CommitmentShape: *none*
- - Shape rim:RegisterItemClassShape: *none*
- - Shape rim:RegisterItemShape: *none*
- - Shape rim:ConceptVersionShape: *none*
- - Shape rim:TextShape/sh:or/rdf:first: *none*
- - Shape rim:RegisterSpecificationShape: *none*
- - Shape rim:RegisterActionShape: *none*
- - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape rim:RegisterShape: *none*
  - Shape rim:TextShape: *none*
+ - Shape rim:RegisterShape: *none*
  - Shape rim:ConceptShape: *none*
+ - Shape rim:TextShape/sh:or/rdf:first: *none*
+ - Shape rim:RegisterItemShape: *none*
+ - Shape rim:RegisterItemClassShape: *none*
+ - Shape rim:TextShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape rim:RegisterSpecificationShape: *none*
+ - Shape rim:CommitmentShape: *none*
+ - Shape rim:ConceptVersionShape: *none*
+ - Shape rim:RegisterActionShape: *none*
 
 Validation result for https://ogcincubator.github.io/registered-item-model/_sources/ml-activity-types/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/registered-item-model/_sources/ml-activity-types/shapes.shacl:
- - Shape mlact:MLActivityTypeShape/sh:property/sh:qualifiedValueShape: *none*
- - Shape mlact:MLActivityTypeShape: *none*
- - Shape _:ne5d4fb270d1b4fa690548e5eea400e77b54: *none*
- - Shape mlact:ActivityInputShape: *none*
- - Shape mlact:MLActivityTypesShape: mlact:MLActivityType
- - Shape mlact:ActivityOutputShape: *none*
- - Shape mlact:InferenceActivityTypesShape: mlact:InferenceActivityType
- - Shape _:ne5d4fb270d1b4fa690548e5eea400e77b47: *none*
- - Shape _:ne5d4fb270d1b4fa690548e5eea400e77b55: *none*
- - Shape _:ne5d4fb270d1b4fa690548e5eea400e77b46: *none*
- - Shape mlact:InferenceActivityTypeShape/sh:property/sh:qualifiedValueShape: *none*
  - Shape mlact:InferenceActivityTypesShape/sh:property/sh:node: *none*
- - Shape mlact:MLActivityTypesShape/sh:property/sh:node: *none*
+ - Shape mlact:InferenceActivityTypeShape/sh:property/sh:qualifiedValueShape: *none*
+ - Shape mlact:MLActivityTypeShape: *none*
+ - Shape mlact:MLActivityTypeShape/sh:property/sh:qualifiedValueShape: *none*
+ - Shape mlact:ActivityOutputShape: *none*
+ - Shape mlact:ActivityInputShape: *none*
+ - Shape _:naed53393247144de9cbc98552111ca00b47: *none*
+ - Shape _:naed53393247144de9cbc98552111ca00b54: *none*
  - Shape mlact:InferenceActivityTypeShape: *none*
+ - Shape mlact:MLActivityTypesShape/sh:property/sh:node: *none*
+ - Shape mlact:MLActivityTypesShape: mlact:MLActivityType
+ - Shape _:naed53393247144de9cbc98552111ca00b55: *none*
+ - Shape mlact:InferenceActivityTypesShape: mlact:InferenceActivityType
  - Shape mlact:MLActivityShape: *none*
+ - Shape _:naed53393247144de9cbc98552111ca00b46: *none*
 
 === End SHACL ===
 

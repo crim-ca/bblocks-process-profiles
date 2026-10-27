@@ -36,12 +36,12 @@
             ns1:CELLSIZE [ dcterms:description "Cellsize" ;
                     dcterms:title "Cellsize" ;
                     proc:keywords "cell size" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Point cloud rasterization -- input `cellSize`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Point cloud to grid -- input `cellSize`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Point cloud to grid -- input `cellSize`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/inputs/cellSize> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Point cloud rasterization -- input `cellSize`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/inputs/cellSize> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:nullable true ;
@@ -71,15 +71,15 @@
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
-    proc:metadata [ dcterms:title "Generic Profile: Point cloud rasterization" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+    proc:metadata [ dcterms:title "Implementation Profile: Point cloud to grid" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
         [ dcterms:title "Process Concept: Point Cloud Processing" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/point-cloud-processing> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Implementation Profile: Point cloud to grid" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ] ;
+        [ dcterms:title "Generic Profile: Point cloud rasterization" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
@@ -87,27 +87,8 @@
                     dcterms:title "Number of Points in Cell" ;
                     proc:schema [ ns2:oneOf [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
-                                [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-envi" ],
-                                [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
                                     ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ] ] ] ;
-            ns3:GRID [ dcterms:description "Z Value" ;
-                    dcterms:title "Z Value" ;
-                    proc:keywords "GeoTIFF",
-                        "raster" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Point cloud rasterization -- output `result`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
-                        [ dcterms:title "Implementation Profile: Point cloud to grid -- output `result`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
                                     ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
@@ -115,22 +96,41 @@
                                     ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
-                                [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/tiff" ] ] ] ;
-            ns3:GRIDS [ dcterms:description "Attributes" ;
-                    dcterms:title "Attributes" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
+            ns3:GRID [ dcterms:description "Z Value" ;
+                    dcterms:title "Z Value" ;
+                    proc:keywords "GeoTIFF",
+                        "raster" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Point cloud to grid -- output `result`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/point-cloud-to-grid/outputs/result> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ],
+                        [ dcterms:title "Generic Profile: Point cloud rasterization -- output `result`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/point-cloud-rasterization/outputs/result> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
                     proc:schema [ ns2:oneOf [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
                                     ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
+                                [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ] ] ] ;
+            ns3:GRIDS [ dcterms:description "Attributes" ;
+                    dcterms:title "Attributes" ;
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
                                     ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ] ] ] ] .
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
+                                [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
+                                [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ] ] ] ] .
 
