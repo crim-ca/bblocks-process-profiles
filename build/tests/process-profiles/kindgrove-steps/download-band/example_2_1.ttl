@@ -48,7 +48,14 @@
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "number" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value [ a ns2:Person ;
+    proc:metadata [ rdf:value "Download one Sentinel-2 band over a bounding box from a STAC Item" ;
+            proc:role schema:description ],
+        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
+            proc:role schema:license ],
+        [ rdf:value [ a ns2:Person ;
+                    ns2:name "Cameron Sajedi" ] ;
+            proc:role schema:author ],
+        [ rdf:value [ a ns2:Person ;
                     ns2:affiliation "GeoLabs" ;
                     ns2:name "Gérald Fenoy" ] ;
             proc:role schema:contributor ],
@@ -57,14 +64,7 @@
         [ rdf:value "https://github.com/starling-foundries/KindGrove" ;
             proc:role schema:codeRepository ],
         [ rdf:value "download_band" ;
-            proc:role schema:name ],
-        [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
-            proc:role schema:license ],
-        [ rdf:value [ a ns2:Person ;
-                    ns2:name "Cameron Sajedi" ] ;
-            proc:role schema:author ],
-        [ rdf:value "Download one Sentinel-2 band over a bounding box from a STAC Item" ;
-            proc:role schema:description ] ;
+            proc:role schema:name ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;

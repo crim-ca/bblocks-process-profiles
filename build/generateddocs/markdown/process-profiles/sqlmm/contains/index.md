@@ -211,10 +211,10 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns3: <http://www.iana.org/assignments/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -225,36 +225,36 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "Contains" ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Contains/execution> ] ;
     pp:version "2.0.0" ;
-    proc:inputs [ ns2:InputEntity1 [ dcterms:description "the first geometry." ;
+    proc:inputs [ ns1:InputEntity1 [ dcterms:description "the first geometry." ;
                     dcterms:title "the first geometry" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "UTF-8" ;
-                                    ns1:contentMediaType "text/xml" ;
-                                    ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "UTF-8" ;
+                                    ns2:contentMediaType "text/xml" ;
+                                    ns2:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "text/xml" ;
-                                    ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ;
-            ns2:InputEntity2 [ dcterms:description "the other geometry." ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "text/xml" ;
+                                    ns2:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ;
+            ns1:InputEntity2 [ dcterms:description "the other geometry." ;
                     dcterms:title "the other geometry" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "text/xml" ;
-                                    ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "text/xml" ;
+                                    ns2:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "UTF-8" ;
-                                    ns1:contentMediaType "text/xml" ;
-                                    ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ] ;
+                                    ns2:contentEncoding "UTF-8" ;
+                                    ns2:contentMediaType "text/xml" ;
+                                    ns2:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ] ;
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns4:Result [ dcterms:description "A value true or false if the geometry1 contains the geometry2." ;
+    proc:outputs [ ns3:Result [ dcterms:description "A value true or false if the geometry1 contains the geometry2." ;
                     dcterms:title "Contains result" ;
                     proc:metadata [ dcterms:title "Mon test  " ] ;
                     proc:schema [ proc:type "boolean" ] ] ] .
@@ -579,9 +579,9 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <http://www.iana.org/assignments/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -598,28 +598,28 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     dcterms:title "Contains" ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Contains/execution> ] ;
     pp:version "2.0.0" ;
-    proc:inputs [ ns3:InputEntity1 [ dcterms:description "the first geometry." ;
+    proc:inputs [ ns2:InputEntity1 [ dcterms:description "the first geometry." ;
                     dcterms:title "the first geometry" ;
                     proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Contains -- input `geometry1`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Contains -- input `geometry1`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains/inputs/geometry1> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry1`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry1> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentEncoding "UTF-8" ;
                                     ns1:contentMediaType "text/xml" ;
                                     ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "UTF-8" ;
+                                    ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "text/xml" ;
                                     ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ;
-            ns3:InputEntity2 [ dcterms:description "the other geometry." ;
+            ns2:InputEntity2 [ dcterms:description "the other geometry." ;
                     dcterms:title "the other geometry" ;
                     proc:keywords "GML",
                         "geometry" ;
@@ -630,11 +630,11 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "UTF-8" ;
+                                    ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "text/xml" ;
                                     ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentEncoding "UTF-8" ;
                                     ns1:contentMediaType "text/xml" ;
                                     ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ] ;
     proc:jobControlOptions "async-execute",
@@ -652,13 +652,13 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns4:Result [ dcterms:description "A value true or false if the geometry1 contains the geometry2." ;
+    proc:outputs [ ns3:Result [ dcterms:description "A value true or false if the geometry1 contains the geometry2." ;
                     dcterms:title "Contains result" ;
                     proc:keywords "boolean" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
+                    proc:metadata [ dcterms:title "Mon test  " ],
+                        [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
-                        [ dcterms:title "Mon test  " ],
                         [ dcterms:title "Implementation Profile: Contains -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/contains/outputs/result> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
@@ -1174,11 +1174,6 @@ x-jsonld-prefixes:
   prov: http://www.w3.org/ns/prov#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-x-bblocks-metadata:
-  itemIdentifier: ospd.process-profiles.sqlmm.contains
-  register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
-  version: '0.1'
-  dateOfLastChange: '2026-10-23'
 
 ```
 

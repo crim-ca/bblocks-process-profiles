@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1356" height="1134" viewBox="0 0 1356 1134">
+<title>CWLProv execution of the U-Net workflow (job d6f937f0)</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker><marker id="dh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0b7a75"/></marker></defs>
+<rect width="1356" height="1134" fill="#fff"/>
+<text x="20" y="38" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222">CWLProv execution of the U-Net workflow (job d6f937f0)</text>
+<rect x="20" y="54.0" width="915.7" height="845.5" rx="6" fill="#f4f5f7" stroke="#c8ccd2"/>
+<text x="923.7" y="71.0" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="end" font-weight="bold" fill="#333">primary.cwlprov</text>
+<text x="923.7" y="85.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="end" font-weight="normal" fill="#555">GET /jobs/{jobId}/prov — engine document completed by crim-ca/weaver</text>
+<text x="923.7" y="99.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="end" font-weight="normal" fill="#555">step names shown without their common prefix “ogc-ospd2026-downscaling-”</text>
+<text x="923.7" y="113.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="end" font-weight="bold" fill="#a14d00">⚠ 3 steps have no recorded inputs/outputs in this document — data flow shown from the CWL wiring</text>
+<g><title>weaver-worker@crim-ca/weaver:6.15.0</title>
+<path d="M40.0,164.0 L150.9,152.0 L261.7,164.0 L261.7,207.0 L40.0,207.0 Z" fill="#fedfa6" stroke="#555"/>
+<text x="150.9" y="179.8" font-family="Helvetica, Arial, sans-serif" font-size="12.0" text-anchor="middle" font-weight="bold" fill="#222">weaver-worker@crim-ca/wea…</text>
+<text x="150.9" y="195.3" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">6.15.0</text>
+</g>
+<g><title>Weaver internal WPS used for demo and testing.; crim-ca/weaver:6.15.0</title>
+<path d="M287.7,164.0 L349.4,152.0 L411.0,164.0 L411.0,207.0 L287.7,207.0 Z" fill="#fedfa6" stroke="#555"/>
+<text x="349.4" y="179.8" font-family="Helvetica, Arial, sans-serif" font-size="12.0" text-anchor="middle" font-weight="bold" fill="#222">crim-ca/weaver</text>
+<text x="349.4" y="195.3" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">6.15.0</text>
+</g>
+<path d="M437.0,164.0 L497.2,152.0 L557.4,164.0 L557.4,207.0 L437.0,207.0 Z" fill="#fedfa6" stroke="#555"/>
+<text x="497.2" y="179.8" font-family="Helvetica, Arial, sans-serif" font-size="12.0" text-anchor="middle" font-weight="bold" fill="#222">weaver-worker</text>
+<text x="497.2" y="195.3" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">user account</text>
+<g><title>cwltool 2.0.20200224214941.dev889+g0bd6789a3</title>
+<path d="M583.4,164.0 L680.4,152.0 L777.5,164.0 L777.5,207.0 L583.4,207.0 Z" fill="#fedfa6" stroke="#555"/>
+<text x="680.4" y="179.8" font-family="Helvetica, Arial, sans-serif" font-size="12.0" text-anchor="middle" font-weight="bold" fill="#222">cwltool</text>
+<text x="680.4" y="195.3" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">2.0.20200224214941.dev889…</text>
+</g>
+<path d="M497.2,153.0 C497.2,138.0 150.9,138.0 150.9,153.0" fill="none" stroke="#444" stroke-width="1.2" marker-end="url(#ah)"/>
+<text x="324.0" y="142.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="middle" fill="#444" stroke="#fff" stroke-width="3" paint-order="stroke">actedOnBehalfOf</text>
+<path d="M287.7,186.1 L263.7,186.1" fill="none" stroke="#444" stroke-width="1.2" marker-end="url(#ah)"/>
+<rect x="40.0" y="265.0" width="335.6" height="80.0" fill="#c9d3fd" stroke="#555"/>
+<text x="207.8" y="293.5" font-family="Helvetica, Arial, sans-serif" font-size="12.0" text-anchor="middle" font-weight="bold" fill="#222">Job d6f937f0-…</text>
+<text x="207.8" y="309.0" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">wfprov:WorkflowRun · 12:53:28–13:03:18 (no timezone)</text>
+<text x="207.8" y="324.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">same IRI as the workflow run below</text>
+<g><title>https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow</title>
+<rect x="415.6" y="265.0" width="334.5" height="80.0" rx="16" fill="#fffcc0" stroke="#555"/>
+<text x="582.8" y="285.8" font-family="Helvetica, Arial, sans-serif" font-size="12.0" text-anchor="middle" font-weight="bold" fill="#222">process description</text>
+<text x="582.8" y="301.3" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">/processes/ogc-ospd2026-downscaling-unet-workfl…</text>
+<text x="582.8" y="316.8" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">hirondelle.crim.ca/weaver</text>
+<text x="582.8" y="332.3" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">not linked to the job (reversed wasGeneratedBy ignored)</text>
+</g>
+<path d="M70.0,265.0 L70.0,221.0 L680.4,221.0 L680.4,209.0" fill="none" stroke="#444" stroke-width="1.2" marker-end="url(#ah)"/>
+<text x="76.0" y="251.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" fill="#444" stroke="#fff" stroke-width="3" paint-order="stroke">wasAssociatedWith (cwltool)</text>
+<rect x="40.0" y="406.8" width="335.6" height="64.5" fill="#c9d3fd" stroke="#555"/>
+<text x="207.8" y="427.5" font-family="Helvetica, Arial, sans-serif" font-size="12.0" text-anchor="middle" font-weight="bold" fill="#222">Wrapping workflow run</text>
+<text x="207.8" y="443.0" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">wfprov:WorkflowRun · cwltool</text>
+<text x="207.8" y="458.5" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">12:53:28–13:03:18 · 9m50s</text>
+<rect x="484.5" y="385.0" width="284.6" height="108.0" rx="16" fill="#fffcc0" stroke="#555"/>
+<text x="626.8" y="405.4" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="bold" fill="#222">inputs (prov:role = prov:value)</text>
+<text x="502.5" y="420.4" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">data_root = https://pavics.ouranos.ca/…/RDPS</text>
+<text x="502.5" y="435.4" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">end_datetime = 2024-05-02T08:00:00</text>
+<text x="502.5" y="450.4" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">include_year_month_subdirectory = true</text>
+<text x="502.5" y="465.4" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">requires_previous_forecast_step = true</text>
+<text x="502.5" y="480.4" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">start_datetime = 2024-05-02T07:00:00</text>
+<path d="M375.6,439.0 L482.5,439.0" fill="none" stroke="#444" stroke-width="1.2" marker-end="url(#ah)"/>
+<text x="430.0" y="433.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="middle" fill="#444" stroke="#fff" stroke-width="3" paint-order="stroke">used</text>
+<path d="M80.0,406.8 L80.0,345.0" fill="none" stroke="#444" stroke-width="1.2" stroke-dasharray="5,3"/>
+<text x="86.0" y="379.9" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" fill="#444" stroke="#fff" stroke-width="3" paint-order="stroke">same IRI (job = workflow run)</text>
+<rect x="40.0" y="577.0" width="314.1" height="119.5" fill="#c9d3fd" stroke="#555"/>
+<text x="197.1" y="597.8" font-family="Helvetica, Arial, sans-serif" font-size="12.0" text-anchor="middle" font-weight="bold" fill="#222">…generate-file-list</text>
+<text x="197.1" y="613.3" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">started 12:53:28 (no end recorded)</text>
+<text x="197.1" y="628.8" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">params: data_root †, end_datetime †,</text>
+<text x="197.1" y="644.3" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">include_year_month_subdirectory †,</text>
+<text x="197.1" y="659.8" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">requires_previous_forecast_step †, start_datetime †</text>
+<rect x="48.0" y="674.5" width="298.1" height="17" rx="3" fill="#e3eedd" stroke="#6b8f5e"/>
+<text x="197.1" y="687.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#2f4a26">≙ generate-file-list</text>
+<rect x="376.1" y="577.0" width="211.8" height="73.0" fill="#c9d3fd" stroke="#555"/>
+<text x="482.0" y="597.8" font-family="Helvetica, Arial, sans-serif" font-size="12.0" text-anchor="middle" font-weight="bold" fill="#222">…download-files</text>
+<text x="482.0" y="613.3" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">started 12:53:36 (no end recorded)</text>
+<rect x="384.1" y="628.0" width="195.8" height="17" rx="3" fill="#e3eedd" stroke="#6b8f5e"/>
+<text x="482.0" y="640.5" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#2f4a26">≙ download-files</text>
+<rect x="609.9" y="577.0" width="305.8" height="88.5" fill="#c9d3fd" stroke="#555"/>
+<text x="762.8" y="597.8" font-family="Helvetica, Arial, sans-serif" font-size="12.0" text-anchor="middle" font-weight="bold" fill="#222">…unet</text>
+<text x="762.8" y="613.3" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">started 12:54:12 (no end recorded)</text>
+<text x="762.8" y="628.8" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="normal" fill="#222">params: config †, end_datetime †, start_datetime †</text>
+<rect x="617.9" y="643.5" width="289.8" height="17" rx="3" fill="#e3eedd" stroke="#6b8f5e"/>
+<text x="762.8" y="656.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#2f4a26">≙ unet</text>
+<rect x="40.0" y="818.5" width="180.0" height="48.0" rx="16" fill="#fffcc0" stroke="#555"/>
+<text x="130.0" y="838.9" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="bold" fill="#222">result · forecast_files</text>
+<text x="130.0" y="853.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#222">rdps_forecast_files.txt</text>
+<rect x="328.9" y="818.5" width="307.0" height="63.0" rx="16" fill="#fffcc0" stroke="#555"/>
+<text x="482.4" y="838.9" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="bold" fill="#222">result · inference_output</text>
+<text x="482.4" y="853.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#222">directory inference_cwl.zarr/</text>
+<text x="482.4" y="868.9" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#222">HRDPS_P_PR_SFC, HRDPS_P_TT_10000, HRDPS…</text>
+<path d="M207.8,471.2 L207.8,561.0" fill="none" stroke="#444" stroke-width="1.2" stroke-dasharray="5,3"/>
+<path d="M197.1,561.0 L762.8,561.0" fill="none" stroke="#444" stroke-width="1.2" stroke-dasharray="5,3"/>
+<path d="M197.1,561.0 L197.1,575.0" fill="none" stroke="#444" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ah)"/>
+<path d="M482.0,561.0 L482.0,575.0" fill="none" stroke="#444" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ah)"/>
+<path d="M762.8,561.0 L762.8,575.0" fill="none" stroke="#444" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ah)"/>
+<path d="M482.4,818.5 L482.4,806.5 L921.7,806.5 L921.7,543.0 L335.6,543.0 L335.6,473.2" fill="none" stroke="#444" stroke-width="1.2" marker-end="url(#ah)"/>
+<text x="343.6" y="539.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" fill="#444" stroke="#fff" stroke-width="3" paint-order="stroke">wasGeneratedBy (output inference_output of the wrapping run)</text>
+<path d="M130.0,818.5 L130.0,810.5 L925.7,810.5 L925.7,529.0 L351.6,529.0 L351.6,473.2" fill="none" stroke="#444" stroke-width="1.2" marker-end="url(#ah)"/>
+<text x="359.6" y="525.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" fill="#444" stroke="#fff" stroke-width="3" paint-order="stroke">wasGeneratedBy (output forecast_files of the wrapping run)</text>
+<path d="M234.8,696.5 L234.8,718.5 L456.6,718.5 L456.6,653.0" fill="none" stroke="#0b7a75" stroke-width="1.8" stroke-dasharray="7,4" stroke-opacity="0.7" marker-end="url(#dh)"/>
+<path d="M507.4,650.0 L507.4,736.5 L726.1,736.5 L726.1,668.5" fill="none" stroke="#0b7a75" stroke-width="1.8" stroke-dasharray="7,4" stroke-opacity="0.7" marker-end="url(#dh)"/>
+<path d="M244.8,696.5 L244.8,754.5 L108.4,754.5 L108.4,815.5" fill="none" stroke="#0b7a75" stroke-width="1.8" stroke-dasharray="7,4" stroke-opacity="0.7" marker-end="url(#dh)"/>
+<path d="M799.5,665.5 L799.5,772.5 L445.6,772.5 L445.6,815.5" fill="none" stroke="#0b7a75" stroke-width="1.8" stroke-dasharray="7,4" stroke-opacity="0.7" marker-end="url(#dh)"/>
+<text x="345.7" y="731.5" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="middle" fill="#0b7a75" font-style="italic" stroke="#fff" stroke-width="3" paint-order="stroke">forecast_files → file_list (declared in CWL, not observed)</text>
+<text x="616.8" y="749.5" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="middle" fill="#0b7a75" font-style="italic" stroke="#fff" stroke-width="3" paint-order="stroke">input_data → input_data (declared in CWL, not observed)</text>
+<text x="386.1" y="767.5" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="middle" fill="#0b7a75" font-style="italic" stroke="#fff" stroke-width="3" paint-order="stroke">forecast_files → output forecast_files (declared in CWL, not observed)</text>
+<text x="622.5" y="785.5" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="middle" fill="#0b7a75" font-style="italic" stroke="#fff" stroke-width="3" paint-order="stroke">inference_output → output inference_output (declared in CWL, not observed)</text>
+<rect x="965.6992" y="54" width="370" height="845.5" rx="6" fill="#fff" stroke="#6b8f5e" stroke-dasharray="4,3"/>
+<text x="1150.7" y="80.0" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle" font-weight="bold" fill="#222">Process profiles of the downscaling steps</text>
+<text x="1150.7" y="98.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#444">ospd.process-profiles.downscaling-unet.*</text>
+<text x="1150.7" y="128.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#2f4a26">≙  the step corresponds to this profile</text>
+<text x="1150.7" y="143.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#2f4a26">(mapping supplied with --profiles;</text>
+<text x="1150.7" y="158.0" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="middle" font-weight="normal" fill="#2f4a26">not asserted in the served provenance)</text>
+<rect x="980.6992" y="174.0" width="340" height="73" rx="4" fill="#e3eedd" stroke="#6b8f5e"/>
+<text x="992.7" y="194.0" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="bold" fill="#222">generate-file-list</text>
+<text x="992.7" y="212.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" font-weight="normal" fill="#333">selection-filtering</text>
+<text x="992.7" y="229.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" font-weight="normal" fill="#333">openEO: –</text>
+<rect x="980.6992" y="257.0" width="340" height="73" rx="4" fill="#e3eedd" stroke="#6b8f5e"/>
+<text x="992.7" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="bold" fill="#222">download-files</text>
+<text x="992.7" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" font-weight="normal" fill="#333">data-retrieval</text>
+<text x="992.7" y="312.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" font-weight="normal" fill="#333">openEO: –</text>
+<rect x="980.6992" y="340.0" width="340" height="73" rx="4" fill="#e3eedd" stroke="#6b8f5e"/>
+<text x="992.7" y="360.0" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="bold" fill="#222">unet</text>
+<text x="992.7" y="378.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" font-weight="normal" fill="#333">scientific-computation</text>
+<text x="992.7" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" font-weight="normal" fill="#333">openEO: –</text>
+<rect x="20" y="915.5" width="1315.6992" height="194" rx="6" fill="#fff" stroke="#c8ccd2"/>
+<text x="36.0" y="937.5" font-family="Helvetica, Arial, sans-serif" font-size="12" text-anchor="start" font-weight="bold" fill="#222">Legend</text>
+<rect x="40.0" y="951.5" width="90.0" height="30.0" fill="#c9d3fd" stroke="#555"/>
+<text x="85.0" y="970.4" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="bold" fill="#222">activity</text>
+<rect x="150.0" y="951.5" width="90.0" height="30.0" rx="16" fill="#fffcc0" stroke="#555"/>
+<text x="195.0" y="970.4" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="bold" fill="#222">entity</text>
+<path d="M260.0,959.5 L305.0,947.5 L350.0,959.5 L350.0,983.5 L260.0,983.5 Z" fill="#fedfa6" stroke="#555"/>
+<text x="305.0" y="973.4" font-family="Helvetica, Arial, sans-serif" font-size="11.5" text-anchor="middle" font-weight="bold" fill="#222">agent</text>
+<path d="M380,959.5 L430,959.5" fill="none" stroke="#444" stroke-width="1.2" marker-end="url(#ah)"/>
+<text x="440.0" y="963.5" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">PROV relation (PROV direction); between agents: actedOnBehalfOf</text>
+<path d="M380,979.5 L430,979.5" fill="none" stroke="#444" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#ah)"/>
+<text x="440.0" y="983.5" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">child run started by the parent run (wasStartedBy); nested document linked by prov:has_provenance</text>
+<path d="M380,999.5 L430,999.5" stroke="#0b7a75" stroke-width="1.8" stroke-dasharray="7,4" stroke-opacity="0.7" marker-end="url(#dh)"/>
+<text x="440.0" y="1003.5" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">data link declared in the CWL wiring, not observed in the provenance</text>
+<text x="440.0" y="1023.5" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">params: … inside a step box = inputs passed from the parent run (∈ = member of the parent's array)</text>
+<text x="440.0" y="1043.5" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">† declared in CWL, not observed in the provenance</text>
+<rect x="380" y="1051.5" width="70" height="16" rx="3" fill="#e3eedd" stroke="#6b8f5e"/>
+<text x="415.0" y="1063.5" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="middle" font-weight="normal" fill="#2f4a26">≙ name</text>
+<text x="460.0" y="1063.5" font-family="Helvetica, Arial, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#222">corresponding process profile (from the --profiles mapping)</text>
+<text x="36.0" y="1087.5" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" font-weight="normal" fill="#555">Job d6f937f0-bdae-4dd5-9fa3-9e0686ed6715 (ogc-ospd2026-downscaling-unet-workflow) on hirondelle.crim.ca, 28 September 2026. Provenance anomalies: reversed wasGeneratedBy (activity in the entity position) ignored; wasStartedBy with a</text>
+<text x="36.0" y="1102.5" font-family="Helvetica, Arial, sans-serif" font-size="10.5" text-anchor="start" font-weight="normal" fill="#555">non-activity trigger; engine times have no timezone (≈ UTC−04:00), job times are UTC. Synthetic view generated by prov_synth from the CWLProv research object: identifiers shortened; secret values redacted; container-image agents shown on their step.</text>
+</svg>

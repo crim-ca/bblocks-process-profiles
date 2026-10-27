@@ -1,143 +1,461 @@
-@prefix activity: <https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/> .
-@prefix acttype: <https://w3id.org/ogc/rim/activity-type/> .
-@prefix binding: <https://crim-ca.github.io/bblocks-process-profiles/def/model-binding/downscaling-unet/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix entity: <https://crim-ca.github.io/bblocks-process-profiles/def/entity-type/> .
-@prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix geoproc: <https://w3id.org/ogc/rim/geoprocessing/> .
-@prefix local: <https://crim-ca.github.io/bblocks-process-profiles/def/> .
-@prefix mlact: <https://w3id.org/ogc/rim/ml-activity/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix plan: <https://crim-ca.github.io/bblocks-process-profiles/def/plan/> .
-@prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
-@prefix pplan: <http://purl.org/net/p-plan#> .
-@prefix process: <https://crim-ca.github.io/bblocks-process-profiles/def/process-type/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rim: <https://w3id.org/ogc/rim/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns1: <vcs:> .
+@prefix ns2: <ml-aoi:> .
+@prefix ns3: <file:> .
+@prefix ns4: <sci:> .
+@prefix ns5: <mlm:> .
+@prefix ns6: <application:> .
+@prefix ns7: <pp:> .
+@prefix ns8: <cube:> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-local:InferenceExecution a owl:Class ;
-    rdfs:label "Inference execution without an asserted register action" ;
-    rdfs:comment "A PROV execution classified by a candidate activity type using dct:type." ;
-    rdfs:subClassOf prov:Activity .
+<file:///workspace/ogc-ospd2026-downscaling-unet> a :Feature ;
+    :assets [ :citation <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/CITATION.cff> ;
+            :configuration <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/configs/downscaling/downscaling_rdps_to_hrdps_cwl.yaml> ;
+            :container <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/docker/Dockerfile.inference> ;
+            :model <https://huggingface.co/bstdenis/unet-rdps-to-hrdps-downscaling/blob/main/unet_epoch_mebojo_018.safetensors> ;
+            :runtime <docker://registry.gitlab.com/crim.ca/clients/ogc/ogc-ospd2026/resoterre-inference:0.1.3-dev.10> ;
+            :source_code <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/scripts/meta_workflows/downscaling/rdps_to_hrdps.smk> ] ;
+    :bbox -8.645e+01,
+        -6.416e+01,
+        3.752e+01,
+        5.325e+01 ;
+    :collection "stac-mlm-examples" ;
+    :geometry [ a :Polygon ;
+            :coordinates "[-86.45, 37.52]",
+                "[-86.45, 53.25]",
+                "[-64.16, 37.52]",
+                "[-64.16, 53.25]" ] ;
+    :links <https://github.com/Ouranosinc/resoterre.git>,
+        <https://hirondelle.crim.ca/stac/>,
+        <https://hirondelle.crim.ca/stac/collections/HRDPS_CRIM>,
+        <https://hirondelle.crim.ca/stac/collections/RDPS_CRIM>,
+        <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples>,
+        <https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet>,
+        <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet>,
+        <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet/package>,
+        <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/CITATION.cff>,
+        <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_download_files.cwl>,
+        <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_generate_file_list.cwl>,
+        <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl>,
+        <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl> ;
+    :properties [ ns8:dimensions [ :rlat [ a :spatial ;
+                            dct:description "Row coordinate of the 512x512 HRDPS target array in its rotated-pole grid. The geographic positions are provided by the two-dimensional lat/lon auxiliary coordinates." ;
+                            :axis "y" ;
+                            :extent 0,
+                                511 ;
+                            :unit "index" ] ;
+                    :rlon [ a :spatial ;
+                            dct:description "Column coordinate of the 512x512 HRDPS target array in its rotated-pole grid. The geographic positions are provided by the two-dimensional lat/lon auxiliary coordinates." ;
+                            :axis "x" ;
+                            :extent 0,
+                                511 ;
+                            :unit "index" ] ;
+                    :time [ a :temporal ;
+                            dct:description "Valid time associated with each independently processed model sample." ;
+                            :extent "2017-05-22T07:00:00Z",
+                                "2100-12-31T23:59:59Z" ;
+                            :unit "s" ] ] ;
+            ns8:variables [ :GZ500 [ a :data ;
+                            dct:description "RDPS geopotential height at 500 hPa, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :GZ850 [ a :data ;
+                            dct:description "RDPS geopotential height at 850 hPa, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :HRDPS_P_PR_SFC [ a :data ;
+                            dct:description "HRDPS precipitation rate at the surface, reconstructed on the target grid." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :HRDPS_P_TT_10000 [ a :data ;
+                            dct:description "HRDPS air temperature at 10 m, reconstructed on the target grid." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :HRDPS_P_UUC_10000 [ a :data ;
+                            dct:description "HRDPS eastward wind component at 10 m, reconstructed on the target grid." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :HRDPS_P_VVC_10000 [ a :data ;
+                            dct:description "HRDPS northward wind component at 10 m, reconstructed on the target grid." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :HU700 [ a :data ;
+                            dct:description "RDPS relative humidity at 700 hPa, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :HU850 [ a :data ;
+                            dct:description "RDPS relative humidity at 850 hPa, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :PC [ a :data ;
+                            dct:description "RDPS convective precipitation at the surface, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :PN [ a :data ;
+                            dct:description "RDPS pressure at the surface, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :PR [ a :data ;
+                            dct:description "RDPS precipitation rate at the surface, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :TD [ a :data ;
+                            dct:description "RDPS dew-point temperature, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :TT850 [ a :data ;
+                            dct:description "RDPS air temperature at 850 hPa, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :TT_model_levels [ a :data ;
+                            dct:description "RDPS air temperature on model levels, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :UU850 [ a :data ;
+                            dct:description "RDPS eastward wind component at 850 hPa, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :UU_model_levels [ a :data ;
+                            dct:description "RDPS eastward wind component on model levels, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :VV850 [ a :data ;
+                            dct:description "RDPS northward wind component at 850 hPa, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :VV_model_levels [ a :data ;
+                            dct:description "RDPS northward wind component on model levels, normalized before inference." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon",
+                                "time" ] ;
+                    :lat [ a :auxiliary ;
+                            dct:description "Geographic latitude auxiliary coordinate for the rotated grid." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon" ;
+                            :unit "degree_north" ] ;
+                    :lon [ a :auxiliary ;
+                            dct:description "Geographic longitude auxiliary coordinate for the rotated grid." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon" ;
+                            :unit "degree_east" ] ;
+                    :orog [ a :data ;
+                            dct:description "Static HRDPS orography on the target rotated grid, aligned to the output patch." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon" ] ;
+                    :sftlf [ a :data ;
+                            dct:description "Static HRDPS land-fraction field on the target rotated grid, aligned to the output patch." ;
+                            :data_type "float32" ;
+                            :dimensions "rlat",
+                                "rlon" ] ] ;
+            dct:description "U-Net trained to downscale RDPS meteorological data to HRDPS resolution." ;
+            dct:title "RDPS-to-HRDPS U-Net downscaling inference" ;
+            :end_datetime "2100-12-31T23:59:59Z" ;
+            :experimental true ;
+            :license "Apache-2.0" ;
+            :providers [ dct:description "Deployment host and inference-container processor." ;
+                    :name "CRIM" ;
+                    :roles "host",
+                        "processor" ;
+                    :url "https://www.crim.ca/" ],
+                [ dct:description "Producer and licensor of the model." ;
+                    :name "Ouranos" ;
+                    :roles "licensor",
+                        "producer" ;
+                    :url "https://www.ouranos.ca/" ] ;
+            :start_datetime "2017-05-22T07:00:00Z" ;
+            ns5:accelerator "cuda" ;
+            ns5:accelerator_constrained false ;
+            ns5:architecture "U-Net" ;
+            ns5:framework "pytorch" ;
+            ns5:framework_version "2.14.0+cu130" ;
+            ns5:hyperparameters [ :coarsen_factor 4 ;
+                    :depth 2 ;
+                    :device "cpu" ;
+                    :global_end_datetime "2024-09-01 12:00:00" ;
+                    :global_start_datetime "2017-05-22 07:00:00" ;
+                    :initial_nb_of_hidden_channels 144 ;
+                    :kernel_size 3 ;
+                    :learning_rate 2e-03 ;
+                    :mae_loss_weight 0e+00 ;
+                    :mass_loss_weight 0e+00 ;
+                    :mse_loss_weight 5e-01 ;
+                    :nb_of_epochs 18 ;
+                    :num_threads 16 ;
+                    :num_workers 8 ;
+                    :optimizer "Adam" ;
+                    :reduction_ratio 4 ;
+                    :ssim_k1 1e-02 ;
+                    :ssim_k2 3e-02 ;
+                    :ssim_kernel_size 11 ;
+                    :ssim_loss_weight 5e-01 ;
+                    :ssim_sigma 1.5e+00 ;
+                    :test_period_start "2023-06-01 00:00:00" ;
+                    :training_batch_size 64 ;
+                    :validation_period_start "2023-01-10 00:00:00" ;
+                    :weight_decay "1e-05" ] ;
+            ns5:input [ dct:description "Static orography and land-fraction channels on the 512x512 target grid. The geographic lat/lon are auxiliary coordinates over rlat/rlon." ;
+                    :input [ :data_type "float32" ;
+                            :dim_order "batch",
+                                "rlat",
+                                "rlon",
+                                "variables" ;
+                            :shape -1,
+                                2,
+                                512 ] ;
+                    :name "hrdps_geophysical_inputs" ;
+                    :variables "orog",
+                        "sftlf" ],
+                [ dct:description "Fourteen normalized RDPS meteorological channels on the 128x128 coarse rotated grid. Each flexible batch element represents one independently selected valid time. The time identifies samples in the surrounding dataset but is not a tensor axis because the U-Net does not jointly process a temporal sequence." ;
+                    :input [ :data_type "float32" ;
+                            :dim_order "batch",
+                                "rlat",
+                                "rlon",
+                                "variables" ;
+                            :shape -1,
+                                14,
+                                128 ] ;
+                    :name "rdps_inputs" ;
+                    :variables "GZ500",
+                        "GZ850",
+                        "HU700",
+                        "HU850",
+                        "PC",
+                        "PN",
+                        "PR",
+                        "TD",
+                        "TT850",
+                        "TT_model_levels",
+                        "UU850",
+                        "UU_model_levels",
+                        "VV850",
+                        "VV_model_levels" ] ;
+            ns5:name "UNet RDPS HRDPS Downscaling" ;
+            ns5:output [ dct:description "Four continuous HRDPS fields reconstructed for the same valid time on the 512x512 target rotated grid." ;
+                    :name "hrdps_outputs" ;
+                    :result [ :data_type "float32" ;
+                            :dim_order "batch",
+                                "rlat",
+                                "rlon",
+                                "variables" ;
+                            :shape -1,
+                                4,
+                                512 ] ;
+                    :tasks "downscaling",
+                        "super-resolution" ;
+                    :variables "HRDPS_P_PR_SFC",
+                        "HRDPS_P_TT_10000",
+                        "HRDPS_P_UUC_10000",
+                        "HRDPS_P_VVC_10000" ] ;
+            ns5:pretrained false ;
+            ns5:tasks "downscaling",
+                "super-resolution" ;
+            ns5:total_parameters 9871888 ;
+            ns7:version "0.1.3-dev.10" ;
+            ns4:citation "Gauvin St-Denis, B., and Smith, T. J. resoterre (version 0.1.3-dev.10). Ouranos." ;
+            ns1:branch "main" ;
+            ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+            ns1:tag "v0.1.3-dev.10" ;
+            ns1:type "git" ] ;
+    :stac_extensions "https://stac-extensions.github.io/application/v0.1.0/schema.json",
+        "https://stac-extensions.github.io/datacube/v2.3.0/schema.json",
+        "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+        "https://stac-extensions.github.io/ml-aoi/v0.2.0/schema.json",
+        "https://stac-extensions.github.io/mlm/v1.6.0/schema.json",
+        "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/vcs/v0.1.0/schema.json",
+        "https://stac-extensions.github.io/version/v1.2.0/schema.json" ;
+    :stac_version "1.1.0" .
 
-plan:infer a pplan:Step ;
-    dct:description "Prepare the model inputs, apply U-Net inference and write HRDPS-scale Zarr results." ;
-    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet> ;
-    pplan:isPrecededBy plan:download ;
-    pplan:isStepOfPlan plan:downscaling-workflow .
+<docker://registry.gitlab.com/crim.ca/clients/ogc/ogc-ospd2026/resoterre-inference:0.1.3-dev.10> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/vnd.oci.image.index.v1+json> ;
+    dct:description "Versioned OCI container that packages PyTorch, Snakemake, the workflow, and model dependencies." ;
+    dct:title "OGC OSPD 2026 resoterre inference container 0.1.3-dev.10" ;
+    :roles "mlm:inference-runtime",
+        "runtime" .
 
-process:downscaling-download-files a skos:Concept ;
-    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-download-files> ;
-    skos:inScheme local:process-type ;
-    skos:prefLabel "Download selected RDPS files" ;
-    pp:profile "ospd.process-profiles.downscaling-unet.download-files" .
+<https://github.com/Ouranosinc/resoterre.git> dct:title "resoterre source repository" ;
+    :rel "vcs" ;
+    ns1:branch "main" ;
+    ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+    ns1:tag "v0.1.3-dev.10" ;
+    ns1:type "git" .
 
-process:downscaling-generate-file-list a skos:Concept ;
-    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-generate-file-list> ;
-    skos:inScheme local:process-type ;
-    skos:prefLabel "Select RDPS forecast files" ;
-    pp:profile "ospd.process-profiles.downscaling-unet.generate-file-list" .
+<https://hirondelle.crim.ca/stac/> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/json> ;
+    :rel "root" .
 
-process:downscaling-unet-inference a skos:Concept ;
-    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet> ;
-    skos:inScheme local:process-type ;
-    skos:prefLabel "Run Resoterre U-Net inference" ;
-    pp:activityType activity:climate-downscaling-inference ;
-    pp:profile "ospd.process-profiles.downscaling-unet.unet" .
+<https://hirondelle.crim.ca/stac/collections/HRDPS_CRIM> dct:description "HRDPS test-split target samples used as labels and predicted downscaling results.",
+        "HRDPS train-split target samples used as labels and predicted downscaling results.",
+        "HRDPS validate-split target samples used as labels and predicted downscaling results." ;
+    dct:title "HRDPS test samples",
+        "HRDPS train samples",
+        "HRDPS validate samples" ;
+    :rel "derived_from" ;
+    ns2:role "label" ;
+    ns2:split "test",
+        "train",
+        "validate" .
 
-<https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet-workflow/package> dct:relation plan:downscaling-workflow .
+<https://hirondelle.crim.ca/stac/collections/RDPS_CRIM> dct:description "RDPS test-split input samples used as machine-learning features.",
+        "RDPS train-split input samples used as machine-learning features.",
+        "RDPS validate-split input samples used as machine-learning features." ;
+    dct:title "RDPS test samples",
+        "RDPS train samples",
+        "RDPS validate samples" ;
+    :rel "derived_from" ;
+    ns2:role "feature" ;
+    ns2:split "test",
+        "train",
+        "validate" .
 
-<arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet> a prov:Plan ;
-    dct:title "Captured packed CWL U-Net step plan" ;
-    prov:wasDerivedFrom <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl> .
+<https://hirondelle.crim.ca/stac/collections/stac-mlm-examples> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/json> ;
+    :rel "collection",
+        "parent" .
 
-activity:climate-downscaling a owl:Class,
-        acttype:ActivityType ;
-    rdfs:label "Climate-variable downscaling" ;
-    dct:description "Transforms georeferenced climate fields to a finer-resolution target grid." ;
-    dct:modified "2026-10-15"^^xsd:date ;
-    rdfs:subClassOf geoproc:GeoprocessingActivityType ;
-    skos:note "Published candidate, not an approved type currently in force. Proposal status remains submitted." ;
-    dcat:version "0.1" ;
-    acttype:associatedAgentType prov:SoftwareAgent ;
-    acttype:generatedEntityType entity:ClimateField ;
-    acttype:plan plan:downscaling-workflow ;
-    acttype:usedEntityType entity:ClimateField ;
-    rim:inRegister <https://crim-ca.github.io/bblocks-process-profiles/> ;
-    rim:itemClass acttype:activityTypeItemClass ;
-    rim:objectIdentifier "https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
+<https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/geo+json> ;
+    :rel "self" .
 
-activity:climate-downscaling-inference a owl:Class,
-        acttype:ActivityType ;
-    rdfs:label "U-Net RDPS-to-HRDPS downscaling inference" ;
-    dct:description "Runs the Resoterre U-Net on meteorological and static geophysical inputs." ;
-    dct:modified "2026-10-15"^^xsd:date ;
-    dct:spatial binding:model-spatial-domain ;
-    dct:temporal binding:model-temporal-domain ;
-    rdfs:subClassOf activity:climate-downscaling,
-        mlact:InferenceActivityType ;
-    skos:note "Published candidate, not an approved type currently in force. Proposal status remains submitted." ;
-    dcat:version "0.1" ;
-    acttype:associatedAgentType prov:SoftwareAgent ;
-    acttype:generatedEntityType entity:HRDPSPrediction ;
-    acttype:plan <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main/ogc-ospd2026-downscaling-unet> ;
-    acttype:usedEntityType entity:HRDPSGeophysicalInput,
-        entity:RDPSModelInput ;
-    rim:inRegister <https://crim-ca.github.io/bblocks-process-profiles/> ;
-    rim:itemClass acttype:activityTypeItemClass ;
-    rim:objectIdentifier "https://crim-ca.github.io/bblocks-process-profiles/def/activity-type/climate-downscaling-inference"^^xsd:anyURI ;
-    rim:publicationStatus rim:published ;
-    rim:validityStatus rim:invalid .
+<https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/json> ;
+    dct:title "Deployed OGC API Processes U-Net inference service" ;
+    :rel "service-desc" .
 
-entity:HRDPSGeophysicalInput a owl:Class ;
-    rdfs:label "Model-ready static HRDPS geophysical input" ;
-    rdfs:seeAlso binding:hrdps_geophysical_inputs ;
-    rdfs:subClassOf entity:ClimateField,
-        mlact:ActivityInput .
+<https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-unet/package> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/cwl+json> ;
+    ns6:languages "Common Workflow Language" ;
+    dct:description "CWL tool using the GitLab-hosted OGC OSPD 2026 inference container." ;
+    dct:title "Deployed ogc-ospd2026-downscaling-unet CWL package" ;
+    :rel "application" .
 
-entity:HRDPSPrediction a owl:Class ;
-    rdfs:label "Predicted HRDPS-resolution climate field" ;
-    rdfs:seeAlso binding:hrdps_outputs ;
-    rdfs:subClassOf entity:ClimateField,
-        mlact:ActivityOutput .
+<https://huggingface.co/bstdenis/unet-rdps-to-hrdps-downscaling/blob/main/unet_epoch_mebojo_018.safetensors> ns6:entrypoint "resoterre.ml.neural_networks_unet:UNet" ;
+    ns3:checksum "122090e4bbd8583de97cea555072b98479920d1c2c6949daa3254f3c771571cebf6b" ;
+    ns3:size 39526256 ;
+    dct:description "SafeTensors weights loaded by the resoterre U-Net implementation." ;
+    dct:title "Epoch 18 U-Net SafeTensors weights" ;
+    :roles "data",
+        "mlm:model",
+        "mlm:weights",
+        "model",
+        "weights" ;
+    ns5:artifact_type "safetensors.torch.save_file" .
 
-entity:RDPSModelInput a owl:Class ;
-    rdfs:label "Model-ready RDPS meteorological input" ;
-    rdfs:seeAlso binding:rdps_inputs ;
-    rdfs:subClassOf entity:ClimateField,
-        mlact:ActivityInput .
+<https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/configs/downscaling/downscaling_rdps_to_hrdps_cwl.yaml> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/yaml> ;
+    ns3:checksum "1220386fc766bf6ab79ef6a9dd6f0ac3f706669bf09a037be02b87991b159af44136" ;
+    ns3:size 3606 ;
+    dct:description "Configuration consumed by the Snakemake workflow." ;
+    dct:title "Training and inference configuration" ;
+    :roles "configuration",
+        "metadata" .
 
-plan:download a pplan:Step ;
-    dct:description "Download the selected RDPS files into the inference input directory." ;
-    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-download-files> ;
-    pplan:isPrecededBy plan:select ;
-    pplan:isStepOfPlan plan:downscaling-workflow .
+<https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/docker/Dockerfile.inference> a <https://crim-ca.github.io/bblocks-process-profiles/def/text/x-dockerfile> ;
+    ns6:languages "Dockerfile" ;
+    ns3:checksum "12201afe4cb941fb434e8fac2bd83a4ddf3a701993bd050a3bae82584e94b3b0824b" ;
+    ns3:size 1626 ;
+    dct:description "Generic Dockerfile used to build the inference container image." ;
+    dct:title "Inference container definition" ;
+    :roles "container" .
 
-plan:select a pplan:Step ;
-    dct:description "Select forecast files for the requested time range, including any required previous step." ;
-    dct:source <https://hirondelle.crim.ca/weaver/processes/ogc-ospd2026-downscaling-generate-file-list> ;
-    pplan:isStepOfPlan plan:downscaling-workflow .
+<https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_download_files.cwl> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
+    ns6:languages "Common Workflow Language" ;
+    ns3:checksum "1220cfe6377d576e12763fa6e0f89f1fbc61a587475fbacf29c0d4921cdba758db19" ;
+    ns3:size 1611 ;
+    dct:description "CWL CommandLineTool downloading the listed RDPS files into a local directory." ;
+    dct:title "RDPS download CWL tool" ;
+    :rel "application" ;
+    ns1:branch "main" ;
+    ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+    ns1:tag "v0.1.3-dev.10" ;
+    ns1:type "git" .
 
-<https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl> a prov:Plan ;
-    dct:title "Resoterre U-Net inference procedure" .
+<https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_generate_file_list.cwl> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
+    ns6:languages "Common Workflow Language" ;
+    ns3:checksum "1220b41206d6ae38ceedfb499c179851d670555a73bfe7a70819ba47b511c1f78f01" ;
+    ns3:size 2284 ;
+    dct:description "CWL CommandLineTool listing the RDPS files required for a requested datetime range." ;
+    dct:title "RDPS file listing CWL tool" ;
+    :rel "application" ;
+    ns1:branch "main" ;
+    ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+    ns1:tag "v0.1.3-dev.10" ;
+    ns1:type "git" .
 
-<https://crim-ca.github.io/bblocks-process-profiles/> a rim:Register ;
-    dct:title "OSPD Process Profiles" .
+<https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet.cwl> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
+    ns6:languages "Common Workflow Language" ;
+    ns3:checksum "122081999f65ffb1cf3256b1a72a3aed25134b4ba446acea1b781b5a783f6ac6b09f" ;
+    ns3:size 2359 ;
+    dct:description "CWL CommandLineTool running the U-Net downscaling inference on the downloaded RDPS data." ;
+    dct:title "U-Net inference CWL tool" ;
+    :rel "application" ;
+    ns1:branch "main" ;
+    ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+    ns1:tag "v0.1.3-dev.10" ;
+    ns1:type "git" .
 
-entity:ClimateField a owl:Class ;
-    rdfs:label "Georeferenced gridded climate field" ;
-    rdfs:subClassOf geo:SpatialObject,
-        prov:Entity .
+<https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl> a <https://crim-ca.github.io/bblocks-process-profiles/def/application/cwl+yaml> ;
+    ns6:languages "Common Workflow Language" ;
+    ns3:checksum "122054639a4072d5fb7e2a0039975ca8446e9fc3e95e91c91f9f4b37bebd3e798937" ;
+    ns3:size 2624 ;
+    dct:description "CWL Workflow chaining the file listing, download and U-Net inference steps." ;
+    dct:title "RDPS-to-HRDPS downscaling CWL workflow" ;
+    :rel "application" ;
+    ns1:branch "main" ;
+    ns1:revision "f08a79b9a1906a8752c5774b050e90f81f2d1bcb" ;
+    ns1:tag "v0.1.3-dev.10" ;
+    ns1:type "git" .
 
-plan:downscaling-workflow a pplan:Plan,
-        prov:Plan ;
-    dct:source <https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/examples/deploy/downscaling_unet_workflow.cwl> ;
-    dct:title "RDPS selection, download and U-Net inference" ;
-    prov:wasDerivedFrom <arcp://uuid,d6f937f0-bdae-4dd5-9fa3-9e0686ed6715/workflow/packed.cwl#main> .
+<https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/scripts/meta_workflows/downscaling/rdps_to_hrdps.smk> a <https://crim-ca.github.io/bblocks-process-profiles/def/text/x-snakemake> ;
+    ns6:entrypoint "scripts/meta_workflows/downscaling/rdps_to_hrdps.smk" ;
+    ns6:languages "Python" ;
+    ns3:checksum "1220fbfe7b7f39796c9e378dc2522a82581ec9024781222327a5d75ba59dc3b32046" ;
+    ns3:size 1700 ;
+    dct:description "Executable Snakemake workflow that preprocesses RDPS data and runs downscaling inference." ;
+    dct:title "RDPS-to-HRDPS Snakemake workflow" ;
+    :roles "code",
+        "mlm:source_code" ;
+    ns5:entrypoint "snakemake -s scripts/meta_workflows/downscaling/rdps_to_hrdps.smk --config config_yaml=/app/configs/downscaling/downscaling_rdps_to_hrdps_cwl.yaml -j1 --directory=/app" .
+
+<https://raw.githubusercontent.com/Ouranosinc/resoterre/f08a79b9a1906a8752c5774b050e90f81f2d1bcb/CITATION.cff> a <https://crim-ca.github.io/bblocks-process-profiles/def/text/yaml> ;
+    ns3:checksum "1220557681a4920870a82cad16713a122e0c9ed49d33c6cd5c57f7396921506f3c5e" ;
+    ns3:size 952 ;
+    dct:description "Citation File Format metadata for resoterre." ;
+    dct:title "Citation metadata",
+        "resoterre citation metadata" ;
+    :rel "cite-as" ;
+    :roles "metadata" .
 

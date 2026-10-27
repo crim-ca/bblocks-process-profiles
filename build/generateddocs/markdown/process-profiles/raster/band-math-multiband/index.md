@@ -369,10 +369,10 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
-@prefix ns3: <http://www.iana.org/assignments/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -384,37 +384,37 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "This application performs mathematical operations on several multiband images." ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.BandMathX/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns1:exp [ dcterms:description "Mathematical expression to apply." ;
+    proc:inputs [ ns2:exp [ dcterms:description "Mathematical expression to apply." ;
                     dcterms:title "Mathematical expression to apply." ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns1:il [ dcterms:description "Image list to perform computation on." ;
+            ns2:il [ dcterms:description "Image list to perform computation on." ;
                     dcterms:title "Image list to perform computation on." ;
                     proc:maxOccurs 1024 ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/tiff" ],
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/jpeg" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ],
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/jpeg" ] ] ] ;
-            ns1:incontext [ dcterms:description "A txt file containing user's constants and expressions." ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+            ns2:incontext [ dcterms:description "A txt file containing user's constants and expressions." ;
                     dcterms:title "A txt file containing user's constants and expressions." ;
                     proc:minOccurs 0 ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/tiff" ],
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/jpeg" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ],
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/jpeg" ] ] ] ;
-            ns1:out [ dcterms:description "Output image." ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+            ns2:out [ dcterms:description "Output image." ;
                     dcterms:title "Output image." ;
                     proc:schema [ proc:default "\"float\""^^rdf:JSON ;
                             proc:enum "double",
@@ -424,7 +424,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                 "uint16",
                                 "uint8" ;
                             proc:type "string" ] ] ;
-            ns1:ram [ dcterms:description "Available memory for processing (in MB)." ;
+            ns2:ram [ dcterms:description "Available memory for processing (in MB)." ;
                     dcterms:title "Available memory for processing (in MB)." ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "256"^^rdf:JSON ;
@@ -436,25 +436,25 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns4:out [ dcterms:description "Output image." ;
+    proc:outputs [ ns3:out [ dcterms:description "Output image." ;
                     dcterms:title "Output image." ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/jpeg" ],
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/jpeg" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/tiff" ],
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ] ] ] ;
-            ns4:outcontext [ dcterms:description "A txt file where to save user's constants and expressions." ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+            ns3:outcontext [ dcterms:description "A txt file where to save user's constants and expressions." ;
                     dcterms:title "A txt file where to save user's constants and expressions." ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentEncoding "utf-8" ;
-                                    ns2:contentMediaType "text/plain" ],
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "utf-8" ;
+                                    ns1:contentMediaType "text/xml" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "utf-8" ;
-                                    ns2:contentMediaType "text/xml" ] ] ] ] .
+                                    ns1:contentEncoding "utf-8" ;
+                                    ns1:contentMediaType "text/plain" ] ] ] ] .
 
 
 ```
@@ -922,8 +922,8 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
@@ -945,7 +945,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
             ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/OTB.BandMathX/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns3:exp [ dcterms:description "Mathematical expression to apply." ;
+    proc:inputs [ ns2:exp [ dcterms:description "Mathematical expression to apply." ;
                     dcterms:title "Mathematical expression to apply." ;
                     proc:keywords "expression" ;
                     proc:metadata [ dcterms:title "Generic Profile: Raster band math -- input `expression`" ;
@@ -955,17 +955,17 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/expression> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
                     proc:schema [ proc:type "string" ] ] ;
-            ns3:il [ dcterms:description "Image list to perform computation on." ;
+            ns2:il [ dcterms:description "Image list to perform computation on." ;
                     dcterms:title "Image list to perform computation on." ;
                     proc:keywords "GeoTIFF",
                         "raster" ;
                     proc:maxOccurs 1024 ;
-                    proc:metadata [ dcterms:title "Generic Profile: Raster band math -- input `rasters`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Raster band math (multi-band output) -- input `rasters`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Raster band math (multi-band output) -- input `rasters`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/inputs/rasters> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Raster band math -- input `rasters`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/inputs/rasters> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/png" ],
@@ -975,7 +975,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/tiff" ] ] ] ;
-            ns3:incontext [ dcterms:description "A txt file containing user's constants and expressions." ;
+            ns2:incontext [ dcterms:description "A txt file containing user's constants and expressions." ;
                     dcterms:title "A txt file containing user's constants and expressions." ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
@@ -983,11 +983,11 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                     ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/jpeg" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
-            ns3:out [ dcterms:description "Output image." ;
+                                    ns1:contentMediaType "image/jpeg" ] ] ] ;
+            ns2:out [ dcterms:description "Output image." ;
                     dcterms:title "Output image." ;
                     proc:schema [ proc:default "\"float\""^^rdf:JSON ;
                             proc:enum "double",
@@ -997,7 +997,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 "uint16",
                                 "uint8" ;
                             proc:type "string" ] ] ;
-            ns3:ram [ dcterms:description "Available memory for processing (in MB)." ;
+            ns2:ram [ dcterms:description "Available memory for processing (in MB)." ;
                     dcterms:title "Available memory for processing (in MB)." ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "256"^^rdf:JSON ;
@@ -1018,33 +1018,33 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns2:out [ dcterms:description "Output image." ;
+    proc:outputs [ ns3:out [ dcterms:description "Output image." ;
                     dcterms:title "Output image." ;
                     proc:keywords "GeoTIFF",
                         "raster" ;
-                    proc:metadata [ dcterms:title "Implementation Profile: Raster band math (multi-band output) -- output `raster`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/outputs/raster> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ],
-                        [ dcterms:title "Generic Profile: Raster band math -- output `raster`" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Raster band math -- output `raster`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-band-math/outputs/raster> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
+                        [ dcterms:title "Implementation Profile: Raster band math (multi-band output) -- output `raster`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-band-math-multiband/outputs/raster> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/jpeg" ],
+                                [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/jpeg" ] ] ] ;
-            ns2:outcontext [ dcterms:description "A txt file where to save user's constants and expressions." ;
+                                    ns1:contentMediaType "image/png" ] ] ] ;
+            ns3:outcontext [ dcterms:description "A txt file where to save user's constants and expressions." ;
                     dcterms:title "A txt file where to save user's constants and expressions." ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "utf-8" ;
-                                    ns1:contentMediaType "text/plain" ],
+                                    ns1:contentMediaType "text/xml" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "utf-8" ;
-                                    ns1:contentMediaType "text/xml" ] ] ] ] .
+                                    ns1:contentMediaType "text/plain" ] ] ] ] .
 
 
 ```
@@ -1564,11 +1564,6 @@ x-jsonld-prefixes:
   prov: http://www.w3.org/ns/prov#
   xsd: http://www.w3.org/2001/XMLSchema#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-x-bblocks-metadata:
-  itemIdentifier: ospd.process-profiles.raster.band-math-multiband
-  register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
-  version: '0.1'
-  dateOfLastChange: '2026-10-23'
 
 ```
 
