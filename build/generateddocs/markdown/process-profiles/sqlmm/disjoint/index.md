@@ -212,8 +212,8 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns3: <http://www.iana.org/assignments/> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
@@ -225,20 +225,20 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "Disjoint " ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns2:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Disjoint/execution> ] ;
     pp:version "2.0.0" ;
-    proc:inputs [ ns2:InputEntity1 [ dcterms:description "the first geometry." ;
+    proc:inputs [ ns3:InputEntity1 [ dcterms:description "the first geometry." ;
                     dcterms:title "the first geometry" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentEncoding "UTF-8" ;
                                     ns1:contentMediaType "text/xml" ;
                                     ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "UTF-8" ;
+                                    ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "text/xml" ;
                                     ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ;
-            ns2:InputEntity2 [ dcterms:description "the other geometry." ;
+            ns3:InputEntity2 [ dcterms:description "the other geometry." ;
                     dcterms:title "the other geometry" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "UTF-8" ;
@@ -579,9 +579,9 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns4: <http://www.iana.org/assignments/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <http://www.iana.org/assignments/> .
+@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -598,10 +598,10 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     dcterms:title "Disjoint " ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/Disjoint/execution> ] ;
     pp:version "2.0.0" ;
-    proc:inputs [ ns3:InputEntity1 [ dcterms:description "the first geometry." ;
+    proc:inputs [ ns2:InputEntity1 [ dcterms:description "the first geometry." ;
                     dcterms:title "the first geometry" ;
                     proc:keywords "GML",
                         "geometry" ;
@@ -619,16 +619,16 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                     ns1:contentEncoding "UTF-8" ;
                                     ns1:contentMediaType "text/xml" ;
                                     ns1:contentSchema "http://fooa/gml/3.1.0/polygon.xsd" ] ] ] ;
-            ns3:InputEntity2 [ dcterms:description "the other geometry." ;
+            ns2:InputEntity2 [ dcterms:description "the other geometry." ;
                     dcterms:title "the other geometry" ;
                     proc:keywords "GML",
                         "geometry" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Disjoint -- input `geometry2`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Disjoint -- input `geometry2`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint/inputs/geometry2> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Binary spatial predicate -- input `geometry2`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/inputs/geometry2> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "text/xml" ;
@@ -652,16 +652,16 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns2:Result [ dcterms:description "true if disjoint." ;
+    proc:outputs [ ns4:Result [ dcterms:description "true if disjoint." ;
                     dcterms:title "Disjoint result" ;
                     proc:keywords "boolean" ;
-                    proc:metadata [ dcterms:title "Implementation Profile: Disjoint -- output `result`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ],
-                        [ dcterms:title "Mon test  " ],
+                    proc:metadata [ dcterms:title "Mon test  " ],
                         [ dcterms:title "Generic Profile: Binary spatial predicate -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/binary-spatial-predicate/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
+                        [ dcterms:title "Implementation Profile: Disjoint -- output `result`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/disjoint/outputs/result> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
                     proc:schema [ proc:type "boolean" ] ] ] .
 
 
@@ -1178,7 +1178,7 @@ x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.sqlmm.disjoint
   register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-27'
+  dateOfLastChange: '2026-10-28'
 
 ```
 

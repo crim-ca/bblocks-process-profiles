@@ -16,6 +16,8 @@ it selects Regional Deterministic Prediction System (RDPS) forecast files for a 
 downloads those files, and applies a trained U-Net to produce HRDPS-scale downscaled fields.
 This workflow performs inference, not model training.
 
+![Overview of the RDPS-to-HRDPS U-Net downscaling workflow](diagrams/unet-workflow-overview.svg)
+
 ### Interacting blocks and artefacts
 
 All **Examples** of this block describe one single use case, the RDPS-to-HRDPS U-Net inference
@@ -903,31 +905,31 @@ such as precipitation.
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/contributor" ;
+    :metadata [ :role "https://schema.org/author" ;
             :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "nazim.azeli@luqia.ca" ;
-                    :name "Nazim Azeli" ] ],
+                    :affiliation "Ouranos" ;
+                    :email "smith.trevorj@ouranos.ca" ;
+                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
+                    :name "Trevor James Smith" ] ],
         [ :role "https://schema.org/dateCreated" ;
             :value "2026-09-09T10:36:53-04:00" ],
         [ :role "https://schema.org/contributor" ;
             :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
-                    :email "francis.charette-migneault@luqia.ca" ;
-                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
-                    :name "Francis Charette-Migneault" ] ],
+                    :email "nazim.azeli@luqia.ca" ;
+                    :name "Nazim Azeli" ] ],
         [ :role "https://schema.org/author" ;
             :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "gauvin-st-denis.blaise@ouranos.ca" ;
                     :identifier "https://orcid.org/0009-0004-9049-2092" ;
                     :name "Blaise Gauvin St-Denis" ] ],
-        [ :role "https://schema.org/author" ;
+        [ :role "https://schema.org/contributor" ;
             :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "smith.trevorj@ouranos.ca" ;
-                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
-                    :name "Trevor James Smith" ] ],
+                    :affiliation "Technologies Luqia" ;
+                    :email "francis.charette-migneault@luqia.ca" ;
+                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
+                    :name "Francis Charette-Migneault" ] ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,
@@ -936,18 +938,18 @@ such as precipitation.
     :outputTransmission "reference",
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
-                    proc:formats [ proc:default "true"^^rdf:JSON ;
-                            proc:mediaType "text/plain" ],
+                    proc:formats [ proc:mediaType "application/pdf" ],
                         [ proc:mediaType "text/html" ],
-                        [ proc:mediaType "application/pdf" ] ;
+                        [ proc:default "true"^^rdf:JSON ;
+                            proc:mediaType "text/plain" ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentMediaType "text/plain" ],
                                 [ proc:type "string" ;
-                                    ns1:contentMediaType "text/html" ],
-                                [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/pdf" ;
-                                    ns1:format "binary" ] ] ] ;
+                                    ns1:format "binary" ],
+                                [ proc:type "string" ;
+                                    ns1:contentMediaType "text/html" ] ] ] ;
             proc:inference_output [ dcterms:title "inference_output" ;
                     proc:formats [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "application/directory" ] ;
@@ -22201,7 +22203,7 @@ x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.downscaling-unet.workflow
   register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-27'
+  dateOfLastChange: '2026-10-28'
 
 ```
 

@@ -213,7 +213,7 @@
   "name": "Building Blocks - OSPD Process Profiles",
   "abstract": "OGC API - Processes profiles for the deployable CWL processes of the OSPD 2026 reference\nworkflows (W1 Algae Bloom, W2 KindGrove mangrove biomass, W3 Water Bodies detection, W2b a\nstep-decomposed reimplementation of KindGrove) and of the RDPS-to-HRDPS U-Net climate\ndownscaling workflow with its STAC MLM model, each linked to its CWL source, the generic\nprovenance profile, the EOAP CWL custom types and the openEO Building Blocks. It also holds\nthe Geonovum testbed operation profiles (SQL/MM, raster, vector, terrain, point cloud).\n",
   "description": "This register is produced by GeoLabs under OSPD 2026 (D100 Workflow Profiler, D120 OGC API\nProcesses Profiler). It holds one Building Block per deployable CWL process (`CommandLineTool`\nor `Workflow`) identified in the workflow observability investigation.\n\nEach process profile combines:\n\n- a reference to the source CWL (linked by URL at a pinned commit, never copied);\n- an OGC API - Processes Part 1 `processDescription` derived with the\n  `eoap.cct.cwl-to-ogcprocess` mapping (deviations are documented, not hidden);\n- a provenance view expressed as an instance of the generic provenance profile\n  (`ogc.bbr.provenance.*`);\n- a candidate process-type entry (`ospd.process-profiles.process-type`) for the OSPD\n  process-type register (Activity 4);\n- proposed openEO equivalences (`ogc.openeo.*`) with an explicit level\n  (exactMatch / closeMatch / none) and rationale;\n- a representative execution example.\n\nThe CRIM fork adds the `downscaling-unet` workflow, whose profile also covers:\n\n- ML and geoprocessing activity types (`ogc.model.registered-item.*`) bound to the STAC MLM\n  model description (`ogc.contrib.stac.extensions.mlm`), with SHACL validation;\n- the model spatial and temporal domain (GeoSPARQL, OWL-Time);\n- an Application Package plan related to the captured CWLProv plan.\n\nThe Geonovum testbed operations (SQL/MM, raster, vector, terrain, point cloud) are\nimplementation profiles of the imported generic profiles register.\n\nAll mappings are proposed correspondences offered for review, not settled equivalences.\n",
-  "modified": "2026-10-27T01:48:04.429645",
+  "modified": "2026-10-28T14:19:15.905119",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"862052921203373f8136e6f464e0dfdd693e79f5",
@@ -280,7 +280,7 @@
       "abstract": "Candidate entry for the OSPD process-type register (Activity 4), linking a process profile, its six-phase position, its provenance class and its proposed openEO equivalences.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -344,13 +344,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/process-type/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/process-type/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/process-type/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/process-type/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -380,7 +380,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `SAGA.pointcloud_tools.9` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -440,13 +440,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/pointcloud/point-cloud-thinning/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/pointcloud/point-cloud-thinning/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/pointcloud/point-cloud-thinning/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/pointcloud/point-cloud-thinning/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -475,7 +475,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `SAGA.pointcloud_tools.4` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -535,13 +535,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/pointcloud/point-cloud-to-grid/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/pointcloud/point-cloud-to-grid/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/pointcloud/point-cloud-to-grid/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/pointcloud/point-cloud-to-grid/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -570,7 +570,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `SAGA.pointcloud_tools.5` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -630,13 +630,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/pointcloud/point-cloud-to-shapes/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/pointcloud/point-cloud-to-shapes/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/pointcloud/point-cloud-to-shapes/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/pointcloud/point-cloud-to-shapes/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -665,7 +665,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `OTB.BandMath` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -725,13 +725,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/raster/band-math/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/band-math/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/raster/band-math/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/band-math/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -760,7 +760,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `OTB.BandMathX` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -820,13 +820,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/raster/band-math-multiband/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/band-math-multiband/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/raster/band-math-multiband/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/band-math-multiband/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -855,7 +855,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `OTB.ImageEnvelope` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -915,13 +915,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/raster/extent/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/extent/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/raster/extent/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/extent/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -950,7 +950,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `OTB.ExtractROI` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1010,13 +1010,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/raster/extract-roi/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/extract-roi/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/raster/extract-roi/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/extract-roi/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1045,7 +1045,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Gdal_Translate` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1105,13 +1105,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/raster/format-conversion/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/format-conversion/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/raster/format-conversion/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/format-conversion/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1140,7 +1140,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `OTB.RadiometricIndices` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1200,13 +1200,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/raster/radiometric-index/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/radiometric-index/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/raster/radiometric-index/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/radiometric-index/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1235,7 +1235,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Gdal_Warp` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1295,13 +1295,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/raster/reprojection/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/reprojection/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/raster/reprojection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/raster/reprojection/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1330,7 +1330,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `GetArea` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1390,13 +1390,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/area/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/area/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/area/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/area/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1425,7 +1425,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Buffer` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1485,13 +1485,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/buffer/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/buffer/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/buffer/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/buffer/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1520,7 +1520,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Centroid` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1580,13 +1580,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/centroid/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/centroid/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/centroid/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/centroid/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1615,7 +1615,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Contains` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1675,13 +1675,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/contains/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/contains/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/contains/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/contains/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1710,7 +1710,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `ConvexHull` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1770,13 +1770,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/convex-hull/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/convex-hull/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/convex-hull/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/convex-hull/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1805,7 +1805,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Crosses` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1865,13 +1865,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/crosses/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/crosses/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/crosses/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/crosses/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1900,7 +1900,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Difference` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -1960,13 +1960,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/difference/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/difference/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/difference/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/difference/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -1995,7 +1995,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Disjoint` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -2055,13 +2055,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/disjoint/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/disjoint/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/disjoint/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/disjoint/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2090,7 +2090,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Equals` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -2150,13 +2150,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/equals/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/equals/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/equals/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/equals/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2185,7 +2185,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Intersection` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -2245,13 +2245,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/intersection/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/intersection/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/intersection/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/intersection/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2280,7 +2280,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Intersects` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -2340,13 +2340,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/intersects/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/intersects/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/intersects/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/intersects/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2375,7 +2375,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `IsSimple` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -2435,13 +2435,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/is-simple/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/is-simple/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/is-simple/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/is-simple/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2470,7 +2470,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `SymDifference` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -2530,13 +2530,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/symdifference/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/symdifference/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/symdifference/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/symdifference/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2565,7 +2565,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Touches` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -2625,13 +2625,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/touches/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/touches/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/touches/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/touches/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2660,7 +2660,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Union` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -2720,13 +2720,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/union/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/union/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/union/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/union/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2755,7 +2755,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `Within` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -2815,13 +2815,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/sqlmm/within/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/within/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/sqlmm/within/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/sqlmm/within/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2850,7 +2850,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `SAGA.ta_lighting.0` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -2910,13 +2910,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/terrain/hillshading/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/terrain/hillshading/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/terrain/hillshading/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/terrain/hillshading/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -2945,7 +2945,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `SAGA.ta_morphometry.0` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -3005,13 +3005,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/terrain/slope/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/terrain/slope/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/terrain/slope/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/terrain/slope/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3040,7 +3040,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `SAGA.ta_morphometry.16` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -3100,13 +3100,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/terrain/terrain-ruggedness-index/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/terrain/terrain-ruggedness-index/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/terrain/terrain-ruggedness-index/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/terrain/terrain-ruggedness-index/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3135,7 +3135,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `SAGA.ta_morphometry.18` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -3195,13 +3195,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/terrain/topographic-position-index/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/terrain/topographic-position-index/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/terrain/topographic-position-index/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/terrain/topographic-position-index/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3230,7 +3230,7 @@
       "abstract": "Process profile of the live OGC API - Processes process `SAGA.shapes_tools.19` (ZOO-Project, Geonovum testbed), with a process-type entry linking to its Implementation Profile. Static processDescription only, no execute/results/provenance.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -3290,13 +3290,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/vector/geometry-extent/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/vector/geometry-extent/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/vector/geometry-extent/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/vector/geometry-extent/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3325,7 +3325,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `calculate-band` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -3406,13 +3406,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/calculate-band/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/calculate-band/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/calculate-band/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/calculate-band/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3442,7 +3442,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `download-band-sentinel2-product-safe` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -3521,13 +3521,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/download-band-sentinel2-product-safe/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-product-safe/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3557,7 +3557,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `download-band-sentinel2-stac-item` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -3636,13 +3636,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/download-band-sentinel2-stac-item/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/download-band-sentinel2-stac-item/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3672,7 +3672,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `plot-image` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -3751,13 +3751,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/plot-image/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/plot-image/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/plot-image/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/plot-image/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3787,7 +3787,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `reproject-image` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -3863,13 +3863,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/reproject-image/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/reproject-image/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/reproject-image/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/reproject-image/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -3899,7 +3899,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `select-products-sentinel2` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -3980,13 +3980,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/select-products-sentinel2/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/select-products-sentinel2/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/select-products-sentinel2/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/select-products-sentinel2/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -4016,7 +4016,7 @@
       "abstract": "OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-copernicus` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -4095,13 +4095,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/workflow-copernicus/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -4131,7 +4131,7 @@
       "abstract": "OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-copernicus-process` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -4213,13 +4213,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/workflow-copernicus-process/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus-process/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-copernicus-process/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-copernicus-process/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -4249,7 +4249,7 @@
       "abstract": "OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-earth-search` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -4327,13 +4327,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/workflow-earth-search/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -4363,7 +4363,7 @@
       "abstract": "OGC API - Processes profile of the CWL Workflow `algae-usecase-workflow-earth-search-process` (W1 Algae Bloom), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -4446,13 +4446,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/algae-bloom/workflow-earth-search-process/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search-process/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/algae-bloom/workflow-earth-search-process/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/algae-bloom/workflow-earth-search-process/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -4482,7 +4482,7 @@
       "abstract": "OGC API - Processes profile of the Resoterre CWL CommandLineTool `ogc-ospd2026-downscaling-download-files`, a step of the RDPS-to-HRDPS U-Net downscaling workflow.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-07T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -4540,13 +4540,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/downscaling-unet/download-files/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/download-files/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/download-files/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/download-files/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -4576,7 +4576,7 @@
       "abstract": "OGC API - Processes profile of the Resoterre CWL CommandLineTool `ogc-ospd2026-downscaling-generate-file-list`, a step of the RDPS-to-HRDPS U-Net downscaling workflow.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-07T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -4634,13 +4634,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/downscaling-unet/generate-file-list/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/generate-file-list/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/generate-file-list/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/generate-file-list/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -4670,7 +4670,7 @@
       "abstract": "OGC API - Processes profile of the Resoterre CWL CommandLineTool `ogc-ospd2026-downscaling-unet`, a step of the RDPS-to-HRDPS U-Net downscaling workflow.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-07T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -4728,13 +4728,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/downscaling-unet/unet/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/unet/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/unet/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/unet/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -4764,7 +4764,7 @@
       "abstract": "Select and download RDPS forecasts, then run Resoterre U-Net downscaling to HRDPS-scale Zarr outputs.",
       "status": "under-development",
       "dateTimeAddition": "2026-10-03T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -4995,13 +4995,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/downscaling-unet/workflow/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/workflow/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/downscaling-unet/workflow/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/downscaling-unet/workflow/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -5031,7 +5031,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `mangrove_cli` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -5120,13 +5120,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove/mangrove/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/mangrove/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/mangrove/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/mangrove/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -5156,7 +5156,7 @@
       "abstract": "OGC API - Processes profile of the CWL Workflow `mangrove-workflow` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -5235,13 +5235,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove/mangrove-workflow/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/mangrove-workflow/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/mangrove-workflow/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/mangrove-workflow/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -5271,7 +5271,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `parse_aoi` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -5348,13 +5348,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove/parse-aoi/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/parse-aoi/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove/parse-aoi/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove/parse-aoi/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -5384,7 +5384,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `calculate_indices` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -5461,13 +5461,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove-steps/calculate-indices/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/calculate-indices/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/calculate-indices/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/calculate-indices/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -5497,7 +5497,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `download_band` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -5574,13 +5574,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove-steps/download-band/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/download-band/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/download-band/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/download-band/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -5610,7 +5610,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `estimate_biomass` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -5685,13 +5685,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove-steps/estimate-biomass/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/estimate-biomass/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/estimate-biomass/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/estimate-biomass/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -5721,7 +5721,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `export_stac` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -5798,13 +5798,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove-steps/export-stac/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/export-stac/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/export-stac/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/export-stac/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -5834,7 +5834,7 @@
       "abstract": "OGC API - Processes profile of the CWL Workflow `mangrove-workflow-steps` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -5923,13 +5923,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove-steps/mangrove-workflow-steps/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/mangrove-workflow-steps/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/mangrove-workflow-steps/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/mangrove-workflow-steps/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -5959,7 +5959,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `parse_aoi` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -6036,13 +6036,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove-steps/parse-aoi-steps/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/parse-aoi-steps/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/parse-aoi-steps/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/parse-aoi-steps/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -6072,7 +6072,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `reproject_band` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -6148,13 +6148,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove-steps/reproject-band/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/reproject-band/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/reproject-band/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/reproject-band/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -6184,7 +6184,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `select_scene` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -6260,13 +6260,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/kindgrove-steps/select-scene/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/select-scene/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/kindgrove-steps/select-scene/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/kindgrove-steps/select-scene/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -6296,7 +6296,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `crop` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -6373,13 +6373,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/crop/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/crop/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/crop/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/crop/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -6409,7 +6409,7 @@
       "abstract": "OGC API - Processes profile of the CWL Workflow `detect_water_body` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -6490,13 +6490,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/detect-water-body/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/detect-water-body/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/detect-water-body/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/detect-water-body/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -6526,7 +6526,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `norm_diff` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -6602,13 +6602,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/norm-diff/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/norm-diff/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/norm-diff/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/norm-diff/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -6638,7 +6638,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `otsu` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -6713,13 +6713,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/otsu/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/otsu/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/otsu/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/otsu/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -6749,7 +6749,7 @@
       "abstract": "OGC API - Processes profile of the CWL CommandLineTool `stac` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -6826,13 +6826,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/stac/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/stac/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/stac/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/stac/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
@@ -6862,7 +6862,7 @@
       "abstract": "OGC API - Processes profile of the CWL Workflow `water-bodies` (W2 KindGrove), with its provenance view, process-type entry and openEO equivalence.",
       "status": "under-development",
       "dateTimeAddition": "2026-09-22T00:00:00Z",
-      "dateOfLastChange": "2026-10-27",
+      "dateOfLastChange": "2026-10-28",
       "version": "0.1",
       "itemClass": "schema",
       "register": "process-profiles",
@@ -6940,13 +6940,13 @@
       "validationPassed": true,
       "testOutputs": "https://github.com/crim-ca/bblocks-process-profiles/blob/master/build/tests/process-profiles/water-bodies/water-bodies/",
       "documentation": {
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/water-bodies/index.json"
-        },
         "markdown": {
           "mediatype": "text/markdown",
           "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/markdown/process-profiles/water-bodies/water-bodies/index.md"
+        },
+        "json-full": {
+          "mediatype": "application/json",
+          "url": "https://crim-ca.github.io/bblocks-process-profiles/build/generateddocs/json-full/process-profiles/water-bodies/water-bodies/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",

@@ -379,8 +379,8 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
 @prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns3: <http://www.iana.org/assignments/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -392,7 +392,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "Terrain Ruggedness Index (TRI)" ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.16/execution> ] ;
     pp:version "1.0.0" ;
     proc:inputs [ ns2:DEM [ dcterms:description "Elevation" ;
@@ -405,10 +405,10 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
+                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
             ns2:DW_BANDWIDTH [ dcterms:description "Gaussian and Exponential Weighting Bandwidth" ;
                     dcterms:title "Gaussian and Exponential Weighting Bandwidth" ;
                     proc:minOccurs 0 ;
@@ -461,20 +461,20 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns4:TRI [ dcterms:description "Terrain Ruggedness Index (TRI)" ;
+    proc:outputs [ ns3:TRI [ dcterms:description "Terrain Ruggedness Index (TRI)" ;
                     dcterms:title "Terrain Ruggedness Index (TRI)" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
-                                [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ] .
+                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/png" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ] .
 
 
 ```
@@ -968,13 +968,13 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                     ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
             ns3:DW_BANDWIDTH [ dcterms:description "Gaussian and Exponential Weighting Bandwidth" ;
                     dcterms:title "Gaussian and Exponential Weighting Bandwidth" ;
                     proc:minOccurs 0 ;
@@ -1024,15 +1024,15 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
-    proc:metadata [ dcterms:title "Implementation Profile: Terrain ruggedness index" ;
+    proc:metadata [ dcterms:title "Generic Profile: Terrain derivative" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+        [ dcterms:title "Implementation Profile: Terrain ruggedness index" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
         [ dcterms:title "Process Concept: Terrain Analysis" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Generic Profile: Terrain derivative" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
@@ -1051,10 +1051,10 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                     ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/png" ] ] ] ] .
@@ -1550,7 +1550,7 @@ x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.terrain.terrain-ruggedness-index
   register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-27'
+  dateOfLastChange: '2026-10-28'
 
 ```
 

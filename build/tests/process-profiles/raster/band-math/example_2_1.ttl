@@ -25,13 +25,13 @@
                     proc:maxOccurs 1024 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/jpeg" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/png" ] ] ] ;
             ns2:out [ dcterms:description "Output image which is the result of the mathematical expressions on input image list operands." ;
                     dcterms:title "Output image which is the result of the mathematical expressions on input image list operands." ;
                     proc:schema [ proc:default "\"float\""^^rdf:JSON ;
@@ -61,8 +61,8 @@
                                     ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/jpeg" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/jpeg" ] ] ] ] .
+                                    ns1:contentMediaType "image/tiff" ] ] ] ] .
 
