@@ -5,6 +5,8 @@ it selects Regional Deterministic Prediction System (RDPS) forecast files for a 
 downloads those files, and applies a trained U-Net to produce HRDPS-scale downscaled fields.
 This workflow performs inference, not model training.
 
+![Overview of the RDPS-to-HRDPS U-Net downscaling workflow](diagrams/unet-workflow-overview.svg)
+
 ### Interacting blocks and artefacts
 
 All **Examples** of this block describe one single use case, the RDPS-to-HRDPS U-Net inference
