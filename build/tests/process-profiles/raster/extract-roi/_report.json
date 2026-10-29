@@ -2,7 +2,7 @@
   "title": "Validation report for ospd.process-profiles.raster.extract-roi - Process profile: OTB.ExtractROI",
   "bblockName": "Process profile: OTB.ExtractROI",
   "bblockId": "ospd.process-profiles.raster.extract-roi",
-  "generated": "2026-10-29T02:19:00.421119+00:00",
+  "generated": "2026-10-29T06:40:00.521267+00:00",
   "result": true,
   "items": [
     {
