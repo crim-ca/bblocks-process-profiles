@@ -7,7 +7,7 @@
     each other and to the blocks that define them. The legend in the graph explains the box colours, and the edge
     labels name the fields that carry the main relations.
 
-    ![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)
+    <a href="diagrams/bblocks-interactions.svg" target="_blank" rel="noopener">![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)</a>
 
 - title: (1/10) U-Net workflow CWL Application Package
   content: |
@@ -167,7 +167,7 @@
     }
     </style>
 
-    ![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)
+    <a href="diagrams/execution-provenance.svg" target="_blank" rel="noopener">![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)</a>
 
     These CWLProv metadata align with the provenance content model described in the
     [draft OGC API - Processes - Part 5: Provenance (26-038)](https://docs.ogc.org/DRAFTS/26-038.html):

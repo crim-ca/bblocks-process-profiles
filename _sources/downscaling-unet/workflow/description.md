@@ -5,7 +5,7 @@ it selects Regional Deterministic Prediction System (RDPS) forecast files for a 
 downloads those files, and applies a trained U-Net to produce HRDPS-scale downscaled fields.
 This workflow performs inference, not model training.
 
-![Overview of the RDPS-to-HRDPS U-Net downscaling workflow](diagrams/unet-workflow-overview.svg)
+<a href="diagrams/unet-workflow-overview.svg" target="_blank" rel="noopener">![Overview of the RDPS-to-HRDPS U-Net downscaling workflow](diagrams/unet-workflow-overview.svg)</a>
 
 ### Interacting blocks and artefacts
 
@@ -15,7 +15,7 @@ the example artefacts (yellow) relate to each other, to the blocks of this regis
 to the imported blocks that define them (grey) and to the published
 or runtime resources (green). Each arrow is labelled with the relation or the fields that carry it. The legend is at the top right of the graph.
 
-![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)
+<a href="diagrams/bblocks-interactions.svg" target="_blank" rel="noopener">![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)</a>
 
 The graph is defined in
 [`diagrams/bblocks-interactions.dot`](https://github.com/crim-ca/bblocks-process-profiles/blob/master/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.dot)
@@ -139,7 +139,7 @@ It shows the job and wrapping workflow runs, the agents, the three step runs mat
 process profiles, the submitted inputs and the two results. Data links between steps are declared
 in the CWL wiring and not observed in the captured records, and are drawn as such.
 
-![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)
+<a href="diagrams/execution-provenance.svg" target="_blank" rel="noopener">![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)</a>
 
 The provenance content aligns with the process, job, input/output and agent relationships described
 in [draft OGC API - Processes - Part 5: Provenance](https://docs.ogc.org/DRAFTS/26-038.html).
