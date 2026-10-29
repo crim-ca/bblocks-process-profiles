@@ -452,6 +452,6 @@
     "itemIdentifier": "ospd.process-profiles.kindgrove-steps.estimate-biomass",
     "register": "https://crim-ca.github.io/bblocks-process-profiles/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-10-28"
+    "dateOfLastChange": "2026-10-29"
   }
 }

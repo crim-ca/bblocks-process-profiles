@@ -37,33 +37,33 @@
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_c [ dcterms:description "" ;
                     dcterms:title "band_c" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns2:band_d [ dcterms:description "" ;
                     dcterms:title "band_d" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ] ] ] ;
@@ -73,13 +73,13 @@
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
             ns2:band_f [ dcterms:description "" ;
                     dcterms:title "band_f" ;
                     proc:maxOccurs 1 ;
@@ -89,12 +89,25 @@
                                     ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+            ns2:band_g [ dcterms:description "" ;
+                    dcterms:title "band_g" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns2:band_g [ dcterms:description "" ;
-                    dcterms:title "band_g" ;
+            ns2:band_h [ dcterms:description "" ;
+                    dcterms:title "band_h" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
@@ -106,34 +119,8 @@
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ] ] ] ;
-            ns2:band_h [ dcterms:description "" ;
-                    dcterms:title "band_h" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_i [ dcterms:description "" ;
                     dcterms:title "band_i" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
-            ns2:band_j [ dcterms:description "" ;
-                    dcterms:title "band_j" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
@@ -145,16 +132,29 @@
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+            ns2:band_j [ dcterms:description "" ;
+                    dcterms:title "band_j" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_k [ dcterms:description "" ;
                     dcterms:title "band_k" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
@@ -164,23 +164,23 @@
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
             ns2:band_m [ dcterms:description "" ;
                     dcterms:title "band_m" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
@@ -190,10 +190,10 @@
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                    ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ] ] ] ;
@@ -203,15 +203,41 @@
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
+            ns2:band_p [ dcterms:description "" ;
+                    dcterms:title "band_p" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
-            ns2:band_p [ dcterms:description "" ;
-                    dcterms:title "band_p" ;
+            ns2:band_q [ dcterms:description "" ;
+                    dcterms:title "band_q" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+            ns2:band_r [ dcterms:description "" ;
+                    dcterms:title "band_r" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
@@ -223,45 +249,19 @@
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ] ] ] ;
-            ns2:band_q [ dcterms:description "" ;
-                    dcterms:title "band_q" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
-            ns2:band_r [ dcterms:description "" ;
-                    dcterms:title "band_r" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
             ns2:band_s [ dcterms:description "" ;
                     dcterms:title "band_s" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
             ns2:band_t [ dcterms:description "" ;
                     dcterms:title "band_t" ;
                     proc:maxOccurs 1 ;
@@ -284,68 +284,42 @@
                                     ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/jp2" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
             ns2:band_v [ dcterms:description "" ;
                     dcterms:title "band_v" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_w [ dcterms:description "" ;
                     dcterms:title "band_w" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:band_x [ dcterms:description "" ;
                     dcterms:title "band_x" ;
                     proc:maxOccurs 1 ;
                     proc:minOccurs 0 ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
-            ns2:band_y [ dcterms:description "" ;
-                    dcterms:title "band_y" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
-                                    ns1:contentMediaType "image/jp2" ] ] ] ;
-            ns2:band_z [ dcterms:description "" ;
-                    dcterms:title "band_z" ;
-                    proc:maxOccurs 1 ;
-                    proc:minOccurs 0 ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff; application=geotiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
@@ -353,6 +327,32 @@
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "binary" ;
                                     ns1:contentMediaType "image/tiff" ] ] ] ;
+            ns2:band_y [ dcterms:description "" ;
+                    dcterms:title "band_y" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+            ns2:band_z [ dcterms:description "" ;
+                    dcterms:title "band_z" ;
+                    proc:maxOccurs 1 ;
+                    proc:minOccurs 0 ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/tiff; application=geotiff" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "binary" ;
+                                    ns1:contentMediaType "image/jp2" ] ] ] ;
             ns2:calc [ dcterms:description "Calculation to perform with band references." ;
                     dcterms:title "Calculation" ;
                     proc:maxOccurs 1 ;
@@ -364,21 +364,21 @@
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value [ a ns3:Person ;
+    proc:metadata [ rdf:value "Performs a calculation with bands." ;
+            proc:role schema:name ],
+        [ rdf:value [ a ns3:Person ;
                     ns3:email "francis.charette-migneault@crim.ca" ;
                     ns3:identifier "http://orcid.org/0000-0003-4862-3349" ;
                     ns3:name "Francis Charette-Migneault" ] ;
             proc:role schema:author ],
-        [ rdf:value "1.1.0" ;
-            proc:role schema:softwareVersion ],
         [ rdf:value "https://gitlab.ogc.org/ogc/ogc-ospd" ;
             proc:role schema:codeRepository ],
+        [ rdf:value "1.1.0" ;
+            proc:role schema:softwareVersion ],
         [ rdf:value "https://spdx.org/licenses/CC-BY-NC-SA-4.0" ;
             proc:role schema:license ],
         [ rdf:value "Performs a calculation over JPEG bands and returns the resulting GeoTiff." ;
-            proc:role schema:description ],
-        [ rdf:value "Performs a calculation with bands." ;
-            proc:role schema:name ] ;
+            proc:role schema:description ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;

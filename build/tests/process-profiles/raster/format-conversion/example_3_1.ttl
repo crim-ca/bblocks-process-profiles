@@ -57,16 +57,16 @@
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
-    proc:metadata [ dcterms:title "My Demo" ],
+    proc:metadata [ dcterms:title "Implementation Profile: Raster format conversion" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-format-conversion> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
+        [ dcterms:title "My Demo" ],
         [ dcterms:title "Generic Profile: Raster format conversion" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/raster-format-conversion> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
         [ dcterms:title "Process Concept: Raster Coverage Processing" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
-        [ dcterms:title "Implementation Profile: Raster format conversion" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/raster-format-conversion> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ] ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;

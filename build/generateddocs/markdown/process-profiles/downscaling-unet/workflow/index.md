@@ -16,7 +16,7 @@ it selects Regional Deterministic Prediction System (RDPS) forecast files for a 
 downloads those files, and applies a trained U-Net to produce HRDPS-scale downscaled fields.
 This workflow performs inference, not model training.
 
-![Overview of the RDPS-to-HRDPS U-Net downscaling workflow](diagrams/unet-workflow-overview.svg)
+<a href="diagrams/unet-workflow-overview.svg" target="_blank" rel="noopener">![Overview of the RDPS-to-HRDPS U-Net downscaling workflow](diagrams/unet-workflow-overview.svg)</a>
 
 ### Interacting blocks and artefacts
 
@@ -26,7 +26,7 @@ the example artefacts (yellow) relate to each other, to the blocks of this regis
 to the imported blocks that define them (grey) and to the published
 or runtime resources (green). Each arrow is labelled with the relation or the fields that carry it. The legend is at the top right of the graph.
 
-![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)
+<a href="diagrams/bblocks-interactions.svg" target="_blank" rel="noopener">![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)</a>
 
 The graph is defined in
 [`diagrams/bblocks-interactions.dot`](https://github.com/crim-ca/bblocks-process-profiles/blob/master/_sources/downscaling-unet/workflow/diagrams/bblocks-interactions.dot)
@@ -150,7 +150,7 @@ It shows the job and wrapping workflow runs, the agents, the three step runs mat
 process profiles, the submitted inputs and the two results. Data links between steps are declared
 in the CWL wiring and not observed in the captured records, and are drawn as such.
 
-![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)
+<a href="diagrams/execution-provenance.svg" target="_blank" rel="noopener">![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)</a>
 
 The provenance content aligns with the process, job, input/output and agent relationships described
 in [draft OGC API - Processes - Part 5: Provenance](https://docs.ogc.org/DRAFTS/26-038.html).
@@ -166,7 +166,7 @@ activity semantics, execution request and captured provenance. The graph below s
 each other and to the blocks that define them. The legend in the graph explains the box colours, and the edge
 labels name the fields that carry the main relations.
 
-![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)
+<a href="diagrams/bblocks-interactions.svg" target="_blank" rel="noopener">![Interactions between the blocks, example artefacts and runtime resources of the U-Net workflow](diagrams/bblocks-interactions.svg)</a>
 
 
 ### (1/10) U-Net workflow CWL Application Package
@@ -905,13 +905,7 @@ such as precipitation.
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "smith.trevorj@ouranos.ca" ;
-                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
-                    :name "Trevor James Smith" ] ],
-        [ :role "https://schema.org/dateCreated" ;
+    :metadata [ :role "https://schema.org/dateCreated" ;
             :value "2026-09-09T10:36:53-04:00" ],
         [ :role "https://schema.org/contributor" ;
             :value [ ns2:schema "https://schema.org/Person" ;
@@ -930,6 +924,12 @@ such as precipitation.
                     :email "francis.charette-migneault@luqia.ca" ;
                     :identifier "https://orcid.org/0000-0003-4862-3349" ;
                     :name "Francis Charette-Migneault" ] ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
+                    :email "smith.trevorj@ouranos.ca" ;
+                    :identifier "https://orcid.org/0000-0001-5393-8359" ;
+                    :name "Trevor James Smith" ] ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,
@@ -939,17 +939,17 @@ such as precipitation.
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
                     proc:formats [ proc:mediaType "application/pdf" ],
-                        [ proc:mediaType "text/html" ],
                         [ proc:default "true"^^rdf:JSON ;
-                            proc:mediaType "text/plain" ] ;
+                            proc:mediaType "text/plain" ],
+                        [ proc:mediaType "text/html" ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentMediaType "text/plain" ],
-                                [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/pdf" ;
                                     ns1:format "binary" ],
                                 [ proc:type "string" ;
-                                    ns1:contentMediaType "text/html" ] ] ] ;
+                                    ns1:contentMediaType "text/html" ],
+                                [ proc:type "string" ;
+                                    ns1:contentMediaType "text/plain" ] ] ] ;
             proc:inference_output [ dcterms:title "inference_output" ;
                     proc:formats [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "application/directory" ] ;
@@ -2428,7 +2428,7 @@ This is the provenance of the same job as the other examples, not a separate sce
 }
 </style>
 
-![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)
+<a href="diagrams/execution-provenance.svg" target="_blank" rel="noopener">![Synthetic view of the CWLProv execution provenance of job d6f937f0](diagrams/execution-provenance.svg)</a>
 
 These CWLProv metadata align with the provenance content model described in the
 [draft OGC API - Processes - Part 5: Provenance (26-038)](https://docs.ogc.org/DRAFTS/26-038.html):
@@ -22203,7 +22203,7 @@ x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.downscaling-unet.workflow
   register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-28'
+  dateOfLastChange: '2026-10-29'
 
 ```
 

@@ -305,12 +305,12 @@ OGC API - Processes processDescription derived from the CWL (manually corrected,
                             ns1:items [ proc:type "string" ;
                                     ns1:contentMediaType "application/octet-stream" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ],
+    proc:metadata [ rdf:value "1.4.1" ;
+            proc:role schema:softwareVersion ],
         [ rdf:value "stac" ;
             proc:role schema:name ],
-        [ rdf:value "1.4.1" ;
-            proc:role schema:softwareVersion ] ;
+        [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ] ;
     proc:mutable true ;
     proc:outputTransmission "reference",
         "value" ;
@@ -588,10 +588,10 @@ Unmodified output of the `eoap.cct.cwl-to-ogcprocess` jq transform.
                             ns1:items [ proc:type "string" ;
                                     ns1:contentMediaType "application/octet-stream" ] ] ] ] ;
     proc:jobControlOptions "async-execute" ;
-    proc:metadata [ rdf:value "Process converted from CWL" ;
-            proc:role schema:description ],
-        [ rdf:value "1.4.1" ;
+    proc:metadata [ rdf:value "1.4.1" ;
             proc:role schema:softwareVersion ],
+        [ rdf:value "Process converted from CWL" ;
+            proc:role schema:description ],
         [ rdf:value "stac" ;
             proc:role schema:name ] ;
     proc:mutable true ;
@@ -982,8 +982,8 @@ W3C PROV chain validated against `ogc.bbr.provenance.provenance`.
 
 <urn:example:entity:stac:in:rasters> a prov:Entity,
         <https://ospd.example.org/ogc-api/processes/stac#inputs/rasters> ;
-    rdf:value [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2B_10TFK_20210713_0_L2A/otsu.tif" ],
-        [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2A_10TFK_20220524_0_L2A/otsu.tif" ] .
+    rdf:value [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2A_10TFK_20220524_0_L2A/otsu.tif" ],
+        [ pp:href "https://ospd.example.org/ogc-api/jobs/upstream-step/results/S2B_10TFK_20210713_0_L2A/otsu.tif" ] .
 
 <urn:example:image:ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:1.5.0> a prov:SoftwareAgent ;
     pp:name "container image ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:1.5.0" .
@@ -2912,9 +2912,9 @@ id:25ff238f-e08b-4dee-a1f9-485e90a02a52 a wfprov:Artifact,
         prov:Collection,
         prov:Entity ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member data:5f0002427ab880579cf6a5a5c704bd399f3310f2 ],
+            provext:member data:09dd884abf8f162fa6ed55f0e958ce9586b8bffd ],
         [ a provext:Membership ;
-            provext:member data:09dd884abf8f162fa6ed55f0e958ce9586b8bffd ] .
+            provext:member data:5f0002427ab880579cf6a5a5c704bd399f3310f2 ] .
 
 id:3d637621-61a3-4c53-8aaf-70daadac3593 a wfprov:Artifact,
         prov:Collection,
@@ -2973,21 +2973,21 @@ id:afa01c29-85ed-418e-b3a4-99ff6f4b06cf a ro:Folder,
         "id:7d9076f9-073d-4667-84e9-131fd7fda68c"^^xsd:QName,
         "id:a9451218-986b-4920-9d23-62638b8aea56"^^xsd:QName ;
     prov:qualifiedGeneration [ a prov:Generation ;
-            prov:activity id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 ;
-            prov:atTime "2026-09-23T22:17:45.465410"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/primary/stac> ],
-        [ a prov:Generation ;
             prov:activity id:fbfd9735-117b-4cdd-9707-61f171585925 ;
             prov:atTime "2026-09-23T22:17:45.432581"^^xsd:dateTime ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/stac_catalog> ] ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/node_stac/stac_catalog> ],
+        [ a prov:Generation ;
+            prov:activity id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 ;
+            prov:atTime "2026-09-23T22:17:45.465410"^^xsd:dateTime ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/primary/stac> ] ;
     provext:qualifiedMembership [ a provext:Membership ;
-            provext:member id:0d06dfcd-e7b7-4fad-a2a5-66cddd416313 ],
+            provext:member id:1d5bc5ed-98ce-4f75-8ca8-c19f497b03c0 ],
         [ a provext:Membership ;
             provext:member id:a782f6a0-89d7-46ac-9c76-c6569903f8e1 ],
         [ a provext:Membership ;
             provext:member id:df33a1dc-d46c-4154-9213-04cfb8cc55c4 ],
         [ a provext:Membership ;
-            provext:member id:1d5bc5ed-98ce-4f75-8ca8-c19f497b03c0 ] ;
+            provext:member id:0d06dfcd-e7b7-4fad-a2a5-66cddd416313 ] ;
     cwlprov:basename "docker_tmpwngcerl4" .
 
 id:b6924a3c-a25c-4107-bdd7-2b5b2bff912e a wfprov:Artifact,
@@ -3115,17 +3115,17 @@ id:43f96d95-9aa3-42a3-8046-388cdfaf7a80 a wfprov:WorkflowRun,
             prov:entity id:b6924a3c-a25c-4107-bdd7-2b5b2bff912e ;
             prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/bands> ],
         [ a prov:Usage ;
+            prov:atTime "2026-09-23T22:09:37.991132"^^xsd:dateTime ;
+            prov:entity data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/aoi> ],
+        [ a prov:Usage ;
             prov:atTime "2026-09-23T22:09:37.993781"^^xsd:dateTime ;
             prov:entity data:9d1fba832b03655b5b73ff964bc74d4543bf904a ;
             prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/epsg> ],
         [ a prov:Usage ;
             prov:atTime "2026-09-23T22:09:37.995200"^^xsd:dateTime ;
             prov:entity id:511850b1-b1bc-44cd-8316-bdd367fefd98 ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/stac_items> ],
-        [ a prov:Usage ;
-            prov:atTime "2026-09-23T22:09:37.991132"^^xsd:dateTime ;
-            prov:entity data:c968ad55dbad27ec9518fb34f62e7ac54bcbe7ad ;
-            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/aoi> ] ;
+            prov:hadRole <arcp://uuid,43f96d95-9aa3-42a3-8046-388cdfaf7a80/workflow/packed.cwl#main/stac_items> ] ;
     prov:startedAtTime "2026-09-23T22:09:35.483832"^^xsd:dateTime .
 
 id:39955f0d-0ccf-44b0-b0a9-70d1dd48559c a wfprov:WorkflowEngine,
@@ -3444,7 +3444,7 @@ x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.water-bodies.stac
   register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-28'
+  dateOfLastChange: '2026-10-29'
 
 ```
 
