@@ -37,7 +37,7 @@ digraph interactions {
   PROC [label="ogc.api.processes.v1.schemas.process,\nogc.api.processes.v2.schemas.staticIndicator"];
   CCT [label="eoap.cct.cwl-to-ogcprocess"];
   CWLS [label="ogc.cwl.v1_2_1.CWLWorkflow"];
-  ACTB [label="ogc.model.registered-item.ml-activity-types,\nogc.model.registered-item.geoprocessing-activity-types"];
+  ACTB [label="ogc.register.st-ml-activity-types,\nogc.register.geoprocessing-activity-types"];
   MLM [label="ogc.contrib.stac.extensions.mlm"];
   STACX [label="ogc.contrib.stac.extensions.file,\nogc.contrib.stac.extensions.application,\nogc.contrib.stac.extensions.vcs,\nogc.contrib.stac.extensions.version,\nogc.contrib.stac.extensions.scientific"];
   MLMX [label="ogc.contrib.stac.extensions.ml-aoi,\nogc.contrib.stac.extensions.datacube,\nogc.contrib.stac.extensions.eo,\nogc.contrib.stac.extensions.raster"];

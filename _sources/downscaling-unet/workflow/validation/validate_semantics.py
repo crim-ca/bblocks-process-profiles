@@ -13,7 +13,8 @@ import pyshacl
 from rdflib import DCTERMS, RDF, Graph, Literal, Namespace, URIRef
 
 BLOCK = Path(__file__).resolve().parents[1]
-REGISTER = "https://ogcincubator.github.io/registered-item-model/_sources/"
+RIM = "https://raw.githubusercontent.com/ogcincubator/registered-item-model/master/_sources/"
+ACTIVITY_TYPES = "https://raw.githubusercontent.com/ogcincubator/activity-type-register/master/_sources/"
 MODEL = "https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet"
 MLACT = Namespace("https://w3id.org/ogc/rim/ml-activity/")
 MLM = Namespace("https://w3id.org/ogc/stac/mlm/")
@@ -34,9 +35,15 @@ def main() -> None:
         raise RuntimeError("Use pySHACL >= 0.30 to enforce the upstream nested activity-type shapes.")
     shapes = Graph().parse(BLOCK / "shapes.shacl", format="turtle")
     closure = Graph()
-    for block in ("core-ontology", "activity-type", "geoprocessing-activity-types", "ml-activity-types"):
-        shapes.parse(f"{REGISTER}{block}/shapes.shacl", format="turtle")
-        closure.parse(f"{REGISTER}{block}/ontology.ttl", format="turtle")
+    blocks = (
+        (RIM, "core-ontology"),
+        (ACTIVITY_TYPES, "activity-types"),
+        (ACTIVITY_TYPES, "geoprocessing-activity-types"),
+        (ACTIVITY_TYPES, "st-ml-activity-types"),
+    )
+    for base, block in blocks:
+        shapes.parse(f"{base}{block}/shapes.shacl", format="turtle")
+        closure.parse(f"{base}{block}/ontology.ttl", format="turtle")
     for resource in ("activity-types.ttl", "examples/model-bindings.ttl"):
         closure.parse(BLOCK / resource, format="turtle")
 
