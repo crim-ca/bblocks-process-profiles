@@ -275,8 +275,8 @@
 <g id="node23" class="node">
 <title>ACTB</title>
 <polygon fill="#e9ecef" stroke="#6c757d" stroke-width="1.3" points="974,-309 646,-309 646,-273 974,-273 974,-309"/>
-<text text-anchor="middle" x="810" y="-294.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.model.registered&#45;item.ml&#45;activity&#45;types,</text>
-<text text-anchor="middle" x="810" y="-282.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.model.registered&#45;item.geoprocessing&#45;activity&#45;types</text>
+<text text-anchor="middle" x="810" y="-294.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.register.st&#45;ml&#45;activity&#45;types,</text>
+<text text-anchor="middle" x="810" y="-282.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.register.geoprocessing&#45;activity&#45;types</text>
 </g>
 <!-- ACT&#45;&gt;ACTB -->
 <g id="edge35" class="edge">

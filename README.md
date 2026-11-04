@@ -66,7 +66,7 @@ It also provides relationships that allows profiling the process against its sim
 
 The workflow block adds, beyond the common artefacts above:
 
-- ML and geoprocessing activity types, with SHACL shapes, reusing `ogc.model.registered-item.*`
+- ML and geoprocessing activity types, with SHACL shapes, reusing `ogc.register.*`
   and the STAC `mlm` extension (`ogc.contrib.stac.extensions.mlm`)
 - an interaction graph of the blocks and example artefacts and a synthetic view of the captured provenance,
   generated with `_sources/downscaling-unet/workflow/diagrams/generate_diagrams.py` (Graphviz and `scripts/prov_synth.py`)

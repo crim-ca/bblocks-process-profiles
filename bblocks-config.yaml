@@ -32,7 +32,7 @@ description: |
 
   The CRIM fork adds the `downscaling-unet` workflow, whose profile also covers:
 
-  - ML and geoprocessing activity types (`ogc.model.registered-item.*`) bound to the STAC MLM
+  - ML and geoprocessing activity types (`ogc.register.*`) bound to the STAC MLM
     model description (`ogc.contrib.stac.extensions.mlm`), with SHACL validation;
   - the model spatial and temporal domain (GeoSPARQL, OWL-Time);
   - an Application Package plan related to the captured CWLProv plan.
@@ -85,8 +85,9 @@ imports:
   # W3C PROV serialisations (experimental, under-development): the cwltool CWLProv bundles as
   # W3C PROV-JSONLD examples (`ogc.ogc-utils.prov.w3c-prov-jsonld`), see docs/OPEN-QUESTIONS.md Q-W3C
   - https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/register.json
-  # Registered item and ML activity profiles used by the downscaling process types.
+  # Registered Item Model (ogc.rim.*) and activity-type register (ogc.register.*) used by the downscaling process types.
   - https://ogcincubator.github.io/registered-item-model/build/register.json
+  - https://ogcincubator.github.io/activity-type-register/build/register.json
   # Generic Process Profiles (Concept / Generic Profile, GeoLabs), published by GeoLabs.
   - https://geolabs.github.io/bblocks-generic-profiles/build/register.json
 
