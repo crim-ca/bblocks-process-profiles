@@ -27,12 +27,12 @@
     proc:inputs [ ns1:AZIMUTH [ dcterms:description "Direction of the light source, measured in degree clockwise from the North direction." ;
                     dcterms:title "Azimuth" ;
                     proc:keywords "azimuth" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- input `azimuth`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Analytical hillshading -- input `azimuth`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Analytical hillshading -- input `azimuth`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/azimuth> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Analytical hillshading -- input `azimuth`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "315"^^rdf:JSON ;
                             proc:nullable true ;
@@ -49,12 +49,12 @@
             ns1:DECLINATION [ dcterms:description "Height of the light source, measured in degree above the horizon." ;
                     dcterms:title "Height" ;
                     proc:keywords "altitude" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- input `altitude`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Analytical hillshading -- input `altitude`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Analytical hillshading -- input `altitude`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/altitude> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Analytical hillshading -- input `altitude`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "45"^^rdf:JSON ;
                             proc:nullable true ;
@@ -74,13 +74,13 @@
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
                     proc:schema [ ns2:oneOf [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ],
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
                                     ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
                                     ns2:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
@@ -152,15 +152,15 @@
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
-    proc:metadata [ dcterms:title "Implementation Profile: Analytical hillshading" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
+    proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
         [ dcterms:title "Generic Profile: Analytical hillshading" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-        [ dcterms:title "Process Concept: Terrain Analysis" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ] ;
+        [ dcterms:title "Implementation Profile: Analytical hillshading" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ] ;
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
@@ -176,10 +176,10 @@
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
                     proc:schema [ ns2:oneOf [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ],
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns2:contentEncoding "base64" ;
                                     ns2:contentMediaType "application/x-ogc-envi" ],

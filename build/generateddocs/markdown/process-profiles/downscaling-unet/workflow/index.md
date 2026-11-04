@@ -49,8 +49,8 @@ it applies a trained model to new inputs, making it an inference activity, and t
 georeferenced RDPS climate fields into finer-resolution HRDPS-scale fields, making it spatial
 data processing. These are complementary classifications of the same operation, not alternative
 labels. The workflow references the
-[ML activity types profile](bblocks://ogc.model.registered-item.ml-activity-types) and
-[geoprocessing activity types profile](bblocks://ogc.model.registered-item.geoprocessing-activity-types);
+[ML activity types profile](bblocks://ogc.register.st-ml-activity-types) and
+[geoprocessing activity types profile](bblocks://ogc.register.geoprocessing-activity-types);
 its process-type example records the climate-downscaling and climate-downscaling-inference
 activity types. File selection and download prepare the model inputs rather than train the model.
 
@@ -839,8 +839,8 @@ Description of the deployed *OGC API - Proceses* process that encapsulates the U
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <pp:> .
-@prefix ns3: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
+@prefix ns2: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
+@prefix ns3: <pp:> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -905,27 +905,27 @@ such as precipitation.
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/contributor" ;
-            :value [ ns3:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "francis.charette-migneault@luqia.ca" ;
-                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
-                    :name "Francis Charette-Migneault" ] ],
-        [ :role "https://schema.org/dateCreated" ;
-            :value "2026-09-09T10:36:53-04:00" ],
-        [ :role "https://schema.org/author" ;
-            :value [ ns3:schema "https://schema.org/Person" ;
+    :metadata [ :role "https://schema.org/author" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "smith.trevorj@ouranos.ca" ;
                     :identifier "https://orcid.org/0000-0001-5393-8359" ;
                     :name "Trevor James Smith" ] ],
+        [ :role "https://schema.org/dateCreated" ;
+            :value "2026-09-09T10:36:53-04:00" ],
         [ :role "https://schema.org/contributor" ;
-            :value [ ns3:schema "https://schema.org/Person" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "nazim.azeli@luqia.ca" ;
                     :name "Nazim Azeli" ] ],
+        [ :role "https://schema.org/contributor" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "francis.charette-migneault@luqia.ca" ;
+                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
+                    :name "Francis Charette-Migneault" ] ],
         [ :role "https://schema.org/author" ;
-            :value [ ns3:schema "https://schema.org/Person" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "gauvin-st-denis.blaise@ouranos.ca" ;
                     :identifier "https://orcid.org/0009-0004-9049-2092" ;
@@ -938,18 +938,18 @@ such as precipitation.
     :outputTransmission "reference",
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
-                    proc:formats [ proc:mediaType "text/html" ],
-                        [ proc:mediaType "application/pdf" ],
+                    proc:formats [ proc:mediaType "application/pdf" ],
+                        [ proc:mediaType "text/html" ],
                         [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "text/plain" ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/pdf" ;
-                                    ns1:format "binary" ],
+                                    ns1:contentMediaType "text/html" ],
                                 [ proc:type "string" ;
                                     ns1:contentMediaType "text/plain" ],
                                 [ proc:type "string" ;
-                                    ns1:contentMediaType "text/html" ] ] ] ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/pdf" ;
+                                    ns1:format "binary" ] ] ] ;
             proc:inference_output [ dcterms:title "inference_output" ;
                     proc:formats [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "application/directory" ] ;
@@ -966,7 +966,7 @@ such as precipitation.
         "machine learning",
         "super-resolution",
         "workflow" ;
-    ns2:version "0.1.3.dev10" .
+    ns3:version "0.1.3.dev10" .
 
 <https://github.com/Ouranosinc/resoterre> a <https://crim-ca.github.io/bblocks-process-profiles/def/text/html> ;
     :rel "https://schema.org/codeRepository" .
@@ -22203,7 +22203,7 @@ x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.downscaling-unet.workflow
   register: https://crim-ca.github.io/bblocks-process-profiles/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-29'
+  dateOfLastChange: '2026-11-04'
 
 ```
 

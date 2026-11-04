@@ -54,13 +54,13 @@
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/jpeg" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
+                                    ns1:contentMediaType "image/png" ] ] ] ;
             ns2:out [ dcterms:description "Radiometric indices output image" ;
                     dcterms:title "Radiometric indices output image" ;
                     proc:schema [ proc:default "\"float\""^^rdf:JSON ;
@@ -80,15 +80,15 @@
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
-    proc:metadata [ dcterms:title "Implementation Profile: Radiometric index" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ],
-        [ dcterms:title "Process Concept: Raster Coverage Processing" ;
+    proc:metadata [ dcterms:title "Process Concept: Raster Coverage Processing" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/raster-coverage-processing> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
         [ dcterms:title "Generic Profile: Radiometric index" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/radiometric-index> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ] ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
+        [ dcterms:title "Implementation Profile: Radiometric index" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/radiometric-index> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ] ;
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
@@ -107,8 +107,8 @@
                                     ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/jpeg" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/jpeg" ] ] ] ] .
+                                    ns1:contentMediaType "image/tiff" ] ] ] ] .
 
