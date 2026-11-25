@@ -3,8 +3,8 @@ description: |
   Profile of the OGC API - Processes process description for the deployed Resoterre
   RDPS-to-HRDPS climate downscaling U-Net workflow.
 allOf:
-  - $ref: bblocks://ogc.api.processes.v1.schemas.process
-  - $ref: bblocks://ogc.api.processes.v2.schemas.staticIndicator
+  - $ref: bblocks://ogc.api.processes.part1.v1.schemas.process
+  - $ref: bblocks://ogc.api.processes.part2.v1.schemas.staticIndicator
   - type: object
     required: [id, version, inputs, outputs]
     properties:
@@ -70,12 +70,12 @@ $defs:
           config:
             oneOf:
               - type: "null"
-              - $ref: bblocks://ogc.api.processes.v1.schemas.link
-              - $ref: bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue
+              - $ref: bblocks://ogc.api.processes.part1.v1.schemas.link
+              - $ref: bblocks://ogc.api.processes.part1.v1.schemas.qualifiedInputValue
   rawProcessDescription:
-    $ref: bblocks://ogc.api.processes.v1.schemas.process
+    $ref: bblocks://ogc.api.processes.part1.v1.schemas.process
   applicationPackage:
-    $ref: bblocks://ogc.api.processes.v2.schemas.ogcapppkg
+    $ref: bblocks://ogc.api.processes.part2.v1.schemas.ogcapppkg
   processTypeEntry:
     $ref: bblocks://ospd.process-profiles.process-type
   w3cProvJson:
