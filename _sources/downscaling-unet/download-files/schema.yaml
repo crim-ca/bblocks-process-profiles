@@ -3,8 +3,8 @@ description: Profile of the OGC API - Processes processDescription of `ogc-ospd2
   (CWL CommandLineTool), step of the Resoterre RDPS-to-HRDPS U-Net downscaling workflow. Pins the process id and
   the input/output names; the input/output schemas are those derived from the CWL.
 allOf:
-- $ref: bblocks://ogc.api.processes.v1.schemas.process
-- $ref: bblocks://ogc.api.processes.v2.schemas.staticIndicator
+- $ref: bblocks://ogc.api.processes.part1.v1.schemas.process
+- $ref: bblocks://ogc.api.processes.part2.v1.schemas.staticIndicator
 - type: object
   required:
   - id
@@ -30,6 +30,6 @@ allOf:
         - input_data
 $defs:
   rawProcessDescription:
-    $ref: bblocks://ogc.api.processes.v1.schemas.process
+    $ref: bblocks://ogc.api.processes.part1.v1.schemas.process
   applicationPackage:
-    $ref: bblocks://ogc.api.processes.v2.schemas.ogcapppkg
+    $ref: bblocks://ogc.api.processes.part2.v1.schemas.ogcapppkg

@@ -163,7 +163,7 @@
 <g id="node19" class="node">
 <title>APKG</title>
 <polygon fill="#e9ecef" stroke="#6c757d" stroke-width="1.3" points="942,-553 690,-553 690,-517 942,-517 942,-553"/>
-<text text-anchor="middle" x="816" y="-532.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.api.processes.v2.schemas.ogcapppkg</text>
+<text text-anchor="middle" x="816" y="-532.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.api.processes.part2.v1.schemas.ogcapppkg</text>
 </g>
 <!-- PKG&#45;&gt;APKG -->
 <g id="edge30" class="edge">
@@ -176,8 +176,8 @@
 <g id="node20" class="node">
 <title>PROC</title>
 <polygon fill="#e9ecef" stroke="#6c757d" stroke-width="1.3" points="383,-441 111,-441 111,-405 383,-405 383,-441"/>
-<text text-anchor="middle" x="247" y="-426.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.api.processes.v1.schemas.process,</text>
-<text text-anchor="middle" x="247" y="-414.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.api.processes.v2.schemas.staticIndicator</text>
+<text text-anchor="middle" x="247" y="-426.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.api.processes.part1.v1.schemas.process,</text>
+<text text-anchor="middle" x="247" y="-414.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.api.processes.part2.v1.schemas.staticIndicator</text>
 </g>
 <!-- PD&#45;&gt;PROC -->
 <g id="edge31" class="edge">
@@ -275,8 +275,8 @@
 <g id="node23" class="node">
 <title>ACTB</title>
 <polygon fill="#e9ecef" stroke="#6c757d" stroke-width="1.3" points="974,-309 646,-309 646,-273 974,-273 974,-309"/>
-<text text-anchor="middle" x="810" y="-294.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.register.st&#45;ml&#45;activity&#45;types,</text>
-<text text-anchor="middle" x="810" y="-282.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.register.geoprocessing&#45;activity&#45;types</text>
+<text text-anchor="middle" x="810" y="-294.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.register.profiles.st&#45;ml&#45;activity&#45;types,</text>
+<text text-anchor="middle" x="810" y="-282.2" font-family="Helvetica,sans-Serif" font-size="11.00">ogc.register.profiles.geoprocessing&#45;activity&#45;types</text>
 </g>
 <!-- ACT&#45;&gt;ACTB -->
 <g id="edge35" class="edge">

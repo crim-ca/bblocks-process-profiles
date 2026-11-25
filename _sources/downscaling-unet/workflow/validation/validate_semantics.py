@@ -14,7 +14,7 @@ from rdflib import DCTERMS, RDF, Graph, Literal, Namespace, URIRef
 
 BLOCK = Path(__file__).resolve().parents[1]
 RIM = "https://raw.githubusercontent.com/ogcincubator/registered-item-model/master/_sources/"
-ACTIVITY_TYPES = "https://raw.githubusercontent.com/ogcincubator/activity-type-register/master/_sources/"
+ACTIVITY_TYPES = "https://raw.githubusercontent.com/ogcincubator/activity-type-register/master/_sources/profiles/"
 MODEL = "https://hirondelle.crim.ca/stac/collections/stac-mlm-examples/items/ogc-ospd2026-downscaling-unet"
 MLACT = Namespace("https://w3id.org/ogc/rim/ml-activity/")
 MLM = Namespace("https://w3id.org/ogc/stac/mlm/")
